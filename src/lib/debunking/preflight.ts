@@ -1,5 +1,6 @@
 import { classifyEgyptianContext } from "./classifier";
 import { EgyptianContextVector } from "./egy-data";
+import { isUrl, extractUrlContent } from "./workers/url-extractor";
 
 // Interfaces
 export interface PreflightContext {
@@ -7,6 +8,9 @@ export interface PreflightContext {
   normalizedText: string;
   vector: EgyptianContextVector;
   isRedDirectPanic: boolean;
+  isUrlInput: boolean;
+  extractedTitle?: string;
+  sourceUrl?: string;
 }
 
 /**
@@ -41,9 +45,24 @@ function checkRedDirectPanic(text: string): boolean {
  * Main Pre-Flight Routing Pipeline
  */
 export async function runPreflight(rawText: string): Promise<PreflightContext> {
-  const normalizedText = normalizeArabicSlang(rawText);
+  let textForProcessing = rawText;
+  let isUrlInput = false;
+  let extractedTitle: string | undefined;
+  let sourceUrl: string | undefined;
+
+  // URL detection and extraction branch
+  if (isUrl(rawText)) {
+    isUrlInput = true;
+    const extracted = await extractUrlContent(rawText);
+    textForProcessing = extracted.content;
+    extractedTitle = extracted.title;
+    sourceUrl = extracted.sourceUrl;
+  }
+
+  // Always run the Arabic normalizer on whatever text we ended up with
+  const normalizedText = normalizeArabicSlang(textForProcessing);
   const isRedDirectPanic = checkRedDirectPanic(normalizedText);
-  
+
   // Use the genuine classifier
   const vector = await classifyEgyptianContext(normalizedText);
 
@@ -51,7 +70,9 @@ export async function runPreflight(rawText: string): Promise<PreflightContext> {
     originalText: rawText,
     normalizedText,
     vector,
-    isRedDirectPanic
+    isRedDirectPanic,
+    isUrlInput,
+    extractedTitle,
+    sourceUrl,
   };
 }
-

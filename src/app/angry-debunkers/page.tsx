@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Loader2, ShieldAlert, Share2, Link as LinkIcon, Database, CheckCircle2, ScanSearch, Send, Bot, Shield, Fingerprint, Zap } from "lucide-react";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { Loader2, ShieldAlert, Share2, CheckCircle2, ScanSearch, Send, Bot, Shield, Fingerprint, Zap, Link as LinkIcon, Paperclip, X, FileText, Clock, Globe, AlertTriangle, User } from "lucide-react";
 
 const GOD_SYSTEM_LAYERS = [
   "1. Stripping Emotion...",
@@ -11,23 +11,29 @@ const GOD_SYSTEM_LAYERS = [
   "4. Cross-Referencing 10 Global Databases...",
   "5. Verifying Context...",
   "6. Detecting Fallacies...",
-  "7. Formatting Truth Sandwich..."
+  "7. Formatting Truth Sandwich...",
 ];
 
-// MATERIAL DESIGN RIPPLE EFFECT (Google Animation)
+const PDF_LAYERS = [
+  "1. Parsing Document Pages...",
+  "2. Extracting Methodology Claims...",
+  "3. Identifying Citation Fraud...",
+  "4. Cross-Referencing EuropePMC...",
+  "5. Verifying Statistical Claims...",
+  "6. Detecting Pseudoscience Markers...",
+  "7. Assembling Forensic Report...",
+];
+
+// MATERIAL DESIGN RIPPLE EFFECT
 function RippleButton({ children, onClick, className, disabled, type = "button" }: any) {
-  const [ripples, setRipples] = useState<{ x: number, y: number, id: number }[]>([]);
+  const [ripples, setRipples] = useState<{ x: number; y: number; id: number }[]>([]);
 
   const addRipple = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (disabled) return;
     const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
     const id = Date.now();
-    setRipples(prev => [...prev, { x, y, id }]);
-    setTimeout(() => {
-      setRipples(prev => prev.filter(r => r.id !== id));
-    }, 600);
+    setRipples((prev) => [...prev, { x: e.clientX - rect.left, y: e.clientY - rect.top, id }]);
+    setTimeout(() => setRipples((prev) => prev.filter((r) => r.id !== id)), 600);
     if (onClick) onClick(e);
   };
 
@@ -41,7 +47,7 @@ function RippleButton({ children, onClick, className, disabled, type = "button" 
     >
       {children}
       <AnimatePresence>
-        {ripples.map(r => (
+        {ripples.map((r) => (
           <motion.span
             key={r.id}
             initial={{ top: r.y, left: r.x, width: 0, height: 0, opacity: 0.4 }}
@@ -63,49 +69,65 @@ export default function AngryDebunkersWarRoom() {
   const [currentLayer, setCurrentLayer] = useState(0);
   const [isFocused, setIsFocused] = useState(false);
 
-  // Custom Chat Engine State
-  const [messages, setMessages] = useState<{ role: string, content: string }[]>([]);
+  // PDF state
+  const [pdfFile, setPdfFile] = useState<File | null>(null);
+  const [pdfBase64, setPdfBase64] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // URL detection
+  const isUrlInput = /^https?:\/\/[^\s]{2,}$/i.test(query.trim());
+
+  // Chat state
+  const [messages, setMessages] = useState<{ role: string; content: string }[]>([]);
   const [input, setInput] = useState("");
   const [isChatLoading, setIsChatLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll chat
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  useEffect(() => { messagesEndRef.current?.scrollIntoView({ behavior: "smooth" }); }, [messages]);
 
   useEffect(() => {
     if (status === "SCANNING" || status === "SYNTHESIZING") {
       setCurrentLayer(0);
       const interval = setInterval(() => {
-        setCurrentLayer(prev => (prev < 6 ? prev + 1 : prev));
-      }, 500); 
+        setCurrentLayer((prev) => (prev < 6 ? prev + 1 : prev));
+      }, 500);
       return () => clearInterval(interval);
     }
   }, [status]);
 
+  // Convert PDF file to base64
+  const handlePdfSelect = (file: File) => {
+    if (!file.type.includes("pdf")) return;
+    if (file.size > 10 * 1024 * 1024) { alert("PDF must be under 10MB"); return; }
+    setPdfFile(file);
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const base64 = (e.target?.result as string).split(",")[1];
+      setPdfBase64(base64);
+    };
+    reader.readAsDataURL(file);
+  };
+
   const handleStrike = async () => {
-    if (!query) return;
+    if (!query && !pdfFile) return;
     setStatus("SCANNING");
     setResult(null);
     setMessages([]);
 
-    setTimeout(() => {
-      if (status !== "COMPLETE") setStatus("SYNTHESIZING");
-    }, 2500);
+    setTimeout(() => { setStatus("SYNTHESIZING"); }, 2500);
 
     try {
       const res = await fetch("/api/defense/angry-debunkers", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query }),
+        body: JSON.stringify({
+          query: query || (pdfFile ? `Analyze this document: ${pdfFile.name}` : ""),
+          pdfBase64: pdfBase64 || null,
+          pdfMimeType: pdfFile?.type || null,
+        }),
       });
       const data = await res.json();
-      
-      setTimeout(() => {
-        setResult(data);
-        setStatus("COMPLETE");
-      }, 1000);
+      setTimeout(() => { setResult(data); setStatus("COMPLETE"); }, 1000);
     } catch (e) {
       console.error(e);
       setStatus("IDLE");
@@ -115,157 +137,138 @@ export default function AngryDebunkersWarRoom() {
   const handleChatSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!input || isChatLoading) return;
-    
     const newMessages = [...messages, { role: "user", content: input }];
     setMessages(newMessages);
     setInput("");
     setIsChatLoading(true);
-
     try {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          messages: newMessages,
-          data: { factCheckContext: result?.data || null }
-        })
+        body: JSON.stringify({ messages: newMessages, data: { factCheckContext: result?.data || null } }),
       });
-
       if (!res.body) throw new Error("No stream");
-
       const reader = res.body.getReader();
       const decoder = new TextDecoder();
       let assistantMsg = "";
-      
-      setMessages(prev => [...prev, { role: "assistant", content: "" }]);
-
+      setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
-        const text = decoder.decode(value, { stream: true });
-        assistantMsg += text;
-        setMessages(prev => {
-          const newM = [...prev];
-          newM[newM.length - 1].content = assistantMsg;
-          return newM;
+        assistantMsg += decoder.decode(value, { stream: true });
+        setMessages((prev) => {
+          const n = [...prev];
+          n[n.length - 1].content = assistantMsg;
+          return n;
         });
       }
-    } catch (err) {
-      console.error("Chat streaming error:", err);
-    } finally {
-      setIsChatLoading(false);
-    }
+    } catch (err) { console.error("Chat error:", err); }
+    finally { setIsChatLoading(false); }
   };
 
   const copyShareLink = () => {
-    if (!result) return;
     const url = new URL(window.location.href);
     url.searchParams.set("q", btoa(encodeURIComponent(query)));
     navigator.clipboard.writeText(url.toString());
     alert("Viral Counter-Attack Link Copied!");
   };
 
+  const resetAll = () => {
+    setStatus("IDLE"); setQuery(""); setResult(null);
+    setMessages([]); setPdfFile(null); setPdfBase64(null);
+  };
+
+  // Animation variants
+  const containerReveal = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.05 } } };
+  const cardReveal: Variants = {
+    hidden: { opacity: 0, scale: 0.88, y: 36, filter: "blur(10px)" } as any,
+    show: { opacity: 1, scale: 1, y: 0, filter: "blur(0px)", transition: { type: "spring", stiffness: 130, damping: 22 } } as any,
+  };
   const ringVariants = {
     hidden: { strokeDasharray: "0, 100" },
-    visible: (score: number) => ({
-      strokeDasharray: `${score}, 100`,
-      transition: { duration: 2, ease: "easeOut" }
-    })
+    visible: (score: number) => ({ strokeDasharray: `${score}, 100`, transition: { duration: 2, ease: "easeOut" } }),
   };
 
-  // Immersive Reveal Physics (Google Material M3 + iOS Elasticity)
-  const containerReveal = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15, delayChildren: 0.1 }
-    }
-  };
-
-  const cardReveal = {
-    hidden: { opacity: 0, scale: 0.85, y: 40, rotateX: -10, filter: "blur(12px)" },
-    show: { 
-      opacity: 1, scale: 1, y: 0, rotateX: 0, filter: "blur(0px)",
-      transition: { type: "spring", stiffness: 120, damping: 20, mass: 1 }
-    }
-  };
-
-  // Explicit font overrides
   const fontBase = { fontFamily: "'Inter', system-ui, -apple-system, sans-serif" };
   const fontHeader = { fontFamily: "'Clash Display', 'Inter', sans-serif" };
   const fontArabic = { fontFamily: "'IBM Plex Sans Arabic', 'Cairo', 'Noto Kufi Arabic', sans-serif" };
 
+  const activeLayers = pdfFile ? PDF_LAYERS : GOD_SYSTEM_LAYERS;
+
   return (
-    <div 
+    <div
       className="min-h-screen w-full text-white selection:bg-[#0A84FF]/30 overflow-x-hidden relative flex flex-col items-center justify-start"
-      style={{ 
-        ...fontBase,
-        backgroundColor: "#000000", // Apple Deep Black
-        backgroundImage: "radial-gradient(circle at top, rgba(10,132,255,0.05) 0%, transparent 40%), radial-gradient(circle at bottom right, rgba(255,45,85,0.03) 0%, transparent 40%)",
-        paddingTop: '8vh', 
-        paddingBottom: '120px' 
-      }}
+      style={{ ...fontBase, backgroundColor: "#000000", backgroundImage: "radial-gradient(circle at top, rgba(10,132,255,0.05) 0%, transparent 40%)", paddingTop: "8vh", paddingBottom: "120px" }}
     >
-      {/* Cinematic Auroral Bleeds */}
+      {/* Aurora */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden mix-blend-screen">
-        <motion.div animate={{ opacity: [0.2, 0.4, 0.2] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }} className="absolute -top-[10%] -left-[10%] w-[50vw] h-[50vw] max-w-[800px] bg-[#0A84FF]/10 blur-[180px] rounded-full" />
+        <motion.div animate={{ opacity: [0.2, 0.4, 0.2] }} transition={{ duration: 10, repeat: Infinity }} className="absolute -top-[10%] -left-[10%] w-[50vw] h-[50vw] max-w-[800px] bg-[#0A84FF]/10 blur-[180px] rounded-full" />
       </div>
 
-      <div className="w-full max-w-[1100px] px-6 lg:px-8 flex flex-col gap-12 relative z-10 items-center justify-center text-center">
-        
-        {/* HERO SECTION */}
-        <motion.header 
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center"
-        >
-          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-8 bg-white/[0.05] border border-white/10 backdrop-blur-md shadow-sm">
+      <div className="w-full max-w-[1100px] px-6 lg:px-8 flex flex-col gap-10 relative z-10 items-center text-center">
+
+        {/* HERO */}
+        <motion.header initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }} className="flex flex-col items-center">
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-8 bg-white/[0.05] border border-white/10 backdrop-blur-md">
             <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Infinity }}>
               <ShieldAlert size={16} className="text-[#0A84FF]" />
             </motion.div>
             <span className="text-white text-[13px] sm:text-sm font-semibold tracking-[0.05em]">Global Threat Defense Network</span>
           </div>
-
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold text-white mb-6 drop-shadow-xl" 
-              style={{ ...fontHeader, letterSpacing: "-0.04em" }}>
+          <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold text-white mb-6 drop-shadow-xl" style={{ ...fontHeader, letterSpacing: "-0.04em" }}>
             The Angry Debunkers
           </h1>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white/80 drop-shadow-md" dir="rtl"
-              style={{ ...fontArabic }}>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white/80 drop-shadow-md" dir="rtl" style={fontArabic}>
             العلم يقاتل <span className="opacity-30 mx-4 font-light">|</span> <span className="text-white/60" style={fontHeader}>Science Fights Back</span>
           </h2>
         </motion.header>
 
-        {/* APPLE / MATERIAL STYLE INPUT CONSOLE */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          animate={{ opacity: 1, scale: status === "IDLE" ? 1 : 0.98, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full relative group z-20"
-        >
-          <div 
+        {/* INPUT CONSOLE */}
+        <motion.div initial={{ opacity: 0, scale: 0.95, y: 20 }} animate={{ opacity: 1, scale: status === "IDLE" ? 1 : 0.98, y: 0 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} className="w-full relative z-20">
+          <div
             className="relative w-full overflow-hidden transition-all duration-500"
-            style={{ 
-              borderRadius: '32px', // Apple hardware curve
-              background: isFocused ? "rgba(28, 28, 30, 0.8)" : "rgba(28, 28, 30, 0.5)", // Apple Dark Mode Surface
-              border: isFocused ? "1px solid rgba(10, 132, 255, 0.6)" : "1px solid rgba(255,255,255,0.08)",
-              backdropFilter: "blur(60px)",
-              WebkitBackdropFilter: "blur(60px)",
-              boxShadow: isFocused 
-                ? "0 12px 40px rgba(0,0,0,0.4), 0 0 0 4px rgba(10,132,255,0.15)" // Material M3 elevation + Apple Focus Ring
-                : "0 4px 20px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.05)", // Soft resting elevation
+            style={{
+              borderRadius: "32px",
+              background: isFocused ? "rgba(28,28,30,0.85)" : "rgba(28,28,30,0.55)",
+              border: isFocused ? "1px solid rgba(10,132,255,0.6)" : "1px solid rgba(255,255,255,0.08)",
+              backdropFilter: "blur(60px)", WebkitBackdropFilter: "blur(60px)",
+              boxShadow: isFocused ? "0 12px 40px rgba(0,0,0,0.4), 0 0 0 4px rgba(10,132,255,0.15)" : "0 4px 20px rgba(0,0,0,0.3)",
             }}
           >
+            {/* URL detection badge */}
+            <AnimatePresence>
+              {isUrlInput && (
+                <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}
+                  className="absolute top-4 left-4 z-20 flex items-center gap-2 bg-[#0A84FF]/20 border border-[#0A84FF]/40 px-4 py-2 rounded-full backdrop-blur-md">
+                  <motion.div animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 1.5, repeat: Infinity }} className="w-2 h-2 rounded-full bg-[#0A84FF]" />
+                  <Globe size={14} className="text-[#0A84FF]" />
+                  <span className="text-[#0A84FF] text-xs font-bold tracking-wide">TARGET LOCKED · LINK EXTRACTION READY</span>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            {/* PDF file badge */}
+            <AnimatePresence>
+              {pdfFile && (
+                <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }}
+                  className="absolute top-4 left-4 z-20 flex items-center gap-2 bg-[#FF9F0A]/15 border border-[#FF9F0A]/30 px-4 py-2 rounded-full backdrop-blur-md">
+                  <FileText size={14} className="text-[#FF9F0A]" />
+                  <span className="text-[#FF9F0A] text-xs font-bold tracking-wide truncate max-w-[200px]">{pdfFile.name}</span>
+                  <button onClick={() => { setPdfFile(null); setPdfBase64(null); }} className="text-[#FF9F0A] hover:text-white ml-1">
+                    <X size={14} />
+                  </button>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
             <div className="relative flex flex-col justify-center min-h-[200px] p-8 sm:p-12">
-              <motion.div 
-                animate={{ y: isFocused || query ? -20 : 0, scale: isFocused || query ? 0.9 : 1, opacity: isFocused || query ? 0 : 1 }}
+              <motion.div
+                animate={{ y: isFocused || query || pdfFile ? -20 : 0, scale: isFocused || query || pdfFile ? 0.9 : 1, opacity: isFocused || query || pdfFile ? 0 : 1 }}
                 className="absolute inset-0 flex items-center px-12 text-[#8E8E93] pointer-events-none font-medium text-xl sm:text-2xl"
                 style={{ ...fontBase, letterSpacing: "-0.01em" }}
               >
-                Paste the rumor, medical myth, or religious fabrication here...
+                {pdfFile ? "Document loaded — add context or launch directly..." : "Paste the rumor, URL, medical myth, or religious fabrication..."}
               </motion.div>
-
               <textarea
                 className="w-full bg-transparent resize-none text-[#FFFFFF] text-2xl sm:text-4xl focus:outline-none text-left font-semibold leading-normal relative z-10 custom-scrollbar mt-4"
                 rows={3}
@@ -274,7 +277,7 @@ export default function AngryDebunkersWarRoom() {
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
                 dir="auto"
-                style={{ 
+                style={{
                   fontFamily: query.match(/[\u0600-\u06FF]/) ? "'IBM Plex Sans Arabic', 'Cairo', sans-serif" : "'Inter', sans-serif",
                   letterSpacing: "-0.01em",
                   paddingTop: query ? "10px" : "0px",
@@ -283,35 +286,38 @@ export default function AngryDebunkersWarRoom() {
               />
             </div>
 
-            {/* Apple Style Footer Bar */}
-            <div className="flex flex-col sm:flex-row justify-between items-center p-6 sm:p-8 bg-[#1C1C1E]/80 border-t border-white/[0.05] gap-6 backdrop-blur-xl">
-              <div className="text-[13px] sm:text-sm text-[#8E8E93] flex items-center gap-4 font-semibold tracking-wide">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#34C759] shadow-[0_0_8px_rgba(52,199,89,0.5)]" />
-                Live Networks: <span className="text-white/90">OpenAlex, EuropePMC, AlQuran</span>
-              </div>
-              
-              {status === "COMPLETE" ? (
+            {/* Footer bar */}
+            <div className="flex flex-col sm:flex-row justify-between items-center p-6 sm:p-8 bg-[#1C1C1E]/80 border-t border-white/[0.05] gap-6">
+              <div className="flex items-center gap-4 flex-wrap">
+                <div className="flex items-center gap-2 text-[13px] text-[#8E8E93] font-semibold">
+                  <div className="w-2 h-2 rounded-full bg-[#34C759] shadow-[0_0_8px_rgba(52,199,89,0.5)]" />
+                  <span>Live: <span className="text-white/90">OpenAlex, EuropePMC, AlQuran</span></span>
+                </div>
+                {/* PDF Upload button */}
+                <input ref={fileInputRef} type="file" accept="application/pdf" className="hidden" onChange={(e) => e.target.files?.[0] && handlePdfSelect(e.target.files[0])} />
                 <RippleButton
-                  onClick={() => {
-                    setStatus("IDLE");
-                    setQuery("");
-                    setResult(null);
-                    setMessages([]);
-                  }}
-                  className="bg-[#3A3A3C] hover:bg-[#48484A] text-white font-semibold py-4 px-10 rounded-full flex items-center justify-center gap-3 shadow-md text-sm sm:text-base w-full sm:w-auto"
+                  onClick={() => fileInputRef.current?.click()}
+                  className="flex items-center gap-2 text-[#8E8E93] hover:text-white bg-[#2C2C2E] hover:bg-[#3A3A3C] px-4 py-2 rounded-full text-xs font-semibold transition-colors border border-white/5"
                 >
+                  <Paperclip size={14} />
+                  <span>Attach PDF</span>
+                </RippleButton>
+              </div>
+
+              {status === "COMPLETE" ? (
+                <RippleButton onClick={resetAll} className="bg-[#3A3A3C] hover:bg-[#48484A] text-white font-semibold py-4 px-10 rounded-full text-sm sm:text-base w-full sm:w-auto">
                   Clear Console
                 </RippleButton>
               ) : (
                 <RippleButton
                   onClick={handleStrike}
-                  disabled={status !== "IDLE" || !query}
-                  className="bg-[#0A84FF] text-white disabled:bg-[#1C1C1E] disabled:text-[#636366] font-semibold py-4 px-12 rounded-full flex items-center justify-center gap-3 shadow-[0_4px_14px_rgba(10,132,255,0.4)] disabled:shadow-none hover:shadow-[0_6px_20px_rgba(10,132,255,0.6)] text-base tracking-wide w-full sm:w-auto border border-transparent disabled:border-white/5"
+                  disabled={status !== "IDLE" || (!query && !pdfFile)}
+                  className="bg-[#0A84FF] text-white disabled:bg-[#1C1C1E] disabled:text-[#636366] font-semibold py-4 px-12 rounded-full flex items-center justify-center gap-3 shadow-[0_4px_14px_rgba(10,132,255,0.4)] disabled:shadow-none text-base tracking-wide w-full sm:w-auto border border-transparent disabled:border-white/5"
                 >
                   {status === "IDLE" ? (
-                    <><span className="relative z-10 font-bold">Launch Strike</span> <Zap size={20} className="relative z-10 fill-white" /></>
+                    <><span className="font-bold">Launch Strike</span><Zap size={20} className="fill-white" /></>
                   ) : (
-                    <><Loader2 className="animate-spin w-5 h-5 relative z-10" /> <span className="relative z-10 font-bold">Executing...</span></>
+                    <><Loader2 className="animate-spin w-5 h-5" /><span className="font-bold">Executing...</span></>
                   )}
                 </RippleButton>
               )}
@@ -321,11 +327,15 @@ export default function AngryDebunkersWarRoom() {
 
         {/* SUGGESTED PROMPTS */}
         {status === "IDLE" && (
-          <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} 
-                      className="w-full flex overflow-x-auto sm:flex-wrap sm:justify-center gap-4 sm:gap-5 pb-6 sm:pb-0 hide-scrollbar snap-x snap-mandatory px-4 sm:px-0">
-            {["Vaccines contain microchips to track citizens.", "A new Hadith claims the world ends next Friday.", "Drinking boiled garlic cures all viruses."].map((example, i) => (
-              <RippleButton key={i} onClick={() => setQuery(example)} 
-                      className="group flex items-center gap-4 bg-[#1C1C1E]/80 hover:bg-[#2C2C2E] border border-white/5 hover:border-[#0A84FF]/50 text-[#8E8E93] hover:text-white text-sm sm:text-base px-6 py-4 rounded-full transition-all duration-300 flex-shrink-0 snap-center backdrop-blur-md shadow-md">
+          <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}
+            className="w-full flex overflow-x-auto sm:flex-wrap sm:justify-center gap-4 sm:gap-5 pb-6 sm:pb-0 hide-scrollbar snap-x snap-mandatory px-4 sm:px-0">
+            {[
+              "Vaccines contain microchips to track citizens.",
+              "A new Hadith claims the world ends next Friday.",
+              "Drinking boiled garlic cures all viruses.",
+            ].map((example, i) => (
+              <RippleButton key={i} onClick={() => setQuery(example)}
+                className="group flex items-center gap-4 bg-[#1C1C1E]/80 hover:bg-[#2C2C2E] border border-white/5 hover:border-[#0A84FF]/50 text-[#8E8E93] hover:text-white text-sm sm:text-base px-6 py-4 rounded-full flex-shrink-0 snap-center backdrop-blur-md shadow-md transition-all duration-300">
                 <span className="font-medium" style={fontBase}>"{example}"</span>
                 <span className="opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-[#0A84FF]">→</span>
               </RippleButton>
@@ -336,40 +346,38 @@ export default function AngryDebunkersWarRoom() {
         {/* LOADING MATRIX */}
         <AnimatePresence mode="wait">
           {(status === "SCANNING" || status === "SYNTHESIZING") && (
-            <motion.div 
-              key="loading-matrix"
+            <motion.div key="loading"
               initial={{ opacity: 0, height: 0, filter: "blur(10px)" }}
               animate={{ opacity: 1, height: "auto", filter: "blur(0px)" }}
               exit={{ opacity: 0, height: 0, filter: "blur(10px)" }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full backdrop-blur-3xl bg-[#1C1C1E]/80 border border-white/10 p-10 sm:p-20 rounded-[32px] shadow-2xl flex flex-col items-center justify-center gap-12 relative overflow-hidden"
+              transition={{ duration: 0.6 }}
+              className="w-full backdrop-blur-3xl bg-[#1C1C1E]/80 border border-white/10 p-10 sm:p-20 rounded-[32px] shadow-2xl flex flex-col items-center gap-12"
             >
               <div className="relative z-10 flex flex-col items-center">
-                <motion.div 
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                  className="w-32 h-32 sm:w-48 sm:h-48 border-4 border-dashed border-[#0A84FF]/50 rounded-full"
-                />
-                <ScanSearch className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#0A84FF] w-12 h-12 sm:w-16 sm:h-16" />
+                <motion.div animate={{ rotate: 360 }} transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  className="w-32 h-32 sm:w-48 sm:h-48 border-4 border-dashed border-[#0A84FF]/50 rounded-full" />
+                <ScanSearch className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#0A84FF] w-12 h-12 sm:w-16 sm:h-16" />
               </div>
-
-              <div className="w-full max-w-lg space-y-5 bg-[#2C2C2E]/60 p-8 sm:p-10 rounded-[24px] border border-white/5 z-10 shadow-xl backdrop-blur-md">
-                <div className="text-sm text-[#0A84FF] font-semibold text-center tracking-wide mb-6">Establishing Uplink...</div>
-                {GOD_SYSTEM_LAYERS.map((layer, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ 
-                      opacity: idx <= currentLayer ? 1 : 0.2, 
-                      x: idx <= currentLayer ? 0 : -10,
-                      color: idx === currentLayer ? "#0A84FF" : (idx < currentLayer ? "#8E8E93" : "#636366") 
-                    }}
+              {isUrlInput && (
+                <div className="flex items-center gap-3 bg-[#0A84FF]/10 border border-[#0A84FF]/20 px-6 py-3 rounded-full">
+                  <Globe size={16} className="text-[#0A84FF]" />
+                  <span className="text-[#0A84FF] text-sm font-semibold">Extracting content via Jina Reader...</span>
+                </div>
+              )}
+              <div className="w-full max-w-lg space-y-5 bg-[#2C2C2E]/60 p-8 sm:p-10 rounded-[24px] border border-white/5 z-10 backdrop-blur-md">
+                <div className="text-sm text-[#0A84FF] font-semibold text-center tracking-wide mb-6">
+                  {pdfFile ? "Document Analysis Protocol Active..." : "Establishing Uplink..."}
+                </div>
+                {activeLayers.map((layer, idx) => (
+                  <motion.div key={idx}
+                    animate={{ opacity: idx <= currentLayer ? 1 : 0.2, x: idx <= currentLayer ? 0 : -10,
+                      color: idx === currentLayer ? "#0A84FF" : idx < currentLayer ? "#8E8E93" : "#636366" }}
                     transition={{ duration: 0.4 }}
-                    className={`text-sm tracking-wide flex items-center gap-4 ${idx === currentLayer ? 'animate-pulse font-bold' : 'font-medium'}`}
+                    className={`text-sm tracking-wide flex items-center gap-4 ${idx === currentLayer ? "animate-pulse font-bold" : "font-medium"}`}
                   >
-                    {idx === currentLayer && <ScanSearch size={18} className="text-[#0A84FF]" />}
-                    {idx < currentLayer && <CheckCircle2 size={18} className="text-[#34C759]" />}
-                    {idx > currentLayer && <div className="w-4 h-4" />}
+                    {idx === currentLayer && <ScanSearch size={18} className="text-[#0A84FF] shrink-0" />}
+                    {idx < currentLayer && <CheckCircle2 size={18} className="text-[#34C759] shrink-0" />}
+                    {idx > currentLayer && <div className="w-4 h-4 shrink-0" />}
                     {layer}
                   </motion.div>
                 ))}
@@ -377,40 +385,38 @@ export default function AngryDebunkersWarRoom() {
             </motion.div>
           )}
 
-          {/* IMMERSIVE REVEAL WAR ROOM */}
+          {/* RESULTS */}
           {status === "COMPLETE" && result && result.type === "SYNTHESIS_COMPLETE" && (
-            <motion.div 
-              key="results"
-              variants={containerReveal}
-              initial="hidden"
-              animate="show"
-              className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full z-10"
-              style={{ perspective: "1500px" }}
-            >
-              
-              {/* ANALYTICS COL (Left, spans 4 cols) */}
+            <motion.div key="results" variants={containerReveal} initial="hidden" animate="show"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full z-10" style={{ perspective: "1500px" }}>
+
+              {/* LEFT COLUMN */}
               <div className="lg:col-span-4 flex flex-col gap-6">
-                
-                {/* Confidence Ring - Material M3 Card */}
-                <motion.div 
-                  variants={cardReveal}
-                  className="backdrop-blur-3xl bg-[#1C1C1E]/80 border border-white/10 p-10 rounded-[32px] shadow-[0_20px_40px_rgba(0,0,0,0.4)] flex flex-col items-center justify-center text-center relative overflow-hidden"
-                >
+
+                {/* Source badge if URL */}
+                {result.data?.isUrlInput && result.data?.sourceUrl && (
+                  <motion.div variants={cardReveal} className="bg-[#0A84FF]/10 border border-[#0A84FF]/25 p-5 rounded-[24px] flex items-start gap-4">
+                    <div className="p-2.5 bg-[#0A84FF]/20 rounded-xl shrink-0">
+                      <Globe size={20} className="text-[#0A84FF]" />
+                    </div>
+                    <div className="text-left min-w-0">
+                      <h3 className="text-[#0A84FF] text-xs font-bold uppercase tracking-wider mb-1">Source Extracted</h3>
+                      <p className="text-white text-sm font-semibold truncate">{result.data.extractedTitle}</p>
+                      <a href={result.data.sourceUrl} target="_blank" rel="noopener noreferrer"
+                        className="text-[#0A84FF]/70 text-xs hover:text-[#0A84FF] truncate block mt-0.5 transition-colors">{result.data.sourceUrl}</a>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Confidence Ring */}
+                <motion.div variants={cardReveal} className="backdrop-blur-3xl bg-[#1C1C1E]/80 border border-white/10 p-10 rounded-[32px] shadow-[0_20px_40px_rgba(0,0,0,0.4)] flex flex-col items-center text-center">
                   <div className="relative w-40 h-40 flex items-center justify-center">
-                    <svg viewBox="0 0 36 36" className="w-full h-full transform -rotate-90">
+                    <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
                       <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth="1.5" />
-                      <motion.path 
-                        d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" 
-                        fill="none" 
-                        stroke="#0A84FF" 
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        variants={ringVariants as any}
-                        custom={Math.round((Number(result?.data?.confidence_score) || 0) * 100)}
-                        initial="hidden"
-                        animate="visible"
-                        style={{ filter: "drop-shadow(0 0 10px rgba(10,132,255,0.5))" }}
-                      />
+                      <motion.path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        fill="none" stroke="#0A84FF" strokeWidth="2.5" strokeLinecap="round"
+                        variants={ringVariants as any} custom={Math.round((Number(result?.data?.confidence_score) || 0) * 100)}
+                        initial="hidden" animate="visible" style={{ filter: "drop-shadow(0 0 10px rgba(10,132,255,0.5))" }} />
                     </svg>
                     <div className="absolute flex flex-col items-center">
                       <span className="text-5xl font-bold text-white tracking-tight" style={fontBase}>
@@ -418,115 +424,142 @@ export default function AngryDebunkersWarRoom() {
                       </span>
                     </div>
                   </div>
-                  <h3 className="mt-6 text-[#8E8E93] font-semibold text-sm" style={fontBase}>Verification Confidence</h3>
+                  <h3 className="mt-6 text-[#8E8E93] font-semibold text-sm">Verification Confidence</h3>
                 </motion.div>
 
-                {/* Threat Dashboards */}
-                <motion.div 
-                  variants={cardReveal}
-                  className="bg-[#1C1C1E]/80 border border-white/10 p-6 sm:p-8 rounded-[28px] shadow-lg relative overflow-hidden flex items-start gap-5"
-                >
+                {/* Science Violation */}
+                <motion.div variants={cardReveal} className="bg-[#1C1C1E]/80 border border-white/10 p-6 sm:p-8 rounded-[28px] relative overflow-hidden flex items-start gap-5">
                   <div className="absolute top-0 left-0 w-1.5 h-full bg-[#FF3B30]" />
                   <Shield className="text-[#FF3B30] shrink-0 mt-1" size={28} />
                   <div className="text-left">
                     <h3 className="text-[#FF3B30] text-xs font-bold uppercase tracking-wider mb-2">Science Violation</h3>
-                    <p className="text-white text-sm sm:text-base font-medium leading-relaxed">{result.data.negative_science_violation || result.data.logical_fallacy_detected}</p>
+                    <p className="text-white text-sm font-medium leading-relaxed">{result.data.negative_science_violation || result.data.logical_fallacy_detected}</p>
                   </div>
                 </motion.div>
 
-                <motion.div 
-                  variants={cardReveal}
-                  className="bg-[#1C1C1E]/80 border border-white/10 p-6 sm:p-8 rounded-[28px] shadow-lg relative overflow-hidden flex items-start gap-5"
-                >
+                {/* Vector Hit */}
+                <motion.div variants={cardReveal} className="bg-[#1C1C1E]/80 border border-white/10 p-6 sm:p-8 rounded-[28px] relative overflow-hidden flex items-start gap-5">
                   <div className="absolute top-0 left-0 w-1.5 h-full bg-[#30D158]" />
                   <Fingerprint className="text-[#30D158] shrink-0 mt-1" size={28} />
                   <div className="text-left">
                     <h3 className="text-[#30D158] text-xs font-bold uppercase tracking-wider mb-2">Vector Hit</h3>
-                    <p className="text-white text-sm sm:text-base font-medium leading-relaxed">{result.data.egyptian_vector_hit || result.data.egyptian_contextual_mapping}</p>
+                    <p className="text-white text-sm font-medium leading-relaxed">{result.data.egyptian_vector_hit || result.data.egyptian_contextual_mapping}</p>
                   </div>
                 </motion.div>
-                
+
+                {/* PATIENT ZERO CARD */}
+                {result.data?.patient_zero_tracing && (
+                  <motion.div variants={cardReveal}
+                    className="bg-[#1C1C1E]/80 border border-[#FF9F0A]/20 p-6 sm:p-8 rounded-[28px] relative overflow-hidden">
+                    <div className="absolute top-0 left-0 w-1.5 h-full bg-[#FF9F0A]" />
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-[#FF9F0A]/5 blur-3xl rounded-full pointer-events-none" />
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="p-2 bg-[#FF9F0A]/15 rounded-xl"><AlertTriangle size={20} className="text-[#FF9F0A]" /></div>
+                      <h3 className="text-[#FF9F0A] text-sm font-bold uppercase tracking-wider">Patient Zero Trace</h3>
+                    </div>
+                    <div className="space-y-4 text-left relative z-10">
+                      <div className="flex gap-3 items-start">
+                        <Clock size={15} className="text-[#FF9F0A]/70 mt-0.5 shrink-0" />
+                        <div>
+                          <span className="text-[#FF9F0A]/70 text-[10px] font-bold uppercase tracking-widest block mb-0.5">Origin Year</span>
+                          <p className="text-white text-sm font-semibold">{result.data.patient_zero_tracing.origin_year}</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-3 items-start">
+                        <Globe size={15} className="text-[#FF9F0A]/70 mt-0.5 shrink-0" />
+                        <div>
+                          <span className="text-[#FF9F0A]/70 text-[10px] font-bold uppercase tracking-widest block mb-0.5">Origin Platform</span>
+                          <p className="text-white text-sm font-semibold">{result.data.patient_zero_tracing.origin_platform}</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-3 items-start">
+                        <LinkIcon size={15} className="text-[#FF9F0A]/70 mt-0.5 shrink-0" />
+                        <div>
+                          <span className="text-[#FF9F0A]/70 text-[10px] font-bold uppercase tracking-widest block mb-0.5">Transmission Vector</span>
+                          <p className="text-white text-sm font-medium leading-relaxed">{result.data.patient_zero_tracing.transmission_vector}</p>
+                        </div>
+                      </div>
+                      <div className="bg-[#FF9F0A]/10 border border-[#FF9F0A]/15 rounded-2xl p-4">
+                        <span className="text-[#FF9F0A] text-[10px] font-bold uppercase tracking-widest block mb-1">Why Trending Now</span>
+                        <p className="text-white/80 text-sm font-medium">{result.data.patient_zero_tracing.why_trending_now}</p>
+                      </div>
+                      {result.data.patient_zero_tracing.named_instigator && (
+                        <div className="flex gap-3 items-start">
+                          <User size={15} className="text-[#FF3B30] mt-0.5 shrink-0" />
+                          <div>
+                            <span className="text-[#FF3B30] text-[10px] font-bold uppercase tracking-widest block mb-0.5">Named Instigator</span>
+                            <p className="text-white text-sm font-bold">{result.data.patient_zero_tracing.named_instigator}</p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </motion.div>
+                )}
+
                 <motion.div variants={cardReveal}>
-                  <RippleButton 
-                    onClick={copyShareLink} 
-                    className="w-full bg-[#2C2C2E] hover:bg-[#3A3A3C] text-white font-semibold py-5 px-6 rounded-[20px] flex items-center justify-center gap-3 transition-colors shadow-md text-sm mt-2"
-                  >
-                    <Share2 size={20} />
-                    <span>Copy Viral Defense Link</span>
+                  <RippleButton onClick={copyShareLink} className="w-full bg-[#2C2C2E] hover:bg-[#3A3A3C] text-white font-semibold py-5 px-6 rounded-[20px] flex items-center justify-center gap-3 text-sm mt-2">
+                    <Share2 size={20} /><span>Copy Viral Defense Link</span>
                   </RippleButton>
                 </motion.div>
               </div>
 
-              {/* OUTPUT COL (Right, spans 8 cols) */}
+              {/* RIGHT COLUMN */}
               <div className="lg:col-span-8 flex flex-col gap-6">
-                
-                {/* TRUTH SANDWICH - MATERIAL ELEVATED CONTAINER */}
-                <motion.div 
-                  variants={cardReveal}
-                  className="backdrop-blur-3xl bg-[#1C1C1E]/90 border border-white/10 p-8 sm:p-12 rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden"
-                >
-                  <div className="absolute top-0 right-0 p-16 opacity-[0.02] pointer-events-none mix-blend-screen">
+
+                {/* TRUTH SANDWICH */}
+                <motion.div variants={cardReveal} className="backdrop-blur-3xl bg-[#1C1C1E]/90 border border-white/10 p-8 sm:p-12 rounded-[32px] shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
+                  <div className="absolute top-0 right-0 p-16 opacity-[0.02] pointer-events-none">
                     <CheckCircle2 size={350} />
                   </div>
-                  
                   <h2 className="text-xl sm:text-2xl font-bold mb-10 text-white flex items-center gap-4" style={fontBase}>
                     <div className="p-3 bg-[#0A84FF]/10 rounded-2xl border border-[#0A84FF]/20 text-[#0A84FF]">
                       <CheckCircle2 size={28} />
                     </div>
                     Truth Sandwich Protocol
                   </h2>
-                  
                   <div className="space-y-5 relative z-10" dir="rtl">
-                    <div className="bg-[#2C2C2E]/60 border border-white/5 p-6 sm:p-8 rounded-[24px] shadow-sm backdrop-blur-md">
+                    <div className="bg-[#2C2C2E]/60 border border-white/5 p-6 sm:p-8 rounded-[24px]">
                       <span className="text-xs text-[#30D158] uppercase font-bold block mb-4 tracking-wider" style={fontArabic}>الحقيقة (الأساس)</span>
                       <p className="text-white text-lg sm:text-xl font-semibold leading-relaxed" style={fontArabic}>{result.data.truth_sandwich.fact_1}</p>
                     </div>
-                    
-                    <div className="bg-[#FF3B30]/10 border border-[#FF3B30]/20 p-6 sm:p-8 rounded-[24px] shadow-sm backdrop-blur-md">
+                    <div className="bg-[#FF3B30]/10 border border-[#FF3B30]/20 p-6 sm:p-8 rounded-[24px]">
                       <span className="text-xs text-[#FF3B30] uppercase font-bold block mb-4 tracking-wider" style={fontArabic}>الخرافة (التحذير)</span>
                       <p className="text-white/60 line-through decoration-[#FF3B30] decoration-[2px] text-lg sm:text-xl font-medium leading-relaxed" style={fontArabic}>{result.data.truth_sandwich.myth}</p>
                     </div>
-                    
-                    <div className="bg-[#2C2C2E]/60 border border-white/5 p-6 sm:p-8 rounded-[24px] shadow-sm backdrop-blur-md">
+                    <div className="bg-[#2C2C2E]/60 border border-white/5 p-6 sm:p-8 rounded-[24px]">
                       <span className="text-xs text-[#30D158] uppercase font-bold block mb-4 tracking-wider" style={fontArabic}>الحقيقة (التأكيد)</span>
                       <p className="text-white text-lg sm:text-xl font-semibold leading-relaxed" style={fontArabic}>{result.data.truth_sandwich.fact_2}</p>
                     </div>
                   </div>
                 </motion.div>
 
-                {/* CHAT TERMINAL - APPLE MESSAGES STYLE */}
-                <motion.div
-                  variants={cardReveal}
-                  className="w-full bg-[#1C1C1E]/90 border border-white/10 rounded-[32px] overflow-hidden flex flex-col h-[600px] shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative"
-                >
-                  <div className="bg-[#2C2C2E]/80 p-5 sm:p-6 border-b border-white/5 flex items-center justify-between z-20 backdrop-blur-xl">
-                    <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 bg-[#0A84FF] rounded-full flex items-center justify-center shadow-md">
-                        <Bot className="text-white" size={20} />
-                      </div>
-                      <div>
-                        <h3 className="text-white font-semibold text-base" style={fontBase}>AI Interrogation</h3>
-                        <p className="text-[#8E8E93] text-xs font-medium mt-0.5">Debate the evidence directly.</p>
-                      </div>
+                {/* AI CHAT — APPLE iMESSAGE */}
+                <motion.div variants={cardReveal} className="w-full bg-[#1C1C1E]/90 border border-white/10 rounded-[32px] overflow-hidden flex flex-col h-[600px] shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                  <div className="bg-[#2C2C2E]/80 p-5 sm:p-6 border-b border-white/5 flex items-center gap-4 backdrop-blur-xl">
+                    <div className="w-10 h-10 bg-[#0A84FF] rounded-full flex items-center justify-center shadow-md shrink-0">
+                      <Bot className="text-white" size={20} />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="text-white font-semibold text-base" style={fontBase}>AI Interrogation</h3>
+                      <p className="text-[#8E8E93] text-xs font-medium mt-0.5">
+                        {result.data?.isUrlInput ? `Analyzing: ${result.data.extractedTitle}` : "Debate the evidence directly."}
+                      </p>
                     </div>
                   </div>
-                  
-                  <div className="flex-1 overflow-y-auto p-6 sm:p-8 space-y-6 flex flex-col custom-scrollbar relative z-10 bg-[#000000]/20">
+
+                  <div className="flex-1 overflow-y-auto p-6 sm:p-8 space-y-6 flex flex-col custom-scrollbar bg-[#000000]/20">
                     {messages.length === 0 && (
                       <div className="text-center text-[#8E8E93] text-sm mt-8 font-medium">
-                        System Online. Awaiting input.
+                        {result.data?.patient_zero_tracing ? "Ask me about the origin of this lie. I have the forensic trace." : "System Online. Awaiting input."}
                       </div>
                     )}
                     {messages.map((m, idx) => (
-                      <div key={idx} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                        <div className={`max-w-[85%] rounded-[24px] px-6 py-4 shadow-sm ${
-                          m.role === 'user' 
-                            ? 'bg-[#0A84FF] text-white rounded-br-md' 
-                            : 'bg-[#2C2C2E] text-white rounded-bl-md'
-                        }`} dir={m.role === 'user' ? 'auto' : 'rtl'}>
-                          <p className={`whitespace-pre-wrap ${m.role === 'user' ? 'font-medium text-base' : 'text-base leading-relaxed font-medium'}`}
-                             style={m.role === 'assistant' ? fontArabic : fontBase}>
-                            {m.content.replace(/\[SYSTEM:.*?\]/g, '').trim()}
+                      <div key={idx} className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}>
+                        <div className={`max-w-[85%] rounded-[24px] px-6 py-4 shadow-sm ${m.role === "user" ? "bg-[#0A84FF] text-white rounded-br-md" : "bg-[#2C2C2E] text-white rounded-bl-md"}`}
+                          dir={m.role === "user" ? "auto" : "rtl"}>
+                          <p className="whitespace-pre-wrap text-base leading-relaxed font-medium"
+                            style={m.role === "assistant" ? fontArabic : fontBase}>
+                            {m.content.replace(/\[SYSTEM:.*?\]/g, "").trim()}
                           </p>
                         </div>
                       </div>
@@ -534,35 +567,26 @@ export default function AngryDebunkersWarRoom() {
                     {isChatLoading && (
                       <div className="flex justify-start">
                         <div className="bg-[#2C2C2E] rounded-[24px] rounded-bl-md px-6 py-4 flex items-center gap-3">
-                          <Loader2 className="w-5 h-5 text-[#8E8E93] animate-spin" />
-                          <span className="text-[#8E8E93] font-medium text-sm">Typing...</span>
+                          <Loader2 className="w-5 h-5 text-[#8E8E93] animate-spin" /><span className="text-[#8E8E93] font-medium text-sm">Typing...</span>
                         </div>
                       </div>
                     )}
                     <div ref={messagesEndRef} />
                   </div>
 
-                  <div className="p-5 sm:p-6 bg-[#1C1C1E] border-t border-white/5 z-20">
+                  <div className="p-5 sm:p-6 bg-[#1C1C1E] border-t border-white/5">
                     <form onSubmit={handleChatSubmit} className="flex gap-3 relative">
-                      <input
-                        value={input}
-                        onChange={(e) => setInput(e.target.value)}
-                        placeholder="iMessage..."
-                        className="flex-1 bg-[#2C2C2E] border border-transparent focus:border-[#0A84FF]/50 rounded-full pl-6 pr-14 py-3.5 text-white text-base font-medium focus:outline-none transition-all shadow-inner"
-                        dir="auto"
-                        style={fontBase}
-                      />
-                      <RippleButton
-                        type="submit"
-                        disabled={isChatLoading || !input}
-                        className="absolute right-2 top-2 bottom-2 bg-[#0A84FF] hover:bg-[#007AFF] text-white w-10 rounded-full flex items-center justify-center disabled:opacity-50 transition-colors shadow-sm"
-                      >
+                      <input value={input} onChange={(e) => setInput(e.target.value)}
+                        placeholder="Ask about the evidence, the origin, the instigator..."
+                        className="flex-1 bg-[#2C2C2E] border border-transparent focus:border-[#0A84FF]/50 rounded-full pl-6 pr-14 py-3.5 text-white text-base font-medium focus:outline-none transition-all"
+                        dir="auto" style={fontBase} />
+                      <RippleButton type="submit" disabled={isChatLoading || !input}
+                        className="absolute right-2 top-2 bottom-2 bg-[#0A84FF] hover:bg-[#007AFF] text-white w-10 rounded-full flex items-center justify-center disabled:opacity-50 transition-colors">
                         <Send size={18} className="fill-white mr-0.5" />
                       </RippleButton>
                     </form>
                   </div>
                 </motion.div>
-
               </div>
             </motion.div>
           )}
