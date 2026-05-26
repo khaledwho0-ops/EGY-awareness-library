@@ -1,0 +1,53 @@
+{
+  "id": "rh-day-09",
+  "title": "Punitive Reappraisal: When God Seems Angry",
+  "titleAr": "إعادة التقييم العقابي: عندما يبدو الله غاضباً",
+  "mvp": "religion-hub",
+  "day": 9,
+  "duration": 14,
+  "difficulty": "intermediate",
+  "category": "threat_awareness",
+  "bloomLevel": "analyze",
+  "learningObjective": "After this exercise, the user will understand punitive religious reappraisal as a risk factor for mental health and distinguish accountability from shame-based thinking.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيفهم المستخدم إعادة التقييم الديني العقابي كعامل خطر.",
+  "content": {
+    "scenario": "Punitive religious reappraisal (Pargament et al., 1998) occurs when someone interprets difficulty as divine punishment:\n\n- 'God is punishing me for my sins'\n- 'I deserve this suffering'\n- 'If I were a better person, this wouldn't happen'\n\nResearch consistently shows punitive religious coping is associated with WORSE mental health outcomes (more depression, anxiety, and distress).\n\nHealthier alternative: Accountability WITHOUT self-destruction\n- 'I can learn from my mistakes' ≠ 'I deserve suffering'\n- 'I seek God's guidance' ≠ 'God is angry with me'\n- 'Repentance' ≠ 'Self-hatred'",
+    "scenarioAr": "إعادة التقييم الديني العقابي يحدث عندما يفسر شخص الصعوبة كعقاب إلهي.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Rewrite each punitive statement into a psychologically healthier alternative.",
+      "instructionsAr": "أعد صياغة كل عبارة عقابية إلى بديل أكثر صحة نفسياً.",
+      "items": [
+        {
+          "id": "pun-1",
+          "text": "From: 'God is punishing me.' → To: 'I'm facing a challenge, and I trust that growth is possible through this difficulty.'",
+          "isCorrect": true,
+          "explanation": "Excellent reframing. Shifts from punishment to growth while maintaining spiritual trust. This is benevolent reappraisal instead of punitive."
+        },
+        {
+          "id": "pun-2",
+          "text": "From: 'I deserve to suffer.' → To: 'I can seek forgiveness and learn from my mistakes without destroying myself.'",
+          "isCorrect": true,
+          "explanation": "Excellent. Preserves accountability (learning from mistakes) while removing self-destructive element. Tawbah (repentance) in Islam is about returning, not self-punishment."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent reframing! Moving from punitive to benevolent reappraisal is one of the most important shifts in religious coping.",
+      "correctAr": "إعادة صياغة ممتازة!",
+      "incorrect": "Review: the goal is to preserve accountability while removing self-destruction. Repentance ≠ self-hatred.",
+      "incorrectAr": "راجع: الهدف الحفاظ على المسؤولية مع إزالة تدمير الذات."
+    }
+  },
+  "whatNotToDo": [
+    "Don't dismiss theological concepts — engage with them through a wellbeing lens",
+    "Don't tell someone their suffering is punishment — this causes harm"
+  ],
+  "keyhunterId": "rh-kh-09",
+  "evidence": "Pargament, K.I., et al. (1998). Patterns of positive and negative religious coping. JSSR, 37(4), 710-724.",
+  "safetyNote": "⚠️ If punitive beliefs are causing you significant distress, please consider speaking with both a trusted moderate scholar and a mental health professional.",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Punitive reappraisal awareness builds capability to reframe harmful interpretations"
+}

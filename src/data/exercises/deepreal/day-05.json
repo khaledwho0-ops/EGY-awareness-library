@@ -1,0 +1,71 @@
+{
+  "id": "dr-day-05",
+  "title": "Investigate the Source: The 'I' in SIFT",
+  "titleAr": "تحقق من المصدر: حرف 'I' في SIFT",
+  "mvp": "deepreal",
+  "day": 5,
+  "duration": 15,
+  "difficulty": "intermediate",
+  "category": "source_credibility",
+  "learningObjective": "After this exercise, the user will be able to apply the 'Investigate the source' step of the SIFT method by researching who is behind a claim before evaluating the claim itself, using Wikipedia as a source orientation tool and Google Scholar to verify researcher credentials.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيكون المستخدم قادرًا على تطبيق خطوة 'تحقق من المصدر' في طريقة SIFT من خلال البحث عمن يقف وراء الادعاء قبل تقييم الادعاء نفسه، باستخدام ويكيبيديا كأداة توجيه وGoogle Scholar للتحقق من أوراق اعتماد الباحثين.",
+  "bloomLevel": "apply",
+  "content": {
+    "scenario": "Caulfield (2019) teaches that the 'I' in SIFT — Investigate the source — means you should check WHO published a claim BEFORE evaluating the claim itself. This reverses the natural tendency to evaluate content first.\n\nHere is a real test: An article titled 'The Hidden Dangers of 5G Radiation: What Your Government Won't Tell You' appears on a website called 'TruthWatchEgypt.net'.\n\nBefore reading the article, you should investigate the source. Here are the results of your investigation:\n\n1. **Wikipedia search for 'TruthWatchEgypt'** → No Wikipedia page exists\n2. **WHOIS domain lookup** → Domain registered 3 months ago by a private registrant in Panama\n3. **About page** → Says 'We are a team of independent truth-seekers' — no names, no credentials\n4. **Other articles on the site** → Include chemtrail conspiracies, anti-vaccine content, and flat earth theories\n5. **Google Scholar search for their cited 'Dr. Smith'** → No results found",
+    "scenarioAr": "يعلّم كولفيلد (2019) أن حرف 'I' في SIFT — تحقق من المصدر — يعني أنه يجب عليك التحقق من الناشر قبل تقييم الادعاء نفسه.\n\nإليك اختبار حقيقي: مقال بعنوان 'الأخطار الخفية لإشعاع 5G: ما لن تخبرك به حكومتك' يظهر على موقع يسمى 'TruthWatchEgypt.net'.\n\nقبل قراءة المقال، يجب عليك التحقق من المصدر. إليك نتائج تحقيقك.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Based on your source investigation results above, evaluate each finding. What does each red flag tell you about the source's credibility?",
+      "instructionsAr": "بناءً على نتائج التحقيق أعلاه، قيّم كل نتيجة. ماذا تخبرك كل علامة تحذيرية عن مصداقية المصدر؟",
+      "items": [
+        {
+          "id": "inv-wiki",
+          "text": "No Wikipedia page exists — This means the organization has not been notable enough for independent coverage. While not every credible source has a Wikipedia page, the absence is a data point.",
+          "isCorrect": true,
+          "explanation": "RED FLAG: Caulfield (2019) recommends Wikipedia as a first-stop orientation tool — not for final truth, but to quickly check if a source has been independently documented."
+        },
+        {
+          "id": "inv-whois",
+          "text": "Domain registered 3 months ago in Panama — Recently created domains with privacy-hidden registrants are a classic misinformation infrastructure pattern.",
+          "isCorrect": true,
+          "explanation": "STRONG RED FLAG: Legitimate organizations typically have established web presences. Recently created domains with hidden registrants are a documented pattern in misinformation networks (Bradshaw & Howard, 2019)."
+        },
+        {
+          "id": "inv-about",
+          "text": "Anonymous team with no credentials — 'Independent truth-seekers' without identifiable people means there is no one to be accountable for the content.",
+          "isCorrect": true,
+          "explanation": "STRONG RED FLAG: Anonymity removes accountability. McGrew (2020) found that students who check 'About' pages for identifiable, credentialed authors make significantly better credibility judgments."
+        },
+        {
+          "id": "inv-other",
+          "text": "Conspiracy content across the site — Pattern of publishing known conspiracy theories (chemtrails, flat earth) indicates the site's editorial standards do not filter for evidence.",
+          "isCorrect": true,
+          "explanation": "DECISIVE RED FLAG: A site's overall content pattern reveals its editorial values. Wineburg & McGrew (2019) call this 'reading laterally' — checking what other content surrounds the claim."
+        },
+        {
+          "id": "inv-scholar",
+          "text": "Cited expert doesn't exist on Google Scholar — If a researcher has no publication record, their cited credentials are likely fabricated.",
+          "isCorrect": true,
+          "explanation": "DECISIVE RED FLAG: Real researchers have verifiable publication records. An expert with zero indexed publications has either fabricated credentials or is being impersonated."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent work! You correctly identified all 5 red flags. The crucial lesson from Caulfield (2019): check the SOURCE before reading the CONTENT. If you had read the article first, the 5G misinformation might have seemed plausible. By investigating first, you know not to trust it.",
+      "correctAr": "عمل ممتاز! لقد حددت جميع العلامات التحذيرية الخمس بشكل صحيح. الدرس الحاسم من كولفيلد (2019): تحقق من المصدر قبل قراءة المحتوى. لو قرأت المقال أولاً، ربما بدا ادعاء 5G معقولاً. بالتحقق أولاً، تعرف أنه لا يمكن الوثوق به.",
+      "incorrect": "Review each finding again. Every one of these investigation results is a documented red flag in media literacy research. The key is: investigate the source BEFORE evaluating the content.",
+      "incorrectAr": "راجع كل نتيجة مرة أخرى. كل واحدة من نتائج التحقيق هذه هي علامة تحذيرية موثقة في بحوث التثقيف الإعلامي."
+    }
+  },
+  "whatNotToDo": [
+    "Don't read and evaluate the article's claims before checking who published it — this reverses the correct order",
+    "Don't dismiss Wikipedia entirely — use it as a first-stop orientation tool for checking if a source has been independently documented"
+  ],
+  "keyhunterId": "dr-kh-05",
+  "evidence": "Caulfield, M. (2019). SIFT (The Four Moves). Hapgood. https://hapgood.us/2019/06/19/sift-the-four-moves/; McGrew, S. (2020). Learning to evaluate: An intervention in civic online reasoning. Computers & Education, 145, 103711.",
+  "safetyNote": "This exercise uses a fictional conspiracy website for educational purposes only. For verified health information about 5G, consult WHO or Egypt's National Telecom Regulatory Authority.",
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Context-first evaluation reverses natural content-first bias",
+  "trackConfidence": true,
+  "requiresEightGate": true
+}

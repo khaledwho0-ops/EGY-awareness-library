@@ -1,0 +1,122 @@
+[
+  {
+    "id": 851,
+    "title": "The Kessler Syndrome",
+    "titleAr": "متلازمة كيسلر",
+    "year": "1978",
+    "domain": "Orbital Cascading Failure",
+    "domainAr": "فشل مداري متسلسل",
+    "damage": "The Space Prison",
+    "damageAr": "سجن الفضاء",
+    "illustrationEn": "A theoretical scenario in which the density of objects in low Earth orbit becomes so high that collisions between objects cause a cascade where each collision generates space debris that increases the likelihood of further collisions. We are rapidly approaching the tipping point where humanity will be permanently trapped on Earth under a lethal shell of hyper-velocity shrapnel.",
+    "illustrationAr": "سيناريو نظري تصبح فيه كثافة الأجسام في مدار أرضي منخفض عالية جداً لدرجة أن الاصطدامات بين الأجسام تسبب سلسلة متتالية حيث يولد كل اصطدام حطاماً فضائياً يزيد من احتمالية حدوث المزيد من الاصطدامات. نحن نقترب بسرعة من نقطة التحول حيث ستُحاصر البشرية بشكل دائم على الأرض تحت قذيفة قاتلة من الشظايا شديدة السرعة."
+  },
+  {
+    "id": 852,
+    "title": "The Carrington Event",
+    "titleAr": "حدث كارينغتون",
+    "year": "1859",
+    "domain": "Geomagnetic Storm",
+    "domainAr": "عاصفة جيومغناطيسية",
+    "damage": "The Grid Collapse",
+    "damageAr": "انهيار الشبكة",
+    "illustrationEn": "A massive coronal mass ejection from the sun hit Earth's magnetosphere, causing telegraph systems worldwide to spark and catch fire, some operating even when disconnected from power. If a storm of that magnitude hits our modern, digitally dependent world today, it would instantly fry the global electrical grid, plunging civilization into permanent darkness.",
+    "illustrationAr": "ضرب انبعاث كتلي إكليلي هائل من الشمس الغلاف المغناطيسي للأرض، مما تسبب في شرر أنظمة التلغراف في جميع أنحاء العالم واشتعال النيران فيها، وبعضها يعمل حتى عند فصله عن الطاقة. إذا ضربت عاصفة بهذا الحجم عالمنا الحديث المعتمد على الرقمية اليوم، فإنها ستقلي شبكة الكهرباء العالمية على الفور، وتغرق الحضارة في ظلام دائم."
+  },
+  {
+    "id": 853,
+    "title": "The Bhopal Disaster",
+    "titleAr": "كارثة بوبال",
+    "year": "1984",
+    "domain": "Industrial Negligence",
+    "domainAr": "إهمال صناعي",
+    "damage": "The Toxic Cloud",
+    "damageAr": "السحابة السامة",
+    "illustrationEn": "A pesticide plant in India leaked over 40 tons of highly toxic methyl isocyanate gas into the surrounding slums while people slept. Over 3,000 died immediately, and hundreds of thousands were severely injured. The corporation responsible largely escaped liability. It proved that human lives in the developing world are a fully calculated, acceptable operating loss for global industry.",
+    "illustrationAr": "تسرب من مصنع للمبيدات في الهند أكثر من 40 طناً من غاز أيزوسيانات الميثيل شديد السمية إلى الأحياء الفقيرة المحيطة بينما كان الناس نائمين. توفي أكثر من 3000 شخص على الفور، وأصيب مئات الآلاف بجروح خطيرة. نجت الشركة المسؤولة إلى حد كبير من المسؤولية. لقد أثبتت أن أرواح البشر في العالم النامي هي خسارة تشغيلية محسوبة بالكامل ومقبولة للصناعة العالمية."
+  },
+  {
+    "id": 854,
+    "title": "The Radium Girls",
+    "titleAr": "فتيات الراديوم",
+    "year": "1917",
+    "domain": "Corporate Exploitation",
+    "domainAr": "استغلال الشركات",
+    "damage": "The Glowing Bones",
+    "damageAr": "العظام المتوهجة",
+    "illustrationEn": "Female factory workers contracted radiation poisoning from painting watch dials with self-luminous paint. The corporation knew radium was lethal but told the women it was safe, encouraging them to point the brushes with their lips. Their jaws rotted and fell off, and their bones glowed in the dark as they slowly, agonizingly died for corporate profit.",
+    "illustrationAr": "أصيبت عاملات مصانع بالتسمم الإشعاعي من طلاء أقراص الساعات بطلاء مضيء ذاتياً. عرفت الشركة أن الراديوم قاتل ولكنها أخبرت النساء أنه آمن، وشجعتهن على توجيه الفرشاة بشفاههن. تعفنت فكوكهن وسقطت، وتوهجت عظامهن في الظلام بينما كن يمتن ببطء وألم من أجل أرباح الشركة."
+  },
+  {
+    "id": 855,
+    "title": "The Minamata Disease",
+    "titleAr": "مرض ميناماتا",
+    "year": "1956",
+    "domain": "Chemical Cover-up",
+    "domainAr": "تستر كيميائي",
+    "damage": "Neurological Decay",
+    "damageAr": "اضمحلال عصبي",
+    "illustrationEn": "A chemical company in Japan continuously dumped massive amounts of industrial wastewater contaminated with highly toxic methylmercury into Minamata Bay for decades. Locals ate the poisoned fish, leading to severe neurological damage, paralysis, and death. The government and the corporation suppressed the truth for years to protect the economy.",
+    "illustrationAr": "قامت شركة كيميائية في اليابان بالتخلص المستمر من كميات هائلة من مياه الصرف الصناعي الملوثة بميثيل الزئبق شديد السمية في خليج ميناماتا لعقود. أكل السكان المحليون الأسماك المسمومة، مما أدى إلى تلف عصبي شديد وشلل والموت. قمعت الحكومة والشركة الحقيقة لسنوات لحماية الاقتصاد."
+  },
+  {
+    "id": 856,
+    "title": "Agent Orange",
+    "titleAr": "العامل البرتقالي",
+    "year": "1961",
+    "domain": "Ecocide & Bio-Damage",
+    "domainAr": "إبادة بيئية وضرر حيوي",
+    "damage": "Generational Mutations",
+    "damageAr": "طفرات الأجيال",
+    "illustrationEn": "The US military sprayed 20 million gallons of herbicides, heavily contaminated with dioxin (one of the most toxic chemicals known to man), over Vietnam to destroy forests and crops. Millions were exposed, resulting in horrific birth defects, cancers, and ecological devastation that persists in the DNA of the population today.",
+    "illustrationAr": "رش الجيش الأمريكي 20 مليون جالون من مبيدات الأعشاب، الملوثة بشدة بالديوكسين (أحد أكثر المواد الكيميائية سمية التي عرفها الإنسان)، فوق فيتنام لتدمير الغابات والمحاصيل. تعرض الملايين، مما أدى إلى عيوب خلقية مروعة وسرطانات ودمار بيئي لا يزال قائماً في الحمض النووي للسكان اليوم."
+  },
+  {
+    "id": 857,
+    "title": "Operation Teak and Orange",
+    "titleAr": "عملية خشب الساج والبرتقال",
+    "year": "1958",
+    "domain": "High-Altitude Nukes",
+    "domainAr": "أسلحة نووية على ارتفاعات عالية",
+    "damage": "Shattering the Sky",
+    "damageAr": "تحطيم السماء",
+    "illustrationEn": "The US military detonated massive thermonuclear weapons in the upper atmosphere to test EMP effects and anti-ballistic missile defense. The explosions temporarily destroyed the Van Allen radiation belts and created an artificial aurora seen from Fiji to Hawaii. They willingly gambled with the Earth's protective magnetic shield.",
+    "illustrationAr": "فجر الجيش الأمريكي أسلحة نووية حرارية هائلة في الغلاف الجوي العلوي لاختبار تأثيرات النبض الكهرومغناطيسي والدفاع الصاروخي المضاد للصواريخ الباليستية. دمرت الانفجارات مؤقتاً أحزمة إشعاع فان ألين وخلقت شفقاً قطبياً اصطناعياً شوهد من فيجي إلى هاواي. لقد غامروا عن طيب خاطر بالدرع المغناطيسي الواقي للأرض."
+  },
+  {
+    "id": 858,
+    "title": "The Sverdlovsk Anthrax Leak",
+    "titleAr": "تسرب الجمرة الخبيثة في سفيردلوفسك",
+    "year": "1979",
+    "domain": "Biological Cover-up",
+    "domainAr": "تستر بيولوجي",
+    "damage": "The Invisible Plume",
+    "damageAr": "العمود غير المرئي",
+    "illustrationEn": "A spore release of weaponized anthrax from a secret Soviet military facility resulted in nearly 100 deaths. For over a decade, the Soviet Union insisted the deaths were caused by people eating contaminated meat. It was the deadliest documented outbreak of inhalation anthrax, proving illegal bioweapons programs operate silently next to civilian populations.",
+    "illustrationAr": "أدى إطلاق جراثيم الجمرة الخبيثة المسلحة من منشأة عسكرية سوفيتية سرية إلى وفاة ما يقرب من 100 شخص. لأكثر من عقد من الزمان، أصر الاتحاد السوفيتي على أن الوفيات نتجت عن تناول أشخاص للحوم ملوثة. كان هذا أعنف تفشي موثق لاستنشاق الجمرة الخبيثة، مما يثبت أن برامج الأسلحة البيولوجية غير القانونية تعمل بصمت بجوار السكان المدنيين."
+  },
+  {
+    "id": 859,
+    "title": "The Dark Forest Hypothesis",
+    "titleAr": "فرضية الغابة المظلمة",
+    "year": "2008",
+    "domain": "Cosmic Sociology",
+    "domainAr": "علم الاجتماع الكوني",
+    "damage": "The Silent Universe",
+    "damageAr": "الكون الصامت",
+    "illustrationEn": "An answer to the Fermi Paradox (why is the universe silent?): The universe is a dark forest. Every civilization is an armed hunter stalking through the trees. If a hunter finds another life, they must shoot to kill to guarantee their own survival. The silence of the stars is not empty; it is the terrifying silence of civilizations hiding from apex predators.",
+    "illustrationAr": "إجابة على مفارقة فيرمي (لماذا الكون صامت؟): الكون غابة مظلمة. كل حضارة هي صياد مسلح يتسلل عبر الأشجار. إذا وجد صياد حياة أخرى، فعليه إطلاق النار للقتل لضمان بقائه. صمت النجوم ليس فارغاً؛ إنه الصمت المرعب للحضارات التي تختبئ من الحيوانات المفترسة العليا."
+  },
+  {
+    "id": 860,
+    "title": "The PFOA Contamination (Dark Waters)",
+    "titleAr": "تلوث PFOA (المياه المظلمة)",
+    "year": "1998",
+    "domain": "Forever Chemicals",
+    "domainAr": "المواد الكيميائية الأبدية",
+    "damage": "The Poisoned Bloodline",
+    "damageAr": "سلالة الدم المسمومة",
+    "illustrationEn": "DuPont knowingly dumped massive amounts of Perfluorooctanoic acid (PFOA), a toxic 'forever chemical' used in Teflon, into local water supplies. Internal documents proved they knew it caused cancer and birth defects for decades but covered it up. Today, PFOA is found in the blood of 99% of human beings on Earth. They poisoned the entire human species for profit.",
+    "illustrationAr": "قامت شركة دوبونت عمداً بإلقاء كميات هائلة من حمض البيرفلوروكتانويك (PFOA)، وهو 'مادة كيميائية أبدية' سامة تستخدم في التيفلون، في إمدادات المياه المحلية. أثبتت الوثائق الداخلية أنهم عرفوا أنها تسبب السرطان والعيوب الخلقية لعقود لكنهم تستروا عليها. اليوم، يوجد PFOA في دم 99% من البشر على وجه الأرض. لقد سمموا الجنس البشري بأكمله من أجل الربح."
+  }
+]

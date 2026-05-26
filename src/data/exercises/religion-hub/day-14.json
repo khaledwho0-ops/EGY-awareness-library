@@ -1,0 +1,59 @@
+{
+  "id": "rh-day-14",
+  "title": "Capstone: Religion, Wellbeing, and Your Integrated Toolkit",
+  "titleAr": "الختام: الدين والرفاهية ومجموعة أدواتك المتكاملة",
+  "mvp": "religion-hub",
+  "day": 14,
+  "duration": 15,
+  "difficulty": "intermediate",
+  "category": "boundaries",
+  "bloomLevel": "evaluate",
+  "learningObjective": "After this exercise, the user will synthesize all 14 days of learning and create a personal wellbeing plan that integrates spiritual and psychological resources.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيدمج المستخدم جميع الدروس المتعلمة في خطة رفاهية شخصية.",
+  "content": {
+    "scenario": "Congratulations on completing 14 days of Religion Hub!\n\nYour Toolkit Summary:\n✓ Positive Coping (Day 1) — Collaborative religious coping\n✓ Benevolent Reappraisal (Day 2) — Finding meaning\n✓ Community Support (Day 3) — Healthy vs. controlling\n✓ Forgiveness (Day 4) — Release without condoning\n✓ Prayer as Coping (Day 5) — Types and boundaries\n✓ Hope & Optimism (Day 6) — Active vs. passive\n✓ Gratitude & Patience (Day 7) — Evidence-based practices\n✓ Spiritual Bypassing (Day 8) — Faith masking pain\n✓ Punitive Reappraisal (Day 9) — God's 'punishment' belief\n✓ Scrupulosity (Day 10) — When devotion becomes distress\n✓ Radicalization Awareness (Day 11) — Protecting your mind\n✓ Healthy Engagement (Day 12) — Balance criteria\n✓ Scholar vs. Therapist (Day 13) — Complementary roles\n✓ Integration (Day 14) — Your personal plan",
+    "scenarioAr": "مبروك على إكمال 14 يوماً من Religion Hub!",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Create your personal wellbeing integration plan.",
+      "instructionsAr": "أنشئ خطة تكامل الرفاهية الشخصية.",
+      "items": [
+        {
+          "id": "rh-cap-1",
+          "text": "My positive coping practices: [Choose 2 from Days 1-7]",
+          "isCorrect": true,
+          "explanation": "Having specific, named practices (e.g., daily gratitude + weekly community connection) makes them more likely to become habits."
+        },
+        {
+          "id": "rh-cap-2",
+          "text": "My warning signs to watch for: [Choose 2 from Days 8-11]",
+          "isCorrect": true,
+          "explanation": "Self-awareness of potential risks (e.g., spiritual bypassing, punitive thinking) is protective."
+        },
+        {
+          "id": "rh-cap-3",
+          "text": "My support resources: Scholar + Therapist + Crisis (16328)",
+          "isCorrect": true,
+          "explanation": "Having a mapped support network (spiritual + professional + emergency) is the most resilient configuration."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Outstanding! You've completed the Religion Hub program with a personal integration plan. Remember: faith and wellbeing work together, not against each other.",
+      "correctAr": "ممتاز! لقد أكملت برنامج Religion Hub مع خطة تكامل شخصية.",
+      "incorrect": "Complete all three sections. Your plan should include: positive practices, warning signs, and support resources.",
+      "incorrectAr": "أكمل جميع الأقسام الثلاثة."
+    }
+  },
+  "whatNotToDo": [
+    "Don't think this is the end — wellbeing integration is a lifelong practice",
+    "Don't forget: Dar al-Ifta (107) for religious guidance, GSMHAT (16328) for mental health support"
+  ],
+  "keyhunterId": "rh-kh-14",
+  "evidence": "VanderWeele, T.J. (2017). On the promotion of human flourishing. PNAS, 114(31), 8148-8156.",
+  "safetyNote": "⚠️ For support: GSMHAT 16328 | Dar al-Ifta 107 | Al-Azhar Observatory",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Full religion-wellbeing synthesis builds integrated capability for balanced faith"
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 821,
+    "title": "Stuxnet",
+    "titleAr": "ستوكسنت",
+    "year": "2010",
+    "domain": "Cyber-Kinetic Weapon",
+    "domainAr": "سلاح سيبراني حركي",
+    "damage": "The Code That Kills",
+    "damageAr": "الكود الذي يقتل",
+    "illustrationEn": "The first known computer virus designed specifically to cause real-world physical damage. It targeted Iranian nuclear centrifuges, causing them to spin out of control and destroy themselves while sending false sensor data to operators indicating everything was normal. It crossed the digital-physical barrier, proving code can shatter reality.",
+    "illustrationAr": "أول فيروس كمبيوتر معروف مصمم خصيصاً لإحداث أضرار مادية في العالم الحقيقي. استهدف أجهزة الطرد المركزي النووية الإيرانية، مما تسبب في خروجها عن نطاق السيطرة وتدمير نفسها بينما أرسل بيانات استشعار خاطئة للمشغلين تشير إلى أن كل شيء طبيعي. لقد تجاوز الحاجز الرقمي المادي، مما يثبت أن الكود يمكن أن يحطم الواقع."
+  },
+  {
+    "id": 822,
+    "title": "Pegasus Spyware",
+    "titleAr": "برنامج بيغاسوس للتجسس",
+    "year": "2016",
+    "domain": "Zero-Click Surveillance",
+    "domainAr": "مراقبة بدون نقر",
+    "damage": "The Omnipresent Eye",
+    "damageAr": "العين الموجودة في كل مكان",
+    "illustrationEn": "Military-grade spyware developed by the NSO Group that can silently infect modern smartphones without the user taking any action (zero-click). Once installed, it turns the device into a 24/7 surveillance tool, accessing cameras, microphones, and encrypted messages. You carry your own absolute surveillant in your pocket, and there is no defense.",
+    "illustrationAr": "برامج تجسس عسكرية طورتها مجموعة NSO يمكنها إصابة الهواتف الذكية الحديثة بصمت دون أن يتخذ المستخدم أي إجراء (بدون نقر). بمجرد تثبيته، فإنه يحول الجهاز إلى أداة مراقبة على مدار الساعة طوال أيام الأسبوع، حيث يمكنه الوصول إلى الكاميرات والميكروفونات والرسائل المشفرة. أنت تحمل مراقبك المطلق في جيبك، ولا يوجد دفاع."
+  },
+  {
+    "id": 823,
+    "title": "PRISM",
+    "titleAr": "بريزم",
+    "year": "2007",
+    "domain": "Mass Data Harvesting",
+    "domainAr": "حصاد البيانات الجماعي",
+    "damage": "The Death of Privacy",
+    "damageAr": "موت الخصوصية",
+    "illustrationEn": "A highly classified NSA surveillance program that collects internet communications directly from the servers of major US internet companies like Google, Facebook, and Apple. Revealed by Edward Snowden, it proved that the government has a backdoor into the entirety of human digital interaction. We willingly upload our lives to the intelligence apparatus.",
+    "illustrationAr": "برنامج مراقبة سري للغاية لوكالة الأمن القومي يقوم بجمع اتصالات الإنترنت مباشرة من خوادم شركات الإنترنت الأمريكية الكبرى مثل جوجل وفيسبوك وأبل. كشف عنه إدوارد سنودن، وأثبت أن الحكومة لديها باب خلفي لمجمل التفاعل الرقمي البشري. نحن نقوم طواعية بتحميل حياتنا إلى جهاز الاستخبارات."
+  },
+  {
+    "id": 824,
+    "title": "Room 641A",
+    "titleAr": "الغرفة 641A",
+    "year": "2006",
+    "domain": "Physical Wiretapping",
+    "domainAr": "تنصت مادي",
+    "damage": "The Bleeding Fiber",
+    "damageAr": "الألياف النازفة",
+    "illustrationEn": "A secret telecommunications interception facility operated by AT&T for the NSA, located in San Francisco. It used optical splitters to clone massive amounts of internet traffic passing through the main fiber optic cables of the internet backbone. The state physically spliced into the nervous system of the global network.",
+    "illustrationAr": "منشأة سرية لاعتراض الاتصالات تديرها شركة AT&T لصالح وكالة الأمن القومي في سان فرانسيسكو. استخدمت مقسمات بصرية لاستنساخ كميات هائلة من حركة مرور الإنترنت التي تمر عبر كابلات الألياف الضوئية الرئيسية لعمود الإنترنت الفقري. لقد ربطت الدولة نفسها مادياً بالجهاز العصبي للشبكة العالمية."
+  },
+  {
+    "id": 825,
+    "title": "Vault 7",
+    "titleAr": "القبو 7",
+    "year": "2017",
+    "domain": "Cyber Weapons Cache",
+    "domainAr": "مخبأ الأسلحة السيبرانية",
+    "damage": "The Hacking of Everything",
+    "damageAr": "اختراق كل شيء",
+    "illustrationEn": "A massive leak of CIA documents detailing their global covert hacking program. It revealed tools capable of compromising iPhones, Androids, smart TVs, and web browsers. One tool, 'Weeping Angel', turns Samsung smart TVs into covert listening devices even when they appear turned off. Your living room is a broadcast studio for the deep state.",
+    "illustrationAr": "تسريب هائل لوثائق وكالة المخابرات المركزية يفصل برنامج القرصنة السري العالمي الخاص بهم. وكشف عن أدوات قادرة على اختراق أجهزة آيفون وأندرويد وأجهزة التلفزيون الذكية ومتصفحات الويب. تقوم إحدى الأدوات، 'Weeping Angel'، بتحويل أجهزة تلفزيون سامسونج الذكية إلى أجهزة تنصت سرية حتى عندما تبدو مغلقة. غرفة معيشتك هي استوديو بث للدولة العميقة."
+  },
+  {
+    "id": 826,
+    "title": "The Equation Group",
+    "titleAr": "مجموعة المعادلة",
+    "year": "2001",
+    "domain": "Advanced Persistent Threat",
+    "domainAr": "تهديد مستمر متقدم",
+    "damage": "Firmware Infection",
+    "damageAr": "عدوى البرامج الثابتة",
+    "illustrationEn": "A highly sophisticated threat actor widely believed to be the NSA's Tailored Access Operations (TAO) unit. They developed malware that could reprogram the firmware of hard drives, making the infection completely undetectable and impossible to remove even by wiping the disk or reinstalling the OS. They own the hardware itself.",
+    "illustrationAr": "جهة تهديد متطورة للغاية يُعتقد على نطاق واسع أنها وحدة عمليات الوصول المخصصة (TAO) التابعة لوكالة الأمن القومي. لقد طوروا برامج ضارة يمكنها إعادة برمجة البرامج الثابتة لمحركات الأقراص الثابتة، مما يجعل العدوى غير قابلة للاكتشاف تماماً ويستحيل إزالتها حتى عن طريق مسح القرص أو إعادة تثبيت نظام التشغيل. إنهم يمتلكون الأجهزة نفسها."
+  },
+  {
+    "id": 827,
+    "title": "FinFisher",
+    "titleAr": "فين فيشر",
+    "year": "2011",
+    "domain": "Mercenary Spyware",
+    "domainAr": "برامج تجسس مرتزقة",
+    "damage": "Corporate Espionage",
+    "damageAr": "تجسس الشركات",
+    "illustrationEn": "A commercial surveillance software sold globally to law enforcement and intelligence agencies by a private corporation. It can take full control of computers and phones, secretly turning on webcams and microphones. It illustrates the terrifying reality of the cyber-mercenary industry: absolute surveillance is a product you can buy if you are a state.",
+    "illustrationAr": "برنامج مراقبة تجاري يُباع عالمياً لوكالات إنفاذ القانون والمخابرات من قبل شركة خاصة. يمكنه السيطرة الكاملة على أجهزة الكمبيوتر والهواتف، وتشغيل كاميرات الويب والميكروفونات سراً. إنه يوضح الواقع المرعب لصناعة المرتزقة السيبرانيين: المراقبة المطلقة هي منتج يمكنك شراؤه إذا كنت دولة."
+  },
+  {
+    "id": 828,
+    "title": "Project Echelon",
+    "titleAr": "مشروع إيكيلون",
+    "year": "1971",
+    "domain": "Signals Intelligence",
+    "domainAr": "استخبارات الإشارات",
+    "damage": "The Global Antenna",
+    "damageAr": "الهوائي العالمي",
+    "illustrationEn": "A global network of electronic spy stations operated by the Five Eyes intelligence alliance. Originally designed to monitor Soviet communications, it evolved into a massive, automated system intercepting private and commercial satellite communications worldwide using dictionary-based keyword tracking. The original planetary dragnet.",
+    "illustrationAr": "شبكة عالمية من محطات التجسس الإلكترونية يديرها تحالف استخبارات العيون الخمس. صُمم في الأصل لمراقبة الاتصالات السوفيتية، وتطور إلى نظام آلي ضخم يعترض الاتصالات الفضائية الخاصة والتجارية في جميع أنحاء العالم باستخدام تتبع الكلمات الرئيسية القائم على القاموس. شبكة السحب الكوكبية الأصلية."
+  },
+  {
+    "id": 829,
+    "title": "XKeyscore",
+    "titleAr": "إكس كي سكور",
+    "year": "2008",
+    "domain": "Data Indexing",
+    "domainAr": "فهرسة البيانات",
+    "damage": "The Omniscient Search Engine",
+    "damageAr": "محرك البحث العليم",
+    "illustrationEn": "An NSA system described as its 'widest-reaching' system for gathering intelligence from the internet. It acts as a search engine for analysts to query essentially everything a user does on the internet without a warrant, from emails and chats to browsing history. 'I sitting at my desk could wiretap anyone, from you or your accountant, to a federal judge.'",
+    "illustrationAr": "نظام تابع لوكالة الأمن القومي وُصف بأنه نظامها 'الأوسع نطاقاً' لجمع المعلومات الاستخبارية من الإنترنت. يعمل كمحرك بحث للمحللين للاستعلام عن كل ما يفعله المستخدم على الإنترنت تقريباً دون أمر قضائي، من رسائل البريد الإلكتروني والمحادثات إلى سجل التصفح. 'يمكنني وأنا جالس على مكتبي التنصت على أي شخص، منك أو من محاسبك، إلى قاضٍ فيدرالي.'"
+  },
+  {
+    "id": 830,
+    "title": "The SolarWinds Hack",
+    "titleAr": "اختراق سولار ويندز",
+    "year": "2020",
+    "domain": "Supply Chain Attack",
+    "domainAr": "هجوم سلسلة التوريد",
+    "damage": "The Invisible Intrusion",
+    "damageAr": "التسلل غير المرئي",
+    "illustrationEn": "One of the most sophisticated cyberattacks in history. Russian state hackers injected malicious code into the software updates of SolarWinds, a network management company. When thousands of organizations (including the US Treasury, Pentagon, and top corporations) downloaded the legitimate update, they unknowingly installed the backdoor. The foundation of digital trust is an illusion.",
+    "illustrationAr": "واحدة من أكثر الهجمات الإلكترونية تطوراً في التاريخ. قام قراصنة الدولة الروسية بحقن تعليمات برمجية ضارة في تحديثات برامج سولار ويندز، وهي شركة لإدارة الشبكات. عندما قامت آلاف المنظمات (بما في ذلك وزارة الخزانة الأمريكية والبنتاغون وكبرى الشركات) بتنزيل التحديث الشرعي، قاموا بتثبيت الباب الخلفي دون علمهم. أساس الثقة الرقمية هو وهم."
+  }
+]

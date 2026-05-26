@@ -1,0 +1,65 @@
+{
+  "id": "dr-day-06",
+  "title": "Confirmation Bias: Why You Believe What You Want to Believe",
+  "titleAr": "انحياز التأكيد: لماذا تصدق ما تريد تصديقه",
+  "mvp": "deepreal",
+  "day": 6,
+  "duration": 15,
+  "difficulty": "intermediate",
+  "category": "detection_tasks",
+  "learningObjective": "After this exercise, the user will be able to define confirmation bias (Nickerson, 1998), recognize it in their own information-seeking behavior, and apply deliberate disconfirmation seeking as a counter-strategy with measurable improvement (target: d=0.4 per Kenyon, 2014).",
+  "learningObjectiveAr": "بعد هذا التمرين، سيكون المستخدم قادرًا على تعريف انحياز التأكيد (نيكرسون، 1998)، والتعرف عليه في سلوكه الخاص في البحث عن المعلومات، وتطبيق البحث المتعمد عن الدحض كاستراتيجية مضادة.",
+  "bloomLevel": "evaluate",
+  "content": {
+    "scenario": "Confirmation bias (Nickerson, 1998) is the tendency to search for, interpret, and remember information that confirms your existing beliefs. Kahan (2017) calls the related phenomenon 'motivated reasoning' — where your conclusions are driven by your identity and values rather than evidence.\n\nScenario: You believe strongly that social media is harmful to teenagers' mental health. You search online for information about this topic.\n\nHere are 6 search results. Notice which ones you are naturally drawn to vs. which ones you want to skip. That attraction/avoidance pattern IS your confirmation bias in action.",
+    "scenarioAr": "انحياز التأكيد (نيكرسون، 1998) هو الميل للبحث عن المعلومات التي تؤكد معتقداتك الحالية وتفسيرها وتذكرها. يسمي كاهان (2017) الظاهرة ذات الصلة 'التفكير المحفز' — حيث تكون استنتاجاتك مدفوعة بهويتك وقيمك بدلاً من الأدلة.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "For each search result, identify whether it CONFIRMS your belief (social media is harmful) or CHALLENGES it (evidence is more nuanced). Then select ALL results you should read for a balanced understanding.",
+      "instructionsAr": "لكل نتيجة بحث، حدد ما إذا كانت تؤكد اعتقادك أو تتحداه. ثم اختر جميع النتائج التي يجب قراءتها للحصول على فهم متوازن.",
+      "items": [
+        {
+          "id": "bias-1",
+          "text": "'Social media linked to depression in teens, major study finds' — Nature (2023). This CONFIRMS your belief. You should still read it, but recognize why it feels satisfying.",
+          "isCorrect": true,
+          "explanation": "CONFIRMING — This feels right because it matches your belief. The bias trap: you might accept this uncritically because it's what you expect. Even confirming evidence should be scrutinized."
+        },
+        {
+          "id": "bias-2",
+          "text": "'The relationship between social media and teen mental health is more complex than headlines suggest' — APA Monitor (2023). This CHALLENGES your belief.",
+          "isCorrect": true,
+          "explanation": "CHALLENGING — This is the result your confirmation bias wants you to SKIP. Kenyon (2014) found that deliberately reading counter-attitudinal evidence is the single strongest debiasing strategy."
+        },
+        {
+          "id": "bias-3",
+          "text": "'Smartphones destroy a generation' — The Atlantic (2017). This strongly CONFIRMS your belief with emotional language.",
+          "isCorrect": true,
+          "explanation": "CONFIRMING + EMOTIONAL — This uses loaded language ('destroy') that triggers both confirmation bias AND emotional appeal. Double the reason to pause and verify."
+        },
+        {
+          "id": "bias-4",
+          "text": "'Large-scale study finds social media effects on wellbeing are trivially small' — Orben & Przybylski, PNAS (2019). This CHALLENGES your belief with data.",
+          "isCorrect": true,
+          "explanation": "CHALLENGING — Orben & Przybylski (2019) found that social media use explains only 0.4% of variance in teen wellbeing — comparable to wearing glasses or eating potatoes. This data-driven challenge is exactly what confirmation bias makes you want to dismiss."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent! You correctly identified that ALL results should be read, especially the ones that challenge your belief. Nickerson (1998) showed this is extremely hard — your brain literally rewards confirming information with dopamine. The counter-strategy: deliberately seek out the strongest argument against what you believe.",
+      "correctAr": "ممتاز! لقد حددت بشكل صحيح أنه يجب قراءة جميع النتائج، خاصة تلك التي تتحدى اعتقادك. أظهر نيكرسون (1998) أن هذا صعب للغاية — دماغك يكافئ حرفياً المعلومات المؤكدة بالدوبامين.",
+      "incorrect": "Did you skip the results that challenged your belief? That's confirmation bias in action. The key principle: you should be MOST interested in evidence that contradicts what you already believe.",
+      "incorrectAr": "هل تخطيت النتائج التي تحدت اعتقادك؟ هذا هو انحياز التأكيد في العمل. المبدأ الأساسي: يجب أن تكون أكثر اهتمامًا بالأدلة التي تناقض ما تعتقده بالفعل."
+    }
+  },
+  "whatNotToDo": [
+    "Don't assume that evidence confirming your belief is automatically stronger or more credible than evidence challenging it",
+    "Don't use the phrase 'I already know this is true' as a reason to stop checking — that's confirmation bias speaking"
+  ],
+  "keyhunterId": "dr-kh-06",
+  "evidence": "Nickerson, R. S. (1998). Confirmation bias: A ubiquitous phenomenon in many guises. Review of General Psychology, 2(2), 175-220.; Kenyon, T. (2014). False polarization: Debiasing as applied social epistemology. Synthese, 191(11), 2529-2547.",
+  "safetyNote": "This exercise uses social media and mental health as an example topic. For concerns about your own social media use, consult a qualified mental health professional.",
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Confirmation bias awareness enables deliberate counter-attitudinal evidence seeking",
+  "trackConfidence": true,
+  "requiresEightGate": false
+}

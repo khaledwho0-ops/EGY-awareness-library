@@ -1,0 +1,59 @@
+{
+  "id": "mh-day-06",
+  "title": "What Is Mental Health Stigma?",
+  "titleAr": "ما هو وصمة الصحة النفسية؟",
+  "mvp": "mental-health",
+  "day": 6,
+  "duration": 12,
+  "difficulty": "intermediate",
+  "category": "stigma_reduction",
+  "bloomLevel": "understand",
+  "learningObjective": "After this exercise, the user will be able to define public stigma, self-stigma, and structural stigma, and explain how each creates barriers to help-seeking.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيتمكن المستخدم من تعريف الوصمة العامة والذاتية والهيكلية.",
+  "content": {
+    "scenario": "Mental health stigma operates at 3 levels (Corrigan et al., 2012):\n\n**Public Stigma**: Society's negative attitudes toward people with mental health conditions\n- 'Mental illness means someone is dangerous'\n- 'They should just get over it'\n\n**Self-Stigma**: Internalized negative beliefs\n- 'If I feel this way, something is wrong with me'\n- 'I should be able to handle this alone'\n\n**Structural Stigma**: Institutional barriers\n- Insurance that doesn't cover mental health\n- Schools that punish absenteeism without considering mental health\n- Workplaces that penalize disclosure",
+    "scenarioAr": "وصمة الصحة النفسية تعمل على 3 مستويات.",
+    "task": {
+      "type": "matching",
+      "instructions": "Match each example to the correct type of stigma.",
+      "instructionsAr": "طابق كل مثال مع النوع الصحيح من الوصمة.",
+      "items": [
+        {
+          "id": "stig-1",
+          "text": "A student avoids seeking help because they think 'only crazy people go to therapists.' → Self-stigma (internalized belief)",
+          "isCorrect": true,
+          "explanation": "Self-stigma. The student has internalized a negative belief about help-seeking, creating an internal barrier."
+        },
+        {
+          "id": "stig-2",
+          "text": "A family tells their child 'Don't tell anyone about your therapy — it's shameful.' → Public stigma (family reflecting societal attitudes)",
+          "isCorrect": true,
+          "explanation": "Public stigma operating through the family unit. The family's reaction reflects broader societal attitudes about mental health."
+        },
+        {
+          "id": "stig-3",
+          "text": "A university has no counseling center and no mental health policy. → Structural stigma (institutional barrier)",
+          "isCorrect": true,
+          "explanation": "Structural stigma. The lack of institutional resources and policies creates a systemic barrier to mental health support."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent understanding! Recognizing the three levels of stigma is the first step toward addressing them. Each level requires different strategies.",
+      "correctAr": "فهم ممتاز! التعرف على مستويات الوصمة الثلاثة هو الخطوة الأولى لمعالجتها.",
+      "incorrect": "Review the three types. Self-stigma is internal, public stigma is social/cultural, and structural stigma is institutional.",
+      "incorrectAr": "راجع الأنواع الثلاثة."
+    }
+  },
+  "whatNotToDo": [
+    "Don't blame individuals for experiencing self-stigma — it's a result of societal messages",
+    "Don't assume stigma is only an individual problem — structural change is also needed"
+  ],
+  "keyhunterId": "mh-kh-06",
+  "evidence": "Corrigan, P.W., et al. (2012). Challenging the public stigma of mental illness. Psychiatric Services.",
+  "safetyNote": null,
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Understanding three stigma types builds capability to identify barriers to help-seeking"
+}

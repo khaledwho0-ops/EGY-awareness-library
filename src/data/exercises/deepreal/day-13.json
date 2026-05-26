@@ -1,0 +1,65 @@
+{
+  "id": "dr-day-13",
+  "title": "Media Literacy Integration: Combining All SIFT Skills",
+  "titleAr": "تكامل التثقيف الإعلامي: الجمع بين جميع مهارات SIFT",
+  "mvp": "deepreal",
+  "day": 13,
+  "duration": 20,
+  "difficulty": "advanced",
+  "category": "detection_tasks",
+  "learningObjective": "After this exercise, the user will be able to apply all 4 SIFT moves (Stop, Investigate, Find, Trace) in sequence to evaluate a complex real-world misinformation scenario, demonstrating integrated media literacy as defined by Guess et al. (2020, PNAS).",
+  "learningObjectiveAr": "بعد هذا التمرين، سيكون المستخدم قادرًا على تطبيق جميع حركات SIFT الأربع بالتسلسل لتقييم سيناريو معلومات مضللة معقد في العالم الحقيقي.",
+  "bloomLevel": "create",
+  "content": {
+    "scenario": "Guess et al. (2020) in PNAS demonstrated that a single digital literacy training tip — simply telling users to check if a news source is trustworthy — reduced sharing of misinformation by 26.1%. Imagine what combining ALL four SIFT skills can do.\n\nIntegration Challenge: A viral WhatsApp forward claims:\n'BREAKING: Egyptian Ministry of Education announces all university exams will be replaced with AI-generated assessments starting September 2026. Several professors have already been fired. Source: Anonymous insider. Over 200,000 shares.'\n\nApply ALL four SIFT moves to evaluate this claim.",
+    "scenarioAr": "أثبت جيس وآخرون (2020) في PNAS أن نصيحة واحدة في التثقيف الرقمي — مجرد إخبار المستخدمين بالتحقق من مصداقية مصدر الأخبار — قللت مشاركة المعلومات المضللة بنسبة 26.1%.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "For each SIFT move below, identify the correct action. Select ALL actions that correctly apply the SIFT method to this scenario.",
+      "instructionsAr": "لكل حركة SIFT أدناه، حدد الإجراء الصحيح. اختر جميع الإجراءات التي تطبق بشكل صحيح طريقة SIFT على هذا السيناريو.",
+      "items": [
+        {
+          "id": "int-stop",
+          "text": "S — STOP: Pause before sharing. Notice the emotional triggers: 'BREAKING', 'fired', urgency framing. Ask: 'Am I about to share this because it's verified or because it's alarming?'",
+          "isCorrect": true,
+          "explanation": "CORRECT S: Pennycook & Rand (2021) showed that simply pausing to consider accuracy reduces sharing of misinformation by 15-20%. The emotional triggers (BREAKING, fear of job loss) are designed to bypass your analytical thinking."
+        },
+        {
+          "id": "int-investigate",
+          "text": "I — INVESTIGATE: The source is 'Anonymous insider' — no verifiable person or organization. Check: does the Egyptian Ministry of Education have any official announcement? Check their official website and social media.",
+          "isCorrect": true,
+          "explanation": "CORRECT I: An anonymous source with no institutional backing is a major red flag. Real policy changes are announced through official government channels, not WhatsApp forwards."
+        },
+        {
+          "id": "int-find",
+          "text": "F — FIND BETTER COVERAGE: Search Google News for 'Egypt university exams AI 2026'. If Reuters, Al-Ahram, Al-Masry Al-Youm, or BBC Arabic have not reported this, the claim is almost certainly false.",
+          "isCorrect": true,
+          "explanation": "CORRECT F: A major education policy change would be covered by every major news outlet. The absence of coverage from multiple independent outlets is strong evidence the claim is fabricated."
+        },
+        {
+          "id": "int-trace",
+          "text": "T — TRACE: The claim mentions 'several professors have already been fired' — but provides no names, universities, or dates. Trace this specific sub-claim: can you find ANY professor who confirms being fired for this reason?",
+          "isCorrect": true,
+          "explanation": "CORRECT T: Specific claims should have specific evidence. If professors were fired, there would be names, union responses, and university statements. The absence of traceable details reveals a fabricated narrative."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Outstanding! You correctly applied all 4 SIFT moves in sequence. This is the integrated media literacy skill that Guess et al. (2020) showed can reduce misinformation susceptibility by over 26%. By combining S (pause) + I (investigate) + F (find better coverage) + T (trace claims), you have a complete verification toolkit that takes only 30-90 seconds per claim.",
+      "correctAr": "ممتاز! لقد طبقت بشكل صحيح جميع حركات SIFT الأربع بالتسلسل. هذه هي مهارة التثقيف الإعلامي المتكاملة التي أظهر جيس وآخرون (2020) أنها يمكن أن تقلل القابلية للمعلومات المضللة بأكثر من 26%.",
+      "incorrect": "All four actions correctly apply the SIFT method. Review each one and practice applying them in sequence to any claim you encounter online.",
+      "incorrectAr": "جميع الإجراءات الأربعة تطبق بشكل صحيح طريقة SIFT. راجع كل واحد وتدرب على تطبيقها بالتسلسل على أي ادعاء تواجهه عبر الإنترنت."
+    }
+  },
+  "whatNotToDo": [
+    "Don't apply SIFT moves out of order — always STOP first to prevent emotional sharing before verification",
+    "Don't skip the 'Trace' step — specific claims should always be traced to specific, verifiable evidence"
+  ],
+  "keyhunterId": "dr-kh-13",
+  "evidence": "Guess, A. M., Lerner, M., Lyons, B., Montgomery, J. M., Nyhan, B., Reifler, J., & Sircar, N. (2020). A digital media literacy intervention increases discernment between mainstream and false news in the United States and India. PNAS, 117(27), 15536-15545.",
+  "safetyNote": "The university exam scenario used in this exercise is entirely fictional and created for educational purposes.",
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Structural media understanding builds sustained critical evaluation capability",
+  "trackConfidence": true,
+  "requiresEightGate": true
+}

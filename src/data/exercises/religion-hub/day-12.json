@@ -1,0 +1,53 @@
+{
+  "id": "rh-day-12",
+  "title": "Healthy vs. Unhealthy Religious Engagement",
+  "titleAr": "الانخراط الديني الصحي مقابل غير الصحي",
+  "mvp": "religion-hub",
+  "day": 12,
+  "duration": 12,
+  "difficulty": "intermediate",
+  "category": "boundaries",
+  "bloomLevel": "evaluate",
+  "learningObjective": "After this exercise, the user will be able to identify criteria for healthy religious engagement and recognize patterns of unhealthy engagement.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيتمكن المستخدم من تحديد معايير الانخراط الديني الصحي.",
+  "content": {
+    "scenario": "Allport & Ross (1967) identified two religious orientations:\n\n**Intrinsic**: Religion as an end in itself — lived, internalized values\n**Extrinsic**: Religion as a means to an end — social status, belonging, comfort\n\n**Healthy engagement criteria:**\n✓ Space for questions and doubt\n✓ Balance with other life areas\n✓ Respect for others' choices\n✓ Growth-oriented, not fear-driven\n✓ Professional help welcomed alongside spiritual support\n\n**Unhealthy patterns:**\n✗ No room for doubt → rigidity\n✗ Religious activity replacing all other life areas → imbalance\n✗ Condemning others' different paths → exclusivity\n✗ Fear-based motivation only → anxiety",
+    "scenarioAr": "أليورت وروس (1967) حددا توجهين دينيين.",
+    "task": {
+      "type": "matching",
+      "instructions": "Classify each scenario.",
+      "instructionsAr": "صنف كل سيناريو.",
+      "items": [
+        {
+          "id": "hre-1",
+          "text": "A student balances religious study with academics, friendships, and self-care. → Healthy engagement (balanced)",
+          "isCorrect": true,
+          "explanation": "Healthy. Balance across life areas is a key indicator of healthy religious engagement."
+        },
+        {
+          "id": "hre-2",
+          "text": "A student drops all hobbies, avoids non-religious friends, and feels guilty about any non-religious activity. → Unhealthy pattern (imbalance, guilt-driven)",
+          "isCorrect": true,
+          "explanation": "Concerning. Dropping all non-religious activities and pervasive guilt suggests imbalanced, fear-driven engagement."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Well evaluated! Healthy engagement is balanced, growth-oriented, and makes room for human complexity. Faith should enhance life, not restrict it.",
+      "correctAr": "تقييم ممتاز!",
+      "incorrect": "Review: healthy engagement balances faith with other life areas; unhealthy patterns show rigidity, isolation, or guilt.",
+      "incorrectAr": "راجع."
+    }
+  },
+  "whatNotToDo": [
+    "Don't use these criteria to judge others' religiosity level",
+    "Don't assume that high religiosity = unhealthy — it's about quality, not quantity"
+  ],
+  "keyhunterId": "rh-kh-12",
+  "evidence": "Allport, G.W., & Ross, J.M. (1967). Personal religious orientation and prejudice. JPSP, 5(4), 432-443.",
+  "safetyNote": "⚠️ Psychology-of-religion perspective. Not a theological ruling.",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Motivation/Reflective",
+  "com_b_mechanism": "Intrinsic vs extrinsic assessment builds reflective motivation for authentic engagement"
+}

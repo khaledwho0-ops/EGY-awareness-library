@@ -1,0 +1,24 @@
+{
+  "name": "Egyptian Awareness Library",
+  "short_name": "EAL",
+  "description": "A research-grade digital literacy, mental health awareness, and religious misinformation intervention platform for Egyptian university students.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D0D1A",
+  "theme_color": "#0066FF",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["education", "health", "news"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable monochrome"
+    }
+  ],
+  "screenshots": [],
+  "prefer_related_applications": false
+}

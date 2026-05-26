@@ -1,0 +1,59 @@
+{
+  "id": "rh-day-13",
+  "title": "When to Seek a Scholar vs. a Therapist",
+  "titleAr": "متى تستشير عالماً مقابل معالجاً",
+  "mvp": "religion-hub",
+  "day": 13,
+  "duration": 12,
+  "difficulty": "intermediate",
+  "category": "boundaries",
+  "bloomLevel": "apply",
+  "learningObjective": "After this exercise, the user will understand the complementary roles of religious scholars and mental health professionals and know when each is appropriate.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيفهم المستخدم الأدوار المتكاملة للعلماء والمتخصصين في الصحة النفسية.",
+  "content": {
+    "scenario": "Religious scholars and mental health professionals have DIFFERENT but COMPLEMENTARY roles:\n\n**Religious scholar (imam, sheikh):**\n- Spiritual guidance and religious questions\n- Ethical and moral reflection\n- Community support and belonging\n- Text interpretation and religious knowledge\n\n**Mental health professional:**\n- Clinical assessment and diagnosis\n- Evidence-based treatment (therapy, medication)\n- Crisis intervention\n- Mental health conditions (depression, anxiety, OCD, PTSD)\n\n**Best approach: Collaboration**, not competition\nMany forward-thinking communities are building bridge programs between imams and psychologists.\n\n🇪🇬 Resources:\n- Dar al-Ifta: 107\n- GSMHAT: 16328",
+    "scenarioAr": "العلماء والمتخصصون في الصحة النفسية لديهم أدوار مختلفة لكنها متكاملة.",
+    "task": {
+      "type": "matching",
+      "instructions": "For each scenario, who is the most appropriate primary resource?",
+      "instructionsAr": "لكل سيناريو، من المصدر الأنسب؟",
+      "items": [
+        {
+          "id": "ref-1",
+          "text": "A student has a question about how Islamic ethics apply to a difficult life decision. → Religious scholar",
+          "isCorrect": true,
+          "explanation": "Correct. This is a religious/ethical question, which is the domain of qualified religious scholars."
+        },
+        {
+          "id": "ref-2",
+          "text": "A student has been experiencing intrusive thoughts, panic attacks, and cannot sleep for weeks. → Mental health professional",
+          "isCorrect": true,
+          "explanation": "Correct. These are potential symptoms of a clinical condition requiring professional assessment and treatment."
+        },
+        {
+          "id": "ref-3",
+          "text": "A student feels torn between spiritual beliefs and emotional struggles. → BOTH (collaborative approach)",
+          "isCorrect": true,
+          "explanation": "Correct. The intersection of faith and mental health often benefits from both perspectives working together."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent! The key insight: religious guidance and professional help are COMPLEMENTARY, not competing. Both serve different but equally important needs.",
+      "correctAr": "ممتاز! التوجيه الديني والمساعدة المهنية متكاملان وليسا متنافسين.",
+      "incorrect": "Review: the question is not 'which is better' but 'which is appropriate for THIS specific need.'",
+      "incorrectAr": "راجع: السؤال ليس 'أيهما أفضل' بل 'أيهما مناسب لهذه الحاجة المحددة.'"
+    }
+  },
+  "whatNotToDo": [
+    "Don't present religion and psychology as enemies — they can complement each other",
+    "Don't suggest that someone only needs one approach when they might benefit from both"
+  ],
+  "keyhunterId": "rh-kh-13",
+  "evidence": "McMinn, M.R., & Dominguez, A.W. (2005). Psychology and the Church. Nova Science Publishers.",
+  "safetyNote": "⚠️ For immediate mental health support: call 16328. For religious guidance: call Dar al-Ifta 107.",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Scholar vs therapist distinction builds capability for appropriate referral"
+}

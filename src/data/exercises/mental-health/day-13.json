@@ -1,0 +1,53 @@
+{
+  "id": "mh-day-13",
+  "title": "Social Media and Your Mental Health",
+  "titleAr": "وسائل التواصل الاجتماعي وصحتك النفسية",
+  "mvp": "mental-health",
+  "day": 13,
+  "duration": 12,
+  "difficulty": "intermediate",
+  "category": "mixed",
+  "bloomLevel": "evaluate",
+  "learningObjective": "After this exercise, the user will understand the nuanced relationship between social media and mental health and apply the active-vs-passive use framework.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيفهم المستخدم العلاقة بين وسائل التواصل الاجتماعي والصحة النفسية.",
+  "content": {
+    "scenario": "Social media's impact on mental health is MORE NUANCED than headlines suggest (Orben, 2020):\n\n**Key findings from research:**\n- The correlation between social media use and wellbeing is very small (r ≈ -0.04)\n- PASSIVE use (scrolling, comparing) is linked to worse outcomes\n- ACTIVE use (messaging, creating, connecting) is linked to better outcomes\n- The relationship is correlational, not necessarily causal\n\nThe real question is not 'Is social media bad?' but 'HOW do you use it?'",
+    "scenarioAr": "تأثير وسائل التواصل الاجتماعي على الصحة النفسية أكثر دقة مما تقترحه العناوين.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Classify each social media behavior as ACTIVE or PASSIVE use.",
+      "instructionsAr": "صنف كل سلوك على وسائل التواصل الاجتماعي كاستخدام نشط أو سلبي.",
+      "items": [
+        {
+          "id": "sm-1",
+          "text": "Scrolling through Instagram for 2 hours comparing yourself to influencers → PASSIVE (linked to worse outcomes)",
+          "isCorrect": true,
+          "explanation": "Passive use + social comparison = the most harmful pattern. Mindless scrolling is associated with decreased wellbeing."
+        },
+        {
+          "id": "sm-2",
+          "text": "Messaging close friends to plan a meetup → ACTIVE (linked to better outcomes)",
+          "isCorrect": true,
+          "explanation": "Active use that strengthens real relationships is associated with positive outcomes. Social media as a tool for connection, not comparison."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Great nuanced understanding! The message to take away: be intentional about HOW you use social media, not just how MUCH.",
+      "correctAr": "ممتاز! الرسالة: كن واعياً لكيفية استخدامك لوسائل التواصل.",
+      "incorrect": "Review the active vs. passive distinction. The key is not usage time alone, but usage quality.",
+      "incorrectAr": "راجع التمييز بين الاستخدام النشط والسلبي."
+    }
+  },
+  "whatNotToDo": [
+    "Don't demonize all social media — the relationship is nuanced, not simply 'bad'",
+    "Don't ignore your own patterns — self-awareness is the first step to healthier use"
+  ],
+  "keyhunterId": "mh-kh-13",
+  "evidence": "Orben, A. (2020). Teenagers, screens and social media. BMJ, 371, m4416.",
+  "safetyNote": null,
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Motivation/Reflective",
+  "com_b_mechanism": "Active vs passive social media use builds reflective motivation for intentional engagement"
+}

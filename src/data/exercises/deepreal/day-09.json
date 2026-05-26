@@ -1,0 +1,71 @@
+{
+  "id": "dr-day-09",
+  "title": "Find Better Coverage: The 'F' in SIFT",
+  "titleAr": "ابحث عن تغطية أفضل: حرف 'F' في SIFT",
+  "mvp": "deepreal",
+  "day": 9,
+  "duration": 15,
+  "difficulty": "intermediate",
+  "category": "source_credibility",
+  "learningObjective": "After this exercise, the user will be able to apply the 'Find better coverage' step of SIFT (Caulfield, 2019) by locating alternative, higher-quality coverage of the same claim rather than evaluating the original source in isolation.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيكون المستخدم قادرًا على تطبيق خطوة 'ابحث عن تغطية أفضل' في SIFT من خلال إيجاد تغطية بديلة أعلى جودة لنفس الادعاء.",
+  "bloomLevel": "apply",
+  "content": {
+    "scenario": "The 'F' in SIFT — Find better coverage — means that when you encounter a claim, you should NOT spend time analyzing the original source. Instead, open a new tab and search for other coverage of the same topic from more reliable sources.\n\nCaulfield (2019) explains: 'The web is huge. No matter what the original source, there is almost certainly a better source out there that has covered the same claim. Your job is to FIND it, not to become an expert on the original source.'\n\nScenario: A WhatsApp message claims that 'Egypt has discovered the largest natural gas reserve in the world, but the government is keeping it secret to sell it to foreign companies.'",
+    "scenarioAr": "حرف 'F' في SIFT — ابحث عن تغطية أفضل — يعني أنه عندما تواجه ادعاءً، لا يجب أن تقضي وقتاً في تحليل المصدر الأصلي. بدلاً من ذلك، افتح علامة تبويب جديدة وابحث عن تغطيات أخرى لنفس الموضوع من مصادر أكثر موثوقية.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "For each search strategy below, evaluate whether it effectively applies the 'Find better coverage' principle. Select ALL strategies that correctly implement the SIFT 'F' step.",
+      "instructionsAr": "لكل استراتيجية بحث أدناه، قيّم ما إذا كانت تطبق بشكل فعال مبدأ 'ابحث عن تغطية أفضل'. اختر جميع الاستراتيجيات التي تطبق بشكل صحيح خطوة 'F' في SIFT.",
+      "items": [
+        {
+          "id": "fc-1",
+          "text": "Search 'Egypt natural gas reserves latest news' on Google News and check Reuters, AP, Al-Ahram, and BBC Arabic coverage → Correct: checking multiple authoritative news sources for the same claim.",
+          "isCorrect": true,
+          "explanation": "CORRECT SIFT 'F': You are finding independent coverage from verified news organizations. If Reuters, AP, and Al-Ahram don't report a 'world's largest reserve,' the WhatsApp claim is likely false."
+        },
+        {
+          "id": "fc-2",
+          "text": "Search the Egyptian Ministry of Petroleum website for official announcements about gas reserves → Correct: going to the primary official source for government resource data.",
+          "isCorrect": true,
+          "explanation": "CORRECT SIFT 'F': Government resource data is public record. The Egyptian Ministry of Petroleum publishes all major discovery announcements. If there's no announcement, the claim is fabricated."
+        },
+        {
+          "id": "fc-3",
+          "text": "Read the original WhatsApp message more carefully, checking for spelling errors and logical consistency → Incorrect: this is analyzing the original source, not finding better coverage.",
+          "isCorrect": false,
+          "explanation": "WRONG APPROACH: This is evaluating the original source, which violates the SIFT principle. Caulfield (2019) explicitly says: don't waste time analyzing a bad source — find a better one."
+        },
+        {
+          "id": "fc-4",
+          "text": "Check the US Energy Information Administration (EIA) database for Egypt's proven gas reserves → Correct: using an international authoritative database with verified data.",
+          "isCorrect": true,
+          "explanation": "CORRECT SIFT 'F': The EIA maintains independently verified energy data for every country. If Egypt's reserves don't match the 'world's largest' claim, it's debunked with data."
+        },
+        {
+          "id": "fc-5",
+          "text": "Forward the WhatsApp message to 5 friends and ask if they've heard about it → Incorrect: this spreads the potential misinformation before verification.",
+          "isCorrect": false,
+          "explanation": "WRONG APPROACH: This amplifies potential misinformation. Vosoughi, Roy & Aral (2018) in Science showed that false news spreads 6x faster than true news. Never forward unverified claims."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent! You correctly identified the three proper 'Find better coverage' strategies (Google News, Ministry of Petroleum, EIA) and rejected the wrong approaches (analyzing the original source, forwarding to friends). The SIFT 'F' step saves you time: instead of becoming an expert on a bad source, you simply find a better one.",
+      "correctAr": "ممتاز! لقد حددت بشكل صحيح الاستراتيجيات الثلاث الصحيحة و رفضت الأساليب الخاطئة. خطوة 'F' في SIFT توفر وقتك: بدلاً من أن تصبح خبيراً في مصدر سيء، ببساطة ابحث عن مصدر أفضل.",
+      "incorrect": "Remember: the 'F' step is about FINDING BETTER COVERAGE elsewhere, not about analyzing or spreading the original claim. Look for strategies that involve searching authoritative databases and news organizations.",
+      "incorrectAr": "تذكر: خطوة 'F' تتعلق بإيجاد تغطية أفضل في مكان آخر، وليس تحليل أو نشر الادعاء الأصلي."
+    }
+  },
+  "whatNotToDo": [
+    "Don't spend time analyzing a suspicious source — find better coverage from authoritative organizations instead",
+    "Don't forward unverified claims to ask others if they've heard them — this spreads potential misinformation (Vosoughi et al., 2018, Science)"
+  ],
+  "keyhunterId": "dr-kh-09",
+  "evidence": "Caulfield, M. (2019). SIFT (The Four Moves). Digital Polarization Initiative.; Vosoughi, S., Roy, D., & Aral, S. (2018). The spread of true and false news online. Science, 359(6380), 1146-1151.",
+  "safetyNote": "The gas reserve claim used in this exercise is fictional and created for educational purposes only.",
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Multi-source triangulation builds systematic verification capability",
+  "trackConfidence": true,
+  "requiresEightGate": false
+}

@@ -1,0 +1,78 @@
+{
+  "id": "rh-day-01",
+  "title": "Seeking Spiritual Support: The First Domain of Positive Coping",
+  "titleAr": "طلب الدعم الروحي: المجال الأول للتكيف الإيجابي",
+  "mvp": "religion-hub",
+  "day": 1,
+  "duration": 12,
+  "difficulty": "beginner",
+  "category": "positive_coping",
+  "learningObjective": "After this exercise, the user will be able to define positive religious coping (Pargament, 2011), distinguish between seeking spiritual support as a healthy coping mechanism versus using it to avoid addressing real problems (spiritual bypassing), and identify at least 2 psychological benefits supported by research.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيتمكن المستخدم من تعريف التكيف الديني الإيجابي (برغامنت، 2011)، والتمييز بين طلب الدعم الروحي كآلية تكيف صحية مقابل استخدامه لتجنب معالجة المشكلات الحقيقية (التجاوز الروحي)، وتحديد فائدتين نفسيتين على الأقل مدعومتين بالبحث.",
+  "bloomLevel": "understand",
+  "content": {
+    "scenario": "Kenneth Pargament's research (1997, 2011) identifies religious coping as one of the most common ways people deal with major life stressors. His Brief RCOPE scale divides religious coping into two dimensions:\n\n**Positive Religious Coping** (7 subscales):\n1. Seeking spiritual support — turning to God for comfort and guidance\n2. Religious forgiveness — asking for or offering divine forgiveness\n3. Collaborative coping — working together with God to solve problems\n4. Spiritual connection — experiencing a sense of connectedness with a higher power\n5. Religious purification — acts of spiritual cleansing or renewal\n6. Benevolent religious reappraisal — seeing stressors as part of a larger divine plan\n7. Seeking support from clergy/members — reaching out to faith community for help\n\n**The Research Says:**\n- Positive religious coping is consistently associated with better psychological adjustment, post-traumatic growth, and life satisfaction (Pargament et al., 2011).\n- BUT: when religion is used to AVOID dealing with real problems, it can become harmful. This is called 'spiritual bypassing' (Masters, 2010).\n\n**Key Distinction:**\n- ✅ 'I pray for strength AND I'm also getting professional help' = Healthy\n- ⚠️ 'I only need to pray, therapy/medicine is not needed' = Potentially harmful bypassing",
+    "scenarioAr": "يُحدد بحث كينيث برغامنت (1997، 2011) التكيف الديني بوصفه أحد أكثر الطرق شيوعًا التي يتعامل بها الناس مع ضغوط الحياة الكبرى. يقسم مقياس RCOPE الموجز خاصته التكيف الديني إلى بُعدين:\n\n**التكيف الديني الإيجابي** (7 مقاييس فرعية):\n1. طلب الدعم الروحي — اللجوء إلى الله للراحة والتوجيه\n2. المسامحة الدينية — طلب العفو الإلهي أو تقديمه\n3. التكيف التعاوني — العمل مع الله لحل المشكلات\n4. الارتباط الروحي — تجربة الشعور بالتواصل مع قوة عليا\n5. التطهير الديني — أعمال التطهير الروحي أو التجديد\n6. إعادة التقييم الديني الخيّر — رؤية الضغوط كجزء من مخطط إلهي أكبر\n7. طلب الدعم من رجال الدين/الأعضاء — التواصل مع مجتمع الإيمان طلبًا للمساعدة\n\n**ما تقوله الأبحاث:**\n- يرتبط التكيف الديني الإيجابي باستمرار بالتكيف النفسي الأفضل والنمو ما بعد الصدمة والرضا عن الحياة (برغامنت وآخرون، 2011).\n- لكن: عندما يُستخدم الدين لتجنب معالجة المشكلات الحقيقية، يمكن أن يصبح ضارًا. ويُسمى هذا 'التجاوز الروحي' (ماسترز، 2010).\n\n**التمييز الأساسي:**\n- ✅ 'أصلي من أجل القوة وأتلقى أيضًا مساعدة مهنية' = صحي\n- ⚠️ 'أحتاج فقط إلى الصلاة، العلاج/الدواء غير ضروري' = تجاوز ضار محتمل",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "For each scenario, identify whether it represents healthy positive coping, potential spiritual bypassing, or negative religious coping.",
+      "instructionsAr": "لكل سيناريو، حدد ما إذا كان يمثل تكيفًا إيجابيًا صحيًا، أو تجاوزًا روحيًا محتملًا، أو تكيفًا دينيًا سلبيًا.",
+      "items": [
+        {
+          "id": "rc-1",
+          "text": "After losing a job, Sarah prays for guidance and also updates her resume and reaches out to her professional network for opportunities.",
+          "textAr": "بعد فقدان وظيفة، تصلي سارة طلبًا للتوجيه وتحدث أيضًا سيرتها الذاتية وتتواصل مع شبكتها المهنية بحثًا عن فرص.",
+          "isCorrect": true,
+          "explanation": "HEALTHY POSITIVE COPING — Sarah combines spiritual support (prayer for guidance) with practical action (resume, networking). This is collaborative coping at its best.",
+          "explanationAr": "تكيف إيجابي صحي — تجمع سارة بين الدعم الروحي (الصلاة من أجل التوجيه) والعمل العملي (السيرة الذاتية، التواصل المهني). هذا هو التكيف التعاوني في أفضل حالاته."
+        },
+        {
+          "id": "rc-2",
+          "text": "Ahmed is experiencing severe anxiety but refuses to see a counselor, saying 'My faith is enough, I just need to pray more.'",
+          "textAr": "يعاني أحمد من قلق شديد لكنه يرفض مقابلة مستشار نفسي قائلًا: 'إيماني يكفي، أحتاج فقط إلى الصلاة أكثر.'",
+          "isCorrect": true,
+          "explanation": "POTENTIAL SPIRITUAL BYPASSING — While prayer can be helpful, dismissing professional help for severe anxiety may prevent Ahmed from getting necessary support. The healthier approach: prayer AND professional care.",
+          "explanationAr": "تجاوز روحي محتمل — رغم أن الصلاة يمكن أن تكون مفيدة، فإن رفض المساعدة المهنية للقلق الشديد قد يحرم أحمد من الدعم الضروري. النهج الأصح: الصلاة والرعاية المهنية معًا."
+        },
+        {
+          "id": "rc-3",
+          "text": "After a difficult medical diagnosis, Fatima says 'God is testing me, and this struggle will make me stronger. I will fight this with treatment AND with my faith.'",
+          "textAr": "بعد تشخيص طبي صعب، تقول فاطمة: 'الله يختبرني، وهذا الكفاح سيجعلني أقوى. سأحارب هذا بالعلاج وبإيماني.'",
+          "isCorrect": true,
+          "explanation": "HEALTHY POSITIVE COPING — Fatima uses benevolent religious reappraisal (seeing the struggle as growth) while also accepting medical treatment. This combination is associated with better outcomes.",
+          "explanationAr": "تكيف إيجابي صحي — تستخدم فاطمة إعادة التقييم الديني الخيّر (رؤية الكفاح كنمو) مع قبول العلاج الطبي أيضًا. هذا المزيج مرتبط بنتائج أفضل."
+        },
+        {
+          "id": "rc-4",
+          "text": "A community leader tells someone experiencing depression: 'Your faith must be weak, that's why you're depressed. Pray harder.'",
+          "textAr": "يقول قائد مجتمعي لشخص يعاني من الاكتئاب: 'يجب أن يكون إيمانك ضعيفًا، لهذا أنت مكتئب. صلِّ أكثر.'",
+          "isCorrect": true,
+          "explanation": "NEGATIVE COPING / HARMFUL — This attributes illness to spiritual failure, creating guilt and shame. Depression is a medical condition, not a faith problem. This kind of response can prevent help-seeking and worsen outcomes.",
+          "explanationAr": "تكيف سلبي/ضار — هذا ينسب المرض إلى الفشل الروحي، مما يخلق ذنبًا وخزيًا. الاكتئاب حالة طبية وليست مشكلة إيمان. هذا النوع من الاستجابة يمكن أن يمنع طلب المساعدة ويزيد النتائج سوءًا."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent! You correctly identified the difference between healthy positive coping (combining faith with action) and potentially harmful patterns (bypassing or guilt-based responses). The key insight: religion can be a powerful positive resource WHEN combined with practical action and professional support when needed.",
+      "correctAr": "ممتاز! لقد حددت بشكل صحيح الفرق بين التكيف الإيجابي الصحي (الجمع بين الإيمان والعمل) والأنماط الضارة المحتملة (التجاوز أو الاستجابات القائمة على الذنب). الإدراك الأساسي: يمكن أن يكون الدين موردًا إيجابيًا قويًا عند الجمع بين العمل العملي والدعم المهني عند الحاجة.",
+      "incorrect": "Review the key distinction: positive coping = faith + practical action + professional support when needed. Bypassing = using faith to AVOID dealing with real problems. Negative coping = guilt, punishment, blaming God.",
+      "incorrectAr": "راجع الفرق الأساسي: التكيف الإيجابي = الإيمان + العمل العملي + الدعم المهني عند الحاجة. التجاوز = استخدام الإيمان لتجنب معالجة المشكلات الحقيقية. التكيف السلبي = الذنب والعقاب ولوم الله."
+    }
+  },
+  "whatNotToDo": [
+    "Don't present religion as a substitute for professional medical or psychological care",
+    "Don't judge someone's faith strength based on their mental health status — depression is not a spiritual failure"
+  ],
+  "whatNotToDoAr": [
+    "لا تقدم الدين كبديل للرعاية الطبية أو النفسية المهنية",
+    "لا تحكم على قوة إيمان شخص ما بناءً على حالته الصحية النفسية — الاكتئاب ليس فشلًا روحيًا"
+  ],
+  "keyhunterId": "rh-kh-01",
+  "evidence": "Pargament, K. I., Feuille, M., & Burdzy, D. (2011). The Brief RCOPE: Current psychometric status of a short measure of religious coping. Religions, 2(1), 51-76.",
+  "safetyNote": "This exercise explores religion through a psychology-of-religion lens. It does not endorse or critique any religious tradition. For religious guidance, consult Dar al-Ifta (107).",
+  "safetyNoteAr": "يستكشف هذا التمرين الدين من خلال عدسة علم نفس الدين. لا يؤيد أي تقليد ديني ولا ينتقده. للتوجيه الديني، استشر دار الإفتاء (107).",
+  "com_b_target": "Motivation/Reflective",
+  "com_b_mechanism": "Distinguishing positive vs negative religious coping builds reflective motivation to engage healthily with faith",
+  "trackConfidence": true,
+  "requiresEightGate": false
+}

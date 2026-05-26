@@ -1,0 +1,59 @@
+{
+  "id": "rh-day-08",
+  "title": "Spiritual Bypassing: When Faith Masks Pain",
+  "titleAr": "التجاوز الروحي: عندما يخفي الإيمان الألم",
+  "mvp": "religion-hub",
+  "day": 8,
+  "duration": 14,
+  "difficulty": "intermediate",
+  "category": "threat_awareness",
+  "bloomLevel": "evaluate",
+  "learningObjective": "After this exercise, the user will be able to define spiritual bypassing, recognize its patterns, and distinguish it from genuine faith-based resilience.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيتمكن المستخدم من تعريف التجاوز الروحي والتمييز بينه وبين المرونة الإيمانية الحقيقية.",
+  "content": {
+    "scenario": "Spiritual Bypassing (Welwood, 2000; Cashwell et al., 2007) is using spiritual practices to AVOID dealing with emotional pain, unresolved trauma, or necessary action.\n\nExamples:\n- 'I don't need therapy — I just need to pray more'\n- 'If you truly had faith, you wouldn't feel depressed'\n- 'Don't question — just trust God'\n\nThis is NOT about doubting faith. It's about recognizing when spiritual language is used to AVOID rather than PROCESS difficulty.",
+    "scenarioAr": "التجاوز الروحي هو استخدام الممارسات الروحية لتجنب التعامل مع الألم العاطفي.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Identify: spiritual bypassing or healthy coping?",
+      "instructionsAr": "حدد: تجاوز روحي أم تكيف صحي؟",
+      "items": [
+        {
+          "id": "bypass-1",
+          "text": "'I acknowledge I'm struggling AND I find comfort in prayer.' → Healthy coping (acknowledges + seeks support)",
+          "isCorrect": true,
+          "explanation": "Healthy. Both acknowledgment of difficulty AND spiritual comfort are present. This is integration, not avoidance."
+        },
+        {
+          "id": "bypass-2",
+          "text": "'A true believer never feels anxious. If I had stronger faith, I wouldn't have these feelings.' → Spiritual bypassing",
+          "isCorrect": true,
+          "explanation": "Spiritual bypassing. This denies the reality of human emotions and creates guilt about natural feelings. Even the most devout people experience anxiety."
+        },
+        {
+          "id": "bypass-3",
+          "text": "'My friend is depressed but I told them to just read Quran more instead of seeing a therapist.' → Spiritual bypassing",
+          "isCorrect": true,
+          "explanation": "Spiritual bypassing AND potentially dangerous. Substituting professional help with religious practice alone when someone has a clinical condition can delay critical treatment."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Outstanding awareness! Recognizing spiritual bypassing protects both you and others from using faith as an avoidance mechanism. Faith and honesty about suffering can coexist.",
+      "correctAr": "وعي ممتاز! التعرف على التجاوز الروحي يحمي من استخدام الإيمان كآلية تجنب.",
+      "incorrect": "Review: the key test is whether the person ACKNOWLEDGES their difficulty or DENIES it using spiritual language.",
+      "incorrectAr": "راجع: الاختبار الأساسي هو ما إذا كان الشخص يعترف بصعوبته أو ينكرها."
+    }
+  },
+  "whatNotToDo": [
+    "Don't use this concept to dismiss all religious coping — most is healthy",
+    "Don't accuse others of spiritual bypassing without care and sensitivity"
+  ],
+  "keyhunterId": "rh-kh-08",
+  "evidence": "Welwood, J. (2000). Toward a Psychology of Awakening. Shambhala. Cashwell, C.S., et al. (2007). Counseling and Values.",
+  "safetyNote": "⚠️ Academic analysis. No theological judgments.",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Spiritual bypassing recognition builds capability to distinguish avoidance from coping"
+}

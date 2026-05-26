@@ -1,0 +1,3881 @@
+@import "tailwindcss";
+
+/* ============================================================
+   EGYPTIAN AWARENESS LIBRARY — DESIGN SYSTEM
+   Framework: §14.2 + §22.2 | DESIGN.txt: §1.1 + §1.6 + §5
+   
+   Aesthetic: Dark Luxury + Glassmorphism Hybrid
+   Color Rule: 60-30-10 (§5.3)
+   Typography: Clash Display + Satoshi + Noto Kufi Arabic
+   
+   MVP Accent Colors:
+     DeepReal:      Amber   #F59E0B (trust/verification)
+     Mental Health:  Emerald #10B981 (calm/growth)
+     Religion Hub:   Indigo  #8B5CF6 (depth/spirituality)
+   
+   NOTE: Font imports are handled via <link> tags in layout.tsx
+   to avoid CSS @import ordering conflict with Tailwind v4.
+   Fonts: Clash Display (Fontshare), Satoshi (Fontshare), Noto Kufi Arabic (Google)
+   ============================================================ */
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES — LIGHT MODE (DEFAULT for system)
+   60% Dominant: warm off-white
+   30% Secondary: slightly warmer gray
+   10% Accent: per-component
+   ============================================================ */
+:root {
+  /* ── 60% Dominant ── */
+  --bg-primary: #FAFAF7;
+  --bg-page: #FAFAF7;
+
+  /* ── 30% Secondary ── */
+  --bg-secondary: #F0EDE8;
+  --bg-card: #FFFFFF;
+  --bg-sidebar: #F5F3EF;
+  --bg-elevated: #FFFFFF;
+
+  /* ── Text ── */
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --text-muted: #888888;
+  --text-caption: #AAAAAA;
+  --text-inverse: #F1F1EE;
+
+  /* ── Borders ── */
+  --border-primary: #E5E7EB;
+  --border-secondary: #D1D5DB;
+  --border-subtle: rgba(0, 0, 0, 0.06);
+
+  /* ── MVP Accent Colors (§ Framework: per-MVP identity) ── */
+  --accent-deepreal: #F59E0B;
+  --accent-deepreal-hover: #D97706;
+  --accent-deepreal-glow: rgba(245, 158, 11, 0.3);
+  --accent-deepreal-surface: rgba(245, 158, 11, 0.08);
+
+  --accent-mentalhealth: #10B981;
+  --accent-mentalhealth-hover: #059669;
+  --accent-mentalhealth-glow: rgba(16, 185, 129, 0.3);
+  --accent-mentalhealth-surface: rgba(16, 185, 129, 0.08);
+
+  --accent-religionhub: #8B5CF6;
+  --accent-religionhub-hover: #7C3AED;
+  --accent-religionhub-glow: rgba(139, 92, 246, 0.3);
+  --accent-religionhub-surface: rgba(139, 92, 246, 0.08);
+  --accent-amber: #F59E0B;
+  --accent-emerald: #10B981;
+  --accent-indigo: #8B5CF6;
+  --accent-purple: #9932CC;
+  --accent-blue: #3B82F6;
+  --accent-red: #EF4444;
+
+  /* ── Primary CTA (DESIGN.txt §1.6: electric blue) ── */
+  --accent-cta: #0066FF;
+  --accent-cta-hover: #0052CC;
+  --accent-cta-glow: rgba(0, 102, 255, 0.4);
+
+  /* ── Status Colors ── */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-danger: #EF4444;
+  --color-info: #3B82F6;
+
+  /* ── Glassmorphism (DESIGN.txt §1.1) ── */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-blur: 12px;
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+  --shadow-card-hover: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+  /* ── Spacing Scale ── */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 80px;
+  --space-5xl: 120px;
+
+  /* ── Border Radius ── */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* ── Typography Scale (DESIGN.txt §5.1, §5.5) ── */
+  --font-display: clamp(56px, 8vw, 96px);
+  --font-h1: clamp(40px, 5vw, 64px);
+  --font-h2: clamp(28px, 3.5vw, 44px);
+  --font-h3: clamp(22px, 2.5vw, 28px);
+  --font-h4: 20px;
+  --font-body: 17px;
+  --font-small: 14px;
+  --font-caption: 12px;
+
+  /* ── Layout ── */
+  --sidebar-width: 260px;
+  --navbar-height: 64px;
+  --content-max-width: 1200px;
+
+  /* ── Transitions ── */
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-smooth: 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Z-Index Scale ── */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 500;
+  --z-modal: 1000;
+  --z-toast: 1500;
+  --z-progress: 9999;
+
+  /* ── Scroll Progress Bar ── */
+  --progress-gradient: linear-gradient(90deg, #667eea 0%, #f64f59 100%);
+  --hero-glow: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+  --hero-orb-1: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 70%);
+  --hero-orb-2: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, transparent 70%);
+  --surface-noise:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.8), transparent 38%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.15), transparent 30%);
+
+  /* ── Premium Font Stacks (color-theory paired per theme) ── */
+  --font-heading-en: 'Clash Display', 'Inter', sans-serif;
+  --font-body-en: 'Satoshi', 'Inter', -apple-system, sans-serif;
+  --font-heading-ar: 'Noto Kufi Arabic', 'Cairo', sans-serif;
+  --font-body-ar: 'Noto Naskh Arabic', 'Amiri', serif;
+  --font-accent: 'Inter', 'Satoshi', sans-serif;
+  --heading-letter-spacing: -0.03em;
+  --heading-weight: 700;
+  --label-letter-spacing: 0.05em;
+  --label-transform: uppercase;
+
+  /* ── Bad News Game Tokens ── */
+  --badnews-bg: hsl(220, 15%, 10%);
+  --badnews-accent: hsl(38, 100%, 50%);
+  --badnews-credibility: hsl(200, 100%, 40%);
+  --badnews-followers: hsl(150, 100%, 35%);
+
+  color-scheme: light;
+}
+
+/* ============================================================
+   DARK MODE — Dark Luxury (DESIGN.txt §1.6)
+   Background: near-black #0D0D1A (NOT pure black)
+   Cards: #111827 with rgba(255,255,255,0.08) borders
+   Accent: single bright color for CTAs
+   ============================================================ */
+[data-theme="dark"],
+.dark {
+  /* ── 60% Dominant: Deep dark blue-black ── */
+  --bg-primary: #0D0D1A;
+  --bg-page: #0D0D1A;
+
+  /* ── 30% Secondary ── */
+  --bg-secondary: #111827;
+  --bg-card: #111827;
+  --bg-sidebar: #0A0F1C;
+  --bg-elevated: #1A1A2E;
+
+  /* ── Text ── */
+  --text-primary: #F1F1EE;
+  --text-secondary: #B0B0B0;
+  --text-muted: #888888;
+  --text-caption: #666666;
+  --text-inverse: #111111;
+
+  /* ── Borders (DESIGN.txt §1.6: thin, low opacity) ── */
+  --border-primary: rgba(255, 255, 255, 0.08);
+  --border-secondary: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.04);
+
+  /* ── Glassmorphism Dark ── */
+  --glass-bg: rgba(17, 24, 39, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: 12px;
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.6);
+  --shadow-card-hover: 0 12px 30px rgba(0, 0, 0, 0.5);
+  --surface-noise:
+    radial-gradient(circle at top, rgba(118, 96, 255, 0.15), transparent 35%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 24%);
+
+  /* ── Bad News Game Tokens ── */
+  --badnews-bg: hsl(220, 15%, 10%);
+  --badnews-accent: hsl(38, 100%, 50%);
+  --badnews-credibility: hsl(200, 100%, 40%);
+  --badnews-followers: hsl(150, 100%, 35%);
+
+  color-scheme: dark;
+}
+
+[data-theme="terracotta"] {
+  --bg-primary: #ffefe3;
+  --bg-page: #ffefe3;
+  --bg-secondary: #f8d2b5;
+  --bg-card: rgba(255, 248, 241, 0.86);
+  --bg-sidebar: #ffe7d4;
+  --bg-elevated: #fff5ec;
+
+  --text-primary: #4E2C23;
+  --text-secondary: #6f4a3d;
+  --text-muted: #8d6a5f;
+  --text-caption: #a5877b;
+  --text-inverse: #fff7f1;
+
+  --border-primary: rgba(78, 44, 35, 0.1);
+  --border-secondary: rgba(78, 44, 35, 0.18);
+  --border-subtle: rgba(78, 44, 35, 0.06);
+
+  --accent-cta: #E2725B;
+  --accent-cta-hover: #c85c42;
+  --accent-cta-glow: rgba(226, 114, 91, 0.35);
+
+  --accent-deepreal: #E2725B;
+  --accent-deepreal-hover: #c85c42;
+  --accent-deepreal-glow: rgba(226, 114, 91, 0.32);
+  --accent-deepreal-surface: rgba(226, 114, 91, 0.12);
+
+  --accent-mentalhealth: #d9896b;
+  --accent-mentalhealth-hover: #c16f4f;
+  --accent-mentalhealth-glow: rgba(217, 137, 107, 0.28);
+  --accent-mentalhealth-surface: rgba(217, 137, 107, 0.1);
+
+  --accent-religionhub: #8b5e52;
+  --accent-religionhub-hover: #72463d;
+  --accent-religionhub-glow: rgba(139, 94, 82, 0.26);
+  --accent-religionhub-surface: rgba(139, 94, 82, 0.1);
+
+  --accent-amber: #E2725B;
+  --accent-emerald: #b8735a;
+  --accent-indigo: #8b5e52;
+  --accent-purple: #b45f49;
+  --accent-blue: #db8e73;
+  --accent-red: #9b3f2d;
+
+  --glass-bg: rgba(255, 248, 241, 0.72);
+  --glass-border: rgba(78, 44, 35, 0.08);
+  --glass-shadow: 0 10px 36px rgba(115, 64, 47, 0.12);
+
+  --progress-gradient: linear-gradient(90deg, #4E2C23 0%, #E2725B 54%, #FFDAB9 100%);
+  --hero-glow: radial-gradient(circle, rgba(226, 114, 91, 0.22) 0%, transparent 72%);
+  --hero-orb-1: radial-gradient(circle, rgba(255, 218, 185, 0.9) 0%, transparent 68%);
+  --hero-orb-2: radial-gradient(circle, rgba(78, 44, 35, 0.08) 0%, transparent 72%);
+  --surface-noise:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.88), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.3), transparent 28%);
+
+  /* ── Typography: Warm editorial — Playfair serif matches terracotta warmth ── */
+  --font-heading-en: 'Playfair Display', 'Clash Display', serif;
+  --font-body-en: 'Satoshi', 'Inter', sans-serif;
+  --font-heading-ar: 'Amiri', 'Noto Kufi Arabic', serif;
+  --font-body-ar: 'Amiri', 'Noto Naskh Arabic', serif;
+  --heading-letter-spacing: -0.02em;
+  --heading-weight: 700;
+
+  color-scheme: light;
+}
+
+[data-theme="amethyst"] {
+  --bg-primary: #1d0d2d;
+  --bg-page: #1d0d2d;
+  --bg-secondary: #240A24;
+  --bg-card: rgba(36, 10, 36, 0.78);
+  --bg-sidebar: #1f0a26;
+  --bg-elevated: #321148;
+
+  --text-primary: #F4F1FF;
+  --text-secondary: #D5CCEA;
+  --text-muted: #B4A7D6;
+  --text-caption: #8F81B4;
+  --text-inverse: #18061f;
+
+  --border-primary: rgba(230, 230, 250, 0.12);
+  --border-secondary: rgba(153, 50, 204, 0.24);
+  --border-subtle: rgba(230, 230, 250, 0.05);
+
+  --accent-cta: #9932CC;
+  --accent-cta-hover: #7c29a4;
+  --accent-cta-glow: rgba(153, 50, 204, 0.45);
+
+  --accent-deepreal: #c95dff;
+  --accent-deepreal-hover: #ad3ee8;
+  --accent-deepreal-glow: rgba(201, 93, 255, 0.34);
+  --accent-deepreal-surface: rgba(201, 93, 255, 0.12);
+
+  --accent-mentalhealth: #b17dff;
+  --accent-mentalhealth-hover: #9760e8;
+  --accent-mentalhealth-glow: rgba(177, 125, 255, 0.3);
+  --accent-mentalhealth-surface: rgba(177, 125, 255, 0.1);
+
+  --accent-religionhub: #E6E6FA;
+  --accent-religionhub-hover: #d5d5f3;
+  --accent-religionhub-glow: rgba(230, 230, 250, 0.26);
+  --accent-religionhub-surface: rgba(230, 230, 250, 0.1);
+
+  --accent-amber: #c95dff;
+  --accent-emerald: #b17dff;
+  --accent-indigo: #E6E6FA;
+  --accent-purple: #9932CC;
+  --accent-blue: #8f6cff;
+  --accent-red: #ff5c9f;
+
+  --glass-bg: rgba(36, 10, 36, 0.66);
+  --glass-border: rgba(230, 230, 250, 0.08);
+  --glass-shadow: 0 10px 36px rgba(10, 0, 20, 0.42);
+
+  --progress-gradient: linear-gradient(90deg, #240A24 0%, #9932CC 48%, #E6E6FA 100%);
+  --hero-glow: radial-gradient(circle, rgba(153, 50, 204, 0.32) 0%, transparent 70%);
+  --hero-orb-1: radial-gradient(circle, rgba(201, 93, 255, 0.18) 0%, transparent 68%);
+  --hero-orb-2: radial-gradient(circle, rgba(230, 230, 250, 0.16) 0%, transparent 75%);
+  --surface-noise:
+    radial-gradient(circle at top, rgba(201, 93, 255, 0.18), transparent 35%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 24%);
+
+  color-scheme: dark;
+}
+
+[data-theme="bloodline"] {
+  --bg-primary: #12050d;
+  --bg-page: #12050d;
+  --bg-secondary: #1d0a14;
+  --bg-card: rgba(28, 9, 20, 0.82);
+  --bg-sidebar: #10050d;
+  --bg-elevated: #2a0d1d;
+
+  --text-primary: #fff2f5;
+  --text-secondary: #d9b9c6;
+  --text-muted: #b88a97;
+  --text-caption: #8d5f6d;
+  --text-inverse: #14070d;
+
+  --border-primary: rgba(255, 212, 223, 0.12);
+  --border-secondary: rgba(255, 93, 149, 0.28);
+  --border-subtle: rgba(255, 212, 223, 0.06);
+
+  --accent-cta: #ff5d95;
+  --accent-cta-hover: #e34780;
+  --accent-cta-glow: rgba(255, 93, 149, 0.5);
+
+  --accent-deepreal: #ff7d66;
+  --accent-deepreal-hover: #ff6449;
+  --accent-deepreal-glow: rgba(255, 125, 102, 0.38);
+  --accent-deepreal-surface: rgba(255, 125, 102, 0.13);
+
+  --accent-mentalhealth: #d46aff;
+  --accent-mentalhealth-hover: #bd4ef0;
+  --accent-mentalhealth-glow: rgba(212, 106, 255, 0.34);
+  --accent-mentalhealth-surface: rgba(212, 106, 255, 0.12);
+
+  --accent-religionhub: #ffd2df;
+  --accent-religionhub-hover: #ffb7cd;
+  --accent-religionhub-glow: rgba(255, 210, 223, 0.26);
+  --accent-religionhub-surface: rgba(255, 210, 223, 0.1);
+
+  --accent-amber: #ff7d66;
+  --accent-emerald: #c270ff;
+  --accent-indigo: #ffd2df;
+  --accent-purple: #d46aff;
+  --accent-blue: #7c5cff;
+  --accent-red: #ff5d95;
+
+  --glass-bg: rgba(28, 9, 20, 0.72);
+  --glass-border: rgba(255, 210, 223, 0.08);
+  --glass-shadow: 0 14px 40px rgba(0, 0, 0, 0.52);
+
+  --progress-gradient: linear-gradient(90deg, #240A24 0%, #ff5d95 42%, #ff7d66 72%, #d46aff 100%);
+  --hero-glow: radial-gradient(circle, rgba(255, 93, 149, 0.32) 0%, transparent 68%);
+  --hero-orb-1: radial-gradient(circle, rgba(255, 125, 102, 0.18) 0%, transparent 70%);
+  --hero-orb-2: radial-gradient(circle, rgba(212, 106, 255, 0.18) 0%, transparent 76%);
+  --surface-noise:
+    radial-gradient(circle at top, rgba(255, 93, 149, 0.18), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 24%);
+
+  color-scheme: dark;
+}
+
+[data-contrast="high"] {
+  --text-primary: #ffffff;
+  --text-secondary: #f2f2f2;
+  --text-muted: #e1e1e1;
+  --text-caption: #d2d2d2;
+  --border-primary: rgba(255, 255, 255, 0.32);
+  --border-secondary: rgba(255, 255, 255, 0.44);
+  --glass-border: rgba(255, 255, 255, 0.28);
+  --glass-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+}
+
+[data-contrast="high"] .glass-card,
+[data-contrast="high"] .glass,
+[data-contrast="high"] .glass-strong {
+  box-shadow: 0 0 0 1px var(--border-primary), var(--glass-shadow);
+}
+
+[data-contrast="high"] a,
+[data-contrast="high"] button,
+[data-contrast="high"] input,
+[data-contrast="high"] textarea,
+[data-contrast="high"] summary {
+  text-shadow: none;
+}
+
+[data-contrast="high"] .badge {
+  border-color: var(--border-secondary);
+}
+
+/* ============================================================
+   OLIVE MEADOW — Earthy Nature Mode
+   Source: new ui / Olive Meadow #41431B + Wild Grove #AEB784
+   Temperature: Warm Green | Scheme: Dark
+   60-30-10: Olive-black / Moss-card / Sage-green accent
+   Contrast: text-primary #E8E6D8 on bg #2A2D12 = 10.2:1 ✓
+   ============================================================ */
+[data-theme="olive-meadow"] {
+  /* ── 60% Dominant: Warm olive-black (NOT pure black — green undertone) ── */
+  --bg-primary: #2A2D12;
+  --bg-page: #2A2D12;
+
+  /* ── 30% Secondary: Moss surfaces ── */
+  --bg-secondary: #3A3D1F;
+  --bg-card: rgba(58, 61, 31, 0.78);
+  --bg-sidebar: #252810;
+  --bg-elevated: #4A4D2A;
+
+  /* ── Text: 4-tier warm parchment hierarchy ── */
+  --text-primary: #E8E6D8;
+  --text-secondary: #C5C3A8;
+  --text-muted: #9A9878;
+  --text-caption: #6F6D52;
+  --text-inverse: #1A1C0A;
+
+  /* ── Borders: olive-tinted, low opacity ── */
+  --border-primary: rgba(174, 183, 132, 0.12);
+  --border-secondary: rgba(174, 183, 132, 0.20);
+  --border-subtle: rgba(174, 183, 132, 0.06);
+
+  /* ── Primary CTA: Sage green ── */
+  --accent-cta: #AEB784;
+  --accent-cta-hover: #97A06A;
+  --accent-cta-glow: rgba(174, 183, 132, 0.38);
+
+  /* ── MVP Accents: remapped to green-earth family ── */
+  --accent-deepreal: #C4CC8E;
+  --accent-deepreal-hover: #AEB474;
+  --accent-deepreal-glow: rgba(196, 204, 142, 0.32);
+  --accent-deepreal-surface: rgba(196, 204, 142, 0.10);
+
+  --accent-mentalhealth: #8FA870;
+  --accent-mentalhealth-hover: #789058;
+  --accent-mentalhealth-glow: rgba(143, 168, 112, 0.28);
+  --accent-mentalhealth-surface: rgba(143, 168, 112, 0.10);
+
+  --accent-religionhub: #D4CDA0;
+  --accent-religionhub-hover: #C0B888;
+  --accent-religionhub-glow: rgba(212, 205, 160, 0.26);
+  --accent-religionhub-surface: rgba(212, 205, 160, 0.10);
+
+  /* ── Generic accent aliases ── */
+  --accent-amber: #C4CC8E;
+  --accent-emerald: #8FA870;
+  --accent-indigo: #D4CDA0;
+  --accent-purple: #A8A86A;
+  --accent-blue: #8EB088;
+  --accent-red: #B89060;
+
+  /* ── Glassmorphism: olive glass ── */
+  --glass-bg: rgba(58, 61, 31, 0.68);
+  --glass-border: rgba(174, 183, 132, 0.08);
+  --glass-blur: 12px;
+  --glass-shadow: 0 10px 36px rgba(10, 12, 2, 0.42);
+
+  /* ── Shadows: warm-tinted ── */
+  --shadow-sm: 0 1px 2px rgba(10, 12, 2, 0.30);
+  --shadow-md: 0 4px 12px rgba(10, 12, 2, 0.40);
+  --shadow-lg: 0 12px 30px rgba(10, 12, 2, 0.50);
+  --shadow-xl: 0 25px 50px rgba(10, 12, 2, 0.60);
+  --shadow-card-hover: 0 12px 30px rgba(10, 12, 2, 0.50);
+
+  /* ── Gradients & Noise ── */
+  --progress-gradient: linear-gradient(90deg, #2A2D12 0%, #AEB784 52%, #E8E6D8 100%);
+  --hero-glow: radial-gradient(circle, rgba(174, 183, 132, 0.24) 0%, transparent 70%);
+  --hero-orb-1: radial-gradient(circle, rgba(196, 204, 142, 0.14) 0%, transparent 68%);
+  --hero-orb-2: radial-gradient(circle, rgba(143, 168, 112, 0.12) 0%, transparent 72%);
+  --surface-noise:
+    radial-gradient(circle at top, rgba(174, 183, 132, 0.14), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 24%);
+
+  color-scheme: dark;
+}
+
+/* ============================================================
+   PEARL SLATE — Corporate Cool Mode
+   Source: new ui / Pearl Grey #ACBAC4 + Quantum Slate #30364F
+   Temperature: Cool Blue | Scheme: Dark
+   60-30-10: Navy-slate / Steel-card / Pearl-blue accent
+   Contrast: text-primary #E8ECF0 on bg #1E2438 = 10.8:1 ✓
+   ============================================================ */
+[data-theme="pearl-slate"] {
+  /* ── 60% Dominant: Cool navy-slate (NOT pure black — blue undertone) ── */
+  --bg-primary: #1E2438;
+  --bg-page: #1E2438;
+
+  /* ── 30% Secondary: Steel surfaces ── */
+  --bg-secondary: #2A3350;
+  --bg-card: rgba(42, 51, 80, 0.76);
+  --bg-sidebar: #1A2034;
+  --bg-elevated: #354060;
+
+  /* ── Text: 4-tier cool silver hierarchy ── */
+  --text-primary: #E8ECF0;
+  --text-secondary: #B8C4D0;
+  --text-muted: #8898A8;
+  --text-caption: #5E6E80;
+  --text-inverse: #141822;
+
+  /* ── Borders: blue-tinted, low opacity ── */
+  --border-primary: rgba(172, 186, 196, 0.12);
+  --border-secondary: rgba(172, 186, 196, 0.20);
+  --border-subtle: rgba(172, 186, 196, 0.06);
+
+  /* ── Primary CTA: Pearl blue ── */
+  --accent-cta: #ACBAC4;
+  --accent-cta-hover: #92A4B0;
+  --accent-cta-glow: rgba(172, 186, 196, 0.38);
+
+  /* ── MVP Accents: remapped to blue-steel family ── */
+  --accent-deepreal: #8AACC8;
+  --accent-deepreal-hover: #7098B8;
+  --accent-deepreal-glow: rgba(138, 172, 200, 0.32);
+  --accent-deepreal-surface: rgba(138, 172, 200, 0.10);
+
+  --accent-mentalhealth: #7ABCB0;
+  --accent-mentalhealth-hover: #60A898;
+  --accent-mentalhealth-glow: rgba(122, 188, 176, 0.28);
+  --accent-mentalhealth-surface: rgba(122, 188, 176, 0.10);
+
+  --accent-religionhub: #C8C4E0;
+  --accent-religionhub-hover: #B4B0D0;
+  --accent-religionhub-glow: rgba(200, 196, 224, 0.26);
+  --accent-religionhub-surface: rgba(200, 196, 224, 0.10);
+
+  /* ── Generic accent aliases ── */
+  --accent-amber: #8AACC8;
+  --accent-emerald: #7ABCB0;
+  --accent-indigo: #C8C4E0;
+  --accent-purple: #9098C0;
+  --accent-blue: #6C9CC8;
+  --accent-red: #C88090;
+
+  /* ── Glassmorphism: slate glass ── */
+  --glass-bg: rgba(42, 51, 80, 0.68);
+  --glass-border: rgba(172, 186, 196, 0.08);
+  --glass-blur: 12px;
+  --glass-shadow: 0 10px 36px rgba(10, 14, 24, 0.42);
+
+  /* ── Shadows: cool-tinted ── */
+  --shadow-sm: 0 1px 2px rgba(10, 14, 24, 0.30);
+  --shadow-md: 0 4px 12px rgba(10, 14, 24, 0.40);
+  --shadow-lg: 0 12px 30px rgba(10, 14, 24, 0.50);
+  --shadow-xl: 0 25px 50px rgba(10, 14, 24, 0.60);
+  --shadow-card-hover: 0 12px 30px rgba(10, 14, 24, 0.50);
+
+  /* ── Gradients & Noise ── */
+  --progress-gradient: linear-gradient(90deg, #1E2438 0%, #ACBAC4 52%, #E8ECF0 100%);
+  --hero-glow: radial-gradient(circle, rgba(172, 186, 196, 0.24) 0%, transparent 70%);
+  --hero-orb-1: radial-gradient(circle, rgba(138, 172, 200, 0.14) 0%, transparent 68%);
+  --hero-orb-2: radial-gradient(circle, rgba(122, 188, 176, 0.12) 0%, transparent 72%);
+  --surface-noise:
+    radial-gradient(circle at top, rgba(172, 186, 196, 0.14), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 24%);
+
+  /* ── Typography: Corporate precision — Inter geometric matches steel authority ── */
+  --font-heading-en: 'Inter', 'Clash Display', sans-serif;
+  --font-body-en: 'Inter', 'Satoshi', sans-serif;
+  --font-heading-ar: 'Cairo', 'Noto Kufi Arabic', sans-serif;
+  --font-body-ar: 'Cairo', 'Noto Naskh Arabic', sans-serif;
+  --heading-letter-spacing: -0.04em;
+  --heading-weight: 800;
+  --label-letter-spacing: 0.10em;
+
+  color-scheme: dark;
+}
+
+/* ============================================================
+   CORE WINE — Dramatic Wine & Carbon Mode
+   Source: new ui / Core Wine #853953 + Core Carbon #151515
+   Temperature: Warm Red | Scheme: Dark
+   60-30-10: Carbon-black / Wine-card / Burgundy accent
+   Contrast: text-primary #F5E8EC on bg #121012 = 13.4:1 ✓
+   ============================================================ */
+[data-theme="core-wine"] {
+  /* ── 60% Dominant: Warm carbon (NOT pure black — subtle red undertone) ── */
+  --bg-primary: #121012;
+  --bg-page: #121012;
+
+  /* ── 30% Secondary: Wine-tinted surfaces ── */
+  --bg-secondary: #1E1518;
+  --bg-card: rgba(30, 21, 24, 0.80);
+  --bg-sidebar: #100E10;
+  --bg-elevated: #2C1E24;
+
+  /* ── Text: 4-tier rose-parchment hierarchy ── */
+  --text-primary: #F5E8EC;
+  --text-secondary: #D4B8C2;
+  --text-muted: #A88898;
+  --text-caption: #7C5C6E;
+  --text-inverse: #0E0A0C;
+
+  /* ── Borders: wine-tinted, low opacity ── */
+  --border-primary: rgba(133, 57, 83, 0.16);
+  --border-secondary: rgba(133, 57, 83, 0.28);
+  --border-subtle: rgba(133, 57, 83, 0.08);
+
+  /* ── Primary CTA: Deep burgundy wine ── */
+  --accent-cta: #853953;
+  --accent-cta-hover: #6E2E44;
+  --accent-cta-glow: rgba(133, 57, 83, 0.42);
+
+  /* ── MVP Accents: remapped to wine-red family ── */
+  --accent-deepreal: #C85070;
+  --accent-deepreal-hover: #B04060;
+  --accent-deepreal-glow: rgba(200, 80, 112, 0.34);
+  --accent-deepreal-surface: rgba(200, 80, 112, 0.12);
+
+  --accent-mentalhealth: #A0607C;
+  --accent-mentalhealth-hover: #885068;
+  --accent-mentalhealth-glow: rgba(160, 96, 124, 0.28);
+  --accent-mentalhealth-surface: rgba(160, 96, 124, 0.10);
+
+  --accent-religionhub: #E0C0D0;
+  --accent-religionhub-hover: #D0A8BC;
+  --accent-religionhub-glow: rgba(224, 192, 208, 0.26);
+  --accent-religionhub-surface: rgba(224, 192, 208, 0.10);
+
+  /* ── Generic accent aliases ── */
+  --accent-amber: #C85070;
+  --accent-emerald: #A0607C;
+  --accent-indigo: #E0C0D0;
+  --accent-purple: #985878;
+  --accent-blue: #886090;
+  --accent-red: #C04058;
+
+  /* ── Glassmorphism: carbon-wine glass ── */
+  --glass-bg: rgba(30, 21, 24, 0.72);
+  --glass-border: rgba(133, 57, 83, 0.10);
+  --glass-blur: 12px;
+  --glass-shadow: 0 10px 36px rgba(8, 4, 6, 0.48);
+
+  /* ── Shadows: warm red-tinted ── */
+  --shadow-sm: 0 1px 2px rgba(8, 4, 6, 0.30);
+  --shadow-md: 0 4px 12px rgba(8, 4, 6, 0.40);
+  --shadow-lg: 0 12px 30px rgba(8, 4, 6, 0.50);
+  --shadow-xl: 0 25px 50px rgba(8, 4, 6, 0.60);
+  --shadow-card-hover: 0 12px 30px rgba(8, 4, 6, 0.50);
+
+  /* ── Gradients & Noise ── */
+  --progress-gradient: linear-gradient(90deg, #121012 0%, #853953 50%, #F5E8EC 100%);
+  --hero-glow: radial-gradient(circle, rgba(133, 57, 83, 0.28) 0%, transparent 70%);
+  --hero-orb-1: radial-gradient(circle, rgba(200, 80, 112, 0.16) 0%, transparent 68%);
+  --hero-orb-2: radial-gradient(circle, rgba(160, 96, 124, 0.12) 0%, transparent 72%);
+  --surface-noise:
+    radial-gradient(circle at top, rgba(133, 57, 83, 0.16), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 24%);
+
+  color-scheme: dark;
+}
+
+/* ============================================================
+   BLUSH ENERGY — Warm Coral & Cream Mode
+   Source: new ui / Blush Energy #D96868 + Neutral Blush #FBF6F6
+   Temperature: Warm Pink | Scheme: Light
+   60-30-10: Rose-white / Blush-card / Coral accent
+   Contrast: text-primary #3D1F1F on bg #FBF6F6 = 11.6:1 ✓
+   ============================================================ */
+[data-theme="blush-energy"] {
+  /* ── 60% Dominant: Warm rose-white ── */
+  --bg-primary: #FBF6F6;
+  --bg-page: #FBF6F6;
+
+  /* ── 30% Secondary: Blush surfaces ── */
+  --bg-secondary: #F0E4E4;
+  --bg-card: rgba(255, 250, 250, 0.86);
+  --bg-sidebar: #F5ECEC;
+  --bg-elevated: #FFF8F8;
+
+  /* ── Text: 4-tier warm brown hierarchy ── */
+  --text-primary: #3D1F1F;
+  --text-secondary: #6B3D3D;
+  --text-muted: #8C5858;
+  --text-caption: #A87878;
+  --text-inverse: #FFF5F5;
+
+  /* ── Borders: coral-tinted, low opacity ── */
+  --border-primary: rgba(217, 104, 104, 0.12);
+  --border-secondary: rgba(217, 104, 104, 0.20);
+  --border-subtle: rgba(217, 104, 104, 0.06);
+
+  /* ── Primary CTA: Warm coral ── */
+  --accent-cta: #D96868;
+  --accent-cta-hover: #C05050;
+  --accent-cta-glow: rgba(217, 104, 104, 0.30);
+
+  /* ── MVP Accents: remapped to warm coral family ── */
+  --accent-deepreal: #D96868;
+  --accent-deepreal-hover: #C05050;
+  --accent-deepreal-glow: rgba(217, 104, 104, 0.28);
+  --accent-deepreal-surface: rgba(217, 104, 104, 0.10);
+
+  --accent-mentalhealth: #C08070;
+  --accent-mentalhealth-hover: #A86858;
+  --accent-mentalhealth-glow: rgba(192, 128, 112, 0.24);
+  --accent-mentalhealth-surface: rgba(192, 128, 112, 0.10);
+
+  --accent-religionhub: #8B5E52;
+  --accent-religionhub-hover: #724840;
+  --accent-religionhub-glow: rgba(139, 94, 82, 0.22);
+  --accent-religionhub-surface: rgba(139, 94, 82, 0.10);
+
+  /* ── Generic accent aliases ── */
+  --accent-amber: #D96868;
+  --accent-emerald: #C08070;
+  --accent-indigo: #8B5E52;
+  --accent-purple: #B06060;
+  --accent-blue: #C87878;
+  --accent-red: #A04040;
+
+  /* ── Glassmorphism: blush glass ── */
+  --glass-bg: rgba(255, 250, 250, 0.76);
+  --glass-border: rgba(217, 104, 104, 0.08);
+  --glass-blur: 12px;
+  --glass-shadow: 0 10px 36px rgba(100, 40, 40, 0.10);
+
+  /* ── Shadows: warm pink-tinted ── */
+  --shadow-sm: 0 1px 2px rgba(100, 40, 40, 0.06);
+  --shadow-md: 0 4px 12px rgba(100, 40, 40, 0.08);
+  --shadow-lg: 0 12px 30px rgba(100, 40, 40, 0.10);
+  --shadow-xl: 0 25px 50px rgba(100, 40, 40, 0.14);
+  --shadow-card-hover: 0 12px 30px rgba(100, 40, 40, 0.12);
+
+  /* ── Gradients & Noise ── */
+  --progress-gradient: linear-gradient(90deg, #3D1F1F 0%, #D96868 52%, #FBF6F6 100%);
+  --hero-glow: radial-gradient(circle, rgba(217, 104, 104, 0.18) 0%, transparent 70%);
+  --hero-orb-1: radial-gradient(circle, rgba(255, 200, 200, 0.30) 0%, transparent 68%);
+  --hero-orb-2: radial-gradient(circle, rgba(139, 94, 82, 0.08) 0%, transparent 72%);
+  --surface-noise:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.85), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.3), transparent 28%);
+
+  /* ── Typography: Warm romantic — Playfair serif matches coral warmth ── */
+  --font-heading-en: 'Playfair Display', 'Clash Display', serif;
+  --font-body-en: 'Satoshi', 'Inter', sans-serif;
+  --font-heading-ar: 'Amiri', 'Noto Kufi Arabic', serif;
+  --font-body-ar: 'Amiri', 'Noto Naskh Arabic', serif;
+
+  color-scheme: light;
+}
+
+/* ============================================================
+   STEEL AZURE — Industrial Tech Mode
+   Source: new ui / Carbon Black #1B1C20 + Steel Azure #144EA0
+   + Old Rose #CF98AF | Temperature: Cool Blue | Scheme: Dark
+   60-30-10: Carbon / Steel-card / Azure-blue + rose accents
+   Contrast: text-primary #F0F2F8 on bg #14161A = 13.8:1 ✓
+   Typography: tight uppercase tracking, slab-weight headings
+   ============================================================ */
+[data-theme="steel-azure"] {
+  --bg-primary: #14161A;
+  --bg-page: #14161A;
+  --bg-secondary: #1E2128;
+  --bg-card: rgba(30, 33, 40, 0.78);
+  --bg-sidebar: #12141A;
+  --bg-elevated: #282C36;
+
+  --text-primary: #F0F2F8;
+  --text-secondary: #B8BCC8;
+  --text-muted: #8890A0;
+  --text-caption: #5C6478;
+  --text-inverse: #0E1014;
+
+  --border-primary: rgba(20, 78, 160, 0.16);
+  --border-secondary: rgba(20, 78, 160, 0.28);
+  --border-subtle: rgba(20, 78, 160, 0.08);
+
+  --accent-cta: #144EA0;
+  --accent-cta-hover: #0F3D80;
+  --accent-cta-glow: rgba(20, 78, 160, 0.42);
+
+  --accent-deepreal: #3A7CE0;
+  --accent-deepreal-hover: #2868C8;
+  --accent-deepreal-glow: rgba(58, 124, 224, 0.34);
+  --accent-deepreal-surface: rgba(58, 124, 224, 0.12);
+
+  --accent-mentalhealth: #CF98AF;
+  --accent-mentalhealth-hover: #B88098;
+  --accent-mentalhealth-glow: rgba(207, 152, 175, 0.28);
+  --accent-mentalhealth-surface: rgba(207, 152, 175, 0.10);
+
+  --accent-religionhub: #A8B8D0;
+  --accent-religionhub-hover: #90A0BC;
+  --accent-religionhub-glow: rgba(168, 184, 208, 0.26);
+  --accent-religionhub-surface: rgba(168, 184, 208, 0.10);
+
+  --accent-amber: #3A7CE0;
+  --accent-emerald: #CF98AF;
+  --accent-indigo: #A8B8D0;
+  --accent-purple: #7088B8;
+  --accent-blue: #144EA0;
+  --accent-red: #C87080;
+
+  --glass-bg: rgba(30, 33, 40, 0.70);
+  --glass-border: rgba(20, 78, 160, 0.10);
+  --glass-blur: 12px;
+  --glass-shadow: 0 10px 36px rgba(6, 8, 14, 0.48);
+
+  --shadow-sm: 0 1px 2px rgba(6, 8, 14, 0.30);
+  --shadow-md: 0 4px 12px rgba(6, 8, 14, 0.40);
+  --shadow-lg: 0 12px 30px rgba(6, 8, 14, 0.50);
+  --shadow-xl: 0 25px 50px rgba(6, 8, 14, 0.60);
+  --shadow-card-hover: 0 12px 30px rgba(6, 8, 14, 0.50);
+
+  --progress-gradient: linear-gradient(90deg, #14161A 0%, #144EA0 40%, #CF98AF 75%, #F0F2F8 100%);
+  --hero-glow: radial-gradient(circle, rgba(20, 78, 160, 0.28) 0%, transparent 70%);
+  --hero-orb-1: radial-gradient(circle, rgba(58, 124, 224, 0.16) 0%, transparent 68%);
+  --hero-orb-2: radial-gradient(circle, rgba(207, 152, 175, 0.14) 0%, transparent 72%);
+  --surface-noise:
+    radial-gradient(circle at top, rgba(20, 78, 160, 0.14), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 24%);
+
+  /* ── Typography: Industrial tight tracking ── */
+  --heading-letter-spacing: -0.04em;
+  --heading-weight: 800;
+  --label-letter-spacing: 0.10em;
+  --label-transform: uppercase;
+
+  color-scheme: dark;
+}
+
+/* ============================================================
+   CRIMSON VIOLET — Bold Violet & Chartreuse Mode
+   Source: new ui / Pale Amber #CFD78C + Crimson Violet #700143
+   Temperature: Warm Violet | Scheme: Dark
+   60-30-10: Plum-violet / Deep-card / Chartreuse accent
+   Contrast: text-primary #F8F0E8 on bg #3A0125 = 12.1:1 ✓
+   Typography: extra-bold display, tight tracking
+   ============================================================ */
+[data-theme="crimson-violet"] {
+  --bg-primary: #3A0125;
+  --bg-page: #3A0125;
+  --bg-secondary: #520136;
+  --bg-card: rgba(82, 1, 54, 0.76);
+  --bg-sidebar: #320120;
+  --bg-elevated: #6A0148;
+
+  --text-primary: #F8F0E8;
+  --text-secondary: #D8C8B8;
+  --text-muted: #A89888;
+  --text-caption: #786858;
+  --text-inverse: #200118;
+
+  --border-primary: rgba(207, 215, 140, 0.14);
+  --border-secondary: rgba(207, 215, 140, 0.24);
+  --border-subtle: rgba(207, 215, 140, 0.06);
+
+  --accent-cta: #CFD78C;
+  --accent-cta-hover: #B8C074;
+  --accent-cta-glow: rgba(207, 215, 140, 0.38);
+
+  --accent-deepreal: #E0E89C;
+  --accent-deepreal-hover: #C8D080;
+  --accent-deepreal-glow: rgba(224, 232, 156, 0.32);
+  --accent-deepreal-surface: rgba(224, 232, 156, 0.12);
+
+  --accent-mentalhealth: #B8A870;
+  --accent-mentalhealth-hover: #A09058;
+  --accent-mentalhealth-glow: rgba(184, 168, 112, 0.28);
+  --accent-mentalhealth-surface: rgba(184, 168, 112, 0.10);
+
+  --accent-religionhub: #E8D8C8;
+  --accent-religionhub-hover: #D4C0AC;
+  --accent-religionhub-glow: rgba(232, 216, 200, 0.24);
+  --accent-religionhub-surface: rgba(232, 216, 200, 0.10);
+
+  --accent-amber: #E0E89C;
+  --accent-emerald: #B8A870;
+  --accent-indigo: #E8D8C8;
+  --accent-purple: #700143;
+  --accent-blue: #C0B880;
+  --accent-red: #A83860;
+
+  --glass-bg: rgba(82, 1, 54, 0.68);
+  --glass-border: rgba(207, 215, 140, 0.08);
+  --glass-blur: 12px;
+  --glass-shadow: 0 10px 36px rgba(20, 0, 14, 0.48);
+
+  --shadow-sm: 0 1px 2px rgba(20, 0, 14, 0.30);
+  --shadow-md: 0 4px 12px rgba(20, 0, 14, 0.40);
+  --shadow-lg: 0 12px 30px rgba(20, 0, 14, 0.50);
+  --shadow-xl: 0 25px 50px rgba(20, 0, 14, 0.60);
+  --shadow-card-hover: 0 12px 30px rgba(20, 0, 14, 0.50);
+
+  --progress-gradient: linear-gradient(90deg, #3A0125 0%, #700143 35%, #CFD78C 70%, #F8F0E8 100%);
+  --hero-glow: radial-gradient(circle, rgba(112, 1, 67, 0.32) 0%, transparent 70%);
+  --hero-orb-1: radial-gradient(circle, rgba(207, 215, 140, 0.18) 0%, transparent 68%);
+  --hero-orb-2: radial-gradient(circle, rgba(184, 168, 112, 0.12) 0%, transparent 72%);
+  --surface-noise:
+    radial-gradient(circle at top, rgba(207, 215, 140, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 24%);
+
+  --heading-letter-spacing: -0.04em;
+  --heading-weight: 800;
+
+  color-scheme: dark;
+}
+
+/* ============================================================
+   DEEP MOCHA — Sophisticated Espresso Mode
+   Source: new ui / Deep Mocha #332927 + Thistle #D6C8DF
+   Temperature: Warm Brown | Scheme: Dark
+   60-30-10: Espresso / Mocha-card / Thistle-lavender accent
+   Contrast: text-primary #F0E8EC on bg #231D1B = 11.5:1 ✓
+   Typography: refined serif-like weight, elegant spacing
+   ============================================================ */
+[data-theme="deep-mocha"] {
+  --bg-primary: #231D1B;
+  --bg-page: #231D1B;
+  --bg-secondary: #332927;
+  --bg-card: rgba(51, 41, 39, 0.78);
+  --bg-sidebar: #1E1816;
+  --bg-elevated: #443632;
+
+  --text-primary: #F0E8EC;
+  --text-secondary: #D0C0C8;
+  --text-muted: #A89098;
+  --text-caption: #786068;
+  --text-inverse: #161010;
+
+  --border-primary: rgba(214, 200, 223, 0.14);
+  --border-secondary: rgba(214, 200, 223, 0.22);
+  --border-subtle: rgba(214, 200, 223, 0.06);
+
+  --accent-cta: #D6C8DF;
+  --accent-cta-hover: #C0B0CC;
+  --accent-cta-glow: rgba(214, 200, 223, 0.36);
+
+  --accent-deepreal: #E0D0E8;
+  --accent-deepreal-hover: #CCB8D8;
+  --accent-deepreal-glow: rgba(224, 208, 232, 0.30);
+  --accent-deepreal-surface: rgba(224, 208, 232, 0.10);
+
+  --accent-mentalhealth: #B8A8C0;
+  --accent-mentalhealth-hover: #A090A8;
+  --accent-mentalhealth-glow: rgba(184, 168, 192, 0.26);
+  --accent-mentalhealth-surface: rgba(184, 168, 192, 0.10);
+
+  --accent-religionhub: #EED3BA;
+  --accent-religionhub-hover: #D8BCA4;
+  --accent-religionhub-glow: rgba(238, 211, 186, 0.24);
+  --accent-religionhub-surface: rgba(238, 211, 186, 0.10);
+
+  --accent-amber: #E0D0E8;
+  --accent-emerald: #B8A8C0;
+  --accent-indigo: #EED3BA;
+  --accent-purple: #9880A8;
+  --accent-blue: #A898B8;
+  --accent-red: #C08878;
+
+  --glass-bg: rgba(51, 41, 39, 0.70);
+  --glass-border: rgba(214, 200, 223, 0.08);
+  --glass-blur: 12px;
+  --glass-shadow: 0 10px 36px rgba(14, 10, 8, 0.44);
+
+  --shadow-sm: 0 1px 2px rgba(14, 10, 8, 0.30);
+  --shadow-md: 0 4px 12px rgba(14, 10, 8, 0.40);
+  --shadow-lg: 0 12px 30px rgba(14, 10, 8, 0.50);
+  --shadow-xl: 0 25px 50px rgba(14, 10, 8, 0.60);
+  --shadow-card-hover: 0 12px 30px rgba(14, 10, 8, 0.50);
+
+  --progress-gradient: linear-gradient(90deg, #231D1B 0%, #332927 30%, #D6C8DF 65%, #EED3BA 100%);
+  --hero-glow: radial-gradient(circle, rgba(214, 200, 223, 0.22) 0%, transparent 70%);
+  --hero-orb-1: radial-gradient(circle, rgba(224, 208, 232, 0.14) 0%, transparent 68%);
+  --hero-orb-2: radial-gradient(circle, rgba(238, 211, 186, 0.12) 0%, transparent 72%);
+  --surface-noise:
+    radial-gradient(circle at top, rgba(214, 200, 223, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 24%);
+
+  /* ── Typography: Refined espresso — Playfair elegance + Amiri Arabic warmth ── */
+  --font-heading-en: 'Playfair Display', 'Clash Display', serif;
+  --font-body-en: 'Satoshi', 'Inter', sans-serif;
+  --font-heading-ar: 'Amiri', 'Noto Kufi Arabic', serif;
+  --font-body-ar: 'Amiri', 'Noto Naskh Arabic', serif;
+  --heading-letter-spacing: -0.02em;
+  --heading-weight: 700;
+
+  color-scheme: dark;
+}
+
+/* ============================================================
+   ESPRESSO PEONY — Elegant Chocolate & Pink Mode
+   Source: new ui / Espresso #3E2723 + Peony #F4C9D6
+   + Rich Mahogany #4C1413 + Bubblegum #EA6B7E
+   Temperature: Warm Brown-Pink | Scheme: Dark
+   60-30-10: Espresso / Chocolate-card / Peony-pink accent
+   Contrast: text-primary #FAF0EC on bg #2A1B18 = 12.8:1 ✓
+   Typography: bold slab headings, wide tracking labels
+   ============================================================ */
+[data-theme="espresso-peony"] {
+  --bg-primary: #2A1B18;
+  --bg-page: #2A1B18;
+  --bg-secondary: #3E2723;
+  --bg-card: rgba(62, 39, 35, 0.78);
+  --bg-sidebar: #241614;
+  --bg-elevated: #503530;
+
+  --text-primary: #FAF0EC;
+  --text-secondary: #D8C4BC;
+  --text-muted: #B09888;
+  --text-caption: #886C5C;
+  --text-inverse: #1A100E;
+
+  --border-primary: rgba(244, 201, 214, 0.14);
+  --border-secondary: rgba(244, 201, 214, 0.24);
+  --border-subtle: rgba(244, 201, 214, 0.06);
+
+  --accent-cta: #F4C9D6;
+  --accent-cta-hover: #E0B0C0;
+  --accent-cta-glow: rgba(244, 201, 214, 0.34);
+
+  --accent-deepreal: #EA6B7E;
+  --accent-deepreal-hover: #D45568;
+  --accent-deepreal-glow: rgba(234, 107, 126, 0.32);
+  --accent-deepreal-surface: rgba(234, 107, 126, 0.12);
+
+  --accent-mentalhealth: #D8A0A8;
+  --accent-mentalhealth-hover: #C08890;
+  --accent-mentalhealth-glow: rgba(216, 160, 168, 0.28);
+  --accent-mentalhealth-surface: rgba(216, 160, 168, 0.10);
+
+  --accent-religionhub: #EED3BA;
+  --accent-religionhub-hover: #D8BCA4;
+  --accent-religionhub-glow: rgba(238, 211, 186, 0.24);
+  --accent-religionhub-surface: rgba(238, 211, 186, 0.10);
+
+  --accent-amber: #EA6B7E;
+  --accent-emerald: #D8A0A8;
+  --accent-indigo: #EED3BA;
+  --accent-purple: #C08090;
+  --accent-blue: #B89098;
+  --accent-red: #4C1413;
+
+  --glass-bg: rgba(62, 39, 35, 0.70);
+  --glass-border: rgba(244, 201, 214, 0.08);
+  --glass-blur: 12px;
+  --glass-shadow: 0 10px 36px rgba(16, 8, 6, 0.46);
+
+  --shadow-sm: 0 1px 2px rgba(16, 8, 6, 0.30);
+  --shadow-md: 0 4px 12px rgba(16, 8, 6, 0.40);
+  --shadow-lg: 0 12px 30px rgba(16, 8, 6, 0.50);
+  --shadow-xl: 0 25px 50px rgba(16, 8, 6, 0.60);
+  --shadow-card-hover: 0 12px 30px rgba(16, 8, 6, 0.50);
+
+  --progress-gradient: linear-gradient(90deg, #2A1B18 0%, #4C1413 30%, #EA6B7E 60%, #F4C9D6 100%);
+  --hero-glow: radial-gradient(circle, rgba(244, 201, 214, 0.24) 0%, transparent 70%);
+  --hero-orb-1: radial-gradient(circle, rgba(234, 107, 126, 0.16) 0%, transparent 68%);
+  --hero-orb-2: radial-gradient(circle, rgba(238, 211, 186, 0.12) 0%, transparent 72%);
+  --surface-noise:
+    radial-gradient(circle at top, rgba(234, 107, 126, 0.14), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 24%);
+
+  /* ── Typography: Elegant chocolate — Playfair warmth + Amiri Arabic luxury ── */
+  --font-heading-en: 'Playfair Display', 'Clash Display', serif;
+  --font-body-en: 'Satoshi', 'Inter', sans-serif;
+  --font-heading-ar: 'Amiri', 'Noto Kufi Arabic', serif;
+  --font-body-ar: 'Amiri', 'Noto Naskh Arabic', serif;
+  --heading-letter-spacing: -0.03em;
+  --heading-weight: 800;
+  --label-letter-spacing: 0.08em;
+
+  color-scheme: dark;
+}
+
+/* ============================================================
+   RASPBERRY SPACE — Deep Navy & Electric Pink Mode
+   Source: new ui / Raspberry Red #EE005A + Deep Space #012641
+   Temperature: Cool Navy | Scheme: Dark
+   60-30-10: Space-navy / Deep-card / Raspberry accent
+   Contrast: text-primary #E8F0F8 on bg #011E33 = 12.3:1 ✓
+   Note: Raspberry de-saturated to #E01858 for eye safety
+   ============================================================ */
+[data-theme="raspberry-space"] {
+  --bg-primary: #011E33;
+  --bg-page: #011E33;
+  --bg-secondary: #012641;
+  --bg-card: rgba(1, 38, 65, 0.78);
+  --bg-sidebar: #01192C;
+  --bg-elevated: #023050;
+
+  --text-primary: #E8F0F8;
+  --text-secondary: #B0C0D0;
+  --text-muted: #7890A8;
+  --text-caption: #506880;
+  --text-inverse: #010E18;
+
+  --border-primary: rgba(224, 24, 88, 0.16);
+  --border-secondary: rgba(224, 24, 88, 0.28);
+  --border-subtle: rgba(224, 24, 88, 0.08);
+
+  --accent-cta: #E01858;
+  --accent-cta-hover: #C81048;
+  --accent-cta-glow: rgba(224, 24, 88, 0.42);
+
+  --accent-deepreal: #F03868;
+  --accent-deepreal-hover: #D82858;
+  --accent-deepreal-glow: rgba(240, 56, 104, 0.34);
+  --accent-deepreal-surface: rgba(240, 56, 104, 0.12);
+
+  --accent-mentalhealth: #4898C8;
+  --accent-mentalhealth-hover: #3480B0;
+  --accent-mentalhealth-glow: rgba(72, 152, 200, 0.28);
+  --accent-mentalhealth-surface: rgba(72, 152, 200, 0.10);
+
+  --accent-religionhub: #C0D0E0;
+  --accent-religionhub-hover: #A8B8CC;
+  --accent-religionhub-glow: rgba(192, 208, 224, 0.24);
+  --accent-religionhub-surface: rgba(192, 208, 224, 0.10);
+
+  --accent-amber: #F03868;
+  --accent-emerald: #4898C8;
+  --accent-indigo: #C0D0E0;
+  --accent-purple: #8868A8;
+  --accent-blue: #3878B8;
+  --accent-red: #E01858;
+
+  --glass-bg: rgba(1, 38, 65, 0.70);
+  --glass-border: rgba(224, 24, 88, 0.10);
+  --glass-blur: 12px;
+  --glass-shadow: 0 10px 36px rgba(0, 10, 20, 0.48);
+
+  --shadow-sm: 0 1px 2px rgba(0, 10, 20, 0.30);
+  --shadow-md: 0 4px 12px rgba(0, 10, 20, 0.40);
+  --shadow-lg: 0 12px 30px rgba(0, 10, 20, 0.50);
+  --shadow-xl: 0 25px 50px rgba(0, 10, 20, 0.60);
+  --shadow-card-hover: 0 12px 30px rgba(0, 10, 20, 0.50);
+
+  --progress-gradient: linear-gradient(90deg, #011E33 0%, #012641 25%, #E01858 60%, #F03868 100%);
+  --hero-glow: radial-gradient(circle, rgba(224, 24, 88, 0.28) 0%, transparent 70%);
+  --hero-orb-1: radial-gradient(circle, rgba(240, 56, 104, 0.16) 0%, transparent 68%);
+  --hero-orb-2: radial-gradient(circle, rgba(72, 152, 200, 0.14) 0%, transparent 72%);
+  --surface-noise:
+    radial-gradient(circle at top, rgba(224, 24, 88, 0.14), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 24%);
+
+  color-scheme: dark;
+}
+
+/* ============================================================
+   ICY GUNMETAL — Modern Steel & Frost Mode
+   Source: new ui / Icy Blue #A4D8FF + Gunmetal #35393C
+   Temperature: Cool Neutral | Scheme: Dark
+   60-30-10: Gunmetal / Steel-card / Icy-blue accent
+   Contrast: text-primary #F0F4F8 on bg #282C2F = 10.9:1 ✓
+   Typography: clean geometric, medium weight
+   ============================================================ */
+[data-theme="icy-gunmetal"] {
+  --bg-primary: #282C2F;
+  --bg-page: #282C2F;
+  --bg-secondary: #35393C;
+  --bg-card: rgba(53, 57, 60, 0.78);
+  --bg-sidebar: #232628;
+  --bg-elevated: #42474A;
+
+  --text-primary: #F0F4F8;
+  --text-secondary: #C0CCD8;
+  --text-muted: #8898A8;
+  --text-caption: #586878;
+  --text-inverse: #1A1C1E;
+
+  --border-primary: rgba(164, 216, 255, 0.12);
+  --border-secondary: rgba(164, 216, 255, 0.20);
+  --border-subtle: rgba(164, 216, 255, 0.06);
+
+  --accent-cta: #A4D8FF;
+  --accent-cta-hover: #88C4F0;
+  --accent-cta-glow: rgba(164, 216, 255, 0.36);
+
+  --accent-deepreal: #78C0F0;
+  --accent-deepreal-hover: #60A8E0;
+  --accent-deepreal-glow: rgba(120, 192, 240, 0.32);
+  --accent-deepreal-surface: rgba(120, 192, 240, 0.10);
+
+  --accent-mentalhealth: #80D0C8;
+  --accent-mentalhealth-hover: #68B8B0;
+  --accent-mentalhealth-glow: rgba(128, 208, 200, 0.28);
+  --accent-mentalhealth-surface: rgba(128, 208, 200, 0.10);
+
+  --accent-religionhub: #C8D8E8;
+  --accent-religionhub-hover: #B0C4D8;
+  --accent-religionhub-glow: rgba(200, 216, 232, 0.24);
+  --accent-religionhub-surface: rgba(200, 216, 232, 0.10);
+
+  --accent-amber: #78C0F0;
+  --accent-emerald: #80D0C8;
+  --accent-indigo: #C8D8E8;
+  --accent-purple: #90A8C8;
+  --accent-blue: #A4D8FF;
+  --accent-red: #E08888;
+
+  --glass-bg: rgba(53, 57, 60, 0.70);
+  --glass-border: rgba(164, 216, 255, 0.08);
+  --glass-blur: 12px;
+  --glass-shadow: 0 10px 36px rgba(12, 14, 16, 0.44);
+
+  --shadow-sm: 0 1px 2px rgba(12, 14, 16, 0.30);
+  --shadow-md: 0 4px 12px rgba(12, 14, 16, 0.40);
+  --shadow-lg: 0 12px 30px rgba(12, 14, 16, 0.50);
+  --shadow-xl: 0 25px 50px rgba(12, 14, 16, 0.60);
+  --shadow-card-hover: 0 12px 30px rgba(12, 14, 16, 0.50);
+
+  --progress-gradient: linear-gradient(90deg, #282C2F 0%, #35393C 30%, #A4D8FF 70%, #F0F4F8 100%);
+  --hero-glow: radial-gradient(circle, rgba(164, 216, 255, 0.22) 0%, transparent 70%);
+  --hero-orb-1: radial-gradient(circle, rgba(120, 192, 240, 0.14) 0%, transparent 68%);
+  --hero-orb-2: radial-gradient(circle, rgba(128, 208, 200, 0.12) 0%, transparent 72%);
+  --surface-noise:
+    radial-gradient(circle at top, rgba(164, 216, 255, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 24%);
+
+  --heading-letter-spacing: -0.02em;
+  --heading-weight: 700;
+
+  color-scheme: dark;
+}
+
+/* ============================================================
+   LILAC CREAM — Soft Pastel & Warm Cream Mode
+   Source: new ui / Lilac #C8A2C9 + Cream #FEFBCE
+   Temperature: Warm Neutral | Scheme: Light
+   60-30-10: Cream / Butter-card / Lilac accent
+   Contrast: text-primary #2D1F2E on bg #FEFBCE = 12.6:1 ✓
+   Typography: soft rounded weight, relaxed tracking
+   ============================================================ */
+[data-theme="lilac-cream"] {
+  --bg-primary: #FEFBCE;
+  --bg-page: #FEFBCE;
+  --bg-secondary: #F2EFC0;
+  --bg-card: rgba(255, 253, 230, 0.86);
+  --bg-sidebar: #F8F5C8;
+  --bg-elevated: #FFFDE0;
+
+  --text-primary: #2D1F2E;
+  --text-secondary: #5A4060;
+  --text-muted: #7A6080;
+  --text-caption: #9A80A0;
+  --text-inverse: #F8F0FF;
+
+  --border-primary: rgba(200, 162, 201, 0.14);
+  --border-secondary: rgba(200, 162, 201, 0.22);
+  --border-subtle: rgba(200, 162, 201, 0.06);
+
+  --accent-cta: #C8A2C9;
+  --accent-cta-hover: #B088B2;
+  --accent-cta-glow: rgba(200, 162, 201, 0.30);
+
+  --accent-deepreal: #B888BA;
+  --accent-deepreal-hover: #A070A4;
+  --accent-deepreal-glow: rgba(184, 136, 186, 0.26);
+  --accent-deepreal-surface: rgba(184, 136, 186, 0.10);
+
+  --accent-mentalhealth: #8FB890;
+  --accent-mentalhealth-hover: #78A078;
+  --accent-mentalhealth-glow: rgba(143, 184, 144, 0.22);
+  --accent-mentalhealth-surface: rgba(143, 184, 144, 0.10);
+
+  --accent-religionhub: #7868A8;
+  --accent-religionhub-hover: #605090;
+  --accent-religionhub-glow: rgba(120, 104, 168, 0.22);
+  --accent-religionhub-surface: rgba(120, 104, 168, 0.10);
+
+  --accent-amber: #B888BA;
+  --accent-emerald: #8FB890;
+  --accent-indigo: #7868A8;
+  --accent-purple: #C8A2C9;
+  --accent-blue: #9888B8;
+  --accent-red: #B86878;
+
+  --glass-bg: rgba(255, 253, 230, 0.76);
+  --glass-border: rgba(200, 162, 201, 0.08);
+  --glass-blur: 12px;
+  --glass-shadow: 0 10px 36px rgba(60, 40, 60, 0.10);
+
+  --shadow-sm: 0 1px 2px rgba(60, 40, 60, 0.06);
+  --shadow-md: 0 4px 12px rgba(60, 40, 60, 0.08);
+  --shadow-lg: 0 12px 30px rgba(60, 40, 60, 0.10);
+  --shadow-xl: 0 25px 50px rgba(60, 40, 60, 0.14);
+  --shadow-card-hover: 0 12px 30px rgba(60, 40, 60, 0.12);
+
+  --progress-gradient: linear-gradient(90deg, #2D1F2E 0%, #C8A2C9 50%, #FEFBCE 100%);
+  --hero-glow: radial-gradient(circle, rgba(200, 162, 201, 0.20) 0%, transparent 70%);
+  --hero-orb-1: radial-gradient(circle, rgba(184, 136, 186, 0.18) 0%, transparent 68%);
+  --hero-orb-2: radial-gradient(circle, rgba(143, 184, 144, 0.12) 0%, transparent 72%);
+  --surface-noise:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.85), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.3), transparent 28%);
+
+  /* ── Typography: Soft pastel — Playfair romance + Amiri Arabic grace ── */
+  --font-heading-en: 'Playfair Display', 'Clash Display', serif;
+  --font-body-en: 'Satoshi', 'Inter', sans-serif;
+  --font-heading-ar: 'Amiri', 'Noto Kufi Arabic', serif;
+  --font-body-ar: 'Amiri', 'Noto Naskh Arabic', serif;
+  --heading-letter-spacing: -0.01em;
+  --heading-weight: 700;
+
+  color-scheme: light;
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-body-en);
+  font-size: var(--font-body);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  background-image: var(--surface-noise);
+  background-attachment: fixed;
+  transition: background-color var(--transition-base), color var(--transition-base);
+  overflow-x: hidden;
+  font-feature-settings: 'liga' 1, 'kern' 1, 'calt' 1;
+}
+
+/* ── Theme Auto-Cycle Cross-Fade (Expert Idea 3) ──
+   When .theme-crossfade is on <html>, ALL color properties
+   transition smoothly over 1.5s creating a gentle, eye-safe
+   cross-fade between themes.
+   ─────────────────────────────────────────────────── */
+.theme-crossfade,
+.theme-crossfade *,
+.theme-crossfade *::before,
+.theme-crossfade *::after {
+  transition:
+    background-color 1.5s cubic-bezier(0.4, 0, 0.2, 1),
+    color 1.5s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 1.5s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 1.5s cubic-bezier(0.4, 0, 0.2, 1),
+    fill 1.5s cubic-bezier(0.4, 0, 0.2, 1),
+    stroke 1.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* ── Arabic RTL Support ── */
+[dir="rtl"] body,
+:dir(rtl) body {
+  font-family: 'Noto Kufi Arabic', 'Satoshi', sans-serif;
+}
+
+/* ============================================================
+   TYPOGRAPHY (DESIGN.txt §5.1, §5.5)
+   Heading: Clash Display (tight letter-spacing, heavy weight)
+   Body: Satoshi (comfortable line-height)
+   ============================================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Clash Display', 'Noto Kufi Arabic', sans-serif;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6 {
+  font-family: 'Noto Kufi Arabic', 'Clash Display', sans-serif;
+  letter-spacing: 0;
+}
+
+/* Display — Used for landing page hero (DESIGN.txt §5.5) */
+.text-display {
+  font-size: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+
+h1 { font-size: var(--font-h1); }
+h2 { font-size: var(--font-h2); font-weight: 600; }
+h3 { font-size: var(--font-h3); font-weight: 600; }
+h4 { font-size: var(--font-h4); font-weight: 600; letter-spacing: -0.01em; }
+
+p {
+  font-size: var(--font-body);
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.text-small { font-size: var(--font-small); }
+.text-caption { font-size: var(--font-caption); color: var(--text-caption); }
+.text-muted { color: var(--text-muted); }
+
+/* ── Gradient Text (DESIGN.txt §5.4) — with subtle shimmer ── */
+.text-gradient {
+  background: var(--progress-gradient);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: textShimmer 8s ease-in-out infinite;
+}
+
+@keyframes textShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.text-gradient-deepreal {
+  background: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-mentalhealth {
+  background: linear-gradient(135deg, #10B981 0%, #06B6D4 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-religionhub {
+  background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================================================
+   GLASSMORPHISM UTILITIES (DESIGN.txt §1.1)
+   backdrop-filter:blur, rgba bg, thin border
+   ============================================================ */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-strong {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card hover shine sweep + lift (DESIGN.txt §6.6) */
+.glass-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.04) 45%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.04) 55%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.glass-card:hover::after {
+  transform: translateX(100%);
+}
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--border-secondary);
+}
+
+/* ============================================================
+   MVP-SPECIFIC CARD BORDERS
+   ============================================================ */
+.card-deepreal {
+  border-left: 3px solid var(--accent-deepreal);
+}
+.card-mentalhealth {
+  border-left: 3px solid var(--accent-mentalhealth);
+}
+.card-religionhub {
+  border-left: 3px solid var(--accent-religionhub);
+}
+
+[dir="rtl"] .card-deepreal {
+  border-left: none;
+  border-right: 3px solid var(--accent-deepreal);
+}
+[dir="rtl"] .card-mentalhealth {
+  border-left: none;
+  border-right: 3px solid var(--accent-mentalhealth);
+}
+[dir="rtl"] .card-religionhub {
+  border-left: none;
+  border-right: 3px solid var(--accent-religionhub);
+}
+
+/* ============================================================
+   BUTTON STYLES (DESIGN.txt §1.6: CTA with glow)
+   ============================================================ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-body-en);
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  background: var(--accent-cta);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: 0 0 0 rgba(0, 102, 255, 0);
+  will-change: transform;
+}
+
+.btn-primary:hover {
+  background: var(--accent-cta-hover);
+  box-shadow: 0 0 30px var(--accent-cta-glow);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 100ms;
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid var(--accent-cta);
+  outline-offset: 3px;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-body-en);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  will-change: transform;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-secondary);
+  border-color: var(--border-secondary);
+}
+
+/* MVP-specific CTA buttons */
+.btn-deepreal {
+  background: var(--accent-deepreal);
+  color: #111;
+}
+.btn-deepreal:hover {
+  background: var(--accent-deepreal-hover);
+  box-shadow: 0 0 30px var(--accent-deepreal-glow);
+}
+
+.btn-mentalhealth {
+  background: var(--accent-mentalhealth);
+  color: white;
+}
+.btn-mentalhealth:hover {
+  background: var(--accent-mentalhealth-hover);
+  box-shadow: 0 0 30px var(--accent-mentalhealth-glow);
+}
+
+.btn-religionhub {
+  background: var(--accent-religionhub);
+  color: white;
+}
+.btn-religionhub:hover {
+  background: var(--accent-religionhub-hover);
+  box-shadow: 0 0 30px var(--accent-religionhub-glow);
+}
+
+/* ============================================================
+   SCROLL-TRIGGERED ANIMATIONS (DESIGN.txt §2.2)
+   IntersectionObserver adds .visible class
+   ============================================================ */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for grid items */
+.stagger-1 { transition-delay: 0.05s; }
+.stagger-2 { transition-delay: 0.12s; }
+.stagger-3 { transition-delay: 0.19s; }
+.stagger-4 { transition-delay: 0.26s; }
+.stagger-5 { transition-delay: 0.33s; }
+.stagger-6 { transition-delay: 0.40s; }
+
+/* ============================================================
+   SCROLL PROGRESS INDICATOR (DESIGN.txt §2.6)
+   ============================================================ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: var(--z-progress);
+  pointer-events: none;
+}
+
+.scroll-progress-bar {
+  height: 100%;
+  background: var(--progress-gradient);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.1s linear;
+}
+
+/* ============================================================
+   TRUST BAND BADGES (§19.2 Scoring)
+   ============================================================ */
+.trust-band-a {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10B981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+.trust-band-b {
+  background: rgba(245, 158, 11, 0.15);
+  color: #F59E0B;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+.trust-band-c {
+  background: rgba(239, 68, 68, 0.15);
+  color: #EF4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================================
+   CRISIS PANEL (§6.3, §28.9: Always visible, high contrast)
+   ============================================================ */
+.crisis-panel {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.crisis-panel a {
+  color: var(--color-danger);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* ============================================================
+   SAFETY DISCLAIMER BARS (§6.5)
+   ============================================================ */
+.disclaimer-bar {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-small);
+  color: var(--text-muted);
+}
+
+.disclaimer-bar-warning {
+  background: rgba(245, 158, 11, 0.08);
+  border-color: rgba(245, 158, 11, 0.2);
+  color: var(--accent-deepreal);
+}
+
+/* ============================================================
+   8-GATE CHECK UI (§17.4)
+   ============================================================ */
+.gate-check {
+  counter-reset: gate;
+}
+
+.gate-check-step {
+  counter-increment: gate;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.gate-check-step::before {
+  content: counter(gate);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-primary);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ============================================================
+   KEYHUNTER LAYER COLORS (§7.2: 7-layer system)
+   ============================================================ */
+.kh-layer-core        { --kh-color: #3B82F6; }
+.kh-layer-expert      { --kh-color: #8B5CF6; }
+.kh-layer-hidden      { --kh-color: #EC4899; }
+.kh-layer-research    { --kh-color: #10B981; }
+.kh-layer-threat      { --kh-color: #EF4444; }
+.kh-layer-confusion   { --kh-color: #F59E0B; }
+.kh-layer-prompt      { --kh-color: #06B6D4; }
+
+.kh-layer-indicator {
+  width: 4px;
+  border-radius: 2px;
+  background: var(--kh-color);
+}
+
+/* ============================================================
+   BENTO GRID (DESIGN.txt §1.5)
+   ============================================================ */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.bento-span-2-col { grid-column: span 2; }
+.bento-span-2-row { grid-row: span 2; }
+
+@media (max-width: 1024px) {
+  .bento-grid { grid-template-columns: repeat(2, 1fr); }
+  .bento-span-2-col { grid-column: span 1; }
+}
+
+@media (max-width: 640px) {
+  .bento-grid { grid-template-columns: 1fr; }
+  .bento-span-2-col { grid-column: span 1; }
+  .bento-span-2-row { grid-row: span 1; }
+}
+
+/* ============================================================
+   SIDEBAR + CONTENT LAYOUT (DESIGN.txt §3.6)
+   ============================================================ */
+.layout-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.layout-sidebar {
+  position: sticky;
+  top: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border-primary);
+  overflow-y: auto;
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+  z-index: var(--z-sticky);
+}
+
+[dir="rtl"] .layout-sidebar {
+  border-right: none;
+  border-left: 1px solid var(--border-primary);
+}
+
+.layout-content {
+  flex: 1;
+  min-width: 0;
+  padding-top: var(--navbar-height);
+}
+
+/* Mobile: sidebar hidden off-screen */
+@media (max-width: 768px) {
+  .layout-sidebar {
+    position: fixed;
+    left: 0;
+    transform: translateX(-100%);
+  }
+  [dir="rtl"] .layout-sidebar {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+  }
+  .layout-sidebar.open {
+    transform: translateX(0);
+  }
+  .layout-content {
+    width: 100%;
+  }
+}
+
+/* ============================================================
+   ACCESSIBILITY (§23.1 #9)
+   ============================================================ */
+
+/* Focus visible outlines */
+:focus-visible {
+  outline: 2px solid var(--accent-cta);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* High contrast mode */
+.high-contrast {
+  --text-primary: #000000;
+  --text-secondary: #222222;
+  --bg-primary: #FFFFFF;
+  --border-primary: #000000;
+}
+
+.dark.high-contrast {
+  --text-primary: #FFFFFF;
+  --text-secondary: #EEEEEE;
+  --bg-primary: #000000;
+  --border-primary: #FFFFFF;
+}
+
+/* Font scaling */
+.font-scale-sm { font-size: 14px; }
+.font-scale-md { font-size: 17px; }
+.font-scale-lg { font-size: 20px; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Skip to content link */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  z-index: 10000;
+  padding: 12px 24px;
+  background: var(--accent-cta);
+  color: white;
+  font-weight: 700;
+  transition: top var(--transition-fast);
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* ============================================================
+   CUSTOM SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-secondary);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ============================================================
+   HERO SECTION GLOW (DESIGN.txt §1.6: subtle radial gradient)
+   ============================================================ */
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: var(--hero-glow);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+.container {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.section-padding {
+  padding: var(--space-4xl) 0;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.truncate-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.truncate-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ============================================================
+   Q17: NEUMORPHISM — Pressed voting/ranking buttons
+   box-shadow: 6px 6px 12px #b8bec7, -6px -6px 12px #ffffff
+   ============================================================ */
+.neu-btn {
+  background: var(--bg-secondary);
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: 14px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 6px 6px 12px #b8bec7, -6px -6px 12px #ffffff;
+  transition: all var(--transition-base);
+}
+
+.neu-btn:active,
+.neu-btn.pressed {
+  box-shadow: inset 4px 4px 8px #b8bec7, inset -4px -4px 8px #ffffff;
+  transform: scale(0.98);
+}
+
+[data-theme="dark"] .neu-btn {
+  box-shadow: 6px 6px 12px #050510, -6px -6px 12px #15152e;
+}
+
+[data-theme="dark"] .neu-btn:active,
+[data-theme="dark"] .neu-btn.pressed {
+  box-shadow: inset 4px 4px 8px #050510, inset -4px -4px 8px #15152e;
+}
+
+/* ============================================================
+   Q18: BRUTALIST DESIGN — Sharp angles, 3px borders, rotation
+   For Myth Autopsy Board: cognitive shock effect
+   ============================================================ */
+.brutalist {
+  border-radius: 0 !important;
+  border: 3px solid var(--text-primary) !important;
+  transform: rotate(-1deg);
+  background: var(--bg-primary);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.brutalist-card {
+  border-radius: 0;
+  border: 3px solid #000;
+  padding: var(--space-lg);
+  transform: rotate(-1deg);
+  transition: transform var(--transition-fast);
+}
+
+.brutalist-card:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+[data-theme="dark"] .brutalist-card {
+  border-color: #F1F1EE;
+}
+
+/* ============================================================
+   Q19: MINIMALIST — Massive padding (80px), reduced colors
+   For Religion Hub meditation/meaning-making sections
+   ============================================================ */
+.minimalist-section {
+  padding: var(--space-4xl) var(--space-lg);
+  max-width: 680px;
+  margin: 0 auto;
+  color: var(--text-primary);
+}
+
+.minimalist-section p {
+  font-size: 19px;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  max-width: 65ch;
+}
+
+/* ============================================================
+   Q21-22: CLAYMORPHISM — border-radius: 24px+, candy colors
+   translateY(4px) on press for Brief RCOPE interface
+   ============================================================ */
+.clay-card {
+  background: var(--bg-card);
+  border-radius: 24px;
+  border: 1px solid var(--border-primary);
+  padding: var(--space-lg);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06),
+              inset 0 -2px 6px rgba(0, 0, 0, 0.02);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.clay-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1),
+              inset 0 -2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.clay-btn {
+  border-radius: 20px;
+  padding: 12px 28px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.clay-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.clay-btn-positive { background: #C8F7DC; color: #065F46; }
+.clay-btn-negative { background: #FDE8E8; color: #991B1B; }
+.clay-btn-neutral  { background: #E0E7FF; color: #3730A3; }
+
+/* ============================================================
+   Q23: RETRO / Y2K — Neon hot pink #FF1493 + cyan #00E5FF
+   For DeepReal youth engagement (18-30 age group)
+   ============================================================ */
+.retro-accent {
+  --retro-pink: #FF1493;
+  --retro-cyan: #00E5FF;
+}
+
+.retro-glow {
+  text-shadow: 0 0 10px var(--retro-pink), 0 0 40px var(--retro-cyan);
+}
+
+.retro-border {
+  border: 2px solid var(--retro-cyan);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.3), inset 0 0 15px rgba(255, 20, 147, 0.1);
+}
+
+.retro-badge {
+  background: linear-gradient(135deg, #FF1493, #00E5FF);
+  color: white;
+  font-weight: 800;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================
+   Q7: DARK LUXURY — CTCS Assessment Environment
+   Colors #0A0A0A bg, #F1F1EE text — strict contemplative
+   ============================================================ */
+.dark-luxury {
+  background: #0A0A0A !important;
+  color: #F1F1EE !important;
+}
+
+.dark-luxury .glass-card {
+  background: #111111;
+  border-color: rgba(241, 241, 238, 0.08);
+}
+
+.dark-luxury h1,
+.dark-luxury h2,
+.dark-luxury h3,
+.dark-luxury h4 {
+  color: #F1F1EE;
+}
+
+.dark-luxury p {
+  color: #999999;
+}
+
+.dark-luxury .btn-primary {
+  background: #F1F1EE;
+  color: #0A0A0A;
+}
+
+/* ============================================================
+   Q24: 60-30-10 RULE — Crisis button accent enforcement
+   Only crisis/emergency elements use full danger accent
+   ============================================================ */
+.accent-crisis {
+  background: var(--color-danger) !important;
+  color: white !important;
+  font-weight: 700;
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+  animation: crisis-pulse 2s ease-in-out infinite;
+}
+
+@keyframes crisis-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(239, 68, 68, 0.6); }
+}
+
+/* ============================================================
+   Q25: GRADIENT TEXT on Expert Keywords
+   background-clip: text + -webkit-text-fill-color: transparent
+   ============================================================ */
+.text-gradient-expert {
+  background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 50%, #10B981 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+/* ============================================================
+   Q27: THEME TRANSITION — Prevent flash of wrong theme
+   0.3s ease for background and color on ALL elements
+   ============================================================ */
+*,
+*::before,
+*::after {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Exclude elements where transition causes performance issues */
+.no-theme-transition,
+.no-theme-transition *,
+canvas,
+video,
+img,
+svg path {
+  transition: none !important;
+}
+
+/* ============================================================
+   Q30: READING WIDTH — max-width 65ch for body text
+   Prevents eye fatigue on long explanations
+   ============================================================ */
+.reading-width {
+  max-width: 65ch;
+}
+
+article p,
+.exercise-content p,
+.reading-content p {
+  max-width: 65ch;
+}
+
+/* ============================================================
+   Q32: ASYMMETRIC SPLIT — grid 3fr 2fr (60/40)
+   For Evidence Ladder: stronger visual focus on evidence
+   ============================================================ */
+.asymmetric-split {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .asymmetric-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   Q29: F-PATTERN — 68% left / 28% right for articles
+   ============================================================ */
+.f-pattern {
+  display: grid;
+  grid-template-columns: 68% 28%;
+  gap: 4%;
+}
+
+@media (max-width: 768px) {
+  .f-pattern {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   Q33: MASONRY LAYOUT — columns:3 → columns:1 on mobile
+   For Religion Hub scenario cards
+   ============================================================ */
+.masonry-grid {
+  columns: 3;
+  column-gap: var(--space-md);
+}
+
+.masonry-grid > * {
+  break-inside: avoid;
+  margin-bottom: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .masonry-grid {
+    columns: 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry-grid {
+    columns: 1;
+  }
+}
+
+/* ============================================================
+   Q34: FULL-PAGE SCROLL SNAP — height:100vh + scroll-snap
+   For MIST-20 questionnaire — one question at a time
+   ============================================================ */
+.scroll-snap-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scroll-snap-page {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+}
+
+/* ============================================================
+   Q39: MEGA MENU — z-index:9000, multi-column, slide down
+   For Top 100 Sources directory
+   ============================================================ */
+.mega-menu {
+  position: fixed;
+  top: var(--navbar-height, 60px);
+  right: 16px;
+  left: auto;
+  width: min(720px, calc(100vw - 32px));
+  max-height: calc(100vh - var(--navbar-height, 60px) - 24px);
+  overflow-y: auto;
+  z-index: 9000;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  padding: var(--space-xl);
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.mega-menu.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mega-menu-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .mega-menu-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   Q40: DOT NAVIGATION — centered, active dot enlarges 1.5x
+   For SIFT Method step sequence
+   ============================================================ */
+.dot-nav {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: var(--z-sticky);
+}
+
+.dot-nav-item {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border-secondary);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  padding: 0;
+}
+
+.dot-nav-item.active {
+  width: 12px;
+  height: 12px;
+  background: var(--accent-cta);
+  box-shadow: 0 0 8px var(--accent-cta-glow);
+}
+
+/* ============================================================
+   Q42: PARALLAX SCROLLING — background 0.3x speed
+   ============================================================ */
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transform: translateZ(-1px) scale(1.3);
+  pointer-events: none;
+}
+
+/* ============================================================
+   Q46: SCROLL-TRIGGERED STAGGER — IntersectionObserver 0.1s
+   For Myth Autopsy progressive dismantle
+   ============================================================ */
+.stagger-reveal > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-reveal.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+.stagger-reveal.visible > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.stagger-reveal.visible > *:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.stagger-reveal.visible > *:nth-child(4) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+.stagger-reveal.visible > *:nth-child(5) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+.stagger-reveal.visible > *:nth-child(6) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+.stagger-reveal.visible > *:nth-child(7) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+.stagger-reveal.visible > *:nth-child(8) { transition-delay: 0.7s; opacity: 1; transform: translateY(0); }
+
+/* ============================================================
+   Q47: WAVEFORM ANIMATION — Audio playing pulse
+   For Expert Voice Capsule
+   ============================================================ */
+@keyframes waveform {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+}
+
+.waveform-bars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 24px;
+}
+
+.waveform-bar {
+  width: 3px;
+  height: 100%;
+  background: var(--accent-cta);
+  border-radius: 2px;
+  animation: waveform 0.8s ease-in-out infinite;
+}
+
+.waveform-bar:nth-child(2) { animation-delay: 0.1s; }
+.waveform-bar:nth-child(3) { animation-delay: 0.2s; }
+.waveform-bar:nth-child(4) { animation-delay: 0.3s; }
+.waveform-bar:nth-child(5) { animation-delay: 0.15s; }
+
+.waveform-bars:not(.playing) .waveform-bar {
+  animation-play-state: paused;
+}
+
+/* ============================================================
+   Q49: TEXT REVEAL — Word-by-word with cubic-bezier
+   For Bias Reflection Minute
+   ============================================================ */
+@keyframes wordReveal {
+  from { opacity: 0; transform: translateY(8px) rotateX(-10deg); }
+  to   { opacity: 1; transform: translateY(0) rotateX(0); }
+}
+
+.text-reveal-word {
+  display: inline-block;
+  opacity: 0;
+  animation: wordReveal 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ============================================================
+   Q50: TAB NAVIGATION — Sliding underline with translateX
+   For Peer Pair Review comparison panels
+   ============================================================ */
+.tab-nav {
+  display: flex;
+  position: relative;
+  border-bottom: 2px solid var(--border-primary);
+}
+
+.tab-nav-item {
+  padding: 12px 24px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color var(--transition-base);
+  position: relative;
+}
+
+.tab-nav-item.active {
+  color: var(--accent-cta);
+}
+
+.tab-nav-underline {
+  position: absolute;
+  bottom: -2px;
+  height: 2px;
+  background: var(--accent-cta);
+  transition: transform var(--transition-smooth), width var(--transition-smooth);
+}
+
+/* ============================================================
+   Q51: HORIZONTAL SCROLL — Pinned axis for cards
+   For Negative Coping Awareness cards
+   ============================================================ */
+.horizontal-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-scroll > * {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+/* ============================================================
+   Q52: STICKY VERIFICATION — position:sticky for checklist
+   Stays alongside reading of misleading claim
+   ============================================================ */
+.sticky-checklist {
+  position: sticky;
+  top: 80px;
+  align-self: start;
+}
+
+/* ============================================================
+   Q53: SCROLL PROGRESS — scaleX bar linked to progress
+   Already defined above, extending with 14-day variant
+   ============================================================ */
+.progress-14day {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: var(--z-progress);
+  pointer-events: none;
+}
+
+.progress-14day-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-deepreal), var(--accent-mentalhealth), var(--accent-religionhub));
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* ============================================================
+   Q55: FLUID TYPOGRAPHY — clamp() enforcement
+   Already in :root, adding responsive display guard
+   ============================================================ */
+.fluid-heading {
+  font-size: clamp(40px, 5vw, 64px);
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ============================================================
+   Q56: DISPLAY TYPOGRAPHY — Danger weight
+   letter-spacing: -0.04em, line-height: 1.05
+   For dangerous awareness messages in DeepReal
+   ============================================================ */
+.text-danger-weight {
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  font-weight: 800;
+  font-family: 'Clash Display', sans-serif;
+}
+
+/* ============================================================
+   Q59: EVIDENCE LADDER S-TIER HIGHLIGHT
+   scale(1.04) on the targeted tier (Systematic Review)
+   ============================================================ */
+.evidence-tier-highlight {
+  transform: scale(1.04);
+  border: 2px solid var(--accent-mentalhealth);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+/* ============================================================
+   Q60: TESTIMONIALS MARQUEE — Opposite speed rows
+   Expert reviews scrolling infinitely
+   ============================================================ */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.marquee-track {
+  display: flex;
+  gap: var(--space-md);
+  width: max-content;
+  animation: marquee-left 30s linear infinite;
+}
+
+.marquee-track-reverse {
+  animation: marquee-right 35s linear infinite;
+}
+
+.marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* ============================================================
+   Q61: CARD 16/9 RATIO — overflow:hidden for images
+   For Source-of-the-Day image cards
+   ============================================================ */
+.card-image-16-9 {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.card-image-16-9 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================
+   Q62: LINE CLAMP — Trim long titles to 2 lines
+   ============================================================ */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ============================================================
+   Q38: BODY OVERFLOW LOCK — Freeze bg when mobile menu open
+   ============================================================ */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ============================================================
+   Q65-66: BREADCRUMBS — ol structure, current page not link
+   ============================================================ */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--font-small);
+  color: var(--text-muted);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumbs li::after {
+  content: "/";
+  margin-left: 8px;
+  color: var(--text-caption);
+}
+
+.breadcrumbs li:last-child::after {
+  content: "";
+}
+
+.breadcrumbs li:last-child {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ============================================================
+   Q103: ACCESSIBILITY LAYER — High contrast, keyboard
+   aria-labels handled in components, CSS focus ring
+   ============================================================ */
+[role="tab"] {
+  cursor: pointer;
+}
+
+[role="tab"][aria-selected="true"] {
+  font-weight: 700;
+  color: var(--accent-cta);
+  border-bottom: 2px solid var(--accent-cta);
+}
+
+[role="tabpanel"]:focus {
+  outline: none;
+}
+
+/* ============================================================
+   Q86: EMOTIONAL TRIGGER HIGHLIGHTING — Anger/fear words
+   NLP-colored spans for critical analysis teaching
+   ============================================================ */
+.emotion-anger {
+  background: linear-gradient(180deg, transparent 60%, rgba(239, 68, 68, 0.3) 60%);
+  font-weight: 600;
+}
+
+.emotion-fear {
+  background: linear-gradient(180deg, transparent 60%, rgba(245, 158, 11, 0.3) 60%);
+  font-weight: 600;
+}
+
+.emotion-sadness {
+  background: linear-gradient(180deg, transparent 60%, rgba(59, 130, 246, 0.3) 60%);
+  font-weight: 600;
+}
+
+.emotion-disgust {
+  background: linear-gradient(180deg, transparent 60%, rgba(139, 92, 246, 0.3) 60%);
+  font-weight: 600;
+}
+
+/* ============================================================
+   Q3: CONFIDENCE RANGE SLIDER — Custom styling
+   0-100% slider for TCE measurement
+   ============================================================ */
+.confidence-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #EF4444 0%, #F59E0B 50%, #10B981 100%);
+  outline: none;
+}
+
+.confidence-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--accent-cta);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: box-shadow var(--transition-fast);
+}
+
+.confidence-slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 2px 12px rgba(0, 102, 255, 0.4);
+}
+
+.confidence-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--accent-cta);
+  cursor: pointer;
+}
+
+/* ============================================================
+   Q57: ARABIC FONT PAIRING — Religion Hub
+   Heading: Noto Kufi Arabic (geometric, modern)
+   Body: Noto Naskh Arabic (readable, traditional)
+   Scale: 1.25× multiplier for Arabic script readability
+   ============================================================ */
+[dir="rtl"] {
+  font-family: 'Noto Naskh Arabic', 'Satoshi', sans-serif;
+  letter-spacing: 0;
+  line-height: 1.9;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] .text-display {
+  font-family: 'Noto Kufi Arabic', 'Clash Display', sans-serif;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+[dir="rtl"] .badge {
+  font-family: 'Noto Kufi Arabic', sans-serif;
+  font-size: calc(var(--font-caption) * 1.1);
+}
+
+[dir="rtl"] .glass-card p,
+[dir="rtl"] .reading-width {
+  font-size: calc(1em * 1.15); /* 15% larger for Arabic readability */
+  line-height: 2;
+}
+
+/* Religion Hub Arabic accent */
+.card-religionhub[dir="rtl"],
+[dir="rtl"] .card-religionhub {
+  font-family: 'Noto Kufi Arabic', sans-serif;
+}
+
+/* ============================================================
+   Q31: Z-PATTERN LAYOUT — CTA Placement
+   Logo (TL) → Nav (TR) → Content (BL) → CTA (BR)
+   ============================================================ */
+.z-pattern-hero {
+  display: grid;
+  grid-template-areas:
+    "logo nav"
+    "content cta";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 80vh;
+  align-items: center;
+}
+
+.z-pattern-hero .z-logo { grid-area: logo; }
+.z-pattern-hero .z-nav { grid-area: nav; text-align: right; }
+.z-pattern-hero .z-content { grid-area: content; }
+.z-pattern-hero .z-cta {
+  grid-area: cta;
+  text-align: right;
+  align-self: end;
+  padding-bottom: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .z-pattern-hero {
+    grid-template-areas: "logo" "content" "cta";
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .z-pattern-hero .z-nav { display: none; }
+  .z-pattern-hero .z-cta { text-align: center; }
+}
+
+/* ============================================================
+   Q90: TIME FRICTION GATE — Countdown animation
+   ============================================================ */
+@keyframes friction-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.friction-countdown {
+  animation: friction-pulse 1.5s ease-in-out infinite;
+}
+
+/* ============================================================
+   Q92: DRIP UI LOCK — Day-locked exercise cards
+   ============================================================ */
+.drip-locked {
+  position: relative;
+  opacity: 0.5;
+  pointer-events: none;
+  filter: grayscale(0.4);
+}
+
+.drip-locked::after {
+  content: '🔒';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+  z-index: 2;
+}
+
+.drip-unlocked {
+  opacity: 1;
+  pointer-events: auto;
+  filter: none;
+  animation: fadeInUp 0.3s ease;
+}
+
+/* ============================================================
+   Q115: DEPLOYMENT READINESS BADGES
+   ============================================================ */
+.readiness-pass {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--color-success);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.readiness-fail {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--color-danger);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.readiness-pending {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--color-warning);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+/* ============================================================
+   Q116: DEFENSE PACK EXPORT BUTTON
+   ============================================================ */
+.btn-export {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--accent-cta), var(--accent-religionhub));
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 16px rgba(0, 102, 255, 0.2);
+}
+
+.btn-export:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(0, 102, 255, 0.3);
+}
+
+/* ============================================================
+   Q88: LLM PROVIDER STATUS INDICATOR
+   ============================================================ */
+.provider-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.provider-active {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--color-success);
+}
+
+.provider-active::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-success);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+.provider-inactive {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--color-danger);
+}
+
+.provider-inactive::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-danger);
+}
+
+/* ============================================================
+   PREMIUM MICRO-ANIMATIONS — Doctor-Proof Academic Quality
+   Philosophy: Egyptian Awareness Library believes in gentle,
+   purposeful movement that mirrors psychological safety.
+   Every animation is subtle enough for extended reading
+   but present enough to feel alive and premium.
+   ============================================================ */
+
+/* ── Keyframes ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+@keyframes gentlePulse {
+  0%, 100% { box-shadow: 0 0 0 0 var(--accent-cta-glow); }
+  50% { box-shadow: 0 0 0 8px transparent; }
+}
+
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* ── Utility Animation Classes ── */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease both;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--accent-cta-glow) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.animate-gentle-pulse {
+  animation: gentlePulse 2.5s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: floatSoft 3s ease-in-out infinite;
+}
+
+/* ── Staggered Entrance Delays ── */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.10s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.20s; }
+.stagger-5 { animation-delay: 0.25s; }
+.stagger-6 { animation-delay: 0.30s; }
+.stagger-7 { animation-delay: 0.35s; }
+.stagger-8 { animation-delay: 0.40s; }
+
+/* ── Premium Hover Micro-Interactions ── */
+.hover-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  will-change: transform;
+}
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.hover-glow {
+  transition: box-shadow var(--transition-base);
+}
+.hover-glow:hover {
+  box-shadow: 0 0 24px var(--accent-cta-glow);
+}
+
+.hover-scale {
+  transition: transform var(--transition-fast);
+  will-change: transform;
+}
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+.hover-shine {
+  position: relative;
+  overflow: hidden;
+}
+.hover-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.06) 45%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.06) 55%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+.hover-shine:hover::after {
+  transform: translateX(100%);
+}
+
+/* ── Focus Ring (Accessibility + Premium feel) ── */
+.focus-ring:focus-visible {
+  outline: 2px solid var(--accent-cta);
+  outline-offset: 2px;
+  border-radius: var(--radius-md);
+}
+
+/* ============================================================
+   PREMIUM TYPOGRAPHY — Theme-Aware Font System
+   Headings use --font-heading-en/ar per theme
+   Body uses --font-body-en/ar per theme
+   Labels use --font-accent with tracking overrides
+   ============================================================ */
+
+/* ── English Headings ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading-en);
+  letter-spacing: var(--heading-letter-spacing);
+  font-weight: var(--heading-weight);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Arabic Override ── */
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] h5,
+[dir="rtl"] h6,
+.heading-ar {
+  font-family: var(--font-heading-ar);
+}
+
+[dir="rtl"] body,
+[dir="rtl"] p,
+[dir="rtl"] span,
+[dir="rtl"] li,
+.body-ar {
+  font-family: var(--font-body-ar);
+}
+
+/* ── Label / Caption Typography ── */
+.label-text {
+  font-family: var(--font-accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--label-letter-spacing);
+  text-transform: var(--label-transform);
+}
+
+/* ── Reduced Motion: respect user preferences ── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-fade-in,
+  .animate-scale-in,
+  .animate-slide-in-right,
+  .animate-shimmer,
+  .animate-breathe,
+  .animate-gentle-pulse,
+  .animate-float {
+    animation: none !important;
+  }
+  .hover-lift:hover,
+  .hover-scale:hover {
+    transform: none !important;
+  }
+  .hover-shine::after {
+    display: none;
+  }
+}
+
+/* ============================================================
+   MOBILE-NATIVE UI — 13 Expert Methods
+   
+   Method  1: Touch-friendly tap targets (≥48px, Apple HIG + Google MD3)
+   Method  2: Thumb-zone optimization (critical actions in bottom 1/3)
+   Method  3: Fluid responsive typography (clamp() scaling)
+   Method  4: Safe area insets (env() for notched devices)
+   Method  5: Smooth momentum scrolling (-webkit-overflow-scrolling)
+   Method  6: Scroll-snap for horizontal card carousels
+   Method  7: Input zoom prevention (16px min font-size on inputs)
+   Method  8: Dynamic viewport height (dvh/svh for mobile)
+   Method  9: Touch feedback (:active states with haptic-feel)
+   Method 10: Bottom sheet / drawer pattern
+   Method 11: Swipe-friendly spacing (generous mobile padding)
+   Method 12: Consistent card aspect ratios on mobile
+   Method 13: Sticky mobile bottom CTA bar
+   ============================================================ */
+
+/* ── Method 4: Safe area insets (notched devices: iPhone X+) ── */
+html {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* ── Method 5: Smooth momentum scrolling (all scroll containers) ── */
+.scroll-container,
+.layout-sidebar,
+.crisis-panel,
+[style*="overflow"],
+[class*="overflow"] {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* ── Method 6: Scroll-snap horizontal card carousel ── */
+.mobile-snap-scroll {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 16px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 4px 0;
+}
+.mobile-snap-scroll::-webkit-scrollbar {
+  display: none;
+}
+.mobile-snap-scroll > * {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* ── Method 7: Input zoom prevention (iOS zoom on focus < 16px) ── */
+input,
+select,
+textarea {
+  font-size: max(16px, 1em);
+  border-radius: var(--radius-md);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* ── Method 9: Touch feedback (:active haptic-feel states) ── */
+@media (pointer: coarse) {
+  .glass-card:active {
+    transform: scale(0.98);
+    transition-duration: 80ms;
+  }
+  .btn-primary:active,
+  .btn-secondary:active {
+    transform: scale(0.96);
+    transition-duration: 80ms;
+  }
+  /* Disable hover effects on touch — they cause sticky states */
+  .glass-card:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+  }
+  .glass-card:hover::after {
+    transform: translateX(-100%);
+  }
+  /* Enlarge all interactive elements to meet 48px touch target */
+  button,
+  [role="button"],
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* ── Method 10: Bottom sheet drawer utility ── */
+.bottom-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-modal);
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-primary);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  padding: var(--space-lg);
+  padding-bottom: calc(var(--space-lg) + env(safe-area-inset-bottom));
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.15);
+  max-height: 85vh;
+  max-height: 85dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.bottom-sheet.open {
+  transform: translateY(0);
+}
+.bottom-sheet-handle {
+  width: 40px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--border-secondary);
+  margin: 0 auto 16px;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   MOBILE BREAKPOINT ≤ 768px — Methods 1, 2, 3, 8, 11, 12, 13
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* ── Method 3: Fluid typography scale for mobile ── */
+  :root {
+    --font-display: clamp(32px, 10vw, 56px);
+    --font-h1: clamp(28px, 8vw, 40px);
+    --font-h2: clamp(22px, 6vw, 28px);
+    --font-h3: clamp(18px, 4.5vw, 22px);
+    --font-h4: 17px;
+    --font-body: 15px;
+    --font-small: 13px;
+    --font-caption: 11px;
+    --navbar-height: 56px;
+  }
+
+  /* ── Method 8: Dynamic viewport height (fixes iOS Safari 100vh bug) ── */
+  .hero-fullscreen,
+  [style*="min-height: 100vh"] {
+    min-height: 100dvh;
+    min-height: -webkit-fill-available;
+  }
+
+  /* ── Method 11: Swipe-friendly horizontal padding ── */
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  .section-padding {
+    padding: var(--space-2xl) 0;
+  }
+
+  /* ── Method 1: Touch-friendly tap targets (≥48px) ── */
+  .btn-primary,
+  .btn-secondary,
+  .btn-deepreal,
+  .btn-mentalhealth,
+  .btn-religionhub {
+    min-height: 48px;
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+
+  /* Badges — bigger touch targets on mobile */
+  .badge {
+    padding: 4px 12px;
+    font-size: 12px;
+    min-height: 28px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* ── Method 12: Consistent card aspect ratios ── */
+  .glass-card {
+    border-radius: var(--radius-md);
+  }
+
+  /* Bento grid → single column with consistent spacing */
+  .bento-grid {
+    gap: 12px;
+  }
+
+  /* ── Method 2: Thumb-zone optimization — important actions visible ── */
+  /* Push CTAs toward bottom of visible area on mobile */
+  .cta-bottom-mobile {
+    position: sticky;
+    bottom: 0;
+    padding-bottom: env(safe-area-inset-bottom);
+    z-index: 10;
+  }
+
+  /* ── Footer mobile optimization ── */
+  footer .container {
+    padding: 0 var(--space-md);
+  }
+  footer .grid {
+    gap: var(--space-lg);
+  }
+
+  /* ── Navbar mobile adjustments ── */
+  nav .container {
+    padding: 0 var(--space-sm);
+  }
+
+  /* ── Exercise engine mobile layout ── */
+  .glass-card[style*="max-width: 800px"] {
+    border-radius: 0;
+    margin: 0 calc(-1 * var(--space-md));
+    width: calc(100% + 2 * var(--space-md));
+  }
+
+  /* ── Crisis panel mobile ── */
+  .crisis-panel {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+  }
+  .crisis-panel .grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  /* ── Scroll reveal — shorter distance on mobile ── */
+  .animate-on-scroll {
+    transform: translateY(16px);
+  }
+
+  /* ── Stagger — faster cascade on mobile ── */
+  .stagger-1 { transition-delay: 0.03s; }
+  .stagger-2 { transition-delay: 0.06s; }
+  .stagger-3 { transition-delay: 0.09s; }
+  .stagger-4 { transition-delay: 0.12s; }
+  .stagger-5 { transition-delay: 0.15s; }
+  .stagger-6 { transition-delay: 0.18s; }
+}
+
+/* ── Method 13: Sticky mobile bottom CTA bar ── */
+.mobile-sticky-cta {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobile-sticky-cta {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-sticky);
+    padding: 12px var(--space-md);
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border-primary);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobile-sticky-cta .btn-primary {
+    flex: 1;
+    justify-content: center;
+  }
+  /* Add bottom padding to body so content isn't hidden behind sticky bar */
+  body:has(.mobile-sticky-cta) {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom));
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   SMALL MOBILE ≤ 480px — Extra-tight adjustments
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  :root {
+    --font-display: clamp(26px, 10vw, 36px);
+    --font-h1: clamp(24px, 8vw, 32px);
+    --font-h2: clamp(20px, 6vw, 26px);
+    --font-h3: 17px;
+    --font-body: 15px;
+  }
+
+  .container {
+    padding: 0 var(--space-sm);
+  }
+
+  .section-padding {
+    padding: var(--space-xl) 0;
+  }
+
+  /* Cards: edge-to-edge on small screens */
+  .glass-card {
+    border-radius: var(--radius-sm);
+  }
+
+  /* Hero: tighter on small screens */
+  [style*="padding: 120px"] {
+    padding-top: 80px !important;
+    padding-bottom: 48px !important;
+  }
+
+  /* 2-column stat grids → single column */
+  .grid[style*="repeat(auto-fit"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   LANDSCAPE MOBILE — Prevent awkward stretching
+   ════════════════════════════════════════════════════════════════ */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-fullscreen,
+  [style*="min-height: 100vh"] {
+    min-height: auto;
+    padding: 48px 0;
+  }
+  .mobile-sticky-cta {
+    padding: 8px var(--space-md);
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   TABLET 769px–1024px — Method 12 card layouts
+   ════════════════════════════════════════════════════════════════ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    padding: 0 var(--space-lg);
+  }
+  .bento-grid {
+    gap: 16px;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   TOUCH vs MOUSE DETECTION — Fine-tune interactions
+   ════════════════════════════════════════════════════════════════ */
+@media (hover: hover) and (pointer: fine) {
+  /* Desktop: keep all hover effects */
+  .glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--border-secondary);
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   HIGH-DPI SCREENS — Sharper borders + text
+   ════════════════════════════════════════════════════════════════ */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .glass-card {
+    border-width: 0.5px;
+  }
+  .btn-primary,
+  .btn-secondary {
+    border-width: 0.5px;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   MOBILE-NATIVE POLISH — Advanced refinements
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Scroll containment (prevent accidental iOS back-swipe) ── */
+html {
+  overscroll-behavior-x: none;
+}
+body {
+  overscroll-behavior-y: contain;
+}
+
+/* ── Smooth page scroll ── */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ── Mobile table horizontal scroll wrapper ── */
+.table-scroll-mobile {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+@media (max-width: 768px) {
+  .table-scroll-mobile {
+    margin: 0 calc(-1 * var(--space-md));
+    padding: 0 var(--space-md);
+  }
+}
+
+/* ── Badge horizontal scroll on mobile (exercise cards) ── */
+@media (max-width: 768px) {
+  .flex-wrap.gap-2 {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 4px;
+  }
+  .flex-wrap.gap-2::-webkit-scrollbar {
+    display: none;
+  }
+  .flex-wrap.gap-2 > .badge {
+    flex-shrink: 0;
+  }
+}
+
+/* ── Mobile input focus ring ── */
+@media (max-width: 768px) {
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: 2px solid var(--accent-cta);
+    outline-offset: 1px;
+    border-color: var(--accent-cta);
+  }
+}
+
+/* ── Text selection color (brand-aware) ── */
+::selection {
+  background: rgba(0, 102, 255, 0.2);
+  color: var(--text-primary);
+}
+
+/* ── Smooth focus transitions for all interactive elements ── */
+button,
+a,
+input,
+select,
+textarea,
+[role="button"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Mobile overscroll decorative gradient ── */
+@media (max-width: 768px) {
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: env(safe-area-inset-top);
+    background: var(--bg-primary);
+    z-index: 9999;
+  }
+}
+
+/* ── Charts container: prevent overflow on mobile ── */
+@media (max-width: 768px) {
+  .recharts-wrapper {
+    font-size: 11px !important;
+  }
+}
+
+/* ── Disclaimer bars: mobile adjustments ── */
+@media (max-width: 768px) {
+  .disclaimer-bar {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+  }
+}
+
+/* ── Calendar grid mobile adjustments ── */
+@media (max-width: 480px) {
+  .grid[style*="repeat(7"] {
+    gap: 4px !important;
+  }
+  .grid[style*="repeat(7"] > div {
+    padding: 6px 2px !important;
+  }
+  .grid[style*="repeat(7"] span[style*="18px"] {
+    font-size: 14px !important;
+  }
+}
+
+/* ============================================================
+   BEHAVIORAL UX ANIMATIONS — Persuasive Design Hooks
+   ============================================================ */
+@keyframes ux-pulse { 0%,100%{box-shadow:0 0 0 0 var(--accent-cta-glow)} 50%{box-shadow:0 0 0 12px transparent} }
+.ux-pulse { animation: ux-pulse 2s ease-in-out infinite; }
+
+@keyframes ux-glow { 0%,100%{text-shadow:0 0 4px transparent} 50%{text-shadow:0 0 12px var(--accent-cta-glow)} }
+.ux-glow { animation: ux-glow 3s ease-in-out infinite; }
+
+@keyframes ux-shimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+.ux-shimmer { background: linear-gradient(90deg, transparent 30%, rgba(255,255,255,0.08) 50%, transparent 70%); background-size: 200% 100%; animation: ux-shimmer 2.5s infinite; }
+
+@keyframes ux-shake { 0%,100%{transform:translateX(0)} 10%,30%,50%,70%,90%{transform:translateX(-3px)} 20%,40%,60%,80%{transform:translateX(3px)} }
+.ux-shake { animation: ux-shake 0.6s ease-in-out; }
+
+@keyframes ux-bounce { 0%{transform:scale(0.3);opacity:0} 50%{transform:scale(1.05)} 70%{transform:scale(0.95)} 100%{transform:scale(1);opacity:1} }
+.ux-bounce { animation: ux-bounce 0.6s cubic-bezier(0.34,1.56,0.64,1); }
+
+@keyframes ux-float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+.ux-float { animation: ux-float 3s ease-in-out infinite; }
+
+@keyframes ux-gradient { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+.ux-gradient { background-size: 200% 200%; animation: ux-gradient 4s ease infinite; }
+
+@keyframes ux-scale-in { from{transform:scale(0.85);opacity:0} to{transform:scale(1);opacity:1} }
+.ux-scale-in { animation: ux-scale-in 0.5s cubic-bezier(0.34,1.56,0.64,1) forwards; }
+
+@keyframes ux-slide-up { from{transform:translateY(30px);opacity:0} to{transform:translateY(0);opacity:1} }
+.ux-slide-up { animation: ux-slide-up 0.5s ease-out forwards; }
+
+@keyframes ux-breathe { 0%,100%{opacity:0.6;transform:scale(1)} 50%{opacity:1;transform:scale(1.02)} }
+.ux-breathe { animation: ux-breathe 4s ease-in-out infinite; }
+
+@keyframes ux-wiggle { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-3deg)} 75%{transform:rotate(3deg)} }
+.ux-wiggle { animation: ux-wiggle 1s ease-in-out; }
+
+@keyframes ux-ripple { 0%{box-shadow:0 0 0 0 var(--accent-cta-glow)} 100%{box-shadow:0 0 0 20px transparent} }
+.ux-ripple:active { animation: ux-ripple 0.4s ease-out; }
+
+@keyframes ux-streak { 0%{border-color:var(--accent-cta)} 50%{border-color:var(--color-warning);box-shadow:0 0 15px var(--accent-cta-glow)} 100%{border-color:var(--accent-cta)} }
+.ux-streak { animation: ux-streak 2s ease-in-out infinite; }
+
+@keyframes ux-blink { 0%,100%{opacity:1} 50%{opacity:0} }
+.ux-cursor::after { content:'|'; animation: ux-blink 1s step-end infinite; color: var(--accent-cta); }
+
+@keyframes ux-fill { from{width:0%} }
+.ux-fill { animation: ux-fill 1.5s ease-out forwards; }
+
+.ux-stagger > * { opacity: 0; animation: ux-slide-up 0.4s ease-out forwards; }
+.ux-stagger > *:nth-child(1){animation-delay:0.05s} .ux-stagger > *:nth-child(2){animation-delay:0.1s}
+.ux-stagger > *:nth-child(3){animation-delay:0.15s} .ux-stagger > *:nth-child(4){animation-delay:0.2s}
+.ux-stagger > *:nth-child(5){animation-delay:0.25s} .ux-stagger > *:nth-child(6){animation-delay:0.3s}
+.ux-stagger > *:nth-child(7){animation-delay:0.35s} .ux-stagger > *:nth-child(8){animation-delay:0.4s}
+.ux-stagger > *:nth-child(9){animation-delay:0.45s} .ux-stagger > *:nth-child(10){animation-delay:0.5s}
+
+.ux-tilt { transition: transform 0.3s ease; }
+.ux-tilt:hover { transform: perspective(800px) rotateY(-4deg) rotateX(2deg) scale(1.02); }
+
+.ux-magnetic { transition: transform 0.2s ease-out; }
+.ux-magnetic:hover { transform: scale(1.08); }
+
+@keyframes ux-radar { 0%{transform:scale(0.5);opacity:0.8} 100%{transform:scale(2.5);opacity:0} }
+.ux-radar::before { content:''; position:absolute; inset:0; border-radius:50%; border:2px solid var(--accent-cta); animation: ux-radar 2s ease-out infinite; pointer-events:none; }
+
+/* ============================================================
+   CHATBOT — Mobile Responsiveness + Arabic Input Fix
+   Requirements: #20, #27-33
+   ============================================================ */
+
+/* Arabic input auto-direction */
+textarea[dir="rtl"],
+input[dir="rtl"] {
+  text-align: right;
+  font-family: var(--font-body-ar);
+}
+textarea[dir="ltr"],
+input[dir="ltr"] {
+  text-align: left;
+  font-family: var(--font-body-en);
+}
+
+/* Chatbot page mobile layout */
+@media (max-width: 767px) {
+  /* Hide sidebar by default on mobile — shown via JS toggle */
+  .chatbot-sidebar {
+    position: fixed !important;
+    z-index: 50 !important;
+    width: 85vw !important;
+    max-width: 320px !important;
+    height: 100vh !important;
+    box-shadow: var(--shadow-xl) !important;
+  }
+
+  /* Chatbot messages area — full width on mobile */
+  .chatbot-messages {
+    padding: 12px 12px !important;
+  }
+
+  /* Chat bubbles — wider on mobile */
+  .chat-bubble {
+    max-width: 95% !important;
+    font-size: 13px !important;
+  }
+
+  /* Input area — compact on mobile */
+  .chatbot-input {
+    padding: 10px 12px !important;
+  }
+
+  /* Top bar — compact */
+  .chatbot-topbar {
+    padding: 8px 12px !important;
+  }
+
+  /* Example prompts — full width on mobile */
+  .chatbot-examples {
+    padding: 16px 12px !important;
+  }
+}
+
+/* Tablet breakpoint */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .chatbot-sidebar {
+    width: 240px !important;
+  }
+}
+
+/* Chatbot animations */
+@keyframes chatMsgFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Defense QA page mobile */
+@media (max-width: 640px) {
+  .defense-qa-tabs {
+    flex-direction: column !important;
+  }
+  .defense-qa-tabs button {
+    width: 100% !important;
+  }
+}
+
+/* Layer 8 Horrific Text Corruption Animations */
+@keyframes cursed-glitch {
+  0% { transform: rotateX(180deg) translate(0); letter-spacing: normal; filter: drop-shadow(0 0 0 red); }
+  10% { transform: rotateX(180deg) translate(-2px, 2px); letter-spacing: -2px; filter: drop-shadow(2px 0 5px red); }
+  20% { transform: rotateX(180deg) translate(2px, -2px); letter-spacing: 3px; font-family: 'Times New Roman', serif; }
+  30% { transform: rotateX(180deg) translate(-2px, 0); letter-spacing: normal; font-family: 'Courier New', monospace; filter: drop-shadow(-2px 0 5px darkred); }
+  40% { transform: rotateX(180deg) translate(2px, 2px); letter-spacing: 5px; opacity: 0.8; }
+  50% { transform: rotateX(180deg) translate(-2px, -2px); font-family: 'Arial', sans-serif; opacity: 1; }
+  60% { transform: rotateX(180deg) translate(2px, 0); letter-spacing: -3px; font-weight: 100; filter: drop-shadow(0 0 10px red); }
+  70% { transform: rotateX(180deg) translate(-2px, 2px); font-family: 'Impact', sans-serif; font-weight: 900; opacity: 0.7; }
+  80% { transform: rotateX(180deg) translate(2px, -2px); letter-spacing: 4px; font-family: 'Verdana', sans-serif; opacity: 1; }
+  90% { transform: rotateX(180deg) translate(-2px, 0); filter: drop-shadow(0 0 20px darkred); }
+  100% { transform: rotateX(180deg) translate(0); letter-spacing: normal; filter: drop-shadow(0 0 0 red); }
+}
+
+.animate-cursed-glitch {
+  animation: cursed-glitch 0.3s infinite alternate;
+  display: inline-block;
+}
+
+@keyframes final-sentence-fade {
+  from { opacity: 0; filter: blur(20px); transform: scale(0.9); }
+  to { opacity: 1; filter: blur(0); transform: scale(1); text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 40px rgba(255, 0, 0, 0.4); }
+}
+
+.animate-final-sentence {
+  animation: final-sentence-fade 10s ease-in-out forwards;
+}

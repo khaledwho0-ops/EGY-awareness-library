@@ -1,0 +1,59 @@
+{
+  "id": "mh-day-04",
+  "title": "Understanding Depression: Beyond 'Just Feeling Sad'",
+  "titleAr": "فهم الاكتئاب: أبعد من 'مجرد الشعور بالحزن'",
+  "mvp": "mental-health",
+  "day": 4,
+  "duration": 14,
+  "difficulty": "beginner",
+  "category": "emotional_awareness",
+  "bloomLevel": "understand",
+  "learningObjective": "After this exercise, the user will be able to differentiate normal sadness from depression, identify key DSM-5-TR criteria (educational), and challenge 3 common myths.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيتمكن المستخدم من التفريق بين الحزن الطبيعي والاكتئاب.",
+  "content": {
+    "scenario": "Depression is NOT 'just being sad.' According to WHO (2023), depression is characterized by:\n- Persistent low mood or loss of interest (anhedonia) lasting 2+ weeks\n- Accompanied by: changes in sleep, appetite, energy, concentration, or self-worth\n- Significant impairment in daily functioning\n\n**Critical distinctions:**\n- Sad ≠ Depressed (sadness is temporary; depression is persistent)\n- Lazy ≠ Depressed (motivation loss is a SYMPTOM, not a choice)\n- Strong ≠ Not Depressed (depression affects everyone regardless of 'strength')",
+    "scenarioAr": "الاكتئاب ليس 'مجرد حزن.'",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Read each scenario and determine whether it describes normal sadness or may indicate something requiring further attention (NOT diagnosis).",
+      "instructionsAr": "اقرأ كل سيناريو وحدد ما إذا كان يصف حزناً طبيعياً.",
+      "items": [
+        {
+          "id": "dep-1",
+          "text": "A student feels very sad for 3 days after a breakup but gradually starts feeling better. → Normal sadness (proportionate, temporary)",
+          "isCorrect": true,
+          "explanation": "Normal sadness. The sadness is proportionate to the event, temporary (3 days), and shows a trajectory of improvement. This is a healthy emotional response."
+        },
+        {
+          "id": "dep-2",
+          "text": "A student has lost interest in ALL activities for 4 weeks, sleeps 14 hours/day, and can't attend classes. → May indicate something requiring attention",
+          "isCorrect": true,
+          "explanation": "This pattern (duration 4+ weeks, pervasive loss of interest, sleep changes, functional impairment) suggests more than normal sadness. Encouraging professional consultation would be appropriate."
+        },
+        {
+          "id": "dep-3",
+          "text": "A student says 'I'm depressed' because they failed an exam, but is laughing with friends an hour later. → Likely colloquial use, not clinical depression",
+          "isCorrect": true,
+          "explanation": "Using 'depressed' colloquially is common but inaccurate. Clinical depression is persistent (2+ weeks) and pervasive. This appears to be temporary disappointment."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent mental health literacy! You can now distinguish between normal sadness and patterns that may need professional attention. Remember: recognition is NOT diagnosis.",
+      "correctAr": "ممتاز! يمكنك الآن التمييز بين الحزن الطبيعي والأنماط التي قد تحتاج اهتماماً مهنياً.",
+      "incorrect": "Review the key distinctions: duration (temporary vs. persistent), scope (specific vs. pervasive), and impairment (functioning vs. not functioning).",
+      "incorrectAr": "راجع الفروق الأساسية."
+    }
+  },
+  "whatNotToDo": [
+    "Don't diagnose — only trained professionals can diagnose depression",
+    "Don't tell someone with depression to 'cheer up' — this dismisses their experience"
+  ],
+  "keyhunterId": "mh-kh-04",
+  "evidence": "WHO (2023). Depressive disorder (depression). https://www.who.int/news-room/fact-sheets/detail/depression",
+  "safetyNote": "This is educational content. If you or someone you know shows persistent signs, please encourage consultation with a mental health professional. Egypt crisis line: 16328.",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Differentiating sadness from depression builds mental health recognition capability"
+}

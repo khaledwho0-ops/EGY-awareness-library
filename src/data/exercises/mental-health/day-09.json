@@ -1,0 +1,53 @@
+{
+  "id": "mh-day-09",
+  "title": "Culture and Mental Health: The Egyptian Context",
+  "titleAr": "الثقافة والصحة النفسية: السياق المصري",
+  "mvp": "mental-health",
+  "day": 9,
+  "duration": 14,
+  "difficulty": "intermediate",
+  "category": "stigma_reduction",
+  "bloomLevel": "analyze",
+  "learningObjective": "After this exercise, the user will understand how cultural factors in Egypt influence mental health expression, help-seeking, and stigma.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيفهم المستخدم كيف تؤثر العوامل الثقافية في مصر على التعبير عن الصحة النفسية.",
+  "content": {
+    "scenario": "Mental health is universal, but how it is EXPRESSED and DISCUSSED varies by culture.\n\nIn many Arab and Egyptian contexts (Kirmayer, 2001):\n- **Somatization**: Emotional distress expressed as physical symptoms ('my chest hurts' instead of 'I feel anxious')\n- **Family-centered decisions**: Help-seeking often involves family consultation\n- **Religious framing**: Mental health may be understood through a spiritual lens\n- **Shame and honor**: Disclosure of mental health struggles may be seen as family shame\n\n⚠️ IMPORTANT: Cultural awareness ≠ cultural determinism. Not everyone in a culture behaves the same way. These are PATTERNS, not rules.",
+    "scenarioAr": "الصحة النفسية عالمية، لكن كيفية التعبير عنها ومناقشتها تختلف حسب الثقافة.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Read each scenario and identify the cultural factor at play. Then suggest a culturally sensitive response.",
+      "instructionsAr": "اقرأ كل سيناريو وحدد العامل الثقافي. ثم اقترح استجابة حساسة ثقافياً.",
+      "items": [
+        {
+          "id": "cult-1",
+          "text": "A student says 'I have headaches and stomach pain' but examinations find no physical cause. → Possible somatization of emotional distress",
+          "isCorrect": true,
+          "explanation": "Somatization is common in many cultures. A sensitive response acknowledges the physical reality of these symptoms while gently exploring emotional wellbeing."
+        },
+        {
+          "id": "cult-2",
+          "text": "A student won't seek help because 'my family would be ashamed.' → Shame/honor cultural factor",
+          "isCorrect": true,
+          "explanation": "This reflects the shame-honor dynamic. A sensitive response respects the family system while providing information about confidential support options."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent cultural awareness! Understanding these factors helps you support others more effectively and reduces the gap between distress and help-seeking.",
+      "correctAr": "وعي ثقافي ممتاز!",
+      "incorrect": "Review the cultural factors. Remember: understanding cultural patterns helps bridge the gap to support, not create new stereotypes.",
+      "incorrectAr": "راجع العوامل الثقافية."
+    }
+  },
+  "whatNotToDo": [
+    "Don't stereotype all Egyptians as responding the same way — individual variation exists",
+    "Don't use cultural factors as excuses to not seek help — culture informs, it doesn't determine"
+  ],
+  "keyhunterId": "mh-kh-09",
+  "evidence": "Kirmayer, L.J. (2001). Cultural variations. American Journal of Psychiatry, 158(7), 1-11.",
+  "safetyNote": null,
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Opportunity/Social",
+  "com_b_mechanism": "Cultural context awareness builds social opportunity for culturally-sensitive help-seeking"
+}

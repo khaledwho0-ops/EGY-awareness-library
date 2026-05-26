@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  web:
+    image: node:22
+    working_dir: /workspace
+    command: sh -c "npm ci && npm run dev"
+    ports:
+      - "3000:3000"
+    environment:
+      FORENSIC_BACKEND_URL: http://analysis-backend:8000
+      ARABIC_NLP_BACKEND_URL: http://analysis-backend:8000/arabic
+    env_file:
+      - .env
+    volumes:
+      - ./:/workspace
+    depends_on:
+      analysis-backend:
+        condition: service_healthy
+      redis:
+        condition: service_started
+
+  analysis-backend:
+    build:
+      context: ./services/analysis-backend
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 60s
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"

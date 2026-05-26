@@ -1,0 +1,77 @@
+{
+  "id": "dr-day-03",
+  "title": "Deepfake Detection: Spotting the Fakes",
+  "titleAr": "كشف التزوير العميق: رصد المحتوى المزيف",
+  "mvp": "deepreal",
+  "day": 3,
+  "duration": 15,
+  "difficulty": "intermediate",
+  "category": "detection",
+  "learningObjective": "After this exercise, the user will be able to identify at least 3 visual artifacts commonly found in deepfake videos (temporal inconsistencies, phoneme-viseme mismatch, edge blurring) and explain the difference between cheapfakes and deepfakes.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيتمكن المستخدم من تحديد 3 عيوب بصرية على الأقل شائعة في مقاطع التزوير العميق (التناقضات الزمنية، عدم تزامن الصوت والشفاه، ضبابية الحواف) وشرح الفرق بين التزوير الرخيص والتزوير العميق.",
+  "bloomLevel": "analyze",
+  "content": {
+    "scenario": "Deepfake technology uses AI (specifically GANs — Generative Adversarial Networks) to create synthetic media that looks authentic. While the technology has legitimate uses (film restoration, accessibility), it's increasingly weaponized for misinformation, fraud, and manipulation.\n\nKey detection signs:\n\n**1. Temporal Inconsistencies** — Unnatural blinking patterns, flickering edges, or micro-expressions that don't match the context.\n\n**2. Phoneme-Viseme Mismatch** — Lip movements don't perfectly sync with spoken words. This is one of the hardest things for deepfakes to get right.\n\n**3. Edge Artifacts** — Blurring, warping, or color shifts around the face boundary, especially near the hairline, jaw, and neck.\n\n**4. Lighting Inconsistencies** — Shadows and reflections in the eyes may not match the environment's light source.\n\n**5. Resolution Differences** — The face region may appear slightly different in resolution or sharpness compared to the rest of the frame.\n\nIMPORTANT DISTINCTION:\n- **Cheapfake**: Manual editing (cut, slow-motion, re-context) — NO AI involved\n- **Deepfake**: AI-generated face swap or voice clone\n- **Shallowfake**: Simple manual manipulation (cropping, filtering)",
+    "scenarioAr": "تستخدم تقنية التزوير العميق الذكاء الاصطناعي (تحديدًا GANs — شبكات التوليد التنافسية) لإنشاء وسائط اصطناعية تبدو أصيلة. بينما للتقنية استخدامات مشروعة (ترميم الأفلام، إمكانية الوصول)، إلا أنها تُستخدم بشكل متزايد كسلاح للتضليل والاحتيال والتلاعب.\n\nعلامات الكشف الرئيسية:\n\n**1. التناقضات الزمنية** — أنماط رمش غير طبيعية، حواف متذبذبة، أو تعابير خفية لا تتطابق مع السياق.\n\n**2. عدم تزامن الصوت والشفاه** — حركات الشفاه لا تتزامن تمامًا مع الكلمات المنطوقة. هذا من أصعب ما تتقنه التزييفات العميقة.\n\n**3. عيوب الحواف** — ضبابية أو تشوه أو تحولات لونية حول حدود الوجه، خاصة بالقرب من خط الشعر والفك والرقبة.\n\n**4. تناقضات الإضاءة** — قد لا تتطابق الظلال والانعكاسات في العيون مع مصدر الضوء في البيئة.\n\n**5. اختلافات الدقة** — قد تبدو منطقة الوجه مختلفة قليلًا في الدقة أو الحدة مقارنة بباقي الإطار.\n\nتمييز مهم:\n- **التزوير الرخيص**: تحرير يدوي (قص، بطء التشغيل، إعادة السياق) — بدون ذكاء اصطناعي\n- **التزوير العميق**: استبدال وجه أو استنساخ صوت بالذكاء الاصطناعي\n- **التزوير الضحل**: تلاعب يدوي بسيط (اقتصاص، فلترة)",
+    "task": {
+      "type": "multiple_choice",
+      "instructions": "For each scenario, identify the most likely type of media manipulation.",
+      "instructionsAr": "لكل سيناريو، حدد النوع الأرجح من التلاعب بالوسائط.",
+      "items": [
+        {
+          "id": "df-1",
+          "text": "A video of a politician giving a speech is slowed down to make them appear drunk. The video is otherwise unmodified.",
+          "textAr": "مقطع فيديو لسياسي يلقي خطابًا يُبطَّأ لجعله يبدو في حالة سكر. الفيديو لم يُعدَّل بطريقة أخرى.",
+          "isCorrect": true,
+          "explanation": "CHEAPFAKE — This is simple manual editing (slow-motion effect) with no AI involvement. This technique was famously used against U.S. Speaker Nancy Pelosi in 2019.",
+          "explanationAr": "تزوير رخيص — هذا تحرير يدوي بسيط (تأثير التصوير البطيء) بدون تدخل الذكاء الاصطناعي. استُخدمت هذه التقنية بشكل مشهور ضد رئيسة مجلس النواب الأمريكية نانسي بيلوسي عام 2019."
+        },
+        {
+          "id": "df-2",
+          "text": "A video shows a celebrity appearing to endorse a cryptocurrency product, but the lip movements seem slightly off and there's a subtle blur around the jawline.",
+          "textAr": "مقطع فيديو يُظهر مشهورًا يبدو أنه يؤيد منتج عملة مشفرة، لكن حركات شفتيه تبدو غير متزامنة تمامًا وهناك ضبابية خفية حول خط الفك.",
+          "isCorrect": true,
+          "explanation": "DEEPFAKE — The combination of lip-sync issues (phoneme-viseme mismatch) and edge artifacts (jaw blur) strongly suggests AI-generated face manipulation.",
+          "explanationAr": "تزوير عميق — مزيج مشاكل مزامنة الشفاه (عدم تزامن الصوت والشفاه) وعيوب الحواف (ضبابية الفك) يشير بقوة إلى تلاعب بالوجه بالذكاء الاصطناعي."
+        },
+        {
+          "id": "df-3",
+          "text": "A photo of a crowd at a protest is cropped to show only a small section, making the crowd look much larger than it actually was.",
+          "textAr": "صورة لحشد في احتجاج تُقتطع لتُظهر قسمًا صغيرًا فقط، مما يجعل الحشد يبدو أكبر بكثير مما كان عليه في الواقع.",
+          "isCorrect": true,
+          "explanation": "CHEAPFAKE — Simple cropping to misrepresent scale. No AI involved. This is one of the most common forms of visual misinformation.",
+          "explanationAr": "تزوير رخيص — اقتصاص بسيط لتشويه الحجم. بدون ذكاء اصطناعي. هذا أحد أكثر أشكال التضليل البصري شيوعًا."
+        },
+        {
+          "id": "df-4",
+          "text": "An audio recording of a CEO appears to give instructions to transfer company funds. The voice sounds natural but was never actually recorded at the company.",
+          "textAr": "تسجيل صوتي لمدير تنفيذي يبدو أنه يعطي تعليمات لتحويل أموال الشركة. الصوت يبدو طبيعيًا لكنه لم يُسجَّل فعليًا في الشركة.",
+          "isCorrect": true,
+          "explanation": "DEEPFAKE (voice clone) — AI-generated voice synthesis. In 2019, criminals used AI voice cloning to impersonate a CEO and steal $243,000. Voice deepfakes are harder to detect than visual ones.",
+          "explanationAr": "تزوير عميق (استنساخ صوتي) — تركيب صوتي بالذكاء الاصطناعي. في عام 2019، استخدم مجرمون استنساخ الصوت بالذكاء الاصطناعي لانتحال شخصية مدير تنفيذي وسرقة 243,000 دولار. التزويرات الصوتية أصعب في الكشف من التزويرات البصرية."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent analysis! You correctly identified the manipulation type in each scenario. Key takeaway: most everyday misinformation uses cheapfakes (simple editing), not sophisticated AI. However, deepfakes are becoming cheaper and more accessible.",
+      "correctAr": "تحليل ممتاز! لقد حددت بشكل صحيح نوع التلاعب في كل سيناريو. النقطة الأساسية: معظم التضليل اليومي يستخدم التزوير الرخيص (التحرير البسيط)، لا الذكاء الاصطناعي المتطور. ومع ذلك، تصبح التزويرات العميقة أرخص وأكثر إتاحة.",
+      "incorrect": "Review the key distinction: cheapfakes use manual editing (cut, crop, slow-mo), deepfakes use AI (GANs for face/voice). Look for phoneme-viseme mismatch, edge artifacts, and temporal inconsistencies.",
+      "incorrectAr": "راجع التمييز الرئيسي: التزويرات الرخيصة تستخدم التحرير اليدوي (قص، اقتصاص، بطء التشغيل)، التزويرات العميقة تستخدم الذكاء الاصطناعي (شبكات GANs للوجه/الصوت). ابحث عن عدم تزامن الصوت والشفاه، وعيوب الحواف، والتناقضات الزمنية."
+    }
+  },
+  "whatNotToDo": [
+    "Don't assume every manipulated video is a 'deepfake' — most are cheapfakes using simple editing",
+    "Don't rely on a single artifact — look for multiple signs of manipulation"
+  ],
+  "whatNotToDoAr": [
+    "لا تفترض أن كل مقطع فيديو متلاعب به هو 'تزوير عميق' — معظمها تزويرات رخيصة بتحرير بسيط",
+    "لا تعتمد على عيب واحد — ابحث عن علامات متعددة للتلاعب"
+  ],
+  "keyhunterId": "dr-kh-03",
+  "evidence": "Tolosana, R., et al. (2020). DeepFakes and beyond: A survey of face manipulation and fake detection. Information Fusion, 64, 131-148.",
+  "safetyNote": "All media examples in this exercise are educational descriptions, not actual deepfake content. No synthetic media is generated or displayed.",
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Understanding System 1 vs System 2 builds metacognitive awareness of automatic thinking traps",
+  "trackConfidence": true,
+  "requiresEightGate": false
+}

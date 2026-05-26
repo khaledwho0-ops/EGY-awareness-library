@@ -1,0 +1,104 @@
+{
+  "contacts": [
+    {
+      "id": "gsmhat-shortcode",
+      "name": "Egypt Mental Health Hotline",
+      "nameAr": "خط الدعم النفسي المصري",
+      "type": "phone",
+      "value": "16328",
+      "status": "confirmed",
+      "description": "Official Egyptian mental-health short code published by the Ministry of Health and Population",
+      "descriptionAr": "الرقم المختصر الرسمي للدعم النفسي المنشور من وزارة الصحة والسكان"
+    },
+    {
+      "id": "gsmhat-tollfree",
+      "name": "Egypt Mental Health Toll-Free Backup",
+      "nameAr": "الرقم المجاني الاحتياطي للدعم النفسي",
+      "type": "phone",
+      "value": "08008880700",
+      "status": "confirmed",
+      "description": "Toll-free mental-health backup route published by the Ministry of Health and Population",
+      "descriptionAr": "الرقم المجاني الاحتياطي للدعم النفسي والمنشور من وزارة الصحة والسكان"
+    },
+    {
+      "id": "gsmhat-landline",
+      "name": "GSMHAT Cairo Backup Line",
+      "nameAr": "الخط الأرضي الاحتياطي للأمانة العامة للصحة النفسية",
+      "type": "phone",
+      "value": "0220816831",
+      "status": "confirmed",
+      "description": "Cairo support line published by the Ministry of Health and Population alongside the hotline expansion notice",
+      "descriptionAr": "الخط الأرضي للدعم بالقاهرة والمنشور من وزارة الصحة والسكان"
+    },
+    {
+      "id": "ambulance",
+      "name": "Emergency Ambulance",
+      "nameAr": "الإسعاف",
+      "type": "phone",
+      "value": "123",
+      "status": "confirmed",
+      "description": "Egypt national emergency ambulance service",
+      "descriptionAr": "خدمة الإسعاف الطبي الطارئ في مصر"
+    },
+    {
+      "id": "mohp",
+      "name": "MoHP Mental Health Platform",
+      "nameAr": "منصة الصحة النفسية لوزارة الصحة والسكان",
+      "type": "web",
+      "value": "https://mentalhealth.mohp.gov.eg",
+      "status": "confirmed",
+      "description": "Official Ministry of Health and Population platform for mental-health literacy and service navigation",
+      "descriptionAr": "المنصة الرسمية لوزارة الصحة والسكان للتوعية بالصحة النفسية وتوجيه الخدمات"
+    },
+    {
+      "id": "darifta",
+      "name": "Dar al-Ifta Religious Guidance",
+      "nameAr": "دار الإفتاء المصرية",
+      "type": "phone",
+      "value": "107",
+      "status": "confirmed",
+      "description": "Official religious guidance and consultation line within Egypt",
+      "descriptionAr": "الخط الرسمي للإرشاد والاستشارة الدينية داخل مصر"
+    },
+    {
+      "id": "azhar-observatory",
+      "name": "Al-Azhar Observatory for Combating Extremism",
+      "nameAr": "مرصد الأزهر لمكافحة التطرف",
+      "type": "web",
+      "value": "https://www.azhar.eg/observer",
+      "status": "confirmed",
+      "description": "Al-Azhar Observatory monitors extremist content and provides counter-narrative resources. Referenced in Religion Hub Day 11 (Radicalization Awareness).",
+      "descriptionAr": "مرصد الأزهر يراقب المحتوى المتطرف ويوفر موارد مضادة للتطرف"
+    },
+    {
+      "id": "befrienders",
+      "name": "Befrienders Worldwide",
+      "nameAr": "منظمة بيفرندرز العالمية",
+      "type": "web",
+      "value": "https://www.befrienders.org",
+      "status": "confirmed",
+      "description": "International emotional support network. Referenced in Mental Health Day 11 (Safety Planning).",
+      "descriptionAr": "شبكة دعم عاطفي دولية"
+    },
+    {
+      "id": "nfsa",
+      "name": "National Food Safety Authority",
+      "nameAr": "الهيئة القومية لسلامة الغذاء",
+      "type": "web",
+      "value": "https://www.nfsa.gov.eg",
+      "status": "confirmed",
+      "description": "Official food safety authority. Referenced in viral fakes registry (Plastic Rice claim debunking).",
+      "descriptionAr": "هيئة رسمية لسلامة الغذاء"
+    },
+    {
+      "id": "university-counseling",
+      "name": "University Counseling Services",
+      "nameAr": "خدمات الإرشاد الجامعي",
+      "type": "info",
+      "value": "Contact your university's student affairs office for counseling services",
+      "status": "confirmed",
+      "description": "Most Egyptian universities offer free confidential counseling. Check your university's student affairs office. Referenced in Mental Health Day 10 (Help-Seeking Pathway).",
+      "descriptionAr": "معظم الجامعات المصرية توفر إرشادًا نفسيًا مجانيًا وسريًا. راجع مكتب شؤون الطلاب في جامعتك."
+    }
+  ]
+}

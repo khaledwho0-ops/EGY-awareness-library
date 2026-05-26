@@ -1,0 +1,59 @@
+{
+  "id": "rh-day-11",
+  "title": "Radicalization Awareness: Protecting Your Mind",
+  "titleAr": "الوعي بالتطرف: حماية عقلك",
+  "mvp": "religion-hub",
+  "day": 11,
+  "duration": 14,
+  "difficulty": "advanced",
+  "category": "threat_awareness",
+  "bloomLevel": "evaluate",
+  "learningObjective": "After this exercise, the user will understand psychological models of radicalization, identify early warning signs, and know the difference between strong faith and extremism.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيفهم المستخدم النماذج النفسية للتطرف.",
+  "content": {
+    "scenario": "Radicalization is a PSYCHOLOGICAL process, not inherent to any religion (Moghaddam, 2005).\n\nMoghaddam's Staircase Model:\n1. Perceived injustice → feeling of being wronged\n2. Perceived options → feeling there are no legitimate solutions\n3. Moral engagement → anger becomes moral righteousness\n4. Us-vs-them → the world divides into good and evil\n5. Action → willingness to act on extreme beliefs\n\n**Strong faith ≠ Extremism:**\n- Strong faith: deep personal conviction + respect for others\n- Extremism: rigid thinking + dehumanization of others\n\nAl-Azhar Observatory actively monitors and counters extremist rhetoric.",
+    "scenarioAr": "التطرف عملية نفسية وليس متأصلاً في أي دين.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Identify warning signs vs. normal religious engagement.",
+      "instructionsAr": "حدد علامات التحذير مقابل الانخراط الديني الطبيعي.",
+      "items": [
+        {
+          "id": "rad-1",
+          "text": "Sudden isolation from friends, only engaging with a closed online group → Warning sign (Stage 2-3)",
+          "isCorrect": true,
+          "explanation": "Warning sign. Rapid social isolation combined with joining a closed group mirrors the radicalization pathway."
+        },
+        {
+          "id": "rad-2",
+          "text": "Studying religion seriously, attending lectures by recognized moderate scholars → Normal religious engagement",
+          "isCorrect": true,
+          "explanation": "Normal. Serious religious study from recognized, moderate sources is healthy engagement."
+        },
+        {
+          "id": "rad-3",
+          "text": "Expressing that 'anyone who disagrees with us is an enemy' → Warning sign (Stage 4 us-vs-them)",
+          "isCorrect": true,
+          "explanation": "Warning sign. Binary us-vs-them thinking is a hallmark of radicalization. Healthy faith allows for disagreement and diversity."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent awareness! Understanding the psychological process of radicalization helps protect yourself and others. Remember: reporting concerns to trusted individuals can save lives.",
+      "correctAr": "وعي ممتاز!",
+      "incorrect": "Review: the key warning signs are isolation, us-vs-them thinking, and dehumanization of others.",
+      "incorrectAr": "راجع: علامات التحذير الأساسية."
+    }
+  },
+  "whatNotToDo": [
+    "Don't equate being religious with being radical — most religious people are moderate",
+    "Don't try to 'deradicalize' someone yourself — contact appropriate authorities (Al-Azhar Observatory, university counselors)"
+  ],
+  "keyhunterId": "rh-kh-11",
+  "evidence": "Moghaddam, F.M. (2005). The Staircase to Terrorism. American Psychologist, 60(2), 161-169.",
+  "safetyNote": "⚠️ If you are concerned about someone's radicalization, contact: Al-Azhar Observatory or university counseling services.",
+  "trackConfidence": false,
+  "requiresEightGate": true,
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Radicalization awareness builds psychological capability to identify manipulation"
+}

@@ -1,0 +1,59 @@
+{
+  "id": "mh-day-10",
+  "title": "Help-Seeking: Knowing When and How to Get Support",
+  "titleAr": "طلب المساعدة: معرفة متى وكيف تحصل على الدعم",
+  "mvp": "mental-health",
+  "day": 10,
+  "duration": 14,
+  "difficulty": "intermediate",
+  "category": "mixed",
+  "bloomLevel": "apply",
+  "learningObjective": "After this exercise, the user will know the help-seeking pathway (self-care → peer support → professional help) and identify local Egyptian resources.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيعرف المستخدم مسار طلب المساعدة ويحدد الموارد المصرية المحلية.",
+  "content": {
+    "scenario": "Help-seeking is not all-or-nothing. There is a PATHWAY (Health Belief Model, Rosenstock, 1974):\n\n**Level 1: Self-Care** — Wellbeing practices, PERMA activities, stress management\n**Level 2: Peer/Family Support** — Talking to trusted friends, family, or mentors\n**Level 3: Community Support** — University counseling, support groups, helplines\n**Level 4: Professional Help** — Psychologist, psychiatrist, clinical social worker\n**Level 5: Crisis Intervention** — Emergency services, crisis hotlines\n\n🇪🇬 Egyptian Resources:\n- GSMHAT Crisis Line: **16328**\n- Dar al-Ifta Helpline: **107**\n- University counseling centers (varies by university)",
+    "scenarioAr": "طلب المساعدة ليس نعم أو لا. هناك مسار.",
+    "task": {
+      "type": "matching",
+      "instructions": "For each scenario, identify the appropriate help-seeking level.",
+      "instructionsAr": "لكل سيناريو، حدد مستوى طلب المساعدة المناسب.",
+      "items": [
+        {
+          "id": "hs-1",
+          "text": "Feeling stressed about exams → Level 1 (Self-Care) or Level 2 (Peer Support)",
+          "isCorrect": true,
+          "explanation": "Exam stress is normal. Self-care practices (exercise, sleep, breaks) and talking to friends are appropriate first responses."
+        },
+        {
+          "id": "hs-2",
+          "text": "Persistent low mood for 3+ weeks affecting daily function → Level 3 or 4 (Community or Professional Help)",
+          "isCorrect": true,
+          "explanation": "Duration (3+ weeks) and functional impairment suggest professional consultation would be beneficial. University counseling is a good starting point."
+        },
+        {
+          "id": "hs-3",
+          "text": "A friend expresses thoughts of self-harm → Level 5 (Crisis Intervention: 16328)",
+          "isCorrect": true,
+          "explanation": "Self-harm thoughts require immediate professional support. Stay with the person, listen without judgment, and help them contact the crisis line: 16328."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent! You now know the help-seeking pathway. Remember: seeking help early, at any level, is a sign of strength, not weakness.",
+      "correctAr": "ممتاز! تعرف الآن مسار طلب المساعدة.",
+      "incorrect": "Review the levels. The key is matching the severity and duration of the issue to the appropriate level of support.",
+      "incorrectAr": "راجع المستويات."
+    }
+  },
+  "whatNotToDo": [
+    "Don't wait until crisis to seek help — early intervention is more effective",
+    "Don't try to be someone's therapist — your role is to listen and help connect them to resources"
+  ],
+  "keyhunterId": "mh-kh-10",
+  "evidence": "Rosenstock, I.M. (1974). Health Belief Model. Health Education Monographs, 2(4), 328-335.",
+  "safetyNote": "If you or someone you know needs immediate help: Egypt crisis line 16328.",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Help-seeking pathway knowledge builds capability to navigate support systems"
+}

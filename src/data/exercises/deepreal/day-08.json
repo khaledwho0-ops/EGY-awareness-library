@@ -1,0 +1,65 @@
+{
+  "id": "dr-day-08",
+  "title": "Emotional Manipulation in Headlines: Outrage vs. Evidence",
+  "titleAr": "التلاعب العاطفي في العناوين: الغضب مقابل الأدلة",
+  "mvp": "deepreal",
+  "day": 8,
+  "duration": 15,
+  "difficulty": "intermediate",
+  "category": "detection_tasks",
+  "learningObjective": "After this exercise, the user will be able to identify emotionally manipulative framing in headlines using Martel, Pennycook & Rand's (2020) framework, distinguishing between informative and manipulative uses of emotion, and reduce susceptibility to emotional amplification by at least 15%.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيكون المستخدم قادرًا على تحديد التأطير العاطفي المتلاعب في العناوين باستخدام إطار مارتل وبينيكوك وراند (2020).",
+  "bloomLevel": "evaluate",
+  "content": {
+    "scenario": "Martel, Pennycook & Rand (2020) in Cognitive Research demonstrated that emotional content makes people significantly more likely to share misinformation without checking its accuracy. Their key finding: emotional arousal reduces analytical thinking, making people ~20% more susceptible to false claims.\n\nBrady et al. (2017) in PNAS found that each 'moral-emotional' word in a social media post increases sharing by 20%. This means misinformation creators deliberately inject emotional language to maximize spread.\n\nBelow are 4 headlines about the same factual event. Some use emotionally manipulative framing; others present the information more neutrally. Your task is to identify the manipulation techniques.",
+    "scenarioAr": "أثبت مارتل وبينيكوك وراند (2020) أن المحتوى العاطفي يجعل الناس أكثر عرضة لمشاركة المعلومات المضللة بنسبة ~20%. وجد برادي وآخرون (2017) أن كل كلمة 'أخلاقية-عاطفية' في منشور على وسائل التواصل الاجتماعي تزيد المشاركة بنسبة 20%.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "For each headline pair, identify which version uses emotional manipulation and which presents the information more accurately. Select the manipulative versions.",
+      "instructionsAr": "لكل زوج من العناوين، حدد أي نسخة تستخدم التلاعب العاطفي وأيها تقدم المعلومات بشكل أكثر دقة.",
+      "items": [
+        {
+          "id": "emo-1",
+          "text": "HEADLINE A: 'SHOCKING: Government COVERS UP deadly water contamination — YOUR family is at risk!' ← Uses fear, urgency, personalization, ALL-CAPS, and conspiracy framing.",
+          "isCorrect": true,
+          "explanation": "MANIPULATIVE: Uses 6 emotional manipulation techniques: (1) SHOCKING — urgency trigger, (2) COVERS UP — conspiracy frame, (3) deadly — fear word, (4) YOUR family — personalization, (5) ALL CAPS — visual aggression, (6) exclamation mark — urgency amplifier."
+        },
+        {
+          "id": "emo-2",
+          "text": "HEADLINE B: 'Study finds elevated lead levels in 3 Cairo districts; health ministry announces testing program' ← Presents the same facts without emotional manipulation.",
+          "isCorrect": false,
+          "explanation": "INFORMATIVE: This headline presents the same underlying facts (water quality concern) but without emotional amplification. It names specific locations, cites the source (study), and reports the response (testing program)."
+        },
+        {
+          "id": "emo-3",
+          "text": "HEADLINE C: 'BETRAYED! Corrupt officials POISON our children's water while they drink imported Evian' ← Uses class-based outrage, betrayal framing, and us-vs-them language.",
+          "isCorrect": true,
+          "explanation": "MANIPULATIVE: Uses (1) BETRAYED — moral outrage, (2) POISON — catastrophization, (3) our children — tribal/protective instinct, (4) they drink Evian — class-based us-vs-them framing. Same facts, maximum emotional amplification."
+        },
+        {
+          "id": "emo-4",
+          "text": "HEADLINE D: 'Environmental monitoring data shows water quality below WHO standards in 3 areas; remediation timeline announced' ← Clinical, specific, actionable.",
+          "isCorrect": false,
+          "explanation": "INFORMATIVE: Technical, specific, and includes the response action. This framing allows the reader to assess the situation rationally without emotional hijacking."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Well done! You correctly identified the emotionally manipulative headlines (A and C) and the informative ones (B and D). Martel et al. (2020) found that simply asking people to rate the ACCURACY of headlines before deciding whether to share them reduces misinformation sharing by 20-25%.",
+      "correctAr": "أحسنت! لقد حددت بشكل صحيح العناوين المتلاعبة عاطفياً. وجد مارتل وآخرون (2020) أن مجرد مطالبة الناس بتقييم دقة العناوين قبل المشاركة يقلل مشاركة المعلومات المضللة بنسبة 20-25%.",
+      "incorrect": "Compare the headlines more carefully. The manipulative ones use specific techniques: ALL CAPS, fear words, conspiracy framing, us-vs-them language, and personalization. The informative ones present the same facts without emotional amplification.",
+      "incorrectAr": "قارن العناوين بعناية أكبر. المتلاعبة تستخدم تقنيات محددة: أحرف كبيرة، كلمات خوف، تأطير مؤامرة، لغة نحن-ضدهم، وتخصيص شخصي."
+    }
+  },
+  "whatNotToDo": [
+    "Don't share content that makes you feel strong emotions before verifying the facts — emotional arousal reduces analytical thinking (Martel et al., 2020)",
+    "Don't assume that emotionally-charged content is always false — the manipulation is in the FRAMING, not necessarily the underlying facts"
+  ],
+  "keyhunterId": "dr-kh-08",
+  "evidence": "Martel, C., Pennycook, G., & Rand, D. G. (2020). Reliance on emotion promotes belief in fake news. Cognitive Research: Principles and Implications, 5, 47.; Brady, W. J., et al. (2017). Emotion shapes the diffusion of moralized content in social networks. PNAS, 114(28), 7313-7318.",
+  "safetyNote": "This exercise discusses emotional manipulation techniques for educational detection purposes only. The water contamination scenario is entirely fictional.",
+  "com_b_target": "Motivation/Reflective",
+  "com_b_mechanism": "Emotional manipulation detection restores reflective motivation over impulsive sharing",
+  "trackConfidence": true,
+  "requiresEightGate": false
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "id": 401,
+    "title": "The Friday News Dump",
+    "titleAr": "تفريغ أخبار الجمعة",
+    "year": "Ongoing",
+    "domain": "Information Burial",
+    "domainAr": "دفن المعلومات",
+    "damage": "Legal Coverups",
+    "damageAr": "تستر قانوني",
+    "illustrationEn": "A deeply statistical OSINT reality: nearly 70% of highly damaging corporate and political admissions (massive data breaches, corruption scandals, lethal side effects) are released legally at exactly 5:00 PM on a Friday. The information is 100% true, but the timing is weaponized. They know journalists have gone home and the public is starting the weekend. By Monday, the news cycle has moved on, perfectly burying devastating truths in plain sight.",
+    "illustrationAr": "حقيقة إحصائية عميقة في المصادر المفتوحة: ما يقرب من ٧٠٪ من الاعترافات المؤسسية والسياسية شديدة الضرر (خروقات ضخمة للبيانات، فضائح فساد، آثار جانبية مميتة) يتم إصدارها قانونياً في تمام الساعة ٥:٠٠ مساءً يوم الجمعة. المعلومات صحيحة ١٠٠٪، لكن التوقيت تم تحويله إلى سلاح. إنهم يعلمون أن الصحفيين عادوا إلى منازلهم وأن الجمهور يبدأ عطلة نهاية الأسبوع. بحلول يوم الاثنين، تكون دورة الأخبار قد تغيرت، مما يدفن الحقائق المدمرة تماماً على مرأى من الجميع."
+  },
+  {
+    "id": 402,
+    "title": "The October Surprise",
+    "titleAr": "مفاجأة أكتوبر",
+    "year": "Historical",
+    "domain": "Political Warfare",
+    "domainAr": "حرب سياسية",
+    "damage": "Hacked Elections",
+    "damageAr": "انتخابات مخترقة",
+    "illustrationEn": "A documented, calculated political strategy where a completely true, devastating piece of opposition research is held in secret for months or years. It is deliberately released exactly 11 days before a major election. The timing ensures the scandal dominates the entire final news cycle, giving the target absolutely no time to mathematically explain or recover from the truth before the voting booths open.",
+    "illustrationAr": "استراتيجية سياسية موثقة ومحسوبة حيث يتم الاحتفاظ ببحث معارض صادق ومدمر تماماً سراً لأشهر أو سنوات. يتم إصداره عمداً قبل ١١ يوماً بالضبط من انتخابات كبرى. يضمن التوقيت هيمنة الفضيحة على دورة الأخبار النهائية بأكملها، مما لا يمنح الهدف أي وقت على الإطلاق لشرح الحقيقة أو التعافي منها قبل فتح صناديق الاقتراع."
+  },
+  {
+    "id": 403,
+    "title": "Disaster Capitalism (Shock Doctrine)",
+    "titleAr": "رأسمالية الكوارث (عقيدة الصدمة)",
+    "year": "2000s+",
+    "domain": "Economic Manipulation",
+    "domainAr": "تلاعب اقتصادي",
+    "damage": "Profiting off Trauma",
+    "damageAr": "التربح من الصدمات",
+    "illustrationEn": "How does the 'Mega-Machine' pass highly unpopular, aggressive privatization laws that the public would normally riot against? They wait for a massive natural disaster (like Hurricane Katrina or a devastating tsunami). In the immediate chaotic aftermath, when the population is entirely focused on basic physical survival, the state rams the legislation through. They weaponize the timing of a population's trauma to extract wealth while nobody is looking.",
+    "illustrationAr": "كيف تمرر 'الآلة الكبرى' قوانين خصخصة عدوانية وغير شعبية للغاية كان من الطبيعي أن يثور الجمهور ضدها؟ إنهم ينتظرون كارثة طبيعية هائلة (مثل إعصار كاترينا أو تسونامي مدمر). في أعقاب الفوضى المباشرة، عندما يكون السكان منشغلين بالكامل بالبقاء الجسدي الأساسي، تفرض الدولة التشريعات بقوة. إنهم يسلحون توقيت صدمة السكان لانتزاع الثروة بينما لا أحد ينظر."
+  },
+  {
+    "id": 404,
+    "title": "Zero-Day Hoarding",
+    "titleAr": "تخزين ثغرات اليوم الصفر",
+    "year": "2017",
+    "domain": "Cyber Warfare",
+    "domainAr": "حرب سيبرانية",
+    "damage": "Global Ransomware",
+    "damageAr": "برامج فدية عالمية",
+    "illustrationEn": "The NSA frequently discovers critical security flaws (Zero-Days) in global software like Windows. Instead of warning the public or Microsoft so they can be fixed, the intelligence agency keeps the truth secret for years to weaponize it for their own offensive hacking. They only release the truth when it serves them. This exact weaponized timing directly led to the devastating global WannaCry ransomware attack when the NSA's secret tools inevitably leaked.",
+    "illustrationAr": "تكتشف وكالة الأمن القومي بشكل متكرر عيوباً أمنية خطيرة (ثغرات يوم الصفر) في البرامج العالمية مثل ويندوز. وبدلاً من تحذير الجمهور أو مايكروسوفت لإصلاحها، تبقي وكالة المخابرات الحقيقة سراً لسنوات لتسليحها من أجل الاختراق الهجومي الخاص بها. إنهم يصدرون الحقيقة فقط عندما تخدمهم. هذا التوقيت المسلح بالذات أدى بشكل مباشر إلى هجوم برنامج الفدية العالمي المدمر WannaCry عندما تسربت أدوات وكالة الأمن القومي السرية حتماً."
+  },
+  {
+    "id": 405,
+    "title": "The 2008 TARP Timing",
+    "titleAr": "توقيت إنقاذ البنوك ٢٠٠٨",
+    "year": "2008",
+    "domain": "Financial Engineering",
+    "domainAr": "هندسة مالية",
+    "damage": "The Weekend Freeze",
+    "damageAr": "تجميد عطلة نهاية الأسبوع",
+    "illustrationEn": "During the 2008 financial collapse, the US government waited until precisely Friday evening, after the global stock markets had officially closed, to announce the catastrophic reality and the $700 billion bank bailout. The timing was highly weaponized: it legally froze the public's ability to pull their money out of the crashing markets for 48 hours, while giving elite institutional insiders the entire weekend in closed rooms to restructure their assets before Monday morning.",
+    "illustrationAr": "خلال الانهيار المالي عام ٢٠٠٨، انتظرت الحكومة الأمريكية حتى مساء الجمعة بالتحديد، بعد إغلاق أسواق الأسهم العالمية رسمياً، للإعلان عن الواقع الكارثي وإنقاذ البنوك بقيمة ٧٠٠ مليار دولار. كان التوقيت مسلحاً للغاية: فقد جمد قانونياً قدرة الجمهور على سحب أموالهم من الأسواق المنهارة لمدة ٤٨ ساعة، بينما أعطى المطلعين من النخبة المؤسسية عطلة نهاية الأسبوع بأكملها في غرف مغلقة لإعادة هيكلة أصولهم قبل صباح يوم الاثنين."
+  }
+]

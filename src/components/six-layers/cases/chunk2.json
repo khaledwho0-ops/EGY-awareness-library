@@ -1,0 +1,122 @@
+[
+  {
+    "id": 811,
+    "title": "Unit 731",
+    "titleAr": "الوحدة 731",
+    "year": "1935",
+    "domain": "Biological Warfare",
+    "domainAr": "حرب بيولوجية",
+    "damage": "Absolute Human Destruction",
+    "damageAr": "دمار بشري مطلق",
+    "illustrationEn": "A covert biological and chemical warfare unit of the Imperial Japanese Army that undertook lethal human experimentation. Victims were subjected to vivisection without anesthesia, frozen alive to study frostbite, and infected with bubonic plague. It is the darkest manifestation of science completely unburdened by morality.",
+    "illustrationAr": "وحدة سرية للحرب البيولوجية والكيميائية تابعة للجيش الإمبراطوري الياباني قامت بتجارب بشرية مميتة. تعرض الضحايا للتشريح وهم أحياء دون تخدير، وتم تجميدهم أحياء لدراسة قضمة الصقيع، وإصابتهم بالطاعون الدبلي. إنه أحلك مظهر للعلم غير المثقل بالأخلاق تمامًا."
+  },
+  {
+    "id": 812,
+    "title": "The Tuskegee Syphilis Study",
+    "titleAr": "تجربة توسكيجي للزهري",
+    "year": "1932",
+    "domain": "Medical Abuse",
+    "domainAr": "إساءة طبية",
+    "damage": "Generational Trauma",
+    "damageAr": "صدمة الأجيال",
+    "illustrationEn": "An unethical clinical study conducted by the US Public Health Service. African American men with syphilis were told they were receiving free health care, but were intentionally left untreated for decades—even after penicillin was discovered as a cure—just to observe how the disease would systematically destroy their bodies and minds.",
+    "illustrationAr": "دراسة سريرية غير أخلاقية أجرتها خدمة الصحة العامة الأمريكية. قيل للرجال الأمريكيين من أصل أفريقي المصابين بمرض الزهري إنهم يتلقون رعاية صحية مجانية، ولكن تم تركهم عمدًا دون علاج لعقود - حتى بعد اكتشاف البنسلين كعلاج - لمجرد ملاحظة كيف سيدمر المرض أجسادهم وعقولهم بشكل منهجي."
+  },
+  {
+    "id": 813,
+    "title": "Guatemala Syphilis Experiments",
+    "titleAr": "تجارب غواتيمالا للزهري",
+    "year": "1946",
+    "domain": "Biological Abuse",
+    "domainAr": "إساءة بيولوجية",
+    "damage": "State-Sponsored Infection",
+    "damageAr": "عدوى برعاية الدولة",
+    "illustrationEn": "US researchers deliberately infected hundreds of Guatemalans—including orphans, prisoners, and mental health patients—with syphilis and gonorrhea without their consent or knowledge. The goal was to test the effectiveness of penicillin. The sheer darkness of weaponizing a horrific disease against the most vulnerable populations is a historical scar.",
+    "illustrationAr": "قام باحثون أمريكيون بتعمد إصابة مئات الغواتيماليين - بما في ذلك الأيتام والسجناء ومرضى الصحة العقلية - بمرض الزهري والسيلان دون موافقتهم أو علمهم. كان الهدف هو اختبار فعالية البنسلين. إن الظلام الدامس لتسليح مرض مروع ضد أكثر الفئات ضعفاً هو ندبة تاريخية."
+  },
+  {
+    "id": 814,
+    "title": "Project 4.1",
+    "titleAr": "المشروع 4.1",
+    "year": "1954",
+    "domain": "Radiation Testing",
+    "domainAr": "اختبار الإشعاع",
+    "damage": "Human Guinea Pigs",
+    "damageAr": "فئران تجارب بشرية",
+    "illustrationEn": "Following the Castle Bravo nuclear test, residents of the Marshall Islands were exposed to massive radioactive fallout. Instead of immediately treating them, the US government initiated Project 4.1 to study the effects of radiation on human beings. They watched as people's skin burned off, treating entire populations as disposable observational data.",
+    "illustrationAr": "في أعقاب اختبار كاسل برافو النووي، تعرض سكان جزر مارشال لتداعيات إشعاعية هائلة. بدلاً من علاجهم على الفور، بدأت الحكومة الأمريكية المشروع 4.1 لدراسة آثار الإشعاع على البشر. لقد راقبوا بينما كان جلد الناس يحترق، وعاملوا مجموعات سكانية بأكملها كبيانات مراقبة يمكن التخلص منها."
+  },
+  {
+    "id": 815,
+    "title": "The Aversion Project",
+    "titleAr": "مشروع النفور",
+    "year": "1971",
+    "domain": "Psychiatric Torture",
+    "domainAr": "تعذيب نفسي",
+    "damage": "Identity Destruction",
+    "damageAr": "تدمير الهوية",
+    "illustrationEn": "In apartheid South Africa, homosexual soldiers were subjected to horrific 'cures' under the guise of military psychiatry. They endured extreme electroconvulsive therapy, chemical castration, and forced sex-change surgeries without consent. It is a chilling reminder of how institutional psychiatry can be weaponized to mutilate human beings.",
+    "illustrationAr": "في جنوب إفريقيا في عهد الفصل العنصري، تعرض الجنود المثليون لـ 'علاجات' مروعة تحت ستار الطب النفسي العسكري. لقد تحملوا علاجاً شديداً بالصدمات الكهربائية، والإخصاء الكيميائي، وجراحات تغيير الجنس القسرية دون موافقة. إنه تذكير مروع بكيفية تسليح الطب النفسي المؤسسي لتشويه البشر."
+  },
+  {
+    "id": 816,
+    "title": "Operation Sea-Spray",
+    "titleAr": "عملية رذاذ البحر",
+    "year": "1950",
+    "domain": "Bio-Warfare Test",
+    "domainAr": "اختبار حرب حيوية",
+    "damage": "City-Wide Infection",
+    "damageAr": "عدوى على مستوى المدينة",
+    "illustrationEn": "The US Navy secretly sprayed a cloud of Serratia marcescens bacteria over the entire city of San Francisco to test the vulnerability of the city to a bioweapon attack. Citizens unknowingly inhaled the bacteria, leading to a spike in rare infections and at least one death. You are nothing but a petri dish in the eyes of the mega-machine.",
+    "illustrationAr": "قامت البحرية الأمريكية سراً برش سحابة من بكتيريا السراتية الماريسنس فوق مدينة سان فرانسيسكو بأكملها لاختبار تعرض المدينة لهجوم بسلاح بيولوجي. استنشق المواطنون البكتيريا دون علمهم، مما أدى إلى ارتفاع في الإصابات النادرة وحالة وفاة واحدة على الأقل. أنت لست سوى طبق بتري في عيون الآلة الضخمة."
+  },
+  {
+    "id": 817,
+    "title": "The Fernald School Experiments",
+    "titleAr": "تجارب مدرسة فيرنالد",
+    "year": "1946",
+    "domain": "Radiation Abuse",
+    "domainAr": "إساءة إشعاعية",
+    "damage": "The Radioactive Milk",
+    "damageAr": "الحليب المشع",
+    "illustrationEn": "Mentally disabled children at the Fernald State School were fed radioactive oatmeal and milk by MIT researchers to trace the absorption of minerals. The children were lured into the 'Science Club' with promises of extra food and baseball tickets. Exploiting the most defenseless members of society for cold data is the hallmark of the architect mindset.",
+    "illustrationAr": "تم إطعام الأطفال المعوقين ذهنياً في مدرسة فيرنالد الحكومية دقيق الشوفان والحليب المشع من قبل باحثي معهد ماساتشوستس للتكنولوجيا لتتبع امتصاص المعادن. تم استدراج الأطفال إلى 'نادي العلوم' بوعود بالمزيد من الطعام وتذاكر البيسبول. إن استغلال الأعضاء الأكثر عجزاً في المجتمع للحصول على بيانات باردة هو السمة المميزة لعقلية المهندس."
+  },
+  {
+    "id": 818,
+    "title": "Ewen Cameron's Psychic Driving",
+    "titleAr": "القيادة النفسية لإوين كاميرون",
+    "year": "1950s",
+    "domain": "Mind Erasure",
+    "domainAr": "محو العقل",
+    "damage": "The Blank Slate",
+    "damageAr": "اللوح الفارغ",
+    "illustrationEn": "Funded by the CIA, Dr. Ewen Cameron put patients into chemically induced comas for up to 86 days and played looped audio messages repeating hundreds of thousands of times to 'depattern' their brains and erase their memories. Patients forgot how to talk, their parents, and who they were. The goal was to completely erase a human soul and overwrite it.",
+    "illustrationAr": "بتمويل من وكالة المخابرات المركزية، وضع الدكتور إوين كاميرون المرضى في غيبوبة مستحثة كيميائياً لمدة تصل إلى 86 يوماً وشغل رسائل صوتية مكررة مئات الآلاف من المرات لـ 'إلغاء نمط' أدمغتهم ومحو ذكرياتهم. نسي المرضى كيفية التحدث، ووالديهم، ومن هم. كان الهدف هو محو الروح البشرية بالكامل والكتابة فوقها."
+  },
+  {
+    "id": 819,
+    "title": "The Vipeholm Experiments",
+    "titleAr": "تجارب فيبهولم",
+    "year": "1945",
+    "domain": "Dental Torture",
+    "domainAr": "تعذيب الأسنان",
+    "damage": "Engineered Rot",
+    "damageAr": "عفن هندسي",
+    "illustrationEn": "In Sweden, patients at a mental hospital were fed massive amounts of sweets to intentionally provoke dental caries. The sugar was formulated into sticky toffees that adhered to the teeth. The experiment ran for years, causing immense pain and rotting the teeth of defenseless patients, all sponsored by the sugar industry and the government.",
+    "illustrationAr": "في السويد، تم إطعام المرضى في مستشفى للأمراض العقلية كميات هائلة من الحلويات لإثارة تسوس الأسنان عمداً. تم صياغة السكر في حلوى لاصقة تلتصق بالأسنان. استمرت التجربة لسنوات، مما تسبب في ألم هائل وتعفن أسنان المرضى العاجزين، وكل ذلك برعاية صناعة السكر والحكومة."
+  },
+  {
+    "id": 820,
+    "title": "Holmesburg Prison Experiments",
+    "titleAr": "تجارب سجن هولمسبيرغ",
+    "year": "1951",
+    "domain": "Inmate Exploitation",
+    "domainAr": "استغلال السجناء",
+    "damage": "The Chemical Flesh",
+    "damageAr": "اللحم الكيميائي",
+    "illustrationEn": "Inmates in Philadelphia were used as test subjects for chemical, biological, and radiological agents, including dioxin and mind-altering drugs. The lead doctor famously stated upon seeing the prison: 'All I saw before me were acres of skin. It was like a farmer seeing a fertile field.' Humans reduced to mere experimental acreage.",
+    "illustrationAr": "استُخدم السجناء في فيلادلفيا كمواضيع اختبار للعوامل الكيميائية والبيولوجية والإشعاعية، بما في ذلك الديوكسين والعقاقير المسببة للهلوسة. صرح الطبيب الرئيسي الشهير عند رؤية السجن: 'كل ما رأيته أمامي كان أفدنة من الجلد. كان الأمر أشبه بمزارع يرى حقلاً خصباً.' تم اختزال البشر إلى مجرد مساحة تجريبية."
+  }
+]

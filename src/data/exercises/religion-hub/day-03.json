@@ -1,0 +1,59 @@
+{
+  "id": "rh-day-03",
+  "title": "Seeking Spiritual Support: The Power of Community",
+  "titleAr": "طلب الدعم الروحي: قوة المجتمع",
+  "mvp": "religion-hub",
+  "day": 3,
+  "duration": 12,
+  "difficulty": "beginner",
+  "category": "positive_coping",
+  "bloomLevel": "understand",
+  "learningObjective": "After this exercise, the user will understand how religious community support functions as a positive coping resource and recognize when it becomes controlling.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيفهم المستخدم كيف يعمل دعم المجتمع الديني كمورد تكيف إيجابي.",
+  "content": {
+    "scenario": "Religious communities can be powerful sources of support (Krause, 2008):\n\n**Positive functions:**\n- Emotional support during difficult times\n- Practical help (meals, childcare, financial aid)\n- Sense of belonging and identity\n- Shared meaning-making resources\n\n**Warning signs of unhealthy community dynamics:**\n- Pressure to conform without question\n- Shaming for doubt or independent thinking\n- Isolation from outside relationships\n- Using guilt to maintain control",
+    "scenarioAr": "المجتمعات الدينية يمكن أن تكون مصادر دعم قوية.",
+    "task": {
+      "type": "matching",
+      "instructions": "Classify each scenario as healthy community support or warning sign.",
+      "instructionsAr": "صنف كل سيناريو كدعم مجتمعي صحي أو علامة تحذيرية.",
+      "items": [
+        {
+          "id": "comm-1",
+          "text": "A mosque organizes meals for a family dealing with illness → Healthy support",
+          "isCorrect": true,
+          "explanation": "Healthy community support. Practical help without conditions demonstrates genuine care and social capital."
+        },
+        {
+          "id": "comm-2",
+          "text": "A group leader says 'If you question our interpretation, you are leaving the faith.' → Warning sign",
+          "isCorrect": true,
+          "explanation": "Warning sign. Equating questioning with apostasy is a control mechanism, not healthy spiritual guidance. Healthy communities welcome thoughtful questions."
+        },
+        {
+          "id": "comm-3",
+          "text": "Friends from the community regularly check in during a stressful period → Healthy support",
+          "isCorrect": true,
+          "explanation": "Healthy support. Regular, non-intrusive check-ins demonstrate genuine concern and belonging."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Well done! You can distinguish healthy community support from controlling dynamics. Healthy communities support growth AND allow questions.",
+      "correctAr": "أحسنت! يمكنك التمييز بين الدعم المجتمعي الصحي والديناميكيات المسيطرة.",
+      "incorrect": "Review: healthy support empowers; controlling dynamics restrict. The key is whether the community encourages growth or demands conformity.",
+      "incorrectAr": "راجع: الدعم الصحي يمكّن؛ الديناميكيات المسيطرة تقيد."
+    }
+  },
+  "whatNotToDo": [
+    "Don't demonize all religious communities — most provide genuine support",
+    "Don't ignore warning signs of unhealthy dynamics"
+  ],
+  "keyhunterId": "rh-kh-03",
+  "evidence": "Krause, N. (2008). Aging in the Church. Templeton Foundation Press.",
+  "safetyNote": "⚠️ This is a psychology-of-religion perspective, NOT a theological ruling.",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Opportunity/Social",
+  "com_b_mechanism": "Community support literacy builds social opportunity for healthy religious engagement"
+}

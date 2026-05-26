@@ -1,0 +1,53 @@
+{
+  "id": "mh-day-07",
+  "title": "Contact and Stories: Reducing Stigma Through Understanding",
+  "titleAr": "التواصل والقصص: تقليل الوصمة من خلال الفهم",
+  "mvp": "mental-health",
+  "day": 7,
+  "duration": 14,
+  "difficulty": "intermediate",
+  "category": "stigma_reduction",
+  "bloomLevel": "analyze",
+  "learningObjective": "After this exercise, the user will understand the contact hypothesis for stigma reduction and practice perspective-taking through structured reflection.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيفهم المستخدم فرضية الاتصال لتقليل الوصمة.",
+  "content": {
+    "scenario": "Research shows that contact with people who have lived experience of mental health conditions is one of the most effective ways to reduce stigma (Corrigan et al., 2012; Allport, 1954).\n\nScenario: Ahmed is a 22-year-old engineering student. He experienced depression during his third year and sought professional help. He now volunteers to share his story with other students.\n\nReflection questions:\n1. What assumptions might you have had about 'someone with depression' before hearing Ahmed's story?\n2. How does hearing a personal experience change your understanding compared to reading a clinical definition?\n3. What would you say to a friend who tells you they're experiencing similar feelings?",
+    "scenarioAr": "البحث يظهر أن التواصل مع أشخاص لديهم خبرة معاشة بحالات الصحة النفسية من أكثر الطرق فعالية لتقليل الوصمة.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Reflect on each question and select the response that best demonstrates perspective-taking.",
+      "instructionsAr": "تأمل في كل سؤال واختر الاستجابة التي تثبت أفضل تقمص للمنظور.",
+      "items": [
+        {
+          "id": "cont-1",
+          "text": "What would you say to a friend who tells you they're feeling depressed? → 'Thank you for trusting me. That took courage. I'm here for you.'",
+          "isCorrect": true,
+          "explanation": "This response demonstrates active listening, affirms trust, and avoids problem-solving or dismissing. These are key supportive communication skills."
+        },
+        {
+          "id": "cont-2",
+          "text": "What should you NOT say? → 'Everyone feels sad sometimes. You just need to be positive!'",
+          "isCorrect": true,
+          "explanation": "This minimizes the experience, equates depression with normal sadness, and suggests a simplistic solution. Even well-intentioned, this response can be harmful."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent empathy and perspective-taking! Your response would help a friend feel heard and supported. Remember: listening is more powerful than advising.",
+      "correctAr": "تعاطف ممتاز! استجابتك ستساعد صديقاً على الشعور بالدعم.",
+      "incorrect": "Review the supportive communication principles. The key is to listen, affirm, and avoid minimizing.",
+      "incorrectAr": "راجع مبادئ التواصل الداعم."
+    }
+  },
+  "whatNotToDo": [
+    "Don't pressure someone to share their story — disclosure must be voluntary",
+    "Don't treat recovery stories as 'inspiration' — they are complex human experiences"
+  ],
+  "keyhunterId": "mh-kh-07",
+  "evidence": "Allport, G.W. (1954). The Nature of Prejudice. Pettigrew & Tropp (2006). Psychological Bulletin.",
+  "safetyNote": "This exercise involves sensitive topics. If reflecting triggers distress, please contact Egypt crisis line: 16328.",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Motivation/Reflective",
+  "com_b_mechanism": "Contact hypothesis builds reflective empathy and reduces prejudice through perspective-taking"
+}

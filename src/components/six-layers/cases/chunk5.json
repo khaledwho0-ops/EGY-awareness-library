@@ -1,0 +1,122 @@
+[
+  {
+    "id": 841,
+    "title": "The Stanford Prison Experiment",
+    "titleAr": "تجربة سجن ستانفورد",
+    "year": "1971",
+    "domain": "Psychological Abuse",
+    "domainAr": "إساءة نفسية",
+    "damage": "The Monster Within",
+    "damageAr": "الوحش بالداخل",
+    "illustrationEn": "A psychological study simulating a prison environment. Normal college students assigned as 'guards' quickly embraced authoritarian, abusive behavior, inflicting severe psychological torture on 'prisoners'. It proved how easily ordinary humans can be programmed into sadists merely by giving them institutional authority and a uniform.",
+    "illustrationAr": "دراسة نفسية تحاكي بيئة السجن. سرعان ما اعتنق طلاب الجامعات العاديون المعينون كـ 'حراس' سلوكاً استبدادياً ومسيئاً، وألحقوا تعذيباً نفسياً شديداً بـ 'السجناء'. لقد أثبتت مدى سهولة برمجة البشر العاديين ليصبحوا ساديين بمجرد منحهم سلطة مؤسسية وزياً رسمياً."
+  },
+  {
+    "id": 842,
+    "title": "The Milgram Shock Experiment",
+    "titleAr": "تجربة صدمة ميلغرام",
+    "year": "1961",
+    "domain": "Authority Compliance",
+    "domainAr": "الامتثال للسلطة",
+    "damage": "The Banality of Evil",
+    "damageAr": "تفاهة الشر",
+    "illustrationEn": "An experiment measuring willingness to obey an authority figure who instructed participants to administer increasingly severe, supposedly lethal electric shocks to another person. A terrifying 65% of participants administered the absolute maximum, fatal voltage simply because a man in a lab coat told them to.",
+    "illustrationAr": "تجربة تقيس الاستعداد لطاعة شخصية ذات سلطة أصدرت تعليمات للمشاركين بإدارة صدمات كهربائية مميتة ومشتدة بشكل متزايد لشخص آخر. أدار 65% مرعب من المشاركين الحد الأقصى المطلق والجهد المميت ببساطة لأن رجلاً يرتدي معطف مختبر أخبرهم بذلك."
+  },
+  {
+    "id": 843,
+    "title": "The Third Wave",
+    "titleAr": "الموجة الثالثة",
+    "year": "1967",
+    "domain": "Social Contagion",
+    "domainAr": "عدوى اجتماعية",
+    "damage": "Fascism Simulation",
+    "damageAr": "محاكاة الفاشية",
+    "illustrationEn": "A high school history teacher attempted to demonstrate how the German population could accept fascist regimes. He created a strict, disciplined movement. Within five days, the simulation spiraled completely out of control, students acting as secret police and reporting on each other. Totalitarianism takes root in days.",
+    "illustrationAr": "حاول مدرس تاريخ في مدرسة ثانوية إظهار كيف يمكن للسكان الألمان قبول الأنظمة الفاشية. ابتكر حركة صارمة ومنضبطة. في غضون خمسة أيام، خرجت المحاكاة عن السيطرة تماماً، حيث عمل الطلاب كشرطة سرية وأبلغوا عن بعضهم البعض. تترسخ الشمولية في أيام."
+  },
+  {
+    "id": 844,
+    "title": "Cambridge Analytica",
+    "titleAr": "كامبريدج أناليتيكا",
+    "year": "2014",
+    "domain": "Psychographic Profiling",
+    "domainAr": "تنميط نفسي",
+    "damage": "Democracy Hacking",
+    "damageAr": "اختراق الديمقراطية",
+    "illustrationEn": "A data analytics firm harvested personal data from millions of Facebook profiles without consent to build psychological models. They used this data to micro-target voters with highly tailored, emotionally manipulative disinformation to sway elections worldwide. The human mind is now a data point optimized for behavioral manipulation.",
+    "illustrationAr": "قامت شركة لتحليل البيانات بجمع البيانات الشخصية لملايين من ملفات تعريف فيسبوك دون موافقة لبناء نماذج نفسية. لقد استخدموا هذه البيانات لاستهداف الناخبين بتضليل دقيق للغاية ومصمم خصيصاً للتلاعب العاطفي للتأثير على الانتخابات في جميع أنحاء العالم. العقل البشري هو الآن نقطة بيانات محسنة للتلاعب السلوكي."
+  },
+  {
+    "id": 845,
+    "title": "The Monster Study",
+    "titleAr": "دراسة الوحش",
+    "year": "1939",
+    "domain": "Behavioral Engineering",
+    "domainAr": "هندسة سلوكية",
+    "damage": "Manufactured Stutter",
+    "damageAr": "تأتأة مصطنعة",
+    "illustrationEn": "An experiment performed on 22 orphan children. Half were given positive speech therapy, the other half were aggressively belittled, badgered, and falsely told they were stutterers. Many of the normal-speaking children subjected to the negative therapy suffered severe psychological damage and retained speech problems for the rest of their lives.",
+    "illustrationAr": "تجربة أجريت على 22 طفلاً يتيماً. أعطي النصف علاج النطق الإيجابي، في حين تم التقليل من شأن النصف الآخر بقوة، ومضايقتهم، وإخبارهم زوراً أنهم يتأتئون. عانى العديد من الأطفال الذين يتحدثون بشكل طبيعي والذين خضعوا للعلاج السلبي من أضرار نفسية شديدة واحتفظوا بمشاكل في النطق لبقية حياتهم."
+  },
+  {
+    "id": 846,
+    "title": "Social Credit System",
+    "titleAr": "نظام الائتمان الاجتماعي",
+    "year": "2014",
+    "domain": "Algorithmic Governance",
+    "domainAr": "حوكمة خوارزمية",
+    "damage": "The Omnipresent State",
+    "damageAr": "الدولة الموجودة في كل مكان",
+    "illustrationEn": "A national reputation system being developed by the Chinese government, intended to standardize the assessment of citizens' and businesses' economic and social reputation. Millions have been blacklisted from buying plane or train tickets because algorithms deemed their behavior 'untrustworthy'. Obedience is automated.",
+    "illustrationAr": "نظام سمعة وطني تطوره الحكومة الصينية، يهدف إلى توحيد تقييم السمعة الاقتصادية والاجتماعية للمواطنين والشركات. تم إدراج الملايين في القائمة السوداء لمنعهم من شراء تذاكر الطائرة أو القطار لأن الخوارزميات اعتبرت سلوكهم 'غير جدير بالثقة'. الطاعة آلية."
+  },
+  {
+    "id": 847,
+    "title": "Project BLUEBIRD",
+    "titleAr": "مشروع الطائر الأزرق",
+    "year": "1950",
+    "domain": "Interrogation Science",
+    "domainAr": "علم الاستجواب",
+    "damage": "The Engineered Manchurian",
+    "damageAr": "المنشوري المهندس",
+    "illustrationEn": "A predecessor to MKUltra, aiming to see if a person could be hypnotized into committing an assassination against their will, and subsequently forgetting it. It experimented with sensory deprivation and drugs. They proved that a human being could be functionally transformed into an unconscious, disposable weapon.",
+    "illustrationAr": "سلف لمشروع إم كي ألترا، يهدف إلى معرفة ما إذا كان يمكن تنويم الشخص مغناطيسياً لارتكاب عملية اغتيال ضد إرادته، ثم نسيانها لاحقاً. جرب الحرمان الحسي والعقاقير. لقد أثبتوا أن الإنسان يمكن أن يتحول وظيفياً إلى سلاح لا واعي يمكن التخلص منه."
+  },
+  {
+    "id": 848,
+    "title": "The Robbers Cave Experiment",
+    "titleAr": "تجربة كهف اللصوص",
+    "year": "1954",
+    "domain": "Conflict Engineering",
+    "domainAr": "هندسة الصراع",
+    "damage": "Manufactured Hatred",
+    "damageAr": "كراهية مصطنعة",
+    "illustrationEn": "Psychologists took two groups of normal 12-year-old boys to a summer camp. By systematically manipulating resources and inciting competition, they engineered extreme, violent hatred between the groups in a matter of days. It is the blueprint for how societies are intentionally divided and conquered by unseen operators.",
+    "illustrationAr": "أخذ علماء النفس مجموعتين من الأولاد العاديين البالغين من العمر 12 عاماً إلى معسكر صيفي. من خلال التلاعب المنهجي بالموارد والتحريض على المنافسة، قاموا بهندسة كراهية شديدة وعنيفة بين المجموعتين في غضون أيام. إنه المخطط لكيفية تقسيم المجتمعات وقهرها عمداً من قبل مشغلين غير مرئيين."
+  },
+  {
+    "id": 849,
+    "title": "Operation Midnight Climax",
+    "titleAr": "عملية ذروة منتصف الليل",
+    "year": "1953",
+    "domain": "Blackmail & Dosing",
+    "domainAr": "ابتزاز وتخدير",
+    "damage": "The CIA Brothels",
+    "damageAr": "بيوت دعارة وكالة المخابرات المركزية",
+    "illustrationEn": "An MKUltra sub-project where the CIA set up covert brothels in San Francisco. Prostitutes lured men into safehouses, where they were secretly dosed with LSD and watched by CIA agents through two-way mirrors. The objective was to study non-consensual drug administration and blackmail techniques.",
+    "illustrationAr": "مشروع فرعي لـ إم كي ألترا حيث أنشأت وكالة المخابرات المركزية بيوت دعارة سرية في سان فرانسيسكو. استدرجت البغايا الرجال إلى منازل آمنة، حيث تم إعطاؤهم جرعات سرية من عقار إل إس دي وراقبهم عملاء وكالة المخابرات المركزية من خلال مرايا ذات اتجاهين. كان الهدف دراسة إدارة المخدرات غير الرضائية وتقنيات الابتزاز."
+  },
+  {
+    "id": 850,
+    "title": "The False Memory Syndrome",
+    "titleAr": "متلازمة الذاكرة الزائفة",
+    "year": "1990s",
+    "domain": "Memory Implantation",
+    "domainAr": "زرع الذاكرة",
+    "damage": "The Fabricated Past",
+    "damageAr": "الماضي الملفق",
+    "illustrationEn": "Psychologists proved that entirely false, vivid memories of traumatic events could be implanted into people's minds through suggestion and guided imagery. People sincerely recalled committing crimes or suffering abuse that never happened. Your own memory is not a recording, but a malleable file that can be rewritten by external forces.",
+    "illustrationAr": "أثبت علماء النفس أن الذكريات الزائفة والحية تماماً للأحداث الصادمة يمكن زرعها في عقول الناس من خلال الإيحاء والتخيل الموجه. تذكر الناس بصدق ارتكاب جرائم أو معاناة من سوء معاملة لم تحدث أبداً. ذاكرتك الخاصة ليست تسجيلاً، بل ملفاً مرناً يمكن إعادة كتابته بواسطة قوى خارجية."
+  }
+]

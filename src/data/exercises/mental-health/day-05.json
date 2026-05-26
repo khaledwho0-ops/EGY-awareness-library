@@ -1,0 +1,59 @@
+{
+  "id": "mh-day-05",
+  "title": "Wellbeing Is More Than Not Being Sick: The PERMA Model",
+  "titleAr": "الرفاهية أكثر من عدم المرض: نموذج PERMA",
+  "mvp": "mental-health",
+  "day": 5,
+  "duration": 12,
+  "difficulty": "beginner",
+  "category": "emotional_awareness",
+  "bloomLevel": "apply",
+  "learningObjective": "After this exercise, the user will be able to explain the 5 PERMA pillars and identify at least one actionable step for each pillar in their own life.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيتمكن المستخدم من شرح ركائز PERMA الخمسة.",
+  "content": {
+    "scenario": "Mental health is NOT just the absence of mental illness. The PERMA model (Seligman, 2011) defines 5 pillars of wellbeing:\n\n**P — Positive Emotions**: Joy, gratitude, hope, serenity\n**E — Engagement**: Flow states, being fully absorbed in meaningful activities\n**R — Relationships**: Positive, supportive connections with others\n**M — Meaning**: Feeling that your life has purpose and significance\n**A — Accomplishment**: Pursuing and achieving goals, mastery\n\nWellbeing = building ALL five pillars, not just avoiding illness.",
+    "scenarioAr": "الصحة النفسية ليست مجرد غياب المرض النفسي. نموذج PERMA يحدد 5 ركائز للرفاهية.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "For each PERMA pillar, select an evidence-supported action you could take this week.",
+      "instructionsAr": "لكل ركيزة من PERMA، اختر إجراءً مدعوماً بالأدلة يمكنك اتخاذه هذا الأسبوع.",
+      "items": [
+        {
+          "id": "perma-p",
+          "text": "Positive Emotions: Write down 3 things you're grateful for today (gratitude journal exercise).",
+          "isCorrect": true,
+          "explanation": "Evidence-supported. Emmons & McCullough (2003) showed that writing gratitude lists increased wellbeing and reduced distress. Takes only 5 minutes."
+        },
+        {
+          "id": "perma-r",
+          "text": "Relationships: Send a genuine compliment or thank-you message to someone you appreciate.",
+          "isCorrect": true,
+          "explanation": "Evidence-supported. Expressing gratitude to others strengthens relationships and increases both parties' wellbeing (Algoe, 2012)."
+        },
+        {
+          "id": "perma-m",
+          "text": "Meaning: Spend 10 minutes reflecting on how your studies connect to your values and goals.",
+          "isCorrect": true,
+          "explanation": "Evidence-supported. Value affirmation exercises (Cohen et al., 2006) connect daily activities to larger meaning and reduce stress."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Wonderful! You've identified actionable steps for wellbeing. Remember: wellbeing is a practice, not a destination. Small daily actions compound over time.",
+      "correctAr": "رائع! لقد حددت خطوات قابلة للتنفيذ للرفاهية.",
+      "incorrect": "Review the PERMA pillars. The key is that wellbeing is multidimensional — you need positive emotions AND engagement AND relationships AND meaning AND accomplishment.",
+      "incorrectAr": "راجع ركائز PERMA."
+    }
+  },
+  "whatNotToDo": [
+    "Don't use PERMA as a replacement for professional help if you're struggling",
+    "Don't fall into toxic positivity — PERMA acknowledges that suffering exists"
+  ],
+  "keyhunterId": "mh-kh-05",
+  "evidence": "Seligman, M.E.P. (2011). Flourish. Atria Books.",
+  "safetyNote": null,
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Motivation/Reflective",
+  "com_b_mechanism": "PERMA model builds reflective motivation to actively pursue wellbeing"
+}

@@ -1,0 +1,20 @@
+# === Core Framework ===
+fastapi==0.115.12
+uvicorn==0.34.2
+python-multipart==0.0.20
+
+# === Arabic NLP (CAMeL Tools - NYU Abu Dhabi) ===
+# Provides: dialect identification, sentiment analysis, NER, morphological analysis
+# Repo: github.com/CAMeL-Lab/camel_tools (MIT)
+# Handles Egyptian Arabic dialect — critical for target population
+camel-tools==1.5.5
+
+# === Image Processing ===
+# Pillow for basic image handling and metadata pre-processing
+Pillow==11.1.0
+
+# === HTTP client for URL-based media fetching ===
+httpx==0.28.1
+
+# === Pydantic settings for env config ===
+pydantic-settings==2.7.1

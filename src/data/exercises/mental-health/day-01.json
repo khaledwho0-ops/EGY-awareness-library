@@ -1,0 +1,78 @@
+{
+  "id": "mh-day-01",
+  "title": "Naming What You Feel: The Science of Affect Labeling",
+  "titleAr": "تسمية ما تشعر به: علم وصف المشاعر",
+  "mvp": "mental-health",
+  "day": 1,
+  "duration": 12,
+  "difficulty": "beginner",
+  "category": "emotional_awareness",
+  "learningObjective": "After this exercise, the user will be able to explain the scientific basis of affect labeling (Lieberman et al., 2007), practice naming emotions using a structured vocabulary, and understand how naming reduces emotional intensity through amygdala modulation.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيتمكن المستخدم من شرح الأساس العلمي لوصف المشاعر (ليبرمان وآخرون، 2007)، وتدريب تسمية المشاعر باستخدام مفردات منظمة، وفهم كيف يقلل التسمية من حدة المشاعر عبر تنظيم اللوزة الدماغية.",
+  "bloomLevel": "understand",
+  "content": {
+    "scenario": "Have you ever felt overwhelmed by an emotion but couldn't quite describe it? Research by Lieberman et al. (2007) found something remarkable: the simple act of naming an emotion — called 'affect labeling' — actually reduces its intensity.\n\nHere's how it works:\n\n**The Neuroscience:** When you experience a strong emotion, your amygdala (the brain's threat detection center) activates. When you put that emotion into words, your prefrontal cortex (the rational brain) activates, which helps modulate and reduce the amygdala's response.\n\n**The Practice:** Instead of 'I feel bad,' try:\n- 'I feel anxious because I'm uncertain about the exam'\n- 'I feel frustrated because my point wasn't understood'\n- 'I feel lonely because I haven't connected with friends this week'\n\n**The Key Distinction:**\n- 'I AM angry' (identity statement — makes it feel permanent)\n- 'I FEEL angry' (emotional state — acknowledges it's temporary)\n- 'I NOTICE anger' (observer stance — creates healthy distance)\n\nThis is NOT about suppressing emotions. It's about understanding them with more precision.",
+    "scenarioAr": "هل شعرت يومًا بأنك مثقل بعاطفة لكنك لا تستطيع وصفها بدقة؟ وجد بحث ليبرمان وآخرين (2007) شيئًا رائعًا: الفعل البسيط المتمثل في تسمية عاطفة — يُسمى 'وصف المشاعر' — يقلل فعليًا من حدتها.\n\nإليك كيف يعمل:\n\n**علم الأعصاب:** عندما تختبر عاطفة قوية، تنشط اللوزة الدماغية (مركز اكتشاف التهديدات في الدماغ). عندما تضع تلك العاطفة في كلمات، ينشط قشرة الفص الجبهي (الدماغ العقلاني)، مما يساعد على تعديل استجابة اللوزة الدماغية وتقليلها.\n\n**التطبيق:** بدلًا من 'أشعر بسوء'، جرّب:\n- 'أشعر بالقلق لأنني غير متأكد من الامتحان'\n- 'أشعر بالإحباط لأن وجهة نظري لم تُفهم'\n- 'أشعر بالوحدة لأنني لم أتواصل مع الأصدقاء هذا الأسبوع'\n\n**التمييز الأساسي:**\n- 'أنا غاضب' (تصريح هوية — يجعله يبدو دائمًا)\n- 'أشعر بالغضب' (حالة عاطفية — يعترف بأنها مؤقتة)\n- 'ألاحظ الغضب' (موقف المراقب — يخلق مسافة صحية)\n\nهذا ليس عن قمع المشاعر. إنه عن فهمها بمزيد من الدقة.",
+    "task": {
+      "type": "matching",
+      "instructions": "For each vague emotional expression, select the more precise affect label that best captures the underlying emotion.",
+      "instructionsAr": "لكل تعبير عاطفي غامض، اختر وصف المشاعر الأكثر دقة الذي يلتقط أفضل العاطفة الكامنة.",
+      "items": [
+        {
+          "id": "al-1",
+          "text": "'I just feel bad.' → Which is more precise? → 'I feel disappointed because my expectations weren't met'",
+          "textAr": "'أشعر بسوء فحسب.' → أيهما أكثر دقة؟ → 'أشعر بخيبة أمل لأن توقعاتي لم تتحقق'",
+          "isCorrect": true,
+          "explanation": "Correct. 'Disappointed' is far more specific than 'bad.' It identifies the emotion AND the cause (unmet expectations), which helps your brain process it more effectively.",
+          "explanationAr": "صحيح. 'خيبة الأمل' أكثر تحديدًا بكثير من 'السوء'. إنها تحدد العاطفة والسبب (التوقعات غير المحققة)، مما يساعد دماغك على معالجتها بشكل أكثر فعالية."
+        },
+        {
+          "id": "al-2",
+          "text": "'I'm stressed.' → Which is more precise? → 'I feel overwhelmed because I have three deadlines this week and haven't planned my time'",
+          "textAr": "'أنا متوتر.' → أيهما أكثر دقة؟ → 'أشعر بالإرهاق لأن لدي ثلاثة مواعيد نهائية هذا الأسبوع ولم أخطط لوقتي'",
+          "isCorrect": true,
+          "explanation": "Correct. 'Overwhelmed' with a specific cause is more actionable than generic 'stressed.' Now you can break down the deadlines and create a plan.",
+          "explanationAr": "صحيح. 'الإرهاق' مع سبب محدد أكثر قابلية للتنفيذ من 'التوتر' العام. الآن يمكنك تقسيم المواعيد النهائية وإنشاء خطة."
+        },
+        {
+          "id": "al-3",
+          "text": "'Everything is fine.' → When you notice tension in your body, which reframing is healthier? → 'I notice some anxiety about tomorrow's meeting, and that's okay'",
+          "textAr": "'كل شيء بخير.' → عندما تلاحظ توترًا في جسمك، أيهما أكثر صحة؟ → 'ألاحظ بعض القلق حول اجتماع الغد، وهذا أمر طبيعي'",
+          "isCorrect": true,
+          "explanation": "Correct. Acknowledging the emotion ('I notice anxiety') rather than dismissing it ('Everything is fine') is associated with better emotional regulation (Gross, 2002). The observer stance creates healthy distance.",
+          "explanationAr": "صحيح. الاعتراف بالعاطفة ('ألاحظ القلق') بدلًا من رفضها ('كل شيء بخير') مرتبط بتنظيم عاطفي أفضل (جروس، 2002). موقف المراقب يخلق مسافة صحية."
+        },
+        {
+          "id": "al-4",
+          "text": "'I AM a failure.' → Which is the healthier reframe? → 'I FEEL frustrated about this specific result, and I can learn from it'",
+          "textAr": "'أنا فاشل.' → أيهما إعادة الصياغة الأكثر صحة؟ → 'أشعر بالإحباط من هذه النتيجة المحددة، ويمكنني التعلم منها'",
+          "isCorrect": true,
+          "explanation": "Correct. Identity statements ('I AM') make emotions feel permanent and global. Emotional state labeling ('I FEEL') acknowledges the emotion is temporary and tied to a specific event.",
+          "explanationAr": "صحيح. تصريحات الهوية ('أنا') تجعل المشاعر تبدو دائمة وشاملة. وصف الحالة العاطفية ('أشعر') يعترف بأن العاطفة مؤقتة ومرتبطة بحدث محدد."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Well done! You've practiced the three levels of affect labeling: identifying the specific emotion, connecting it to its cause, and using observer stance. Research shows this simple practice, done consistently, strengthens your emotional regulation over time.",
+      "correctAr": "أحسنت! لقد تدربت على المستويات الثلاثة لوصف المشاعر: تحديد العاطفة المحددة، وربطها بسببها، واستخدام موقف المراقب. تظهر الأبحاث أن هذه الممارسة البسيطة، عند القيام بها باستمرار، تقوي التنظيم العاطفي لديك بمرور الوقت.",
+      "incorrect": "Review the key principle: specific emotion + specific cause = better emotional processing. 'I feel anxious about X' is always more useful than 'I just feel bad.'",
+      "incorrectAr": "راجع المبدأ الأساسي: عاطفة محددة + سبب محدد = معالجة عاطفية أفضل. 'أشعر بالقلق من X' دائمًا أكثر فائدة من 'أشعر بسوء فحسب'."
+    }
+  },
+  "whatNotToDo": [
+    "Don't suppress emotions — affect labeling is about understanding, not eliminating feelings",
+    "Don't diagnose yourself or others — this is an emotional awareness skill, not a clinical tool"
+  ],
+  "whatNotToDoAr": [
+    "لا تقمع المشاعر — وصف المشاعر يتعلق بالفهم وليس بالتخلص من المشاعر",
+    "لا تشخص نفسك أو الآخرين — هذه مهارة وعي عاطفي وليست أداة سريرية"
+  ],
+  "keyhunterId": "mh-kh-01",
+  "evidence": "Lieberman, M.D., et al. (2007). Putting feelings into words: Affect labeling disrupts amygdala activity in response to affective stimuli. Psychological Science, 18(5), 421-428.",
+  "safetyNote": "If this exercise brings up difficult emotions, you can stop at any time. For crisis support: 16328 (Mental Health Hotline) or 123 (Emergency).",
+  "safetyNoteAr": "إذا أثار هذا التمرين مشاعر صعبة، يمكنك التوقف في أي وقت. للدعم في الأزمات: 16328 (خط مساعدة الصحة النفسية) أو 123 (الطوارئ).",
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Affect labeling builds emotional granularity capability — naming emotions reduces amygdala activation",
+  "trackConfidence": true,
+  "requiresEightGate": false
+}

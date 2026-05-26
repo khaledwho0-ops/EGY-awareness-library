@@ -1,0 +1,53 @@
+{
+  "id": "mh-day-12",
+  "title": "Sleep and Mental Health: The Bidirectional Link",
+  "titleAr": "النوم والصحة النفسية: الرابط ثنائي الاتجاه",
+  "mvp": "mental-health",
+  "day": 12,
+  "duration": 12,
+  "difficulty": "intermediate",
+  "category": "mixed",
+  "bloomLevel": "apply",
+  "learningObjective": "After this exercise, the user will understand the sleep-mental health connection and be able to identify 3 evidence-based sleep hygiene practices.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيفهم المستخدم العلاقة بين النوم والصحة النفسية.",
+  "content": {
+    "scenario": "Sleep and mental health have a BIDIRECTIONAL relationship (Walker, 2017):\n- Poor sleep → worse mental health\n- Poor mental health → worse sleep\n\n**3 Evidence-Based Sleep Practices:**\n1. **Consistent schedule**: Same wake time every day (even weekends)\n2. **Screen curfew**: No screens 30-60 min before bed (blue light suppresses melatonin)\n3. **Wind-down routine**: Reading, stretching, or breathing exercises before sleep",
+    "scenarioAr": "النوم والصحة النفسية لديهما علاقة ثنائية الاتجاه.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Which of these sleep habits are evidence-supported?",
+      "instructionsAr": "أي من عادات النوم هذه مدعومة بالأدلة؟",
+      "items": [
+        {
+          "id": "sleep-1",
+          "text": "Consistent wake time every day → Evidence-supported (circadian rhythm regulation)",
+          "isCorrect": true,
+          "explanation": "Strong evidence. Consistent wake times regulate your circadian rhythm, which is more important than consistent bedtimes."
+        },
+        {
+          "id": "sleep-2",
+          "text": "'Just force yourself to sleep through willpower.' → NOT evidence-supported",
+          "isCorrect": true,
+          "explanation": "Paradoxically, trying harder to sleep makes it harder. This is the 'sleep effort paradox.' Relaxation, not willpower, aids sleep."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Great sleep literacy! Remember: sleep is not a luxury — it's a fundamental pillar of mental health.",
+      "correctAr": "ممتاز! تذكر: النوم ليس رفاهية — إنه ركيزة أساسية للصحة النفسية.",
+      "incorrect": "Review the evidence-based practices. The key is consistency and wind-down routines.",
+      "incorrectAr": "راجع الممارسات المبنية على الأدلة."
+    }
+  },
+  "whatNotToDo": [
+    "Don't equate difficulty sleeping with insomnia disorder — occasional sleep difficulty is normal",
+    "Don't replace professional help with sleep hygiene alone if you have persistent sleep problems"
+  ],
+  "keyhunterId": "mh-kh-12",
+  "evidence": "Walker, M. (2017). Why We Sleep. Scribner.",
+  "safetyNote": null,
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Capability/Physical",
+  "com_b_mechanism": "Sleep hygiene knowledge builds physical capability for mental health maintenance"
+}

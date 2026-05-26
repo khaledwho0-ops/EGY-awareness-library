@@ -1,0 +1,65 @@
+{
+  "id": "dr-day-10",
+  "title": "Prebunking vs Debunking: Vaccine Before the Virus",
+  "titleAr": "التحصين المسبق مقابل التفنيد: اللقاح قبل الفيروس",
+  "mvp": "deepreal",
+  "day": 10,
+  "duration": 15,
+  "difficulty": "advanced",
+  "category": "detection_tasks",
+  "learningObjective": "After this exercise, the user will be able to explain the difference between prebunking (inoculation) and debunking (correction), describe why prebunking is more effective based on Roozenbeek et al. (2022, Science Advances), and apply prebunking strategies to anticipate misinformation before encountering it.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيكون المستخدم قادرًا على شرح الفرق بين التحصين المسبق والتفنيد، ووصف لماذا التحصين المسبق أكثر فعالية بناءً على بحث روزنبيك وآخرون (2022).",
+  "bloomLevel": "evaluate",
+  "content": {
+    "scenario": "Roozenbeek, van der Linden et al. (2022) published a landmark study in Science Advances with Google's Jigsaw team, showing that short 'prebunking' videos — warning people about manipulation techniques BEFORE they encounter them — reduced susceptibility to misinformation by 21-29% across 5 different experiments with a total sample of N>29,000.\n\nKey finding: prebunking outperforms debunking because:\n1. It's PROACTIVE — it works before exposure to the lie\n2. It teaches TECHNIQUE recognition, not just fact correction\n3. It's less politically polarizing — it doesn't target specific beliefs\n4. Effects last up to 3 months (van der Linden & Roozenbeek, 2023)\n\nYou will now compare prebunking and debunking approaches to the same misinformation scenario.",
+    "scenarioAr": "نشر روزنبيك وفان دير ليندن وآخرون (2022) دراسة بارزة في Science Advances مع فريق Jigsaw في Google، تُظهر أن مقاطع فيديو 'التحصين المسبق' القصيرة قللت القابلية للمعلومات المضللة بنسبة 21-29% عبر 5 تجارب مختلفة مع عينة إجمالية تزيد عن 29,000.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "For each approach, classify it as PREBUNKING (proactive inoculation), DEBUNKING (reactive correction), or INEFFECTIVE. Select ALL approaches that use prebunking.",
+      "instructionsAr": "لكل نهج، صنفه كتحصين مسبق أو تفنيد أو غير فعال. اختر جميع الأساليب التي تستخدم التحصين المسبق.",
+      "items": [
+        {
+          "id": "pb-1",
+          "text": "Before flu season, teaching people: 'Misinformation will claim the flu vaccine contains microchips. The technique used is called FEARMONGERING — making something sound scarier than it is.' → PREBUNKING: warns about the technique before the lie appears.",
+          "isCorrect": true,
+          "explanation": "PREBUNKING: This follows the exact Roozenbeek et al. (2022) methodology — (1) warn about the coming misinformation, (2) name the manipulation technique, (3) explain how it works. This inoculates against ALL fearmongering, not just this one claim."
+        },
+        {
+          "id": "pb-2",
+          "text": "After a viral post claims '5G causes COVID': posting a fact-check saying 'FALSE — there is no connection between 5G and viruses. Here is the evidence...' → DEBUNKING: corrects after exposure.",
+          "isCorrect": false,
+          "explanation": "DEBUNKING: This is reactive correction — it fights the lie AFTER it has spread. Lewandowsky et al. (2012) showed debunking has a 'continued influence effect' where the original misinformation persists in memory even after correction."
+        },
+        {
+          "id": "pb-3",
+          "text": "A classroom lesson teaching students: 'Before you see misleading health claims, know that a common technique is FAKE EXPERTS — using people with irrelevant credentials to endorse a claim.' → PREBUNKING: teaches technique recognition proactively.",
+          "isCorrect": true,
+          "explanation": "PREBUNKING: Teaching the 'fake expert' manipulation technique in advance means students will recognize it when they encounter it. The Cambridge 'Bad News' game (Roozenbeek & van der Linden, 2019) uses this exact approach."
+        },
+        {
+          "id": "pb-4",
+          "text": "Sharing a meme that says 'People who believe conspiracy theories are stupid' → INEFFECTIVE: insults the audience and increases polarization.",
+          "isCorrect": false,
+          "explanation": "INEFFECTIVE: Mocking or insulting people increases their resistance to correction (Nyhan & Reifler, 2010, 'backfire effect'). This approach is counterproductive."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "You correctly identified the two prebunking approaches and distinguished them from debunking and ineffective strategies. The Roozenbeek et al. (2022) research shows that prebunking is 21-29% more effective because it teaches TECHNIQUE recognition rather than correcting specific claims. This is the scientific basis for your entire 14-day training program in this app.",
+      "correctAr": "لقد حددت بشكل صحيح نهجي التحصين المسبق وميزتهما عن التفنيد والاستراتيجيات غير الفعالة. يُظهر بحث روزنبيك وآخرون (2022) أن التحصين المسبق أكثر فعالية بنسبة 21-29% لأنه يعلّم التعرف على التقنيات بدلاً من تصحيح ادعاءات محددة.",
+      "incorrect": "Review each approach carefully. Prebunking = proactive (teaches techniques BEFORE exposure). Debunking = reactive (corrects AFTER exposure). The key distinction is timing and focus.",
+      "incorrectAr": "راجع كل نهج بعناية. التحصين المسبق = استباقي (يعلم التقنيات قبل التعرض). التفنيد = تفاعلي (يصحح بعد التعرض)."
+    }
+  },
+  "whatNotToDo": [
+    "Don't wait until misinformation has already spread to respond — prebunking before exposure is 21-29% more effective (Roozenbeek et al., 2022)",
+    "Don't insult or mock people who believe misinformation — this triggers the 'backfire effect' and increases resistance to correction (Nyhan & Reifler, 2010)"
+  ],
+  "keyhunterId": "dr-kh-10",
+  "evidence": "Roozenbeek, J., van der Linden, S., Goldberg, B., Rathje, S., & Lewandowsky, S. (2022). Psychological inoculation improves resilience against misinformation on social media. Science Advances, 8(34), eabo6254.",
+  "safetyNote": "This exercise discusses misinformation techniques for educational purposes only. For verified health information, consult WHO or Egypt's Ministry of Health and Population.",
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Understanding prebunking vs debunking builds proactive resilience capability",
+  "trackConfidence": true,
+  "requiresEightGate": true
+}

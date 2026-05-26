@@ -1,0 +1,71 @@
+{
+  "id": "dr-day-04",
+  "title": "Manufactured Credibility: Spotting Fake Authority",
+  "titleAr": "المصداقية المزيفة: اكتشاف السلطة الوهمية",
+  "mvp": "deepreal",
+  "day": 4,
+  "duration": 15,
+  "difficulty": "intermediate",
+  "category": "source_credibility",
+  "learningObjective": "After this exercise, the user will be able to identify at least 4 techniques used to manufacture false credibility (fake expert titles, fabricated credentials, misleading domain names, stolen institutional logos) and explain why surface-level authority markers are unreliable indicators of truthfulness.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيكون المستخدم قادرًا على تحديد 4 تقنيات على الأقل تُستخدم لتصنيع المصداقية الزائفة (ألقاب خبراء وهمية، شهادات مزيفة، أسماء نطاقات مضللة، شعارات مؤسسية مسروقة) وشرح لماذا لا تُعد علامات السلطة السطحية مؤشرات موثوقة على الصدق.",
+  "bloomLevel": "analyze",
+  "content": {
+    "scenario": "Inoculation theory (van der Linden et al., 2020) shows that teaching users the specific techniques used to manufacture false credibility creates lasting resistance to these tactics.\n\nConsider this scenario: A website called 'EgyptMedicalResearch.org' publishes an article claiming: 'Vaccines cause autism — confirmed by Dr. Ahmed Hassan, PhD in Molecular Biology from Cairo University.'\n\nThe website has:\n- A professional .org domain\n- An official-looking logo resembling a government health ministry\n- The author listed with impressive credentials\n- A 'peer-reviewed' badge on the article\n- References to 'Journal of Advanced Medical Studies'\n\nYour task: Identify which credibility markers are potentially fabricated.",
+    "scenarioAr": "تُظهر نظرية التطعيم (فان دير ليندن وآخرون، 2020) أن تعليم المستخدمين التقنيات المحددة المستخدمة في تصنيع المصداقية الزائفة يخلق مقاومة دائمة لهذه التكتيكات.\n\nتأمل هذا السيناريو: موقع يسمى 'EgyptMedicalResearch.org' ينشر مقالاً يدّعي: 'اللقاحات تسبب التوحد — أكده د. أحمد حسن، حاصل على دكتوراه في البيولوجيا الجزيئية من جامعة القاهرة.'\n\nالموقع يحتوي على:\n- نطاق .org محترف\n- شعار رسمي يشبه وزارة الصحة\n- المؤلف مدرج بأوراق اعتماد مثيرة للإعجاب\n- شارة 'مراجعة الأقران' على المقال\n- إشارات إلى 'مجلة الدراسات الطبية المتقدمة'\n\nمهمتك: حدد أي علامات مصداقية من المحتمل أن تكون مُصطنعة.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "For each credibility marker, determine whether it is RELIABLE or POTENTIALLY FABRICATED and explain why.",
+      "instructionsAr": "لكل علامة مصداقية، حدد ما إذا كانت موثوقة أو من المحتمل أن تكون مُصطنعة واشرح السبب.",
+      "items": [
+        {
+          "id": "cred-domain",
+          "text": "The .org domain — Anyone can register a .org domain for about $10/year. The .org extension does NOT indicate an official organization.",
+          "isCorrect": true,
+          "explanation": "FABRICATED — .org domains are available to anyone. Unlike .gov or .edu, there is no verification process. Misinformation sites frequently use .org to appear official."
+        },
+        {
+          "id": "cred-logo",
+          "text": "The official-looking logo — Logos can be designed or stolen in minutes. Visual similarity to a government logo is not proof of government affiliation.",
+          "isCorrect": true,
+          "explanation": "FABRICATED — Creating a professional logo costs nothing. Maertens et al. (2021) found that institutional logos are among the most commonly faked authority markers."
+        },
+        {
+          "id": "cred-title",
+          "text": "Dr. Ahmed Hassan, PhD — The credentials are listed but not independently verifiable. No link to university profile, no publication record.",
+          "isCorrect": true,
+          "explanation": "POTENTIALLY FABRICATED — Real researchers have verifiable profiles (Google Scholar, university pages, ORCID). Always check if the claimed expert actually exists in institutional records."
+        },
+        {
+          "id": "cred-peer",
+          "text": "The 'peer-reviewed' badge — Self-applied badges mean nothing. Real peer review is conducted by established journals with transparent editorial processes.",
+          "isCorrect": true,
+          "explanation": "FABRICATED — Any website can add a 'peer-reviewed' badge. Genuine peer review is verified through journal indexing (PubMed, Scopus, Web of Science), not self-declaration."
+        },
+        {
+          "id": "cred-journal",
+          "text": "'Journal of Advanced Medical Studies' — This journal name does not appear in any legitimate academic database. It is likely a predatory or fictitious journal.",
+          "isCorrect": true,
+          "explanation": "FABRICATED — Always verify journal names in Scopus, PubMed, or DOAJ. Predatory journals with impressive-sounding names are a major vector for misinformation."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent! You identified all 5 manufactured credibility markers. The key lesson: NEVER trust surface appearances. Always verify: (1) Is the domain officially registered to an institution? (2) Does the expert have verifiable credentials? (3) Is the journal indexed in legitimate databases? This is what Maertens et al. (2021) call 'source literacy.'",
+      "correctAr": "ممتاز! لقد حددت جميع علامات المصداقية المُصطنعة الخمس. الدرس الرئيسي: لا تثق أبدًا بالمظاهر السطحية. تحقق دائمًا: (1) هل النطاق مسجل رسميًا لمؤسسة؟ (2) هل لدى الخبير أوراق اعتماد يمكن التحقق منها؟ (3) هل المجلة مفهرسة في قواعد بيانات شرعية؟",
+      "incorrect": "Review each marker carefully. In the real world, ALL of these markers can be faked cheaply and quickly. The only reliable verification is checking external databases, not trusting what a website says about itself.",
+      "incorrectAr": "راجع كل علامة بعناية. في العالم الحقيقي، يمكن تزوير جميع هذه العلامات بتكلفة زهيدة وبسرعة. التحقق الموثوق الوحيد هو التحقق من قواعد البيانات الخارجية، وليس الوثوق بما يقوله موقع عن نفسه."
+    }
+  },
+  "whatNotToDo": [
+    "Don't trust a .org domain as proof of legitimacy — anyone can register one for $10",
+    "Don't assume an author's listed credentials are real without checking their institutional profile or Google Scholar page"
+  ],
+  "keyhunterId": "dr-kh-04",
+  "evidence": "Maertens, R., Roozenbeek, J., Basol, M., & van der Linden, S. (2021). Long-term effectiveness of inoculation against misinformation: Three longitudinal experiments. Journal of Experimental Psychology: Applied, 27(1), 1-16.",
+  "safetyNote": "This exercise uses a fictional anti-vaccine claim for educational purposes only. Vaccines are safe and effective according to WHO, CDC, and Egypt's Ministry of Health.",
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Identifying manufactured credibility cues builds source evaluation capability",
+  "trackConfidence": true,
+  "requiresEightGate": true
+}

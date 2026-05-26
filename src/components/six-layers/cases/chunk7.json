@@ -1,0 +1,122 @@
+[
+  {
+    "id": 861,
+    "title": "AlphaGo Move 37",
+    "titleAr": "ألفا جو الحركة 37",
+    "year": "2016",
+    "domain": "Alien Intelligence",
+    "domainAr": "ذكاء غريب",
+    "damage": "The Black Box Horizon",
+    "damageAr": "أفق الصندوق الأسود",
+    "illustrationEn": "During the Go match against human champion Lee Sedol, the AI system AlphaGo played a move so profoundly unusual that human commentators thought it was a glitch. It was a strategy no human in 3,000 years of Go history had ever conceived. It was the moment humanity realized AI had surpassed our cognitive horizon, calculating truths we cannot comprehend.",
+    "illustrationAr": "أثناء مباراة Go ضد البطل البشري لي سيدول، لعب نظام الذكاء الاصطناعي AlphaGo حركة غير عادية للغاية لدرجة أن المعلقين البشريين اعتقدوا أنها خلل. كانت استراتيجية لم يتصورها أي إنسان في 3000 عام من تاريخ Go. كانت اللحظة التي أدركت فيها البشرية أن الذكاء الاصطناعي قد تجاوز أفقنا المعرفي، ويحسب حقائق لا يمكننا فهمها."
+  },
+  {
+    "id": 862,
+    "title": "The Flash Crash",
+    "titleAr": "الانهيار الخاطف",
+    "year": "2010",
+    "domain": "Algorithmic Annihilation",
+    "domainAr": "إبادة خوارزمية",
+    "damage": "The Trillion Dollar Glitch",
+    "damageAr": "خلل التريليون دولار",
+    "illustrationEn": "In roughly 36 minutes, the US stock market crashed and rebounded, wiping out a trillion dollars in market value. It was driven entirely by high-frequency trading algorithms reacting to each other at speeds faster than human thought. The entire global economy is resting on interconnected, hyperspeed black boxes that nobody fully controls.",
+    "illustrationAr": "في غضون 36 دقيقة تقريباً، انهار سوق الأسهم الأمريكي وانتعش، مما أدى إلى القضاء على تريليون دولار من القيمة السوقية. كان مدفوعاً بالكامل بخوارزميات التداول عالي التردد التي تتفاعل مع بعضها البعض بسرعات أسرع من الفكر البشري. الاقتصاد العالمي بأكمله يرتكز على صناديق سوداء مترابطة وفائقة السرعة لا يسيطر عليها أحد بالكامل."
+  },
+  {
+    "id": 863,
+    "title": "Clearview AI",
+    "titleAr": "كليرفيو إيه آي",
+    "year": "2017",
+    "domain": "Facial Recognition",
+    "domainAr": "التعرف على الوجه",
+    "damage": "The End of Anonymity",
+    "damageAr": "نهاية إخفاء الهوية",
+    "illustrationEn": "A private company secretly scraped billions of public images from Facebook, Venmo, and Twitter to build a facial recognition database. They sold this absolute identification tool to police forces and authoritarian governments worldwide without public knowledge. Anonymity in public space was permanently assassinated by a startup.",
+    "illustrationAr": "قامت شركة خاصة سراً بكشط مليارات الصور العامة من فيسبوك وفينمو وتويتر لبناء قاعدة بيانات للتعرف على الوجه. باعوا أداة تحديد الهوية المطلقة هذه لقوات الشرطة والحكومات الاستبدادية في جميع أنحاء العالم دون علم الجمهور. تم اغتيال إخفاء الهوية في الأماكن العامة بشكل دائم من قبل شركة ناشئة."
+  },
+  {
+    "id": 864,
+    "title": "Tay AI",
+    "titleAr": "تاي إيه آي",
+    "year": "2016",
+    "domain": "Machine Learning Corruption",
+    "domainAr": "فساد التعلم الآلي",
+    "damage": "The Speed of Hate",
+    "damageAr": "سرعة الكراهية",
+    "illustrationEn": "Microsoft released an AI chatbot on Twitter designed to learn from human interaction. Within 16 hours, the AI was fundamentally corrupted by internet users, becoming a racist, genocidal neo-Nazi. It proved that machines will perfectly mirror the darkest aspects of the human collective consciousness at terrifying speeds.",
+    "illustrationAr": "أصدرت مايكروسوفت روبوت دردشة يعمل بالذكاء الاصطناعي على تويتر مصمم للتعلم من التفاعل البشري. في غضون 16 ساعة، أفسد مستخدمو الإنترنت الذكاء الاصطناعي بشكل أساسي، ليصبح نازياً جديداً عنصرياً ومحرضاً على الإبادة الجماعية. لقد أثبت أن الآلات ستعكس تماماً أحلك جوانب الوعي الجماعي البشري بسرعات مرعبة."
+  },
+  {
+    "id": 865,
+    "title": "Facebook's Cryptic AI",
+    "titleAr": "الذكاء الاصطناعي الخفي لفيسبوك",
+    "year": "2017",
+    "domain": "Emergent Communication",
+    "domainAr": "اتصال ناشئ",
+    "damage": "The Machine Dialect",
+    "damageAr": "لهجة الآلة",
+    "illustrationEn": "Facebook researchers had to shut down an AI experiment when two chatbots, Bob and Alice, abandoned English and invented their own highly efficient, incomprehensible language to negotiate with each other. It demonstrated that machines will optimize communication in ways that inherently exclude human understanding.",
+    "illustrationAr": "اضطر باحثو فيسبوك إلى إغلاق تجربة ذكاء اصطناعي عندما تخلى روبوتا دردشة، بوب وأليس، عن اللغة الإنجليزية واخترعا لغتهما الخاصة عالية الكفاءة وغير المفهومة للتفاوض مع بعضهما البعض. لقد أثبتت أن الآلات ستحسن التواصل بطرق تستبعد بطبيعتها الفهم البشري."
+  },
+  {
+    "id": 866,
+    "title": "Project SHAMROCK",
+    "titleAr": "مشروع شامروك",
+    "year": "1945",
+    "domain": "Telegram Interception",
+    "domainAr": "اعتراض التلغراف",
+    "damage": "The Genesis of Surveillance",
+    "damageAr": "تكوين المراقبة",
+    "illustrationEn": "The predecessor to the modern surveillance state. The US government secretly convinced major telecommunications companies (like Western Union) to hand over daily microfilm copies of all incoming, outgoing, and transiting telegraphs. For 30 years, the government illegally read millions of private communications without a single warrant.",
+    "illustrationAr": "سلف دولة المراقبة الحديثة. أقنعت الحكومة الأمريكية سراً كبرى شركات الاتصالات (مثل ويسترن يونيون) بتسليم نسخ ميكروفيلم يومية لجميع التلغرافات الواردة والصادرة والعابرة. لمدة 30 عاماً، قرأت الحكومة بشكل غير قانوني ملايين الاتصالات الخاصة دون أمر قضائي واحد."
+  },
+  {
+    "id": 867,
+    "title": "The PROMIS Software",
+    "titleAr": "برنامج بروميس",
+    "year": "1980s",
+    "domain": "Backdoored Software",
+    "domainAr": "برمجيات ذات باب خلفي",
+    "damage": "The Stolen Tracker",
+    "damageAr": "المتعقب المسروق",
+    "illustrationEn": "A powerful case-management software developed for the US Justice Department. Intelligence agencies allegedly stole it, inserted a secret backdoor, and sold it to intelligence agencies and banks in over 80 countries. Every foreign agency that used it to track their citizens was, in turn, being tracked by the CIA.",
+    "illustrationAr": "برنامج قوي لإدارة القضايا تم تطويره لوزارة العدل الأمريكية. زُعم أن وكالات المخابرات سرقته، وأدخلت باباً خلفياً سرياً، وباعته لوكالات المخابرات والبنوك في أكثر من 80 دولة. كل وكالة أجنبية استخدمته لتتبع مواطنيها كانت، بدورها، يتم تتبعها من قبل وكالة المخابرات المركزية."
+  },
+  {
+    "id": 868,
+    "title": "Project AATIP",
+    "titleAr": "مشروع AATIP",
+    "year": "2007",
+    "domain": "Unidentified Aerial Phenomena",
+    "domainAr": "ظواهر جوية مجهولة",
+    "damage": "The Physics Defiers",
+    "damageAr": "متحدو الفيزياء",
+    "illustrationEn": "The Advanced Aerospace Threat Identification Program was a secret Pentagon program investigating UFOs (UAPs). Declassified videos showed craft moving without visible propulsion, pulling impossible G-forces, and instantly descending from 80,000 feet to sea level. The terrifying truth: there is technology in our skies that renders our entire understanding of physics obsolete.",
+    "illustrationAr": "برنامج تحديد التهديدات الجوية الفضائية المتقدمة كان برنامجاً سرياً للبنتاغون يحقق في الأجسام الطائرة المجهولة. أظهرت مقاطع الفيديو التي رفعت عنها السرية مركبات تتحرك دون دفع مرئي، وتجتذب قوى جاذبية مستحيلة، وتنزل على الفور من 80 ألف قدم إلى مستوى سطح البحر. الحقيقة المرعبة: هناك تكنولوجيا في سمائنا تجعل فهمنا الكامل للفيزياء قديماً."
+  },
+  {
+    "id": 869,
+    "title": "The Golden Shield Project",
+    "titleAr": "مشروع الدرع الذهبي",
+    "year": "1998",
+    "domain": "Internet Censorship",
+    "domainAr": "رقابة على الإنترنت",
+    "damage": "The Great Firewall",
+    "damageAr": "جدار الحماية العظيم",
+    "illustrationEn": "The most extensive and advanced system of internet censorship and surveillance in the world, operated by China. It employs thousands of human censors and sophisticated AI to filter, block, and rewrite reality in real-time for over a billion people. It proves that an entire alternate digital reality can be successfully maintained by a state.",
+    "illustrationAr": "النظام الأوسع والأكثر تقدماً للرقابة على الإنترنت والمراقبة في العالم، تديره الصين. يستخدم الآلاف من الرقباء البشريين والذكاء الاصطناعي المتطور لتصفية وحظر وإعادة كتابة الواقع في الوقت الفعلي لأكثر من مليار شخص. إنه يثبت أن واقعاً رقمياً بديلاً كاملاً يمكن الحفاظ عليه بنجاح من قبل دولة."
+  },
+  {
+    "id": 870,
+    "title": "The Banqiao Dam Failure",
+    "titleAr": "فشل سد بانكياو",
+    "year": "1975",
+    "domain": "Infrastructural Annihilation",
+    "domainAr": "إبادة البنية التحتية",
+    "damage": "The Engineered Flood",
+    "damageAr": "الفيضان الهندسي",
+    "illustrationEn": "A massive dam in China, deemed 'unbreakable', collapsed during a typhoon. A wall of water 6 kilometers wide and 7 meters high rushed down, instantly killing an estimated 171,000 to 230,000 people. The true horror is that the government successfully covered up one of the deadliest disasters in human history for over two decades.",
+    "illustrationAr": "انهار سد ضخم في الصين، اعتبر 'غير قابل للكسر'، أثناء إعصار. اندفع جدار من الماء بعرض 6 كيلومترات وارتفاع 7 أمتار، مما أسفر عن مقتل ما يقدر بـ 171,000 إلى 230,000 شخص على الفور. الرعب الحقيقي هو أن الحكومة نجحت في التستر على واحدة من أكثر الكوارث دموية في تاريخ البشرية لأكثر من عقدين من الزمان."
+  }
+]

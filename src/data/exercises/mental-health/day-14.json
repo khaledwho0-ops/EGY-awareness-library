@@ -1,0 +1,59 @@
+{
+  "id": "mh-day-14",
+  "title": "Capstone: Your Mental Health Literacy Toolkit",
+  "titleAr": "الختام: مجموعة أدوات معرفتك بالصحة النفسية",
+  "mvp": "mental-health",
+  "day": 14,
+  "duration": 15,
+  "difficulty": "intermediate",
+  "category": "mixed",
+  "bloomLevel": "evaluate",
+  "learningObjective": "After this exercise, the user will synthesize all mental health literacy skills learned over 14 days into a personal action plan.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيدمج المستخدم جميع مهارات محو الأمية في الصحة النفسية.",
+  "content": {
+    "scenario": "Congratulations on completing 14 days of Mental Health Literacy!\n\nYour Toolkit Summary:\n✓ Affect Labeling (Day 1)\n✓ Stress Response (Day 2)\n✓ Anxiety Literacy (Day 3)\n✓ Depression Literacy (Day 4)\n✓ PERMA Wellbeing (Day 5)\n✓ Stigma Types (Day 6)\n✓ Contact & Empathy (Day 7)\n✓ Myth-Busting (Day 8)\n✓ Cultural Context (Day 9)\n✓ Help-Seeking Pathway (Day 10)\n✓ Safety Planning (Day 11)\n✓ Sleep & Mental Health (Day 12)\n✓ Social Media Literacy (Day 13)\n✓ Synthesis (Day 14)\n\nKey resources:\n- Egypt Crisis Line: 16328\n- Dar al-Ifta: 107\n- WHO Mental Health: who.int/health-topics/mental-health",
+    "scenarioAr": "مبروك على إكمال 14 يوماً من محو الأمية في الصحة النفسية!",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Create your personal mental health action plan by completing each section.",
+      "instructionsAr": "أنشئ خطة عملك الشخصية للصحة النفسية.",
+      "items": [
+        {
+          "id": "mh-cap-1",
+          "text": "My self-care practice: [Choose one PERMA activity to practice weekly]",
+          "isCorrect": true,
+          "explanation": "Excellent. Having a specific, planned self-care practice makes it more likely you'll follow through."
+        },
+        {
+          "id": "mh-cap-2",
+          "text": "My help-seeking plan: [Identify one person you could talk to if struggling]",
+          "isCorrect": true,
+          "explanation": "Having a named person (friend, family member, counselor) removes the barrier of 'who would I even tell?'"
+        },
+        {
+          "id": "mh-cap-3",
+          "text": "My crisis resources: 16328 (GSMHAT), 107 (Dar al-Ifta), university counseling",
+          "isCorrect": true,
+          "explanation": "Saving crisis numbers NOW means you have them WHEN you need them. Don't wait until a crisis to search for help."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Outstanding! You've completed the Mental Health Literacy program and created a personal action plan. Remember: mental health literacy is not a destination — it's a lifelong practice.",
+      "correctAr": "ممتاز! لقد أكملت برنامج محو الأمية في الصحة النفسية.",
+      "incorrect": "Complete each section. The action plan is personal — there are no wrong answers, only missing ones.",
+      "incorrectAr": "أكمل كل قسم."
+    }
+  },
+  "whatNotToDo": [
+    "Don't think this is the end — mental health literacy is a lifelong practice",
+    "Don't forget the crisis resources — save them in your phone now"
+  ],
+  "keyhunterId": "mh-kh-14",
+  "evidence": "Jorm, A.F. (2012). Mental health literacy. American Psychologist + Kitchener & Jorm (2002). Mental health first aid.",
+  "safetyNote": "If you or anyone you know needs support, call 16328 (GSMHAT crisis line).",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Full MHL synthesis builds integrated capability for ongoing mental health literacy"
+}

@@ -1,0 +1,71 @@
+{
+  "id": "dr-day-07",
+  "title": "Deepfake Detection: Can You Spot the AI?",
+  "titleAr": "اكتشاف التزييف العميق: هل يمكنك رصد الذكاء الاصطناعي؟",
+  "mvp": "deepreal",
+  "day": 7,
+  "duration": 20,
+  "difficulty": "advanced",
+  "category": "detection_tasks",
+  "learningObjective": "After this exercise, the user will be able to identify at least 5 forensic markers of deepfake media (temporal inconsistencies, boundary artifacts, unnatural blinking patterns, inconsistent lighting, audio-visual desynchronization) based on Groh et al. (2022) from MIT/PNAS research.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيكون المستخدم قادرًا على تحديد 5 علامات جنائية على الأقل للوسائط المزيفة بعمق بناءً على بحث جروه وآخرون (2022) من MIT/PNAS.",
+  "bloomLevel": "analyze",
+  "content": {
+    "scenario": "Groh et al. (2022) published research in PNAS from MIT showing that humans can detect deepfakes at approximately 60-70% accuracy — barely above chance. However, training in specific forensic markers significantly improves detection rates.\n\nKey findings from Groh et al. (2022):\n- Untrained humans detect deepfakes at ~65% accuracy\n- After learning forensic markers, accuracy rises to ~80%\n- The most reliable detection cues are NOT 'gut feeling' but specific visual artifacts\n\nYou are presented with a description of a video that has gone viral on Egyptian social media. The video shows a prominent public figure apparently endorsing a cryptocurrency investment scheme. Your task is to identify which forensic markers suggest this video may be a deepfake.",
+    "scenarioAr": "نشر جروه وآخرون (2022) بحثاً في PNAS من MIT يُظهر أن البشر يمكنهم اكتشاف التزييف العميق بدقة تقارب 60-70% — بالكاد فوق الصدفة. ومع ذلك، فإن التدريب على علامات جنائية محددة يحسن معدلات الاكتشاف بشكل ملحوظ.\n\nتم عرض وصف لفيديو انتشر على وسائل التواصل الاجتماعي المصرية. يُظهر الفيديو شخصية عامة بارزة تؤيد على ما يبدو مخطط استثمار في العملات المشفرة.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Examine each forensic marker described below. Select ALL markers that indicate the video may be a deepfake.",
+      "instructionsAr": "افحص كل علامة جنائية موصوفة أدناه. اختر جميع العلامات التي تشير إلى أن الفيديو قد يكون مزيفاً بعمق.",
+      "items": [
+        {
+          "id": "df-blink",
+          "text": "Unnatural blinking — The person blinks only 3 times in a 2-minute video (normal rate: 15-20 blinks/min). Early deepfake models failed to replicate natural blink patterns.",
+          "isCorrect": true,
+          "explanation": "DEEPFAKE MARKER: Li, Chang & Lyu (2018) identified abnormal blink rates as one of the first reliable deepfake detection methods. While newer models have improved, blink analysis remains a useful forensic tool."
+        },
+        {
+          "id": "df-boundary",
+          "text": "Face boundary artifacts — There is a subtle but visible 'mask edge' where the face meets the hair and ears. The skin tone shifts slightly at this boundary.",
+          "isCorrect": true,
+          "explanation": "DEEPFAKE MARKER: Face-swap deepfakes must blend a synthesized face onto an original head. Groh et al. (2022) found boundary artifacts are among the most detectable forensic markers."
+        },
+        {
+          "id": "df-lighting",
+          "text": "Inconsistent lighting — The light appears to come from the left on the face but from the right on the background. Deepfakes often fail to match the lighting physics of the original scene.",
+          "isCorrect": true,
+          "explanation": "DEEPFAKE MARKER: Lighting inconsistency occurs because the face model and background are processed separately. Real video has consistent light physics."
+        },
+        {
+          "id": "df-sync",
+          "text": "Audio-visual desync — The lip movements are slightly off from the audio, especially on words with strong consonants like 'b', 'p', and 'm'.",
+          "isCorrect": true,
+          "explanation": "DEEPFAKE MARKER: Audio-driven lip synthesis often struggles with plosive consonants. Agarwal et al. (2020) at UC Berkeley developed detection methods specifically targeting lip-sync mismatches."
+        },
+        {
+          "id": "df-temporal",
+          "text": "Temporal flicker — When the video is paused frame-by-frame, the face shape changes slightly between consecutive frames, creating a subtle 'jitter' not present in the body.",
+          "isCorrect": true,
+          "explanation": "DEEPFAKE MARKER: Frame-by-frame inconsistency (temporal incoherence) is a hallmark of deepfake generation. Güera & Delp (2018) showed that convolutional neural networks can exploit these temporal artifacts."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent forensic analysis! You identified all 5 deepfake markers. Key takeaway from Groh et al. (2022): trained humans significantly outperform untrained ones. The techniques you just learned — checking blinks, boundaries, lighting, audio sync, and temporal consistency — are the same methods used by professional fact-checkers.",
+      "correctAr": "تحليل جنائي ممتاز! لقد حددت جميع العلامات الخمس للتزييف العميق. النتيجة الرئيسية من جروه وآخرون (2022): البشر المدربون يتفوقون بشكل ملحوظ على غير المدربين.",
+      "incorrect": "All 5 markers are genuine deepfake indicators documented in peer-reviewed research. Review each one — these are the exact forensic cues that professional fact-checkers use.",
+      "incorrectAr": "جميع العلامات الخمس هي مؤشرات حقيقية على التزييف العميق موثقة في بحوث محكمة. راجع كل واحدة منها."
+    }
+  },
+  "whatNotToDo": [
+    "Don't rely on 'gut feeling' to detect deepfakes — Groh et al. (2022) showed intuition alone is only ~65% accurate, barely above chance",
+    "Don't share suspicious videos before verification — sharing amplifies potential harm even if you add a disclaimer"
+  ],
+  "keyhunterId": "dr-kh-07",
+  "evidence": "Groh, M., Epstein, Z., Firestone, C., & Picard, R. (2022). Deepfake detection by human crowds, machines, and machine-informed crowds. Proceedings of the National Academy of Sciences, 119(1), e2110013119.",
+  "safetyNote": "This exercise discusses deepfake technology for educational detection purposes only. Creating deepfakes to deceive others is illegal under Egyptian cybercrime law (Law No. 175 of 2018).",
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Deepfake artifact recognition builds visual detection pattern capability",
+  "trackConfidence": true,
+  "requiresEightGate": true
+}

@@ -1,0 +1,53 @@
+{
+  "id": "rh-day-06",
+  "title": "Hope and Optimism Through a Spiritual Lens",
+  "titleAr": "الأمل والتفاؤل من منظور روحي",
+  "mvp": "religion-hub",
+  "day": 6,
+  "duration": 12,
+  "difficulty": "beginner",
+  "category": "positive_coping",
+  "bloomLevel": "apply",
+  "learningObjective": "After this exercise, the user will understand hope as a psychological construct with spiritual dimensions and differentiate active hope from passive wishful thinking.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيفهم المستخدم الأمل كبناء نفسي ذو أبعاد روحية.",
+  "content": {
+    "scenario": "Hope has both a psychological and spiritual dimension (Snyder, 2002):\n\n**Psychological hope** (Snyder's Hope Theory):\n- Agency thinking: 'I CAN do something about this'\n- Pathways thinking: 'I CAN FIND a way to do it'\n\n**Spiritual hope**: Trust that meaning exists even when pathways are unclear\n\n**Healthy hope** = agency + pathways + trust\n**Passive wishful thinking** = waiting without action\n\nIn Islamic tradition: Tawakkul (trust in God) + amal (action/work) = healthy pattern\nTawakkul WITHOUT action = fatalism (not recommended in mainstream Islamic scholarship)",
+    "scenarioAr": "الأمل له بعد نفسي وروحي.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Classify each response as active hope or passive wishful thinking.",
+      "instructionsAr": "صنف كل استجابة كأمل نشط أو تمنٍّ سلبي.",
+      "items": [
+        {
+          "id": "hope-1",
+          "text": "'I'm facing a challenge, but I've identified 3 possible solutions and I trust that God will support my effort.' → Active hope",
+          "isCorrect": true,
+          "explanation": "Active hope: combines agency (identified solutions), pathways (3 options), and spiritual trust. This is the healthiest pattern."
+        },
+        {
+          "id": "hope-2",
+          "text": "'I'll just wait and see what happens. If it's meant to be, it will be.' → Passive wishful thinking",
+          "isCorrect": true,
+          "explanation": "Passive: no agency, no pathways, only waiting. This confuses tawakkul with fatalism. Mainstream Islamic scholarship emphasizes trust WITH action."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent! Active hope combines three elements: agency (I CAN), pathways (I'll FIND a way), and trust. Together they create resilience.",
+      "correctAr": "ممتاز! الأمل النشط يجمع ثلاثة عناصر.",
+      "incorrect": "Review: active hope ≠ passive waiting. True hope involves action, planning, AND trust.",
+      "incorrectAr": "راجع: الأمل النشط ≠ الانتظار السلبي."
+    }
+  },
+  "whatNotToDo": [
+    "Don't equate spiritual trust with passivity",
+    "Don't dismiss hope as 'just wishful thinking' — it has strong empirical support"
+  ],
+  "keyhunterId": "rh-kh-06",
+  "evidence": "Snyder, C.R. (2002). Hope theory: Rainbows in the mind. Psychological Inquiry, 13(4), 249-275.",
+  "safetyNote": "⚠️ Academic perspective. No theological rulings are made.",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Motivation/Reflective",
+  "com_b_mechanism": "Active hope distinction builds reflective motivation combining agency with trust"
+}

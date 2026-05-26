@@ -1,0 +1,59 @@
+{
+  "id": "mh-day-08",
+  "title": "Mental Health Myths: Busting Common Misconceptions",
+  "titleAr": "خرافات الصحة النفسية: تصحيح المفاهيم الخاطئة",
+  "mvp": "mental-health",
+  "day": 8,
+  "duration": 12,
+  "difficulty": "intermediate",
+  "category": "stigma_reduction",
+  "bloomLevel": "evaluate",
+  "learningObjective": "After this exercise, the user will be able to identify and correct 5 common mental health myths using evidence-based information.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيتمكن المستخدم من تحديد وتصحيح 5 خرافات شائعة عن الصحة النفسية.",
+  "content": {
+    "scenario": "Mental health myths persist because they are repeated so often they feel true. Let's test 5 common ones.",
+    "scenarioAr": "خرافات الصحة النفسية تستمر لأنها تتكرر كثيراً.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "For each statement, determine: MYTH or FACT?",
+      "instructionsAr": "لكل عبارة، حدد: خرافة أم حقيقة؟",
+      "items": [
+        {
+          "id": "myth-1",
+          "text": "'People with mental health conditions are more violent than the general population.' → MYTH",
+          "isCorrect": true,
+          "explanation": "MYTH. People with mental health conditions are actually MORE LIKELY to be victims of violence than perpetrators. This myth is fueled by selective media coverage (Stuart, 2006)."
+        },
+        {
+          "id": "myth-2",
+          "text": "'Therapy is only for people with serious mental illness.' → MYTH",
+          "isCorrect": true,
+          "explanation": "MYTH. Therapy benefits people across the spectrum, from managing everyday stress to clinical conditions. Early intervention is most effective (NICE guidelines)."
+        },
+        {
+          "id": "myth-3",
+          "text": "'Mental health conditions are treatable.' → FACT",
+          "isCorrect": true,
+          "explanation": "FACT. Most mental health conditions respond to evidence-based treatment (therapy, medication, or both). Full recovery or significant improvement is common with appropriate care."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent myth-busting! Each myth you correct helps reduce stigma. Consider sharing what you've learned with friends and family.",
+      "correctAr": "ممتاز في تصحيح الخرافات! كل خرافة تصححها تساعد في تقليل الوصمة.",
+      "incorrect": "Review each statement against WHO and NIMH guidelines. Myths often contain a tiny grain of truth wrapped in harmful generalization.",
+      "incorrectAr": "راجع كل عبارة."
+    }
+  },
+  "whatNotToDo": [
+    "Don't attack people who believe myths — educate with empathy",
+    "Don't present myth-busting as 'you're wrong' — frame it as 'what evidence actually shows'"
+  ],
+  "keyhunterId": "mh-kh-08",
+  "evidence": "Lilienfeld, S.O., et al. (2010). 50 Great Myths of Popular Psychology. Wiley-Blackwell.",
+  "safetyNote": null,
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Myth-busting builds psychological capability to evaluate mental health claims"
+}

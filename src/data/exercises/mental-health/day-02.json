@@ -1,0 +1,59 @@
+{
+  "id": "mh-day-02",
+  "title": "Stress Response: Understanding Your Body's Alarm System",
+  "titleAr": "استجابة الإجهاد: فهم نظام إنذار جسمك",
+  "mvp": "mental-health",
+  "day": 2,
+  "duration": 12,
+  "difficulty": "beginner",
+  "category": "emotional_awareness",
+  "bloomLevel": "understand",
+  "learningObjective": "After this exercise, the user will be able to describe the stress response (fight-or-flight), differentiate between acute and chronic stress, and identify 3 healthy coping strategies supported by evidence.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيتمكن المستخدم من وصف استجابة الإجهاد والتمييز بين الإجهاد الحاد والمزمن.",
+  "content": {
+    "scenario": "Stress is your body's NORMAL alarm system. When you face a threat (an exam, an argument, a deadline), your brain activates the 'fight-or-flight' response (Lazarus & Folkman, 1984):\n\n- Heart rate increases\n- Muscles tense\n- Attention narrows\n\nThis is adaptive for SHORT-TERM threats. But when stress becomes CHRONIC (lasting weeks or months), it can harm physical and mental health.\n\nKey distinction:\n- **Acute stress**: Short-term, focused, often performance-enhancing\n- **Chronic stress**: Long-term, diffuse, linked to burnout and health problems\n- **Eustress**: Positive stress (excitement, challenge)\n- **Distress**: Negative stress (overwhelm, helplessness)",
+    "scenarioAr": "الإجهاد هو نظام إنذار طبيعي في جسمك.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Classify each scenario as acute stress, chronic stress, eustress, or distress.",
+      "instructionsAr": "صنف كل سيناريو.",
+      "items": [
+        {
+          "id": "str-1",
+          "text": "Feeling nervous before a presentation → Acute stress / Eustress (short-term, can enhance performance)",
+          "isCorrect": true,
+          "explanation": "Correct. Pre-performance nervousness is normal acute stress that typically improves performance. It becomes a concern only if it's paralyzing."
+        },
+        {
+          "id": "str-2",
+          "text": "Months of financial worry with no sleep → Chronic distress (long-term, impairing function)",
+          "isCorrect": true,
+          "explanation": "Correct. Long-term financial worry affecting sleep is chronic distress. This is the type of stress that requires active coping strategies and potentially professional support."
+        },
+        {
+          "id": "str-3",
+          "text": "Excitement about starting a new project → Eustress (positive, motivating)",
+          "isCorrect": true,
+          "explanation": "Correct. Excitement is eustress — positive stress that motivates and energizes. Not all stress is bad."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent! Understanding the types of stress helps you respond appropriately. Remember: stress itself is normal — it's CHRONIC, unmanaged stress that becomes harmful.",
+      "correctAr": "ممتاز! فهم أنواع الإجهاد يساعدك على الاستجابة بشكل مناسب.",
+      "incorrect": "Review the stress types. The key is duration (acute vs. chronic) and valence (eustress vs. distress).",
+      "incorrectAr": "راجع أنواع الإجهاد."
+    }
+  },
+  "whatNotToDo": [
+    "Don't pathologize normal stress — some stress is healthy and adaptive",
+    "Don't use this exercise as a diagnostic tool — it's educational only"
+  ],
+  "keyhunterId": "mh-kh-02",
+  "evidence": "Lazarus, R.S., & Folkman, S. (1984). Stress, Appraisal, and Coping. Springer.",
+  "safetyNote": "If you are experiencing persistent stress affecting daily functioning, please consider speaking with a mental health professional. Egypt crisis line: 16328.",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Understanding stress response types builds capability to distinguish healthy vs harmful stress"
+}

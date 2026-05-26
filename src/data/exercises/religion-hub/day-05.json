@@ -1,0 +1,53 @@
+{
+  "id": "rh-day-05",
+  "title": "Prayer as Coping: Types and Boundaries",
+  "titleAr": "الصلاة كتكيف: أنواعها وحدودها",
+  "mvp": "religion-hub",
+  "day": 5,
+  "duration": 12,
+  "difficulty": "beginner",
+  "category": "positive_coping",
+  "bloomLevel": "understand",
+  "learningObjective": "After this exercise, the user will understand different types of prayer from a psychology perspective and recognize when prayer supports wellbeing versus when it may delay needed help.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيفهم المستخدم أنواع الصلاة المختلفة من منظور نفسي.",
+  "content": {
+    "scenario": "Research on prayer and mental health (Masters & Spielmans, 2007) shows:\n\n**Positive forms:**\n- Meditative/contemplative prayer → similar benefits to meditation (stress reduction)\n- Gratitude-focused prayer → linked to wellbeing (Emmons & McCullough, 2003)\n- Conversational prayer → sense of connection, emotional processing\n\n**When prayer may NOT be enough alone:**\n- When used to REPLACE professional help for clinical conditions\n- When guilt from 'unanswered prayers' increases distress\n- When prayer becomes compulsive (possible scrupulosity)\n\nKey principle: Prayer AND professional help can coexist beautifully.",
+    "scenarioAr": "البحث عن الصلاة والصحة النفسية يظهر أنواعاً مختلفة.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "For each scenario, identify: prayer supporting wellbeing or prayer potentially delaying needed help?",
+      "instructionsAr": "لكل سيناريو: الصلاة تدعم الرفاهية أو تؤخر المساعدة المطلوبة؟",
+      "items": [
+        {
+          "id": "pray-1",
+          "text": "A student prays for calm before exams and uses breathing techniques learned from prayer rituals. → Prayer supporting wellbeing",
+          "isCorrect": true,
+          "explanation": "Positive use. The meditative aspects of prayer naturally support stress management. This complements healthy coping."
+        },
+        {
+          "id": "pray-2",
+          "text": "A student with severe depression says 'I just need to pray harder' and refuses to see a counselor. → Prayer potentially delaying help",
+          "isCorrect": true,
+          "explanation": "Concerning pattern. While prayer can support recovery, using it to REPLACE professional help for clinical depression can delay critical treatment."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Well balanced! The healthiest approach recognizes prayer as a valuable support that complements, not replaces, professional help when needed.",
+      "correctAr": "متوازن! النهج الأصح يعترف بالصلاة كدعم قيم يكمل المساعدة المهنية.",
+      "incorrect": "Review: the key is not whether prayer helps (it often does), but whether it's being used to AVOID professional help when needed.",
+      "incorrectAr": "راجع: المفتاح ليس ما إذا كانت الصلاة تساعد، بل ما إذا كانت تُستخدم لتجنب المساعدة المهنية."
+    }
+  },
+  "whatNotToDo": [
+    "Don't dismiss the psychological benefits of prayer — research supports them",
+    "Don't use prayer as the ONLY response to clinical mental health conditions"
+  ],
+  "keyhunterId": "rh-kh-05",
+  "evidence": "Masters, K.S., & Spielmans, G.I. (2007). Prayer and health. Journal of Behavioral Medicine, 30(4), 329-338.",
+  "safetyNote": "⚠️ This is a psychology perspective. No theological claims are being made about the spiritual efficacy of prayer.",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Motivation/Reflective",
+  "com_b_mechanism": "Prayer type awareness builds reflective motivation for balanced coping"
+}

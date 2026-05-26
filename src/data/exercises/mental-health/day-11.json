@@ -1,0 +1,59 @@
+{
+  "id": "mh-day-11",
+  "title": "Crisis Resources and Safety Planning Basics",
+  "titleAr": "موارد الأزمات وأساسيات خطة السلامة",
+  "mvp": "mental-health",
+  "day": 11,
+  "duration": 12,
+  "difficulty": "intermediate",
+  "category": "mixed",
+  "bloomLevel": "apply",
+  "learningObjective": "After this exercise, the user will understand the purpose of a safety plan, know the key components, and be able to share crisis resources with others.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيفهم المستخدم الغرض من خطة السلامة ومكوناتها الأساسية.",
+  "content": {
+    "scenario": "A safety plan (Stanley & Brown, 2012) is a brief, structured list that helps someone navigate a crisis. It is NOT a contract, and it is NOT a replacement for professional help.\n\n**Key Components:**\n1. Warning signs (what does a crisis feel like for YOU?)\n2. Internal coping strategies (things you can do alone to calm down)\n3. People and places that provide distraction\n4. People you can ask for help\n5. Professionals and agencies to contact\n6. Making the environment safe\n\n🇪🇬 Egypt Crisis Resources:\n- GSMHAT: 16328 (24/7)\n- Emergency: 123\n- Befrienders Worldwide: www.befrienders.org",
+    "scenarioAr": "خطة السلامة هي قائمة مختصرة ومنظمة تساعد شخصاً ما على التعامل مع الأزمة.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "A friend tells you they've been feeling hopeless. Which steps do you take?",
+      "instructionsAr": "صديق يخبرك أنه يشعر باليأس. ما الخطوات التي تتخذها؟",
+      "items": [
+        {
+          "id": "safe-1",
+          "text": "Step 1: Listen without judgment. Don't try to fix or minimize.",
+          "isCorrect": true,
+          "explanation": "Active listening is the most important first step. Let them feel heard before taking any action."
+        },
+        {
+          "id": "safe-2",
+          "text": "Step 2: Ask directly about safety. 'Are you thinking about hurting yourself?'",
+          "isCorrect": true,
+          "explanation": "Research shows that asking about suicide does NOT increase risk — it opens the door for help. Direct, caring questions are essential."
+        },
+        {
+          "id": "safe-3",
+          "text": "Step 3: Connect to professional help. Offer to help them call 16328 together.",
+          "isCorrect": true,
+          "explanation": "Connecting to professional support is critical. Offering to make the call together reduces the barrier significantly."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "You've demonstrated essential crisis response skills. Remember: your role is to listen, ask, and connect — not to be the therapist.",
+      "correctAr": "لقد أظهرت مهارات استجابة أساسية للأزمات.",
+      "incorrect": "Review the steps: Listen → Ask directly → Connect to professional help. Don't try to handle a crisis alone.",
+      "incorrectAr": "راجع الخطوات."
+    }
+  },
+  "whatNotToDo": [
+    "Don't promise to keep secrets if someone's safety is at risk",
+    "Don't try to be someone's therapist — connect them to professionals"
+  ],
+  "keyhunterId": "mh-kh-11",
+  "evidence": "Stanley, B., & Brown, G.K. (2012). Safety planning intervention. Cognitive and Behavioral Practice, 19(2), 256-264.",
+  "safetyNote": "This exercise covers sensitive topics. If you are in crisis, call 16328 immediately.",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Safety planning builds crisis response capability"
+}

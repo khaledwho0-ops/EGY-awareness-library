@@ -1,0 +1,62 @@
+[
+  {
+    "id": 201,
+    "title": "Search Engine Manipulation Effect",
+    "titleAr": "تأثير التلاعب بمحركات البحث",
+    "year": "2015+",
+    "domain": "Algorithmic Censorship",
+    "domainAr": "رقابة خوارزمية",
+    "damage": "Hacked Elections",
+    "damageAr": "انتخابات مخترقة",
+    "illustrationEn": "OSINT researchers have proven that companies like Google can swing the voting preferences of undecided voters by up to 20% simply by altering the ranking of real news articles. They do not invent fake news (Layer 1); they just place negative news about a specific candidate on Page 3 of the search results, ensuring nobody ever sees it. It is a perfectly biased lens that bypasses all fact-checkers because the results are 'technically true', just aggressively filtered.",
+    "illustrationAr": "أثبت باحثو المصادر المفتوحة أن شركات مثل جوجل يمكنها تغيير التفضيلات التصويتية للناخبين المترددين بنسبة تصل إلى ٢٠٪ ببساطة عن طريق تغيير ترتيب المقالات الإخبارية الحقيقية. إنهم لا يخترعون أخباراً مزيفة (الطبقة ١)؛ بل يضعون الأخبار السلبية حول مرشح معين في الصفحة الثالثة من نتائج البحث، لضمان عدم رؤية أحد لها. إنها عدسة منحازة تماماً تتجاوز جميع مدققي الحقائق لأن النتائج 'صحيحة تقنياً'، لكنها مفلترة بقوة."
+  },
+  {
+    "id": 202,
+    "title": "Pentagon's Hollywood Liaison",
+    "titleAr": "مكتب اتصال البنتاغون بهوليوود",
+    "year": "1940s+",
+    "domain": "Cultural Engineering",
+    "domainAr": "هندسة ثقافية",
+    "damage": "Militarized Pop Culture",
+    "damageAr": "ثقافة شعبية معسكرة",
+    "illustrationEn": "A documented reality where the US Department of Defense officially reviews, edits, and alters scripts for major Hollywood blockbusters (like Marvel movies and Top Gun). They provide expensive military hardware for filming, but *only* if the script portrays the military through a heavily biased, heroic lens. They quietly rewrite global pop culture, removing any critique of the military-industrial complex without the audience ever knowing they are watching state-sponsored PR.",
+    "illustrationAr": "حقيقة موثقة حيث تقوم وزارة الدفاع الأمريكية رسمياً بمراجعة وتعديل النصوص السينمائية لأكبر أفلام هوليوود (مثل أفلام مارفل وتوب غان). إنهم يوفرون معدات عسكرية باهظة الثمن للتصوير، ولكن *فقط* إذا صور النص الجيش من خلال عدسة بطولية منحازة بشدة. إنهم يعيدون كتابة الثقافة الشعبية العالمية بهدوء، ويزيلون أي نقد للمجمع الصناعي العسكري دون أن يعرف الجمهور أبداً أنهم يشاهدون علاقات عامة برعاية الدولة."
+  },
+  {
+    "id": 203,
+    "title": "Embedded Journalism in Iraq",
+    "titleAr": "الصحافة المدمجة في العراق",
+    "year": "2003",
+    "domain": "Media Control",
+    "domainAr": "سيطرة إعلامية",
+    "damage": "The Filtered War",
+    "damageAr": "الحرب المفلترة",
+    "illustrationEn": "During the 2003 invasion of Iraq, the military allowed journalists to be 'embedded' with front-line troops. The journalists reported 100% accurate facts of what they saw. However, by restricting their movement entirely to the perspective of the invading soldiers, the resulting global media coverage completely filtered out the massive civilian casualties. The truth was told, but through a perfectly controlled, entirely one-sided lens.",
+    "illustrationAr": "خلال غزو العراق عام ٢٠٠٣، سمح الجيش للصحفيين بـ 'الاندماج' مع قوات الخطوط الأمامية. أبلغ الصحفيون حقائق دقيقة ١٠٠٪ عما رأوه. ومع ذلك، من خلال تقييد حركتهم بالكامل من منظور الجنود الغزاة، قامت التغطية الإعلامية العالمية الناتجة بتصفية الخسائر الهائلة في صفوف المدنيين تماماً. قيلت الحقيقة، ولكن من خلال عدسة محكومة تماماً وأحادية الجانب كلياً."
+  },
+  {
+    "id": 204,
+    "title": "Astroturfed 'Grassroots'",
+    "titleAr": "الحركات 'الشعبية' المزيفة",
+    "year": "Ongoing",
+    "domain": "Manufactured Consensus",
+    "domainAr": "إجماع مُصنع",
+    "damage": "Fake Public Outrage",
+    "damageAr": "غضب عام مزيف",
+    "illustrationEn": "Massive PR firms frequently create fake 'grassroots' citizen groups (astroturfing) to protest environmental or healthcare regulations. They hire real people, hold real protests, and use real economic data. But they completely hide the fact that the entire movement was funded, scripted, and organized by corporate billionaires. You are watching a real protest, but viewed through a manufactured lens designed to protect elite monopolies.",
+    "illustrationAr": "تنشئ شركات العلاقات العامة الضخمة بشكل متكرر مجموعات مواطنين 'شعبية' مزيفة للاحتجاج على اللوائح البيئية أو الصحية. إنهم يوظفون أشخاصاً حقيقيين، وينظمون احتجاجات حقيقية، ويستخدمون بيانات اقتصادية حقيقية. لكنهم يخفون تماماً حقيقة أن الحركة بأكملها تم تمويلها وكتابتها وتنظيمها من قبل مليارديرات الشركات. أنت تشاهد احتجاجاً حقيقياً، لكن يُرى من خلال عدسة مُصنعة تهدف إلى حماية احتكارات النخبة."
+  },
+  {
+    "id": 205,
+    "title": "The Sugar Research Scandal",
+    "titleAr": "فضيحة أبحاث السكر",
+    "year": "1965",
+    "domain": "Corporate Science",
+    "domainAr": "علم الشركات",
+    "damage": "Global Obesity Epidemic",
+    "damageAr": "وباء السمنة العالمي",
+    "illustrationEn": "The sugar industry secretly paid Harvard scientists to publish a massive literature review on heart disease. The scientists used real data, but deliberately shifted the entire blame onto cholesterol and saturated fat, while minimizing the real dangers of sugar. Because the data was 'real' and from Harvard, it shaped global dietary guidelines for 50 years, directly causing the modern obesity epidemic through a purely biased scientific lens.",
+    "illustrationAr": "دفعت صناعة السكر سراً لعلماء في جامعة هارفارد لنشر مراجعة أدبية ضخمة حول أمراض القلب. استخدم العلماء بيانات حقيقية، لكنهم ألقوا اللوم بالكامل عمداً على الكوليسترول والدهون المشبعة، مع تقليل المخاطر الحقيقية للسكر. ولأن البيانات كانت 'حقيقية' ومن هارفارد، فقد شكلت الإرشادات الغذائية العالمية لمدة ٥٠ عاماً، مما تسبب بشكل مباشر في وباء السمنة الحديث من خلال عدسة علمية منحازة بحتة."
+  }
+]

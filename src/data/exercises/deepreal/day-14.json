@@ -1,0 +1,72 @@
+{
+  "id": "dr-day-14",
+  "title": "Final Assessment: Integrated Inoculation Mastery",
+  "titleAr": "التقييم النهائي: إتقان التحصين المتكامل",
+  "mvp": "deepreal",
+  "day": 14,
+  "duration": 25,
+  "difficulty": "advanced",
+  "category": "detection_tasks",
+  "learningObjective": "After this exercise, the user will demonstrate mastery of all DeepReal skills: SIFT application, source credibility evaluation, deepfake forensic markers, emotional manipulation detection, social proof resistance, and claim tracing — achieving the integrated inoculation profile described in van der Linden (2022).",
+  "learningObjectiveAr": "بعد هذا التمرين، سيُظهر المستخدم إتقان جميع مهارات DeepReal: تطبيق SIFT، تقييم مصداقية المصادر، العلامات الجنائية للتزييف العميق، اكتشاف التلاعب العاطفي، مقاومة الدليل الاجتماعي، وتتبع الادعاءات.",
+  "bloomLevel": "create",
+  "content": {
+    "scenario": "van der Linden (2022) in 'Foolproof' (Norton) synthesizes decades of inoculation research into a comprehensive framework: teaching people the TECHNIQUES of manipulation creates broad, transferable immunity against misinformation.\n\nThis final assessment tests your ability to integrate all the skills you've learned over the past 13 days. You will encounter a multi-layered misinformation scenario that combines multiple manipulation techniques.\n\nScenario: A viral video on Egyptian social media shows what appears to be a well-known health minister saying: 'We have been hiding the cure for cancer for decades because pharmaceutical companies pay us.' The video has 500K views, is shared by 12 verified-looking accounts simultaneously, and is accompanied by a PDF 'leaked document' from a site called 'TruthHealthEgypt.org'.\n\nApply everything you've learned to evaluate this scenario.",
+    "scenarioAr": "يلخص فان دير ليندن (2022) في 'Foolproof' عقوداً من بحوث التحصين في إطار شامل: تعليم الناس تقنيات التلاعب يخلق مناعة واسعة قابلة للنقل ضد المعلومات المضللة.\n\nهذا التقييم النهائي يختبر قدرتك على دمج جميع المهارات التي تعلمتها خلال الأيام الـ 13 الماضية.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Identify ALL manipulation techniques and forensic red flags present in this scenario. Select every technique you can detect.",
+      "instructionsAr": "حدد جميع تقنيات التلاعب والعلامات التحذيرية الجنائية الموجودة في هذا السيناريو. اختر كل تقنية يمكنك اكتشافها.",
+      "items": [
+        {
+          "id": "final-deepfake",
+          "text": "Potential Deepfake: A video of a public figure saying something career-ending should trigger deepfake analysis. Check for: boundary artifacts, lip-sync accuracy, unnatural blinking, temporal consistency (Days 7).",
+          "isCorrect": true,
+          "explanation": "DEEPFAKE RED FLAG (Day 7 — Groh et al., 2022): High-profile public figures are prime deepfake targets. The specific claim ('hiding cure for cancer') is a classic conspiracy narrative that deepfake creators use because it triggers strong emotions."
+        },
+        {
+          "id": "final-social",
+          "text": "Social Proof Manipulation: 500K views and 12 'verified-looking' accounts sharing simultaneously suggests a coordinated inauthentic behavior campaign, not organic sharing (Day 11).",
+          "isCorrect": true,
+          "explanation": "SOCIAL PROOF + COORDINATION (Day 11 — Cialdini, 2001): Simultaneous sharing by 12 accounts is a hallmark of coordinated inauthentic behavior (CIB), documented by Facebook/Meta as a primary misinformation tactic."
+        },
+        {
+          "id": "final-emotion",
+          "text": "Emotional Manipulation: 'Hiding the cure for cancer' triggers fear, betrayal, and moral outrage — the most powerful emotional amplifiers for viral sharing (Day 8).",
+          "isCorrect": true,
+          "explanation": "EMOTIONAL MANIPULATION (Day 8 — Martel et al., 2020): Cancer is a universal fear. 'Hiding the cure' triggers betrayal and moral outrage. Brady et al. (2017) showed these emotions maximize sharing behavior."
+        },
+        {
+          "id": "final-authority",
+          "text": "Manufactured Credibility: 'TruthHealthEgypt.org' with a 'leaked document' PDF uses manufactured authority signals — a .org domain and official-looking documents are cheap to fake (Day 4).",
+          "isCorrect": true,
+          "explanation": "MANUFACTURED CREDIBILITY (Day 4 — Maertens et al., 2021): The .org domain, the 'leaked document' format, and the official-sounding name are all manufactured authority markers designed to bypass source scrutiny."
+        },
+        {
+          "id": "final-sift",
+          "text": "SIFT Integration: Apply all 4 moves — STOP (don't share in emotional state), INVESTIGATE (check the minister's official channels), FIND (search Reuters/Al-Ahram for the claim), TRACE (verify the 'leaked document' source) (Days 1,5,9,12).",
+          "isCorrect": true,
+          "explanation": "FULL SIFT (Days 1,5,9,12 — Caulfield, 2019): All 4 SIFT moves are needed simultaneously. This scenario is designed to overwhelm — but systematic application of S-I-F-T cuts through the noise in under 2 minutes."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Outstanding! You demonstrated full integrated inoculation mastery. You detected: deepfake potential (Day 7), social proof manipulation (Day 11), emotional manipulation (Day 8), manufactured credibility (Day 4), and applied SIFT integration (Days 1,5,9,12). This is the exact 'broad-spectrum immunity' that van der Linden (2022) describes — you can now transfer these skills to ANY new misinformation you encounter.",
+      "correctAr": "ممتاز! لقد أظهرت إتقاناً كاملاً للتحصين المتكامل. اكتشفت: احتمال التزييف العميق، التلاعب بالدليل الاجتماعي، التلاعب العاطفي، المصداقية المصطنعة، وطبقت تكامل SIFT. هذه هي 'المناعة واسعة النطاق' التي يصفها فان دير ليندن (2022).",
+      "incorrect": "This scenario contains ALL the manipulation techniques you've studied. Review each item — it combines deepfake technology, social proof, emotional manipulation, manufactured credibility, and requires full SIFT application.",
+      "incorrectAr": "هذا السيناريو يحتوي على جميع تقنيات التلاعب التي درستها. راجع كل عنصر."
+    }
+  },
+  "whatNotToDo": [
+    "Don't share this kind of multi-layered misinformation even with a 'is this real?' caption — sharing amplifies the claim regardless of your intent",
+    "Don't rely on just one SIFT move — complex misinformation requires ALL four moves applied systematically"
+  ],
+  "keyhunterId": "dr-kh-14",
+  "evidence": "van der Linden, S. (2022). Foolproof: Why Misinformation Infects Our Minds and How to Build Immunity. W.W. Norton & Company.",
+  "safetyNote": "This exercise discusses conspiracy theories about cancer cures for educational purposes only. Cancer treatment decisions should ONLY be made with qualified oncologists. Egyptian Cancer Network: 15335.",
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Full SIFT synthesis builds habitual verification as automatic cognitive routine",
+  "trackConfidence": true,
+  "requiresEightGate": true,
+  "approvalState": "approved"
+}

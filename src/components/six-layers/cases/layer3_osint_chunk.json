@@ -1,0 +1,62 @@
+[
+  {
+    "id": 301,
+    "title": "The Crisis Actor Phenomenon",
+    "titleAr": "ظاهرة ممثلي الأزمات",
+    "year": "2012+",
+    "domain": "Conspiracy Fabrication",
+    "domainAr": "تلفيق المؤامرة",
+    "damage": "Harassment of Victims",
+    "damageAr": "مضايقة الضحايا",
+    "illustrationEn": "A deeply disturbing tactic where genuine video footage of local police disaster training drills (which are publicly scheduled and real) is violently ripped out of context by massive media figures. They present this training footage as 'proof' that real, horrific tragedies (like mass school shootings) are 'staged' by the government using 'crisis actors'. The footage is 100% real; the event they claim it represents is a complete, malicious hallucination.",
+    "illustrationAr": "تكتيك مزعج للغاية حيث يتم اقتطاع لقطات فيديو حقيقية لتدريبات الشرطة المحلية على الكوارث (والتي تكون مجدولة علناً وحقيقية) من سياقها بعنف بواسطة شخصيات إعلامية ضخمة. يقدمون لقطات التدريب هذه كـ 'دليل' على أن المآسي الحقيقية والمروعة (مثل حوادث إطلاق النار الجماعي في المدارس) 'مُدبرة' من قبل الحكومة باستخدام 'ممثلي أزمات'. اللقطات حقيقية ١٠٠٪؛ والحدث الذي يزعمون أنها تمثله هو هلوسة خبيثة وكاملة."
+  },
+  {
+    "id": 302,
+    "title": "The P-Hacking Replication Crisis",
+    "titleAr": "أزمة التكرار والتلاعب بالبيانات",
+    "year": "2010s",
+    "domain": "Scientific Fraud",
+    "domainAr": "احتيال علمي",
+    "damage": "A Decade of Fake Science",
+    "damageAr": "عقد من العلم المزيف",
+    "illustrationEn": "A massive scandal in the scientific community where researchers would run 50 different variables in an experiment, find ONE random correlation by pure statistical chance, and publish it as a 'breakthrough' while hiding the 49 failed variables. The data they published was real, but by decontextualizing it from the 49 failures, they created fake science that passed peer review, corrupting medical and psychological literature for decades.",
+    "illustrationAr": "فضيحة ضخمة في المجتمع العلمي حيث يقوم الباحثون بتشغيل ٥٠ متغيراً مختلفاً في تجربة ما، ويجدون ارتباطاً عشوائياً واحداً بمحض الصدفة الإحصائية البحتة، وينشرونه كـ 'اختراق' مع إخفاء الـ ٤٩ متغيراً الفاشلة. البيانات التي نشروها كانت حقيقية، ولكن من خلال عزلها عن حالات الفشل الـ ٤٩، فقد ابتكروا علماً مزيفاً اجتاز مراجعة الأقران، مما أدى إلى إفساد الأدبيات الطبية والنفسية لعقود."
+  },
+  {
+    "id": 303,
+    "title": "The Shirley Sherrod Smear",
+    "titleAr": "تشويه سمعة شيرلي شيرود",
+    "year": "2010",
+    "domain": "Character Assassination",
+    "domainAr": "اغتيال الشخصية",
+    "damage": "Destroyed Career",
+    "damageAr": "تدمير مسيرة مهنية",
+    "illustrationEn": "A conservative media outlet published a video of a government official seemingly admitting to racist discrimination against a white farmer. The clip was 100% real. But it was surgically cropped. The rest of the unedited video showed her explaining how she *overcame* that prejudice to ultimately help the farmer, teaching a lesson of unity. The decontextualization was so powerful and fast that the White House fired her before the truth came out.",
+    "illustrationAr": "نشرت وسيلة إعلامية محافظة مقطع فيديو لمسؤولة حكومية يبدو أنها تعترف فيه بالتمييز العنصري ضد مزارع أبيض. كان المقطع حقيقياً ١٠٠٪. لكنه قُص جراحياً. أظهرت بقية الفيديو غير المعدل وهي تشرح كيف *تغلبت* على هذا التحيز لمساعدة المزارع في النهاية، لتقديم درس في الوحدة. كان اقتطاع السياق قوياً وسريعاً لدرجة أن البيت الأبيض أقالها قبل ظهور الحقيقة."
+  },
+  {
+    "id": 304,
+    "title": "Geographic Decontextualization",
+    "titleAr": "اقتطاع السياق الجغرافي",
+    "year": "Ongoing",
+    "domain": "War Propaganda",
+    "domainAr": "دعاية حرب",
+    "damage": "Manufacturing Casus Belli",
+    "damageAr": "صناعة مبررات الحرب",
+    "illustrationEn": "Using real historical footage of an atrocity from an entirely different continent or decade to 'prove' current enemy war crimes. For instance, state media networks using 10-year-old footage of an accidental gas pipeline explosion in Asia and broadcasting it globally as a 'current military strike' by their enemy in a modern war zone. The explosion is real; the context is entirely fabricated to justify military escalation.",
+    "illustrationAr": "استخدام لقطات تاريخية حقيقية لفظائع من قارة أو عقد مختلف تماماً لـ 'إثبات' جرائم حرب حالية للعدو. على سبيل المثال، استخدام شبكات الإعلام الحكومية للقطات مدتها ١٠ سنوات لانفجار عرضي لخط أنابيب غاز في آسيا وبثها عالمياً كـ 'ضربة عسكرية حالية' من قبل عدوهم في منطقة حرب حديثة. الانفجار حقيقي؛ لكن السياق ملفق تماماً لتبرير التصعيد العسكري."
+  },
+  {
+    "id": 305,
+    "title": "The Gulf of Tonkin Incident",
+    "titleAr": "حادثة خليج تونكين",
+    "year": "1964",
+    "domain": "Geopolitical Deception",
+    "domainAr": "خداع جيوسياسي",
+    "damage": "The Vietnam War",
+    "damageAr": "حرب فيتنام",
+    "illustrationEn": "The US military detected a real radar anomaly (blips on a sonar screen) during a heavy storm in the Gulf of Tonkin. Intelligence agencies decontextualized these radar blips from the severe weather conditions and nervous sailors, and presented them to Congress as absolute proof of an 'unprovoked torpedo attack' by North Vietnam. This single decontextualized, misinterpreted radar reading was used to officially launch the Vietnam War, killing millions.",
+    "illustrationAr": "اكتشف الجيش الأمريكي شذوذاً حقيقياً في الرادار (نقاط على شاشة السونار) أثناء عاصفة شديدة في خليج تونكين. جردت وكالات المخابرات هذه النقاط الرادارية من ظروف الطقس القاسية والبحارة المتوترين، وقدمتها للكونغرس كدليل قاطع على 'هجوم طوربيد غير مبرر' من قبل فيتنام الشمالية. استُخدمت قراءة الرادار الفردية المقتطعة من سياقها والمُساء تفسيرها لبدء حرب فيتنام رسمياً، مما أسفر عن مقتل الملايين."
+  }
+]

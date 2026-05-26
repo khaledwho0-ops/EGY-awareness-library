@@ -1,0 +1,53 @@
+{
+  "id": "rh-day-04",
+  "title": "Forgiveness: Letting Go Without Condoning",
+  "titleAr": "المسامحة: التخلي دون القبول",
+  "mvp": "religion-hub",
+  "day": 4,
+  "duration": 14,
+  "difficulty": "intermediate",
+  "category": "positive_coping",
+  "bloomLevel": "analyze",
+  "learningObjective": "After this exercise, the user will differentiate between decisional and emotional forgiveness and understand forgiveness as a coping strategy distinct from reconciliation.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيميز المستخدم بين المسامحة القرارية والعاطفية.",
+  "content": {
+    "scenario": "Forgiveness is one of the most misunderstood concepts (Worthington, 2005):\n\n- Forgiveness ≠ Reconciliation (you can forgive without restoring the relationship)\n- Forgiveness ≠ Condoning (forgiving doesn't mean what happened was OK)\n- Forgiveness ≠ Forgetting (releasing resentment, not erasing memory)\n\nIn religious contexts, forgiveness is emphasized. But FORCED forgiveness can be harmful.\n\n**Healthy forgiveness**: A personal process of releasing resentment for YOUR wellbeing\n**Unhealthy pressure**: Others telling you to 'just forgive' before you're ready",
+    "scenarioAr": "المسامحة من أكثر المفاهيم سوء فهم.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "For each scenario, identify: healthy forgiveness process or unhealthy pressure?",
+      "instructionsAr": "لكل سيناريو: عملية مسامحة صحية أم ضغط غير صحي؟",
+      "items": [
+        {
+          "id": "forg-1",
+          "text": "A person decides to release their resentment toward someone who hurt them, while maintaining boundaries. → Healthy forgiveness",
+          "isCorrect": true,
+          "explanation": "Healthy. They are choosing to release resentment for their own wellbeing while maintaining protective boundaries. This is the REACH model of forgiveness."
+        },
+        {
+          "id": "forg-2",
+          "text": "A community leader tells a domestic abuse survivor they MUST forgive their abuser immediately to be a good believer. → Unhealthy pressure",
+          "isCorrect": true,
+          "explanation": "Unhealthy and dangerous. Pressuring abuse survivors to forgive immediately can normalize harm and prevent necessary safety measures. Forgiveness, if it comes, must be on the person's own timeline."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent understanding! Healthy forgiveness is a GIFT you give yourself — it is never an obligation imposed by others.",
+      "correctAr": "فهم ممتاز!",
+      "incorrect": "Review the distinction. Forgiveness is a personal process, not an externally imposed demand.",
+      "incorrectAr": "راجع التمييز."
+    }
+  },
+  "whatNotToDo": [
+    "Don't pressure someone to forgive before they're ready",
+    "Don't confuse forgiveness with excusing or enabling harmful behavior"
+  ],
+  "keyhunterId": "rh-kh-04",
+  "evidence": "Worthington, E.L., Jr. (2005). Handbook of Forgiveness. Routledge.",
+  "safetyNote": "⚠️ If you are in an abusive situation, forgiveness should NEVER be prioritized over safety. Contact help first.",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Motivation/Reflective",
+  "com_b_mechanism": "Forgiveness distinction builds reflective motivation for personal healing"
+}

@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Egyptian Awareness Library Offline</title>
+    <meta
+      name="description"
+      content="Offline support page for the Egyptian Awareness Library. Crisis contacts and official support routes remain available without connectivity."
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0b1120;
+        --panel: rgba(15, 23, 42, 0.92);
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --accent: #2563eb;
+        --border: rgba(148, 163, 184, 0.18);
+        --danger: #ef4444;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Segoe UI", Tahoma, sans-serif;
+        background:
+          radial-gradient(circle at top, rgba(37, 99, 235, 0.22), transparent 30%),
+          linear-gradient(180deg, #020617, #0f172a 60%, #111827);
+        color: var(--text);
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      main {
+        width: min(720px, 100%);
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 32px;
+        box-shadow: 0 24px 80px rgba(2, 6, 23, 0.4);
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 4vw, 3rem);
+      }
+
+      p {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .callout {
+        margin: 24px 0;
+        padding: 16px 18px;
+        border-left: 4px solid var(--danger);
+        border-radius: 16px;
+        background: rgba(239, 68, 68, 0.08);
+      }
+
+      ul {
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 12px;
+      }
+
+      li {
+        padding: 14px 16px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: rgba(15, 23, 42, 0.7);
+      }
+
+      a {
+        color: #93c5fd;
+      }
+
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 160px;
+        padding: 12px 16px;
+        border-radius: 999px;
+        text-decoration: none;
+        color: white;
+        background: var(--accent);
+      }
+
+      .secondary {
+        background: transparent;
+        border: 1px solid var(--border);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>Offline mode</p>
+      <h1>Core support is still available.</h1>
+      <p>
+        Your connection is unavailable right now. The Egyptian Awareness Library keeps a small offline shell so
+        learners can still reach crisis numbers and verified official support routes while connectivity is down.
+      </p>
+
+      <div class="callout">
+        <strong>If this is an emergency, call 123 immediately.</strong>
+        <p style="margin-bottom: 0">
+          For mental-health crisis support in Egypt, call 16328 first. If that route is unavailable, use the published
+          toll-free backup 08008880700.
+        </p>
+      </div>
+
+      <ul>
+        <li><strong>Egypt Mental Health Hotline</strong><br />16328 · official short code · urgent support</li>
+        <li><strong>Egypt Mental Health Toll-Free Backup</strong><br />08008880700 · official backup route</li>
+        <li><strong>GSMHAT Cairo backup line</strong><br />0220816831 · official support line</li>
+        <li><strong>Emergency Services</strong><br />123 · 24/7</li>
+        <li><strong>Dar al-Ifta</strong><br />107 · within Egypt · official religious guidance</li>
+      </ul>
+
+      <div class="actions">
+        <a class="button" href="/">Retry home</a>
+        <a class="button secondary" href="/sources">Open trusted sources</a>
+      </div>
+    </main>
+  </body>
+</html>

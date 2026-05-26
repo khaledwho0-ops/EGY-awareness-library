@@ -1,0 +1,53 @@
+{
+  "id": "rh-day-10",
+  "title": "Scrupulosity: When Devotion Becomes Distress",
+  "titleAr": "الوسوسة: عندما يصبح التقوى اضطراباً",
+  "mvp": "religion-hub",
+  "day": 10,
+  "duration": 14,
+  "difficulty": "intermediate",
+  "category": "threat_awareness",
+  "bloomLevel": "analyze",
+  "learningObjective": "After this exercise, the user will understand scrupulosity, distinguish it from healthy devotion, and know when professional help is appropriate.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيفهم المستخدم الوسوسة ويميزها عن التقوى الصحية.",
+  "content": {
+    "scenario": "Scrupulosity (Abramowitz et al., 2002) is excessive, distressing worry about sin, purity, or religious practice:\n\n**Healthy devotion:**\n- Feels meaningful and connected\n- Allows for human imperfection\n- Brings peace, even during challenges\n\n**Scrupulosity (waswas in Islamic tradition):**\n- Persistent, unwanted doubt about religious adequacy\n- Excessive repetition of prayers/rituals despite 'proper' performance\n- Intense guilt disproportionate to the 'offense'\n- Distress that interferes with daily life\n\n**Important**: In Islamic scholarship, excessive waswas is recognized as a known problem, not a sign of weak faith.",
+    "scenarioAr": "الوسوسة هي قلق مفرط ومؤلم بشأن الخطيئة أو الطهارة أو الممارسة الدينية.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Classify: healthy devotion or potential scrupulosity?",
+      "instructionsAr": "صنف: تقوى صحية أو وسوسة محتملة؟",
+      "items": [
+        {
+          "id": "scrup-1",
+          "text": "A student repeats wudu 7+ times because they 'can't be sure it was perfect.' → Potential scrupulosity",
+          "isCorrect": true,
+          "explanation": "Potential scrupulosity. Excessive repetition despite proper performance and persistent doubt are hallmarks. Islamic scholars specifically address this as waswas."
+        },
+        {
+          "id": "scrup-2",
+          "text": "A student prays regularly and feels at peace, even though they occasionally make mistakes. → Healthy devotion",
+          "isCorrect": true,
+          "explanation": "Healthy devotion. Acceptance of human imperfection with a sense of peace is the hallmark of healthy religious practice."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent understanding! Recognizing the difference between devotion and scrupulosity can help people get appropriate support. Both religious guidance AND professional help may be needed.",
+      "correctAr": "فهم ممتاز!",
+      "incorrect": "Review: healthy devotion brings peace; scrupulosity brings ongoing distress and compulsive behaviors.",
+      "incorrectAr": "راجع: التقوى الصحية تجلب السلام؛ الوسوسة تجلب ضيقاً مستمراً."
+    }
+  },
+  "whatNotToDo": [
+    "Don't shame someone for scrupulosity — it's a recognized condition, not weak faith",
+    "Don't diagnose — only professionals can determine if OCD is present"
+  ],
+  "keyhunterId": "rh-kh-10",
+  "evidence": "Abramowitz, J.S., et al. (2002). Religious obsessions and compulsions. Behaviour Research and Therapy, 40(7), 819-826.",
+  "safetyNote": "⚠️ If religious practices are causing significant distress, consider consulting both a trusted scholar and a mental health professional.",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Scrupulosity recognition builds capability to distinguish devotion from compulsion"
+}

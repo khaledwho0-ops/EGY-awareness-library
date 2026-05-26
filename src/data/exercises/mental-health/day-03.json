@@ -1,0 +1,59 @@
+{
+  "id": "mh-day-03",
+  "title": "Understanding Anxiety: What It Is and What It Isn't",
+  "titleAr": "فهم القلق: ما هو وما ليس كذلك",
+  "mvp": "mental-health",
+  "day": 3,
+  "duration": 12,
+  "difficulty": "beginner",
+  "category": "emotional_awareness",
+  "bloomLevel": "understand",
+  "learningObjective": "After this exercise, the user will be able to distinguish between normal anxiety and anxiety disorders, identify 3 common misconceptions, and recognize when professional help may be beneficial.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيتمكن المستخدم من التمييز بين القلق الطبيعي واضطرابات القلق.",
+  "content": {
+    "scenario": "Anxiety is one of the most misunderstood terms in mental health.\n\n**What anxiety IS:**\n- A normal emotional response to perceived threats (Jorm, 2012)\n- Present in everyone at some level\n- Can be helpful (alerts us to real dangers)\n\n**What anxiety is NOT:**\n- A choice or personality weakness\n- The same as being 'just worried'\n- Something you can 'just get over'\n\n**When it may indicate a disorder (educational, NOT diagnostic):**\n- Persistent (most days for 6+ months)\n- Disproportionate to the actual threat\n- Significantly impairs daily functioning (work, relationships, sleep)\n- Physical symptoms: racing heart, difficulty breathing, muscle tension\n\n⚠️ DISCLAIMER: This is EDUCATIONAL content. Only qualified professionals can diagnose anxiety disorders.",
+    "scenarioAr": "القلق من أكثر المصطلحات سوء فهم في الصحة النفسية.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "For each statement, identify whether it is a FACT or a MYTH about anxiety.",
+      "instructionsAr": "لكل عبارة، حدد ما إذا كانت حقيقة أم خرافة عن القلق.",
+      "items": [
+        {
+          "id": "anx-1",
+          "text": "'Everyone feels anxious sometimes.' → FACT",
+          "isCorrect": true,
+          "explanation": "FACT. Anxiety is a universal human experience. It becomes a concern when it's persistent, disproportionate, and impairing."
+        },
+        {
+          "id": "anx-2",
+          "text": "'If you just relax, your anxiety will go away.' → MYTH",
+          "isCorrect": true,
+          "explanation": "MYTH. Telling someone to 'just relax' misunderstands anxiety. Anxiety disorders involve neurobiological mechanisms that cannot be simply 'thought away.'"
+        },
+        {
+          "id": "anx-3",
+          "text": "'Anxiety disorders are very common among university students.' → FACT",
+          "isCorrect": true,
+          "explanation": "FACT. Research consistently shows anxiety is one of the most prevalent mental health concerns among university populations worldwide."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Well done! You can now distinguish facts from myths about anxiety. This knowledge helps reduce stigma and encourages appropriate help-seeking.",
+      "correctAr": "أحسنت! يمكنك الآن التمييز بين الحقائق والخرافات عن القلق.",
+      "incorrect": "Review each statement carefully. Myths often contain a tiny grain of truth wrapped in a harmful misunderstanding.",
+      "incorrectAr": "راجع كل عبارة بعناية."
+    }
+  },
+  "whatNotToDo": [
+    "Don't diagnose yourself or others based on this exercise — it's educational only",
+    "Don't dismiss anxiety as 'not real' — it has neurobiological underpinnings"
+  ],
+  "keyhunterId": "mh-kh-03",
+  "evidence": "Jorm, A.F. (2012). Mental health literacy. American Psychologist, 67(3), 231-243.",
+  "safetyNote": "This is educational content, NOT diagnostic. For clinical assessment, consult a qualified mental health professional. Egypt crisis line: 16328.",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Distinguishing anxiety facts from myths builds recognition capability"
+}

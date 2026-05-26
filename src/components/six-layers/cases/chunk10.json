@@ -1,0 +1,122 @@
+[
+  {
+    "id": 891,
+    "title": "The False Alarm of 1983",
+    "titleAr": "الإنذار الكاذب لعام 1983",
+    "year": "1983",
+    "domain": "Nuclear Close Call",
+    "domainAr": "اقتراب نووي",
+    "damage": "The Man Who Saved the World",
+    "damageAr": "الرجل الذي أنقذ العالم",
+    "illustrationEn": "Soviet early warning systems detected five incoming intercontinental ballistic missiles launched from the US. The protocol demanded an immediate, massive nuclear counter-strike. One officer, Stanislav Petrov, judged it to be a false alarm based entirely on a gut feeling and disobeyed orders. Humanity survived its engineered extinction purely by a single man's intuition.",
+    "illustrationAr": "اكتشفت أنظمة الإنذار المبكر السوفيتية خمسة صواريخ باليستية عابرة للقارات قادمة أطلقت من الولايات المتحدة. تطلب البروتوكول ضربة نووية مضادة فورية وهائلة. ضابط واحد، ستانيسلاف بيتروف، حكم عليه بأنه إنذار كاذب بناءً بالكامل على شعور داخلي وعصى الأوامر. نجت البشرية من الانقراض المصمم هندسياً بفضل حدس رجل واحد فقط."
+  },
+  {
+    "id": 892,
+    "title": "Project PLUTO",
+    "titleAr": "مشروع بلوتو",
+    "year": "1957",
+    "domain": "Doomsday Weaponry",
+    "domainAr": "أسلحة يوم القيامة",
+    "damage": "The Flying Chernobyl",
+    "damageAr": "تشيرنوبيل الطائرة",
+    "illustrationEn": "A US government program to develop nuclear-powered ramjet engines for cruise missiles. The proposed missile (SLAM) would fly at Mach 3 at low altitudes, deafening people on the ground, spewing highly radioactive fallout in its wake, and ultimately dropping multiple nuclear warheads on enemy territory. The concept was so apocalyptic it terrified its own creators into abandoning it.",
+    "illustrationAr": "برنامج للحكومة الأمريكية لتطوير محركات نفاثة تعمل بالطاقة النووية لصواريخ كروز. كان الصاروخ المقترح (SLAM) سيطير بسرعة 3 ماخ على ارتفاعات منخفضة، مما يصم آذان الناس على الأرض، وينفث تداعيات شديدة الإشعاع في أعقابه، ويلقي في النهاية رؤوساً نووية متعددة على أراضي العدو. كان المفهوم مروعاً لدرجة أنه أرعب مبدعيه وتركوه."
+  },
+  {
+    "id": 893,
+    "title": "Operation Fishbowl",
+    "titleAr": "عملية وعاء السمك",
+    "year": "1962",
+    "domain": "High-Altitude EMP",
+    "domainAr": "نبض كهرومغناطيسي على ارتفاع عالٍ",
+    "damage": "Starfish Prime",
+    "damageAr": "نجم البحر الرئيسي",
+    "illustrationEn": "A series of high-altitude nuclear tests. The Starfish Prime test detonated a 1.4-megaton warhead in space. The resulting electromagnetic pulse (EMP) was vastly larger than anticipated, knocking out streetlights and telephones in Hawaii, 900 miles away, and destroying satellites. We proved we could instantly blind and cripple human civilization from orbit.",
+    "illustrationAr": "سلسلة من التجارب النووية على ارتفاعات عالية. فجرت تجربة نجم البحر الرئيسي رأساً حربياً بقوة 1.4 ميغا طن في الفضاء. كان النبض الكهرومغناطيسي (EMP) الناتج أكبر بكثير مما كان متوقعاً، حيث أدى إلى تدمير أضواء الشوارع والهواتف في هاواي، على بعد 900 ميل، وتدمير الأقمار الصناعية. أثبتنا أنه يمكننا أن نعمي ونشل الحضارة البشرية على الفور من المدار."
+  },
+  {
+    "id": 894,
+    "title": "The Y2K Bug",
+    "titleAr": "خطأ عام 2000",
+    "year": "1999",
+    "domain": "Digital Fragility",
+    "domainAr": "هشاشة رقمية",
+    "damage": "The Calendar Collapse",
+    "damageAr": "انهيار التقويم",
+    "illustrationEn": "A computer flaw caused by the storage of calendar data in a two-digit format. The terrifying reality wasn't what happened, but what almost happened: a structural flaw in the absolute baseline code of global finance, utilities, and nuclear systems threatened to unravel modern civilization. Our world is built on a house of digital cards.",
+    "illustrationAr": "خلل في الكمبيوتر ناتج عن تخزين بيانات التقويم بتنسيق من رقمين. الحقيقة المرعبة لم تكن ما حدث، بل ما كاد أن يحدث: خلل هيكلي في الكود الأساسي المطلق للتمويل العالمي والمرافق والأنظمة النووية هدد بتفكيك الحضارة الحديثة. عالمنا مبني على بيت من البطاقات الرقمية."
+  },
+  {
+    "id": 895,
+    "title": "False Vacuum Decay",
+    "titleAr": "اضمحلال الفراغ الكاذب",
+    "year": "1970s",
+    "domain": "Quantum Annihilation",
+    "domainAr": "إبادة كمومية",
+    "damage": "The Bubble of Nothing",
+    "damageAr": "فقاعة اللاشيء",
+    "illustrationEn": "A theoretical physics scenario where the universe is existing in a 'false vacuum' state. If a quantum tunneling event occurs, it would create a bubble of 'true vacuum' that expands at the speed of light, instantly destroying all matter, energy, and the laws of physics themselves. We would never see it coming, and there is no defense.",
+    "illustrationAr": "سيناريو فيزياء نظري حيث يوجد الكون في حالة 'فراغ كاذب'. إذا حدث حدث نفق كمي، فسوف يخلق فقاعة من 'الفراغ الحقيقي' تتوسع بسرعة الضوء، وتدمر على الفور كل المادة والطاقة وقوانين الفيزياء نفسها. لن نرى ذلك قادماً أبداً، ولا يوجد دفاع."
+  },
+  {
+    "id": 896,
+    "title": "The Tunguska Event",
+    "titleAr": "حدث تونغوسكا",
+    "year": "1908",
+    "domain": "Cosmic Impact",
+    "domainAr": "تأثير كوني",
+    "damage": "The Forest Flattened",
+    "damageAr": "الغابة المسطحة",
+    "illustrationEn": "A massive explosion occurred over the remote Siberian taiga, flattening 80 million trees over an area of 2,150 square kilometers. It is widely believed to be the air burst of a meteoroid. Had it struck a populated city, it would have annihilated millions instantly. A stark reminder that the cosmos randomly throws apocalyptic rocks at us.",
+    "illustrationAr": "انفجار هائل وقع فوق غابة التايغا السيبيرية النائية، وسوى 80 مليون شجرة بالأرض على مساحة 2150 كيلومتراً مربعاً. يُعتقد على نطاق واسع أنه انفجار هوائي لنيزك. لو ضرب مدينة مأهولة بالسكان، لكان دمر الملايين على الفور. تذكير صارخ بأن الكون يلقي علينا صخوراً مروعة بشكل عشوائي."
+  },
+  {
+    "id": 897,
+    "title": "The Great Filter",
+    "titleAr": "المرشح العظيم",
+    "year": "1996",
+    "domain": "Existential Philosophy",
+    "domainAr": "فلسفة وجودية",
+    "damage": "The Inevitable End",
+    "damageAr": "النهاية الحتمية",
+    "illustrationEn": "A concept attempting to resolve the Fermi Paradox: it posits that in the development of life from the earliest stages to a space-colonizing civilization, there is a barrier (a 'filter') that is almost impossible to overcome. If we haven't passed it yet, it means our extinction as a species is not only possible, but statistically guaranteed.",
+    "illustrationAr": "مفهوم يحاول حل مفارقة فيرمي: يفترض أنه في تطور الحياة من المراحل المبكرة إلى حضارة تستعمر الفضاء، هناك حاجز ('مرشح') يكاد يكون من المستحيل التغلب عليه. إذا لم نجتز ذلك بعد، فهذا يعني أن انقراضنا كنوع ليس ممكناً فحسب، بل إنه مضمون إحصائياً."
+  },
+  {
+    "id": 898,
+    "title": "The Doomsday Clock",
+    "titleAr": "ساعة يوم القيامة",
+    "year": "1947",
+    "domain": "Symbolic Extinction",
+    "domainAr": "انقراض رمزي",
+    "damage": "Seconds to Midnight",
+    "damageAr": "ثوانٍ حتى منتصف الليل",
+    "illustrationEn": "A clock maintained by the Bulletin of the Atomic Scientists representing the likelihood of a human-made global catastrophe. Midnight represents global annihilation. As of recent years, we are operating merely 90 seconds to midnight—the closest humanity has ever been to engineering its own total destruction through nuclear war and climate collapse.",
+    "illustrationAr": "ساعة تحتفظ بها نشرة علماء الذرة تمثل احتمالية حدوث كارثة عالمية من صنع الإنسان. يمثل منتصف الليل الإبادة العالمية. اعتباراً من السنوات الأخيرة، نحن نعمل على بعد 90 ثانية فقط من منتصف الليل - وهو الأقرب الذي وصلته البشرية على الإطلاق لهندسة دمارها الشامل من خلال الحرب النووية والانهيار المناخي."
+  },
+  {
+    "id": 899,
+    "title": "De-Extinction Black Projects",
+    "titleAr": "مشاريع سوداء لإنهاء الانقراض",
+    "year": "2020s",
+    "domain": "Synthetic Biology",
+    "domainAr": "بيولوجيا تركيبية",
+    "damage": "The Resurrected Pathogens",
+    "damageAr": "مسببات الأمراض التي أُقيمت من الموت",
+    "illustrationEn": "While public focus is on resurrecting mammoths, classified bio-labs globally possess the capability to synthesize and resurrect extinct, devastating pathogens like smallpox and the 1918 influenza virus purely from digital genetic sequences. We have reached a point where ancient death can be downloaded and printed in a laboratory.",
+    "illustrationAr": "بينما ينصب التركيز العام على إحياء الماموث، تمتلك المختبرات الحيوية السرية على مستوى العالم القدرة على تجميع وإحياء مسببات الأمراض المنقرضة والمدمرة مثل الجدري وفيروس إنفلونزا عام 1918 بشكل بحت من التسلسلات الجينية الرقمية. لقد وصلنا إلى نقطة حيث يمكن تنزيل الموت القديم وطباعته في المختبر."
+  },
+  {
+    "id": 900,
+    "title": "The Holocene Extinction",
+    "titleAr": "انقراض الهولوسين",
+    "year": "Present",
+    "domain": "Anthropogenic Annihilation",
+    "domainAr": "إبادة بشرية المنشأ",
+    "damage": "The Silent Death of Earth",
+    "damageAr": "الموت الصامت للأرض",
+    "illustrationEn": "We are currently in the midst of the sixth mass extinction event in Earth's history, and the first driven entirely by a single species: humans. We are systematically unwinding the complex web of life that sustains us. The ultimate terrifying truth is that we are the apex predators architecting our own planetary collapse.",
+    "illustrationAr": "نحن حالياً في خضم حدث الانقراض الجماعي السادس في تاريخ الأرض، والأول الذي تحركه بالكامل أنواع واحدة: البشر. نحن نقوم بشكل منهجي بتفكيك شبكة الحياة المعقدة التي تحافظ علينا. الحقيقة المرعبة المطلقة هي أننا الحيوانات المفترسة العليا التي تضع هندسة لانهيار الكوكب الخاص بها."
+  }
+]

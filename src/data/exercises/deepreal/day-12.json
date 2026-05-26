@@ -1,0 +1,65 @@
+{
+  "id": "dr-day-12",
+  "title": "Trace Claims: The 'T' in SIFT — Following the Evidence Chain",
+  "titleAr": "تتبع الادعاءات: حرف 'T' في SIFT — تتبع سلسلة الأدلة",
+  "mvp": "deepreal",
+  "day": 12,
+  "duration": 15,
+  "difficulty": "advanced",
+  "category": "source_credibility",
+  "learningObjective": "After this exercise, the user will be able to apply the 'Trace claims, quotes, and media to their original context' step of SIFT (Caulfield, 2019), following the information chain from secondary sources back to primary sources and identifying where distortion occurs.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيكون المستخدم قادرًا على تطبيق خطوة 'تتبع الادعاءات والاقتباسات والوسائط إلى سياقها الأصلي' في SIFT.",
+  "bloomLevel": "analyze",
+  "content": {
+    "scenario": "The 'T' in SIFT — Trace claims — addresses the problem of information distortion as claims travel through the information ecosystem. Wardle & Derakhshan (2017) in their Council of Europe report identified 7 types of information disorder, many involving distortion during transmission.\n\nA claim travels through 5 stages: Original Study → University Press Release → News Article → Blog Post → Social Media Share. At each stage, key details can be lost, exaggerated, or changed.\n\nScenario: The original study found: 'Moderate coffee consumption (3-4 cups/day) was associated with a 12% lower risk of type 2 diabetes in a cohort of 1,200 adults over 5 years (HR=0.88, 95% CI: 0.81-0.96).'\n\nWatch how this finding transforms at each stage.",
+    "scenarioAr": "حرف 'T' في SIFT — تتبع الادعاءات — يعالج مشكلة تشويه المعلومات أثناء انتقالها عبر نظام المعلومات. حدد واردل وديراخشان (2017) 7 أنواع من اضطراب المعلومات.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "At each stage of the information chain below, identify what specific distortion occurred. Select ALL stages where the original finding was changed or exaggerated.",
+      "instructionsAr": "في كل مرحلة من سلسلة المعلومات أدناه، حدد التشويه المحدد الذي حدث. اختر جميع المراحل التي تم فيها تغيير أو تضخيم النتيجة الأصلية.",
+      "items": [
+        {
+          "id": "trace-press",
+          "text": "University Press Release: 'Coffee drinking may protect against diabetes, new study suggests.' ← Distortion: 'associated with lower risk' became 'may protect against' — correlation is reframed as potential causation.",
+          "isCorrect": true,
+          "explanation": "DISTORTION: The study found an ASSOCIATION (correlation), not a causal mechanism. The press release's 'may protect' implies a causal protective effect that the study did not demonstrate. Sumner et al. (2014) in BMJ found 40% of press releases contain exaggerated causal claims."
+        },
+        {
+          "id": "trace-news",
+          "text": "News Article: 'Scientists discover coffee prevents diabetes.' ← Distortion: 'may protect' became 'prevents' — a speculative association is presented as a definitive prevention.",
+          "isCorrect": true,
+          "explanation": "DISTORTION: 'Prevents' is far stronger than the original 'associated with lower risk.' The confidence interval (0.81-0.96) is gone, the sample size is gone, and correlation has become causation."
+        },
+        {
+          "id": "trace-blog",
+          "text": "Health Blog: 'Drink 5 cups of coffee a day to ELIMINATE your diabetes risk!' ← Distortion: 3-4 cups became 5, 12% lower risk became 'ELIMINATE,' and moderation context is removed.",
+          "isCorrect": true,
+          "explanation": "DISTORTION: The dose was increased (3-4 → 5), the effect was exaggerated (12% lower risk → ELIMINATE), and the nuance was removed. This is the point where health misinformation becomes potentially dangerous."
+        },
+        {
+          "id": "trace-social",
+          "text": "Social Media: 'COFFEE CURES DIABETES!!! 🎉☕ Share with everyone you know who has diabetes!!!' ← Distortion: maximum emotional amplification, loss of all scientific nuance.",
+          "isCorrect": true,
+          "explanation": "MAXIMUM DISTORTION: Every element has been corrupted. 'Associated with 12% lower risk in a cohort study' has become 'CURES DIABETES.' This is what Wardle & Derakhshan (2017) call 'misinformation' — false information shared without intent to harm, but harmful nonetheless."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "You correctly identified distortion at ALL 4 stages. The key insight: every stage of the information chain introduces distortion. The SIFT 'T' step tells you to trace back to the original study. If you had only seen the social media post ('coffee cures diabetes'), tracing it back reveals the reality: a modest 12% association in one study.",
+      "correctAr": "لقد حددت بشكل صحيح التشويه في جميع المراحل الأربع. البصيرة الرئيسية: كل مرحلة في سلسلة المعلومات تدخل تشويهاً. خطوة 'T' في SIFT تخبرك بالتتبع للوصول إلى الدراسة الأصلية.",
+      "incorrect": "All 4 stages contain significant distortions. Trace each transformation: the original study's modest finding was progressively exaggerated at every stage until it became dangerously misleading.",
+      "incorrectAr": "جميع المراحل الأربع تحتوي على تشويهات كبيرة. تتبع كل تحول: النتيجة المتواضعة للدراسة الأصلية تم تضخيمها تدريجياً في كل مرحلة."
+    }
+  },
+  "whatNotToDo": [
+    "Don't accept a claim from a secondary source without checking the original study — distortion accumulates at every stage",
+    "Don't assume that a university press release accurately represents the study's findings — Sumner et al. (2014, BMJ) found 40% contain exaggerated claims"
+  ],
+  "keyhunterId": "dr-kh-12",
+  "evidence": "Wardle, C., & Derakhshan, H. (2017). Information Disorder: Toward an Interdisciplinary Framework for Research and Policy Making. Council of Europe.; Sumner, P., et al. (2014). The association between exaggeration in health related science news and academic press releases. BMJ, 349, g7015.",
+  "safetyNote": "The coffee-diabetes claim chain in this exercise is a simplified educational illustration. For medical advice about diabetes management, consult a qualified healthcare professional.",
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Claim tracing to original context builds decontextualization detection capability",
+  "trackConfidence": true,
+  "requiresEightGate": true
+}

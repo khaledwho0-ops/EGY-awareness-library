@@ -1,0 +1,62 @@
+[
+  {
+    "id": 501,
+    "title": "Pegasus Zero-Click Exploits",
+    "titleAr": "ثغرات بيغاسوس الخالية من النقرات",
+    "year": "2016-Present",
+    "domain": "Weaponized Software",
+    "domainAr": "برمجيات مسلحة",
+    "damage": "Total Device Compromise",
+    "damageAr": "اختراق كامل للجهاز",
+    "illustrationEn": "A deeply terrifying reality of modern software: the NSO Group's Pegasus spyware can infect a phone through a 'zero-click' exploit. They simply send a hidden WhatsApp message or iMessage to the target. The user does not need to click a link; they don't even need to open the app. The phone silently compromises itself, turning on the microphone, camera, and copying all encrypted messages. An evil application that requires absolutely zero user interaction to destroy their privacy.",
+    "illustrationAr": "حقيقة مرعبة للغاية للبرمجيات الحديثة: يمكن لبرنامج بيغاسوس للتجسس التابع لمجموعة NSO إصابة هاتف من خلال ثغرة 'بدون نقر'. إنهم يرسلون ببساطة رسالة واتساب أو iMessage مخفية إلى الهدف. لا يحتاج المستخدم إلى النقر فوق رابط؛ ولا يحتاج حتى إلى فتح التطبيق. يخترق الهاتف نفسه بصمت، ويشغل الميكروفون والكاميرا وينسخ جميع الرسائل المشفرة. تطبيق شرير لا يتطلب أي تفاعل على الإطلاق من المستخدم لتدمير خصوصيته."
+  },
+  {
+    "id": 502,
+    "title": "Project Nightingale",
+    "titleAr": "مشروع العندليب",
+    "year": "2019",
+    "domain": "Data Extraction",
+    "domainAr": "استخراج البيانات",
+    "damage": "Secret Medical Scraping",
+    "damageAr": "كشط طبي سري",
+    "illustrationEn": "Google partnered secretly with Ascension, the second-largest healthcare system in the US. Under 'Project Nightingale', Google collected the highly detailed, un-anonymized medical records (names, lab results, diagnoses) of 50 million Americans without their knowledge or consent. Standard, seemingly benign hospital administrative applications were the vector used to pipe a nation's most intimate biological secrets directly into a massive corporate tech database.",
+    "illustrationAr": "شراكة سرية بين جوجل و أسنشن، ثاني أكبر نظام رعاية صحية في الولايات المتحدة. في إطار 'مشروع العندليب'، جمعت جوجل السجلات الطبية المفصلة للغاية وغير المجهولة (الأسماء ونتائج المختبرات والتشخيصات) لـ ٥٠ مليون أمريكي دون علمهم أو موافقتهم. كانت التطبيقات الإدارية القياسية للمستشفيات، والتي تبدو حميدة، هي الناقل المستخدم لضخ أكثر الأسرار البيولوجية حميمية للأمة مباشرة في قاعدة بيانات شركة تكنولوجية ضخمة."
+  },
+  {
+    "id": 503,
+    "title": "Vault 7: Weeping Angel",
+    "titleAr": "القبو ٧: الملاك الباكي",
+    "year": "2017",
+    "domain": "IoT Surveillance",
+    "domainAr": "مراقبة إنترنت الأشياء",
+    "damage": "The Fake-Off State",
+    "damageAr": "حالة الإيقاف المزيفة",
+    "illustrationEn": "Wikileaks published 'Vault 7', a massive dump of classified CIA cyber weapons. Among them was an application named 'Weeping Angel', co-developed with MI5. It was designed to infect Samsung Smart TVs. The evil application created a 'Fake-Off' state; the TV appeared to be turned off, the screen was black, and the LED light responded to the remote. But the TV's microphone was secretly fully active, recording all conversations in the room and transmitting them via Wi-Fi to a covert server.",
+    "illustrationAr": "نشرت ويكيليكس 'القبو ٧'، وهو تسريب ضخم للأسلحة السيبرانية السرية لوكالة المخابرات المركزية. من بينها كان هناك تطبيق باسم 'الملاك الباكي'، تم تطويره بالاشتراك مع الاستخبارات البريطانية (MI5). صُمم لإصابة أجهزة تلفزيون سامسونج الذكية. ابتكر التطبيق الشرير حالة 'إيقاف مزيفة'؛ حيث يبدو التلفزيون مغلقاً والشاشة سوداء، لكن الميكروفون كان نشطاً بالكامل سراً، ويسجل جميع المحادثات في الغرفة ويرسلها عبر شبكة الواي فاي إلى خادم سري."
+  },
+  {
+    "id": 504,
+    "title": "The Strava Heatmap Leak",
+    "titleAr": "تسريب الخريطة الحرارية لسترافا",
+    "year": "2018",
+    "domain": "Unintended Intelligence",
+    "domainAr": "استخبارات غير مقصودة",
+    "damage": "Exposed Black Sites",
+    "damageAr": "كشف المواقع السوداء",
+    "illustrationEn": "Strava, a popular fitness tracking app, proudly published a global 'heatmap' showing billions of activity paths from its users. OSINT researchers immediately noticed brightly lit running tracks in the middle of completely empty, dark deserts in Syria, Afghanistan, and Somalia. The app had accidentally, yet perfectly, mapped the internal layouts and perimeter patrol routes of highly classified CIA black sites and forward operating bases simply because soldiers were wearing smartwatches.",
+    "illustrationAr": "نشر تطبيق اللياقة البدنية الشهير، سترافا، بـ فخر 'خريطة حرارية' عالمية تُظهر مليارات مسارات النشاط لمستخدميه. لاحظ باحثو المصادر المفتوحة على الفور مسارات ركض مضيئة في وسط صحارى فارغة ومظلمة تماماً في سوريا وأفغانستان والصومال. كان التطبيق قد رسم عن طريق الخطأ، ولكن بشكل مثالي، المخططات الداخلية وطرق دوريات المحيط للمواقع السوداء شديدة السرية لوكالة المخابرات المركزية، وذلك ببساطة لأن الجنود كانوا يرتدون ساعات ذكية."
+  },
+  {
+    "id": 505,
+    "title": "Clearview AI",
+    "titleAr": "كليرفيو للذكاء الاصطناعي",
+    "year": "2020",
+    "domain": "Facial Recognition",
+    "domainAr": "التعرف على الوجوه",
+    "damage": "The End of Anonymity",
+    "damageAr": "نهاية عدم الكشف عن الهوية",
+    "illustrationEn": "A secretive startup scraped billions of public photos from Facebook, Venmo, and Twitter without consent to build an inescapable facial recognition application. It was sold to law enforcement globally. It effectively ended public anonymity; anyone with access to the app could snap a photo of a stranger on the street and instantly pull up their name, address, family members, and entire digital history. Your face itself became an unchangeable tracking barcode.",
+    "illustrationAr": "قامت شركة ناشئة سرية بسحب مليارات الصور العامة من فيسبوك وتويتر وفينمو دون موافقة لبناء تطبيق حتمي للتعرف على الوجوه. تم بيعه لوكالات إنفاذ القانون عالمياً. لقد أنهى فعلياً عدم الكشف عن هوية الجمهور؛ يمكن لأي شخص لديه إمكانية الوصول إلى التطبيق التقاط صورة لشخص غريب في الشارع وسحب اسمه وعنوانه وأفراد أسرته وتاريخه الرقمي بالكامل على الفور. أصبح وجهك نفسه باركود تتبع لا يمكن تغييره."
+  }
+]

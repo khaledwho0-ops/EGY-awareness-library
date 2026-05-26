@@ -1,0 +1,92 @@
+{
+  "id": "dr-day-02",
+  "title": "Source Credibility Ranking: Who Can You Trust?",
+  "titleAr": "تصنيف مصداقية المصادر: من يمكنك الوثوق به؟",
+  "mvp": "deepreal",
+  "day": 2,
+  "duration": 15,
+  "difficulty": "beginner",
+  "category": "source_credibility",
+  "learningObjective": "After this exercise, the user will be able to rank information sources by credibility using at least 3 criteria (editorial transparency, author credentials, correction policies) and identify why personal blogs rank lower than peer-reviewed journals.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيتمكن المستخدم من تصنيف مصادر المعلومات حسب المصداقية باستخدام 3 معايير على الأقل (الشفافية التحريرية، مؤهلات المؤلف، سياسات التصحيح) وتحديد لماذا تُصنَّف المدونات الشخصية أدنى من المجلات العلمية المحكّمة.",
+  "bloomLevel": "analyze",
+  "content": {
+    "scenario": "A claim is circulating online: 'New research shows that smartphone use before bed increases anxiety by 67%.' You find this claim reported by 6 different sources. Your task is to rank these sources from MOST to LEAST credible.\n\nConsider these criteria:\n1. **Editorial Transparency** — Does the source disclose its editorial process?\n2. **Author Credentials** — Is the author identified with verifiable qualifications?\n3. **Correction Policy** — Does the source correct errors publicly?\n4. **Method Transparency** — Does it explain how findings were obtained?\n5. **Institutional Independence** — Is the source free from commercial bias?",
+    "scenarioAr": "ادعاء يتداول عبر الإنترنت: 'تظهر أبحاث جديدة أن استخدام الهاتف الذكي قبل النوم يزيد القلق بنسبة 67٪.' وجدت هذا الادعاء مُبلَّغاً عنه من 6 مصادر مختلفة. مهمتك تصنيف هذه المصادر من الأكثر إلى الأقل مصداقية.\n\nخذ في الاعتبار هذه المعايير:\n1. **الشفافية التحريرية** — هل يكشف المصدر عن عمليته التحريرية؟\n2. **مؤهلات المؤلف** — هل المؤلف محدد بمؤهلات قابلة للتحقق؟\n3. **سياسة التصحيح** — هل يصحح المصدر الأخطاء علنًا؟\n4. **شفافية المنهجية** — هل يشرح كيفية الحصول على النتائج؟\n5. **الاستقلالية المؤسسية** — هل المصدر خالٍ من التحيز التجاري؟",
+    "task": {
+      "type": "ranking",
+      "instructions": "Rank these 6 sources from 1 (most credible) to 6 (least credible) for verifying the smartphone-anxiety claim.",
+      "instructionsAr": "صنّف هذه المصادر الستة من 1 (الأكثر مصداقية) إلى 6 (الأقل مصداقية) للتحقق من ادعاء الهاتف الذكي والقلق.",
+      "items": [
+        {
+          "id": "src-lancet",
+          "text": "The Lancet Psychiatry — Original peer-reviewed study with methodology section",
+          "textAr": "مجلة The Lancet Psychiatry — الدراسة الأصلية المحكّمة مع قسم المنهجية",
+          "isCorrect": true,
+          "explanation": "RANK 1: Peer-reviewed journal with the original study. Shows methodology, peer review process, and has a corrections policy.",
+          "explanationAr": "الترتيب 1: مجلة محكّمة بالدراسة الأصلية. تُظهر المنهجية وعملية المراجعة العلمية ولديها سياسة تصحيحات."
+        },
+        {
+          "id": "src-who",
+          "text": "WHO Mental Health page — Summary of the research with citation to the original",
+          "textAr": "صفحة الصحة النفسية لمنظمة الصحة العالمية — ملخص البحث مع إشارة للمصدر الأصلي",
+          "isCorrect": true,
+          "explanation": "RANK 2: Official international health organization. Cites original research and has editorial oversight.",
+          "explanationAr": "الترتيب 2: منظمة صحية دولية رسمية. تستشهد بالبحث الأصلي ولديها إشراف تحريري."
+        },
+        {
+          "id": "src-bbc",
+          "text": "BBC Health — News article interviewing the study's lead researcher",
+          "textAr": "BBC Health — مقال إخباري يحاور الباحث الرئيسي للدراسة",
+          "isCorrect": true,
+          "explanation": "RANK 3: Mainstream news outlet with editorial standards, fact-checking, and corrections policy. Primary source interview.",
+          "explanationAr": "الترتيب 3: وسيلة إعلامية رئيسية بمعايير تحريرية وفحص حقائق وسياسة تصحيحات. مقابلة مع مصدر أساسي."
+        },
+        {
+          "id": "src-healthsite",
+          "text": "HealthyLiving.com — Blog post titled '10 Reasons Your Phone is Destroying Your Mental Health'",
+          "textAr": "HealthyLiving.com — مقال مدونة بعنوان '10 أسباب تجعل هاتفك يدمر صحتك النفسية'",
+          "isCorrect": true,
+          "explanation": "RANK 4: Health blog. No editorial process, no peer review, sensational title. May or may not cite the original study.",
+          "explanationAr": "الترتيب 4: مدونة صحية. بدون عملية تحريرية أو مراجعة علمية، عنوان إثاري. قد تستشهد أو لا تستشهد بالدراسة الأصلية."
+        },
+        {
+          "id": "src-influencer",
+          "text": "Social media wellness influencer — Instagram carousel citing 'studies show...'",
+          "textAr": "مؤثر العافية على وسائل التواصل الاجتماعي — شريحة Instagram تستشهد بـ'تظهر الدراسات...'",
+          "isCorrect": true,
+          "explanation": "RANK 5: No editorial oversight, no specific citation, no corrections process. 'Studies show' without naming which studies.",
+          "explanationAr": "الترتيب 5: بدون إشراف تحريري أو استشهاد محدد أو عملية تصحيح. 'تظهر الدراسات' بدون تسمية أي دراسات."
+        },
+        {
+          "id": "src-anon",
+          "text": "Anonymous forum post — Claims '67% is actually higher, I've seen it firsthand'",
+          "textAr": "منشور منتدى مجهول — يدّعي '67% في الواقع أعلى، رأيته بنفسي'",
+          "isCorrect": true,
+          "explanation": "RANK 6: Anonymous, anecdotal, no evidence. Personal experience ≠ research data.",
+          "explanationAr": "الترتيب 6: مجهول، قصصي، بدون دليل. التجربة الشخصية ≠ بيانات البحث."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Well done! You correctly identified that the original peer-reviewed study is the most credible source. Key lesson: always trace claims back to the primary research. The further a claim travels from its source, the more distorted it can become.",
+      "correctAr": "أحسنت! لقد حددت بشكل صحيح أن الدراسة الأصلية المحكّمة هي المصدر الأكثر مصداقية. الدرس الرئيسي: تتبع الادعاءات دائمًا إلى البحث الأولي. كلما ابتعد الادعاء عن مصدره، زاد تشويهه.",
+      "incorrect": "Review the ranking criteria: peer-reviewed research > official organizations > news with editorial standards > blogs > influencers > anonymous posts.",
+      "incorrectAr": "راجع معايير التصنيف: البحث المحكّم > المنظمات الرسمية > الأخبار بمعايير تحريرية > المدونات > المؤثرون > المنشورات المجهولة."
+    }
+  },
+  "whatNotToDo": [
+    "Don't rank sources based on aesthetics — a well-designed blog is not more credible than an ugly academic paper",
+    "Don't assume that being 'first' to report something makes a source credible"
+  ],
+  "whatNotToDoAr": [
+    "لا تصنف المصادر بناءً على المظهر — مدونة أنيقة التصميم ليست أكثر مصداقية من ورقة أكاديمية قديمة",
+    "لا تفترض أن كون المصدر 'الأول' في الإبلاغ يجعله موثوقًا"
+  ],
+  "keyhunterId": "dr-kh-02",
+  "evidence": "Wineburg, S., & McGrew, S. (2019). Lateral Reading and the Nature of Expertise: Reading Less and Learning More When Evaluating Digital Information. Teachers College Record, 121(11).",
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Source credibility ranking builds analytical evaluation capability",
+  "trackConfidence": true,
+  "requiresEightGate": true
+}

@@ -1,0 +1,65 @@
+{
+  "id": "dr-day-11",
+  "title": "Social Proof: When Everyone Shares, Does That Make It True?",
+  "titleAr": "الدليل الاجتماعي: عندما يشارك الجميع، هل هذا يعني أنه صحيح؟",
+  "mvp": "deepreal",
+  "day": 11,
+  "duration": 15,
+  "difficulty": "advanced",
+  "category": "detection_tasks",
+  "learningObjective": "After this exercise, the user will be able to identify social proof manipulation (Cialdini, 2001) in online content, explain why high share/like counts do not indicate accuracy, and resist the bandwagon effect when evaluating claims.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيكون المستخدم قادرًا على تحديد التلاعب بالدليل الاجتماعي وشرح لماذا لا تشير أعداد المشاركات والإعجابات العالية إلى الدقة.",
+  "bloomLevel": "evaluate",
+  "content": {
+    "scenario": "Cialdini (2001) identified 'social proof' as one of the 6 universal principles of influence: people assume that if many others are doing something, it must be correct. In the digital world, this manifests as equating popularity (likes, shares, views) with truth.\n\nVosoughi, Roy & Aral (2018) in Science demonstrated the devastating consequence: false news stories are 70% more likely to be retweeted than true stories. False news reaches 1,500 people 6x faster than true news. Popularity ≠ Accuracy.\n\nScenario: Four posts about the same health topic appear on your social media feed. Which factors should influence your credibility assessment?",
+    "scenarioAr": "حدد شيالديني (2001) 'الدليل الاجتماعي' كأحد المبادئ الستة العالمية للتأثير: يفترض الناس أنه إذا كان الكثيرون يفعلون شيئاً ما، فلا بد أنه صحيح.\n\nأثبت فوسوغي وروي وأرال (2018) في Science أن الأخبار الكاذبة أكثر احتمالاً لإعادة التغريد بنسبة 70% من الأخبار الصحيحة.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Evaluate each post. Select the ones that use social proof manipulation — where popularity metrics are being used to substitute for evidence.",
+      "instructionsAr": "قيّم كل منشور. اختر المنشورات التي تستخدم التلاعب بالدليل الاجتماعي.",
+      "items": [
+        {
+          "id": "sp-1",
+          "text": "Post with 50K shares: 'This natural remedy cured my diabetes in 3 days! 50,000 people have already shared this — they can't all be wrong!' ← Uses share count as proof of truth.",
+          "isCorrect": true,
+          "explanation": "SOCIAL PROOF MANIPULATION: The logical fallacy 'argumentum ad populum' — 50,000 shares prove only that 50,000 people clicked share, NOT that the content is true. Vosoughi et al. (2018) showed false health claims spread faster because they trigger stronger emotions."
+        },
+        {
+          "id": "sp-2",
+          "text": "WHO official account, 200 shares: 'New clinical trial data shows [treatment] reduces symptoms by 23% (p<0.01). Full study: [link to Lancet]' ← Uses evidence, not popularity, as the basis for the claim.",
+          "isCorrect": false,
+          "explanation": "NOT MANIPULATIVE: This post cites specific data (23%, p<0.01), links to a peer-reviewed source (Lancet), and comes from an authoritative account (WHO). The low share count does NOT reduce its credibility."
+        },
+        {
+          "id": "sp-3",
+          "text": "Influencer post, 100K likes: 'Everyone I know is using this supplement. 100K likes can't be wrong. Don't be the last one to try it!' ← Classic bandwagon + social proof + FOMO.",
+          "isCorrect": true,
+          "explanation": "TRIPLE MANIPULATION: Combines social proof (100K likes), bandwagon effect (everyone is doing it), and FOMO (don't be the last). Zero evidence presented. Cialdini (2001) warns this combination is especially persuasive."
+        },
+        {
+          "id": "sp-4",
+          "text": "Research post, 15 shares: 'Meta-analysis of 12 RCTs (N=4,500) shows no significant benefit of [supplement] vs placebo. doi:10.xxxx' ← Low shares, high evidence quality.",
+          "isCorrect": false,
+          "explanation": "NOT MANIPULATIVE: A meta-analysis of 12 randomized controlled trials is among the highest quality evidence possible. 15 shares reflects that scientific findings don't go viral, not that they're less true."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "You correctly identified that posts 1 and 3 use social proof manipulation while posts 2 and 4 rely on evidence. The critical lesson: popularity and truth are INVERSELY correlated for health misinformation (Vosoughi et al., 2018). The viral post with 50K shares is less credible than the meta-analysis with 15 shares.",
+      "correctAr": "لقد حددت بشكل صحيح أن المنشورين 1 و 3 يستخدمان التلاعب بالدليل الاجتماعي. الدرس الحاسم: الشعبية والحقيقة مترابطتان عكسياً في المعلومات الصحية المضللة.",
+      "incorrect": "Remember: share counts, likes, and views measure POPULARITY, not ACCURACY. A post with 100K likes and zero evidence is less credible than a post with 15 shares and a peer-reviewed citation.",
+      "incorrectAr": "تذكر: أعداد المشاركات والإعجابات والمشاهدات تقيس الشعبية، وليس الدقة."
+    }
+  },
+  "whatNotToDo": [
+    "Don't use share counts or likes as evidence that something is true — Vosoughi et al. (2018, Science) showed false news spreads 6x faster than true news",
+    "Don't assume that low-engagement posts are less credible — scientific findings rarely go viral"
+  ],
+  "keyhunterId": "dr-kh-11",
+  "evidence": "Cialdini, R. B. (2001). Influence: Science and Practice (4th ed.). Allyn & Bacon.; Vosoughi, S., Roy, D., & Aral, S. (2018). The spread of true and false news online. Science, 359(6380), 1146-1151.",
+  "safetyNote": "This exercise uses fictional social media posts for educational purposes. For health advice, consult a licensed healthcare professional.",
+  "com_b_target": "Motivation/Reflective",
+  "com_b_mechanism": "Social proof literacy builds reflective resistance to bandwagon heuristic",
+  "trackConfidence": true,
+  "requiresEightGate": false
+}

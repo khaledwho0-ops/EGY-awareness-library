@@ -1,0 +1,53 @@
+{
+  "id": "rh-day-07",
+  "title": "Gratitude and Sabr: Ancient Wisdom, Modern Evidence",
+  "titleAr": "الشكر والصبر: حكمة قديمة وأدلة حديثة",
+  "mvp": "religion-hub",
+  "day": 7,
+  "duration": 12,
+  "difficulty": "beginner",
+  "category": "positive_coping",
+  "bloomLevel": "apply",
+  "learningObjective": "After this exercise, the user will understand gratitude and patience as evidence-based wellbeing practices with spiritual roots and practice one gratitude exercise.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيفهم المستخدم الشكر والصبر كممارسات رفاهية مبنية على الأدلة.",
+  "content": {
+    "scenario": "Gratitude and patience are both: (1) valued in spiritual traditions AND (2) supported by psychological research.\n\n**Gratitude** (Emmons & McCullough, 2003):\n- Writing 3 things you're grateful for each day improved wellbeing in RCTs\n- Gratitude shifts attention from what's missing to what's present\n- ≠ minimizing problems (acknowledging good doesn't erase difficulty)\n\n**Sabr (Patience)** in psychological terms:\n- Delayed gratification → associated with better long-term outcomes\n- Emotional regulation → tolerating discomfort without reactive behavior\n- ≠ Passivity (sabr includes active endurance, not just waiting)",
+    "scenarioAr": "الشكر والصبر كلاهما: (1) ذو قيمة في التقاليد الروحية و(2) مدعوم بالبحث النفسي.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Practice: Write 3 specific things you are genuinely grateful for today. Be specific, not generic.",
+      "instructionsAr": "تدرب: اكتب 3 أشياء محددة أنت ممتن لها حقاً اليوم.",
+      "items": [
+        {
+          "id": "grat-1",
+          "text": "My gratitude is specific (e.g., 'I'm grateful my friend called to check on me today') not generic ('I'm grateful for friends').",
+          "isCorrect": true,
+          "explanation": "Excellent. Specific gratitude is more effective than generic gratitude (Emmons, 2003). The more detailed, the more impactful."
+        },
+        {
+          "id": "grat-2",
+          "text": "I can hold gratitude AND acknowledge difficulty at the same time.",
+          "isCorrect": true,
+          "explanation": "This is the key insight. Gratitude doesn't erase difficulty. Holding both simultaneously is the most psychologically healthy pattern."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Wonderful! You've practiced evidence-based gratitude. Research shows that even 5 minutes of daily gratitude practice can improve wellbeing over time.",
+      "correctAr": "رائع! لقد تدربت على الشكر المبني على الأدلة.",
+      "incorrect": "Review: gratitude should be specific, and it should coexist with acknowledging difficulty.",
+      "incorrectAr": "راجع: الشكر يجب أن يكون محدداً ويتعايش مع الاعتراف بالصعوبة."
+    }
+  },
+  "whatNotToDo": [
+    "Don't use gratitude to guilt-trip someone ('you should be grateful!')",
+    "Don't confuse gratitude with dismissing legitimate pain"
+  ],
+  "keyhunterId": "rh-kh-07",
+  "evidence": "Emmons, R.A., & McCullough, M.E. (2003). Counting blessings vs. burdens. JPSP, 84(2), 377-389.",
+  "safetyNote": "⚠️ Academic perspective. If practicing gratitude triggers distressing feelings, that's OK — speak to a trusted person.",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Motivation/Reflective",
+  "com_b_mechanism": "Gratitude practice builds reflective motivation for positive emotion cultivation"
+}

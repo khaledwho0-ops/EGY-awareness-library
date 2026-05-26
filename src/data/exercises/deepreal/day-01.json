@@ -1,0 +1,80 @@
+{
+  "id": "dr-day-01",
+  "title": "The SIFT Method: Your First Line of Defense",
+  "titleAr": "طريقة SIFT: خط دفاعك الأول",
+  "mvp": "deepreal",
+  "day": 1,
+  "duration": 12,
+  "difficulty": "beginner",
+  "category": "source_credibility",
+  "learningObjective": "After this exercise, the user will be able to explain the four steps of the SIFT method (Stop, Investigate the source, Find better coverage, Trace claims) and apply the 'Stop' step to a real-world scenario.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيكون المستخدم قادرًا على شرح الخطوات الأربع لطريقة SIFT (توقف، تحقق من المصدر، ابحث عن تغطية أفضل، تتبع الادعاءات) وتطبيق خطوة 'توقف' على سيناريو واقعي.",
+  "bloomLevel": "understand",
+  "content": {
+    "scenario": "You're scrolling through social media and see a post claiming: 'BREAKING: Scientists confirm that drinking warm lemon water every morning cures 90% of common diseases.' The post has been shared 45,000 times and has a professional-looking medical logo. Before you react, let's learn a framework that will change how you process information online.\n\nThe SIFT Method (Caulfield, 2019):\n\n**S — Stop**: Don't share, react, or form an opinion immediately. Pause.\n**I — Investigate the source**: Who published this? What is their track record?\n**F — Find better coverage**: Search for the same claim from other, independent sources.\n**T — Trace claims**: Follow the claim back to its original source. Who said it first?",
+    "scenarioAr": "أثناء تصفحك لوسائل التواصل الاجتماعي، ترى منشورًا يدعي: 'عاجل: العلماء يؤكدون أن شرب الماء الدافئ بالليمون كل صباح يعالج 90% من الأمراض الشائعة.' المنشور تمت مشاركته 45,000 مرة ويحمل شعارًا طبيًا احترافيًا. قبل أن تتفاعل، دعنا نتعلم إطارًا سيغير طريقة معالجتك للمعلومات عبر الإنترنت.\n\nطريقة SIFT (كولفيلد، 2019):\n\n**S — توقف**: لا تشارك أو تتفاعل أو تكوّن رأيًا فورًا. توقف.\n**I — تحقق من المصدر**: من نشر هذا؟ ما سجله؟\n**F — ابحث عن تغطية أفضل**: ابحث عن نفس الادعاء من مصادر مستقلة أخرى.\n**T — تتبع الادعاءات**: تتبع الادعاء حتى مصدره الأصلي. من قاله أولًا؟",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "Apply the SIFT method to the lemon water claim above. For each step, select the correct action.",
+      "instructionsAr": "طبق طريقة SIFT على ادعاء ماء الليمون أعلاه. لكل خطوة، اختر الإجراء الصحيح.",
+      "items": [
+        {
+          "id": "sift-s",
+          "text": "Step S (Stop): What should you do FIRST when you see this claim?",
+          "textAr": "الخطوة S (توقف): ماذا يجب أن تفعل أولًا عندما ترى هذا الادعاء؟",
+          "isCorrect": true,
+          "explanation": "STOP means: Do NOT share, like, or comment yet. Take a breath. Recognize that your initial emotional reaction (excitement, fear, hope) is not evidence.",
+          "explanationAr": "توقف يعني: لا تشارك أو تعجب أو تعلق بعد. خذ نفسًا. أدرك أن ردة فعلك العاطفية الأولية (الإثارة، الخوف، الأمل) ليست دليلًا."
+        },
+        {
+          "id": "sift-i",
+          "text": "Step I (Investigate): The post uses a 'medical logo.' What should you check?",
+          "textAr": "الخطوة I (تحقق): المنشور يستخدم 'شعارًا طبيًا'. ماذا يجب أن تتحقق؟",
+          "isCorrect": true,
+          "explanation": "INVESTIGATE means: Search for the organization behind the logo. Does it have a real website? Is it a recognized medical institution? A professional-looking logo is NOT proof of authority.",
+          "explanationAr": "تحقق يعني: ابحث عن المؤسسة وراء الشعار. هل لديها موقع ويب حقيقي؟ هل هي مؤسسة طبية معترف بها؟ الشعار الاحترافي ليس دليلًا على السلطة."
+        },
+        {
+          "id": "sift-f",
+          "text": "Step F (Find): You search 'warm lemon water cures diseases.' What result pattern would increase your trust?",
+          "textAr": "الخطوة F (ابحث): تبحث عن 'الماء الدافئ بالليمون يعالج الأمراض'. ما نمط النتائج الذي سيزيد ثقتك؟",
+          "isCorrect": true,
+          "explanation": "FIND BETTER COVERAGE means: Look for the same claim reported by multiple independent, credible sources (WHO, NHS, Mayo Clinic). If only blogs and social media repeat it, that's a red flag.",
+          "explanationAr": "ابحث عن تغطية أفضل يعني: ابحث عن نفس الادعاء المُبلَّغ عنه من مصادر متعددة مستقلة وموثوقة (منظمة الصحة العالمية، هيئة الصحة الوطنية، Mayo Clinic). إذا كانت المدونات ووسائل التواصل الاجتماعي فقط تكرره، فهذا تحذير."
+        },
+        {
+          "id": "sift-t",
+          "text": "Step T (Trace): You find the claim originated from a personal blog post in 2018 with no citations. What does this tell you?",
+          "textAr": "الخطوة T (تتبع): تجد أن الادعاء نشأ من مدونة شخصية عام 2018 بدون مراجع. ماذا يخبرك هذا؟",
+          "isCorrect": true,
+          "explanation": "TRACE means: Follow the claim to its origin. A personal blog with no citations is NOT equivalent to peer-reviewed research. The 45,000 shares don't make it true — they only mean it spread widely.",
+          "explanationAr": "تتبع يعني: تابع الادعاء حتى أصله. مدونة شخصية بدون مراجع ليست مكافئة للبحث العلمي المحكّم. 45,000 مشاركة لا تجعله صحيحًا — فقط تعني أنه انتشر على نطاق واسع."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent! You've successfully applied all four SIFT steps. The key insight: sharing frequency (45,000 times) is NOT a measure of truth. Always check the SOURCE, not just the content.",
+      "correctAr": "ممتاز! لقد نجحت في تطبيق جميع خطوات SIFT الأربع. النقطة الأساسية: عدد المشاركات (45,000 مرة) ليس مقياسًا للصحة. تحقق دائمًا من المصدر وليس المحتوى فقط.",
+      "incorrect": "Not quite. Remember: SIFT is about PAUSING before reacting. The number of shares doesn't make something true. Let's review each step.",
+      "incorrectAr": "ليس تمامًا. تذكر: SIFT تتعلق بالتوقف قبل التفاعل. عدد المشاركات لا يجعل شيئًا صحيحًا. دعنا نراجع كل خطوة."
+    }
+  },
+  "whatNotToDo": [
+    "Don't assume a professional logo means a credible source — anyone can create a logo",
+    "Don't equate viral sharing with verified truth — misinformation spreads faster than corrections"
+  ],
+  "whatNotToDoAr": [
+    "لا تفترض أن الشعار الاحترافي يعني مصدرًا موثوقًا — يمكن لأي شخص إنشاء شعار",
+    "لا تساوي الانتشار الفيروسي بالحقيقة المحققة — المعلومات المضللة تنتشر أسرع من التصحيحات"
+  ],
+  "keyhunterId": "dr-kh-01",
+  "evidence": "Caulfield, M. (2019). SIFT (The Four Moves). Hapgood. https://hapgood.us/2019/06/19/sift-the-four-moves/",
+  "safetyNote": "This exercise uses a fictional health claim for educational purposes only. For medical advice, consult a qualified healthcare professional.",
+  "com_b_target": "Capability/Psychological",
+  "com_b_mechanism": "Teaching SIFT framework builds cognitive capability to evaluate claims systematically",
+  "trackConfidence": true,
+  "requiresEightGate": false,
+  "approvalState": "approved",
+  "reviewedBy": "Dr. Ahmed Mansour",
+  "approvedAt": "2026-04-12"
+}

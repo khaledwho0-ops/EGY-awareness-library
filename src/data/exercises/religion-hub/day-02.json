@@ -1,0 +1,59 @@
+{
+  "id": "rh-day-02",
+  "title": "Benevolent Reappraisal: Finding Meaning in Difficulty",
+  "titleAr": "إعادة التقييم الخيّر: إيجاد المعنى في الصعوبات",
+  "mvp": "religion-hub",
+  "day": 2,
+  "duration": 12,
+  "difficulty": "beginner",
+  "category": "positive_coping",
+  "bloomLevel": "understand",
+  "learningObjective": "After this exercise, the user will understand benevolent religious reappraisal as a positive coping strategy and distinguish it from denial or toxic positivity.",
+  "learningObjectiveAr": "بعد هذا التمرين، سيفهم المستخدم إعادة التقييم الديني الخيّر كاستراتيجية تكيف إيجابية.",
+  "content": {
+    "scenario": "Benevolent religious reappraisal (Pargament, 2011) is the process of finding positive meaning in difficult situations through a spiritual lens:\n\n- 'This difficulty is an opportunity for growth'\n- 'God is teaching me patience through this challenge'\n- 'I trust that there is wisdom in what I don't yet understand'\n\n**What it IS**: Actively seeking meaning while acknowledging pain\n**What it is NOT**: Denying that something is difficult, or dismissing your own emotions\n\nKey distinction: Reappraisal + acknowledging difficulty = healthy coping\nReappraisal + denying difficulty = spiritual bypassing (unhealthy)",
+    "scenarioAr": "إعادة التقييم الديني الخيّر هي عملية إيجاد معنى إيجابي في المواقف الصعبة.",
+    "task": {
+      "type": "scenario_response",
+      "instructions": "For each statement, identify: healthy benevolent reappraisal or spiritual bypassing?",
+      "instructionsAr": "لكل عبارة، حدد: إعادة تقييم صحية أم تجاوز روحي؟",
+      "items": [
+        {
+          "id": "br-1",
+          "text": "'This illness is painful, but I believe I can find strength through patience and trust in God.' → Healthy reappraisal",
+          "isCorrect": true,
+          "explanation": "Healthy reappraisal. The person acknowledges the pain ('this is painful') while seeking meaning. Both emotions and faith coexist."
+        },
+        {
+          "id": "br-2",
+          "text": "'There's nothing wrong with me. God would never let me suffer. I don't need help.' → Spiritual bypassing",
+          "isCorrect": true,
+          "explanation": "Spiritual bypassing. The person denies the difficulty entirely and uses religion to avoid addressing the problem. This can delay necessary help-seeking."
+        },
+        {
+          "id": "br-3",
+          "text": "'I'm struggling, and I don't fully understand why. But I trust that this struggle has purpose, even if I can't see it now.' → Healthy reappraisal",
+          "isCorrect": true,
+          "explanation": "Healthy reappraisal with honesty. Acknowledging both the struggle AND uncertainty while maintaining trust. This is the healthiest form."
+        }
+      ]
+    },
+    "feedback": {
+      "correct": "Excellent distinction! The key is that healthy reappraisal INCLUDES acknowledging difficulty, not replacing it. Faith and honest emotion can coexist.",
+      "correctAr": "ممتاز! المفتاح هو أن إعادة التقييم الصحية تتضمن الاعتراف بالصعوبة.",
+      "incorrect": "Review the distinction: reappraisal + acknowledging pain = healthy. Reappraisal + denying pain = bypassing.",
+      "incorrectAr": "راجع التمييز."
+    }
+  },
+  "whatNotToDo": [
+    "Don't tell someone in pain 'everything happens for a reason' without first acknowledging their suffering",
+    "Don't use spiritual language to dismiss legitimate distress"
+  ],
+  "keyhunterId": "rh-kh-02",
+  "evidence": "Park, C.L. (2010). Making sense of the meaning literature. Psychological Bulletin, 136(2), 257-301.",
+  "safetyNote": "⚠️ This is an academic psychology-of-religion perspective. It does NOT issue religious verdicts or fatwas.",
+  "trackConfidence": false,
+  "requiresEightGate": false,
+  "com_b_target": "Motivation/Reflective",
+  "com_b_mechanism": "Benevolent reappraisal builds reflective motivation to find meaning without denial"
+}
