@@ -20,6 +20,7 @@ import {
   Flame,
   Globe,
   ScanSearch,
+  Layers,
 } from "lucide-react";
 import { THEME_OPTIONS, useTheme } from "./theme-provider";
 import { useRTL } from "./rtl-provider";
@@ -120,9 +121,9 @@ export function Navbar() {
       accent: "var(--accent-religionhub)",
     },
     {
-      href: "/live-deception",
-      label: isRTL ? "محاكي الخداع" : "Deception Sim",
-      icon: <Bot size={18} />,
+      href: "/six-layers",
+      label: isRTL ? "الطبقات الست" : "Six Layers",
+      icon: <Layers size={18} />,
       accent: "#ef4444",
     },
     {
