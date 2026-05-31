@@ -1,8 +1,6 @@
 import { NextResponse } from 'next/server';
-import { createGoogleGenerativeAI } from '@ai-sdk/google';
 import { streamText } from 'ai';
-
-const google = createGoogleGenerativeAI({ apiKey: process.env.GEMINI_API_KEY });
+import { getActiveGeminiModel } from '@/lib/debunking/gemini-rotator';
 
 export const runtime = 'edge';
 
@@ -72,7 +70,7 @@ export async function POST(req: Request) {
     }
 
     const result = streamText({
-      model: google('gemini-2.5-flash'),
+      model: getActiveGeminiModel('gemini-2.5-flash'),
       system: SYSTEM_PROMPT,
       messages: processedMessages,
     });

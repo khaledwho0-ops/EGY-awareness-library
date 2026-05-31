@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@ai-sdk/google": "^3.0.79",
+    "@ai-sdk/groq": "^3.0.39",
     "@ai-sdk/openai": "^3.0.65",
+    "@ai-sdk/openai-compatible": "^2.0.48",
     "@ai-sdk/react": "^3.0.193",
     "@axe-core/react": "^4.11.2",
     "@edge-runtime/vm": "^5.0.0",

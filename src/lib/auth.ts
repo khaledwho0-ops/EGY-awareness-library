@@ -4,7 +4,9 @@ import bcrypt from "bcryptjs";
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 
-const secret = new TextEncoder().encode(process.env.JWT_SECRET || "eal_pilot_super_secret_key_2026_x_zero_trust");
+const secret = new TextEncoder().encode(
+  process.env.JWT_SECRET || crypto.randomUUID() // Falls back to random key per cold start if env not set
+);
 
 export interface UserProfile {
   id: string;
@@ -30,7 +32,7 @@ export interface UserProfile {
 
 // In-memory mock DB for the N=84 Pilot (Zero-Trust Server-Side Only)
 const mockDb = {
-  users: new Map<string, any>()
+  users: new Map<string, { hash: string; profile: UserProfile }>()
 };
 
 async function issueAuthCookie(user: UserProfile) {
@@ -66,7 +68,7 @@ export async function isAdmin(): Promise<boolean> {
   return user?.role === "admin";
 }
 
-export async function loginUser(email: string, password: string, options?: any) {
+export async function loginUser(email: string, password: string, _options?: Record<string, unknown>) {
   const userRecord = mockDb.users.get(email.toLowerCase());
   if (!userRecord) return { ok: false as const, errorCode: "INVALID_CREDENTIALS" };
   
@@ -80,7 +82,7 @@ export async function loginUser(email: string, password: string, options?: any) 
   return { ok: true as const, user };
 }
 
-export async function registerUser(name: string, email: string, password: string, adminCode?: string, options?: any) {
+export async function registerUser(name: string, email: string, password: string, adminCode?: string, _options?: Record<string, unknown>) {
   if (mockDb.users.has(email.toLowerCase())) {
     return { ok: false as const, errorCode: "EMAIL_EXISTS" };
   }
@@ -92,7 +94,7 @@ export async function registerUser(name: string, email: string, password: string
     id: crypto.randomUUID(),
     name,
     email: email.toLowerCase(),
-    role: adminCode === "EAL-ADMIN-2026" ? "admin" : "user",
+    role: (process.env.ADMIN_REGISTRATION_CODE && adminCode === process.env.ADMIN_REGISTRATION_CODE) ? "admin" : "user",
     createdAt: new Date().toISOString(),
     lastLogin: new Date().toISOString(),
     preferences: { language: "ar", theme: "default", highContrast: false },
@@ -104,7 +106,7 @@ export async function registerUser(name: string, email: string, password: string
   return { ok: true as const, user };
 }
 
-export async function loginAsGuest(options?: any) {
+export async function loginAsGuest(_options?: Record<string, unknown>) {
   const user: UserProfile = {
     id: crypto.randomUUID(),
     name: "Guest User",
@@ -124,11 +126,11 @@ export async function logoutUser() {
   cookieStore.delete("eal_pilot_auth");
 }
 
-export async function requestPasswordReset(email: string) {
-  return { previewToken: "PILOT-RESET-1234", expiresAt: new Date(Date.now() + 3600000).toISOString() };
+export async function requestPasswordReset(_email: string) {
+  return { previewToken: crypto.randomUUID(), expiresAt: new Date(Date.now() + 3600000).toISOString() };
 }
 
-export async function resetPassword(email: string, code: string, password: string, confirmPassword?: string, options?: any) {
+export async function resetPassword(_email: string, _code: string, _password: string, _confirmPassword?: string, _options?: Record<string, unknown>) {
   return { ok: false as const, errorCode: "RESET_TOKEN_INVALID" };
 }
 

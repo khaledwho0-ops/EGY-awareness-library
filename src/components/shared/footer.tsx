@@ -10,6 +10,9 @@ import {
   Sparkles,
   BookOpen,
   ExternalLink,
+  Flame,
+  Bot,
+  Search,
 } from "lucide-react";
 import {
   EGYPT_CRISIS_CONTACTS,
@@ -116,6 +119,29 @@ export function Footer() {
               </Link>
               <Link href="/religion-hub" className="flex items-center gap-2 text-sm no-underline transition-colors duration-200" style={{ color: "var(--text-secondary)" }}>
                 <Sparkles size={14} style={{ color: "var(--accent-religionhub)" }} /> {s(NAV.religionHub, lang)}
+              </Link>
+            </div>
+          </div>
+
+          <div>
+            <h5 style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", color: "var(--text-muted)", marginBottom: "12px" }}>
+              {t({ en: "Powers", ar: "الأسلحة", arEG: "الأسلحة" })}
+            </h5>
+            <div className="flex flex-col gap-2">
+              <Link href="/angry-debunkers" className="flex items-center gap-2 text-sm no-underline transition-colors duration-200" style={{ color: "var(--text-secondary)" }}>
+                <Flame size={14} style={{ color: "#C2185B" }} /> {t({ en: "Angry Debunkers", ar: "المفنّدون الغاضبون", arEG: "المفنّدون الغاضبون" })}
+              </Link>
+              <Link href="/ai-agents" className="flex items-center gap-2 text-sm no-underline transition-colors duration-200" style={{ color: "var(--text-secondary)" }}>
+                <Bot size={14} style={{ color: "#1976D2" }} /> {t({ en: "AI Agents", ar: "فريق التحقيق", arEG: "فريق التحقيق" })}
+              </Link>
+              <Link href="/global-alliance" className="flex items-center gap-2 text-sm no-underline transition-colors duration-200" style={{ color: "var(--text-secondary)" }}>
+                <Globe size={14} style={{ color: "#10B981" }} /> {t({ en: "Global Alliance", ar: "التحالف العالمي", arEG: "التحالف العالمي" })}
+              </Link>
+              <Link href="/religion-hub/tools" className="flex items-center gap-2 text-sm no-underline transition-colors duration-200" style={{ color: "var(--text-secondary)" }}>
+                <Sparkles size={14} style={{ color: "#D4A843" }} /> {t({ en: "Islamic Verification", ar: "التحقق الإسلامي", arEG: "التحقق الإسلامي" })}
+              </Link>
+              <Link href="/osint-investigator" className="flex items-center gap-2 text-sm no-underline transition-colors duration-200" style={{ color: "var(--text-secondary)" }}>
+                <Search size={14} style={{ color: "#78909C" }} /> {t({ en: "OSINT Investigator", ar: "محقق المصادر", arEG: "محقق المصادر" })}
               </Link>
             </div>
           </div>

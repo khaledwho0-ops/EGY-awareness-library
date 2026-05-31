@@ -1,17 +1,9 @@
-import { generateObject } from "ai";
-import { createGoogleGenerativeAI } from "@ai-sdk/google";
-
-const google = createGoogleGenerativeAI({ apiKey: process.env.GEMINI_API_KEY });
 import { z } from "zod";
 import { EgyptianContextVectorSchema, EgyptianContextVector } from './egy-data';
+import { rotatingGenerateObject } from "./gemini-rotator";
 
 export async function classifyEgyptianContext(claim: string): Promise<EgyptianContextVector> {
-  if (!process.env.GEMINI_API_KEY) {
-    throw new Error('GEMINI_API_KEY is required. Please set it in your .env file.');
-  }
-
-  const { object } = await generateObject({
-    model: google('gemini-2.5-flash'),
+  const { object } = await rotatingGenerateObject({
     schema: z.object({
       vector: EgyptianContextVectorSchema
     }),
@@ -20,4 +12,3 @@ export async function classifyEgyptianContext(claim: string): Promise<EgyptianCo
 
   return object.vector;
 }
-

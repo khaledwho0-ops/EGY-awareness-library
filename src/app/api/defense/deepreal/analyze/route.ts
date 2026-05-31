@@ -55,7 +55,7 @@ export async function POST(req: Request) {
       try {
         const parsed = JSON.parse(errorText);
         parsedError = parsed.message || parsed.error?.message || errorText;
-      } catch (e) {}
+      } catch { /* JSON parse fallback — use raw text */ }
       
       throw new Error(`Sightengine Error (${response.status}): ${parsedError}`);
     }
@@ -66,9 +66,10 @@ export async function POST(req: Request) {
       success: true,
       analysis: data,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Internal Server Error';
     return NextResponse.json(
-      { error: error.message || 'Internal Server Error' },
+      { error: message },
       { status: 500 }
     );
   }

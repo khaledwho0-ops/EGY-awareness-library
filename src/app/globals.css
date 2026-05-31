@@ -3879,3 +3879,513 @@ input[dir="ltr"] {
 .animate-final-sentence {
   animation: final-sentence-fade 10s ease-in-out forwards;
 }
+
+/* ============================================================
+   UI OVERHAUL — REUSABLE UTILITIES
+   Added for: Angry Debunkers, Home Page, Module Shell redesign
+   ============================================================ */
+
+/* ── Pill Progress Bars ── */
+.progress-pill {
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.06);
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-pill-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(90deg, var(--pill-color, var(--accent-cta)), var(--pill-color-end, var(--accent-cta)));
+}
+
+/* ── Nav Pulse Dot ── */
+@keyframes nav-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.8); }
+}
+
+.nav-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #C2185B;
+  animation: nav-pulse 2s ease-in-out infinite;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ── Glass Card v2 (for new components) ── */
+.glass-card-v2 {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 22px;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.glass-card-v2:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+/* ── Gradient Text ── */
+.text-gradient-crimson {
+  background: linear-gradient(135deg, #C2185B, #7B1FA2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #10B981, #059669);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-violet {
+  background: linear-gradient(135deg, #8B5CF6, #6D28D9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-azure {
+  background: linear-gradient(135deg, #1976D2, #1565C0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Module Hero Banner ── */
+.module-hero {
+  position: relative;
+  padding: 80px 24px 48px;
+  overflow: hidden;
+  border-radius: 0 0 32px 32px;
+  margin-bottom: 32px;
+}
+
+.module-hero-gradient {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.module-hero-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  pointer-events: none;
+  background-size: 80px 80px;
+}
+
+.module-hero-pattern-topographic {
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.1) 39px, rgba(255,255,255,0.1) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,0.05) 39px, rgba(255,255,255,0.05) 40px);
+}
+
+.module-hero-pattern-waves {
+  background-image:
+    radial-gradient(ellipse 100% 40px at 50% 0%, rgba(255,255,255,0.06) 0%, transparent 100%),
+    radial-gradient(ellipse 100% 40px at 50% 40px, transparent 0%, rgba(255,255,255,0.03) 50%, transparent 100%);
+  background-size: 100% 80px;
+}
+
+.module-hero-pattern-geometric {
+  background-image:
+    linear-gradient(30deg, rgba(255,255,255,0.04) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.04) 87.5%),
+    linear-gradient(150deg, rgba(255,255,255,0.04) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.04) 87.5%),
+    linear-gradient(30deg, rgba(255,255,255,0.04) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.04) 87.5%),
+    linear-gradient(150deg, rgba(255,255,255,0.04) 12%, transparent 12.5%, transparent 87%, rgba(255,255,255,0.04) 87.5%);
+  background-size: 60px 104px;
+  background-position: 0 0, 0 0, 30px 52px, 30px 52px;
+}
+
+/* ── Module Tabs v2 ── */
+.module-tabs-container {
+  display: flex;
+  gap: 2px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 14px;
+  padding: 3px;
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.module-tab {
+  padding: 10px 18px;
+  border-radius: 11px;
+  font-weight: 700;
+  font-size: 13px;
+  transition: all 0.25s ease;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.module-tab:hover {
+  background: rgba(255,255,255,0.06);
+  color: var(--text-secondary);
+}
+
+.module-tab.active {
+  background: var(--accent-cta);
+  color: white;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+
+.module-tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  font-size: 11px;
+  font-weight: 800;
+  background: rgba(255,255,255,0.1);
+  padding: 0 6px;
+}
+
+.module-tab.active .module-tab-count {
+  background: rgba(255,255,255,0.25);
+}
+
+/* ── Item Card Intensity Borders ── */
+.item-card-intensity {
+  border-left: 3px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.item-card-intensity-high {
+  border-left-color: #ef4444;
+}
+
+.item-card-intensity-medium {
+  border-left-color: #f59e0b;
+}
+
+.item-card-intensity-low {
+  border-left-color: #10b981;
+}
+
+/* ── Filter Pills ── */
+.filter-pill {
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-pill:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+.filter-pill.active {
+  background: rgba(255,255,255,0.08);
+  border-color: var(--accent-cta);
+  color: var(--text-primary);
+}
+
+.filter-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+/* ── Arsenal Section ── */
+.arsenal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 640px) {
+  .arsenal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.arsenal-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  padding: 28px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.arsenal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.arsenal-card-border {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  border-radius: 22px 0 0 22px;
+}
+
+.arsenal-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+/* ── Step Flow (How It Works) ── */
+.step-flow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  position: relative;
+}
+
+.step-flow-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 0 12px;
+}
+
+.step-flow-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 18px;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 12px;
+}
+
+.step-flow-connector {
+  position: absolute;
+  top: 24px;
+  left: calc(50% + 24px);
+  right: calc(-50% + 24px);
+  height: 2px;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .step-flow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+  .step-flow-item {
+    flex-direction: row;
+    text-align: left;
+    gap: 16px;
+    padding: 0;
+  }
+  .step-flow-number {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  .step-flow-connector {
+    display: none;
+  }
+}
+
+/* ── Trusted By Marquee ── */
+.trusted-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.trusted-logo {
+  opacity: 0.4;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+.trusted-logo:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+}
+
+/* ── Quick Stats Row (Angry Debunkers) ── */
+.quick-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 640px) {
+  .quick-stats-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Cross-Module CTA ── */
+.cross-module-cta {
+  background: linear-gradient(135deg, rgba(194,24,91,0.08), rgba(123,31,162,0.08));
+  border: 1px solid rgba(194,24,91,0.15);
+  border-radius: 22px;
+  padding: 32px;
+  text-align: center;
+  transition: transform var(--transition-base);
+}
+
+.cross-module-cta:hover {
+  transform: translateY(-2px);
+}
+
+/* ── Collapsible Section ── */
+.collapsible-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.collapsible-trigger:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.collapsible-trigger[aria-expanded="true"] {
+  border-radius: 12px 12px 0 0;
+  border-bottom: none;
+}
+
+.collapsible-content {
+  border: 1px solid rgba(255,255,255,0.06);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  padding: 16px;
+  background: rgba(255,255,255,0.02);
+}
+
+/* ── Emergency Banner ── */
+@keyframes emergency-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(239,68,68,0); }
+}
+
+.emergency-banner {
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.2);
+  border-radius: 16px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: emergency-pulse 3s infinite;
+}
+
+/* ── Responsive Module Command Center ── */
+@media (max-width: 768px) {
+  .module-tabs-container {
+    gap: 1px;
+    padding: 2px;
+  }
+  .module-tab {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  .module-hero {
+    padding: 60px 16px 32px;
+  }
+}
+
+/* ============================================================
+   ANGRY DEBUNKERS — Quick Stats Row & Progress Pills
+   ============================================================ */
+
+/* Quick Stats Row */
+.quick-stats-row {
+  width: 100%;
+}
+
+/* Progress Pill — rounded bar container */
+.progress-pill {
+  height: 10px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Progress Pill Fill — animated inner bar */
+.progress-pill-fill {
+  height: 100%;
+  border-radius: 9999px;
+  min-width: 4px;
+  transition: width 1.5s ease-out;
+}
+
+/* ── Responsive 2-column grid (ModuleCommandCenter) ── */
+.mcc-two-col-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .mcc-two-col-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -12,6 +12,14 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Dev scripts (gitignored, on-disk only)
+    "test-*.ts",
+    "generate-*.js",
+    "rebuild-*.js",
+    "translate-*.js",
+    "git-log.js",
+    "scratch/**",
+    "test-results/**",
   ]),
 ]);
 

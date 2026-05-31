@@ -7,11 +7,28 @@ import { ModuleOperatingShell } from "@/components/science/module-operating-shel
 export default function MentalHealthPage() {
   const { isRTL, t } = useRTL();
 
+  const emergencyBanner = (
+    <div className="emergency-banner">
+      <span style={{ fontSize: 24 }}>🆘</span>
+      <div>
+        <strong style={{ display: "block", marginBottom: 2 }}>
+          {t({ en: "Mental Health Hotline", ar: "خط نجدة الصحة النفسية", arEG: "خط نجدة الصحة النفسية" })}
+        </strong>
+        <a
+          href="tel:08008880700"
+          style={{ color: "var(--color-danger)", fontWeight: 700, fontSize: 18 }}
+        >
+          08008880700
+        </a>
+      </div>
+    </div>
+  );
+
   return (
     <ModuleOperatingShell
       module="mental-health"
       accent="var(--accent-mentalhealth)"
-      icon={<HeartPulse size={24} style={{ color: "var(--accent-mentalhealth)" }} />}
+      icon={<HeartPulse size={28} style={{ color: "var(--accent-mentalhealth)" }} />}
       title={t({ en: "Mental Health", ar: "الصحة النفسية", arEG: "الصحة النفسية" })}
       subtitle={t({
         en: "The safety-first engine: stabilize, separate symptoms from diagnosis, then route support with the least harm.",
@@ -33,6 +50,15 @@ export default function MentalHealthPage() {
         ar: "ابدأ بالفرز التشغيلي، ثم أكمل خطوة المسار التالية، ثم نفّذ البروتوكولات على السيناريوهات والخرافات.",
         arEG: "ابدأ بالفرز العملي، كمّل خطوة المسار الجاية، وبعدين شغّل البروتوكولات على السيناريوهات والخرافات.",
       })}
+      heroPattern="waves"
+      heroGradient="linear-gradient(135deg, rgba(16,185,129,0.12), rgba(5,150,105,0.08))"
+      tagline={t({ en: "Stabilize. Separate. Support. | ثبّت. افصل. ادعم.", ar: "ثبّت. افصل. ادعم.", arEG: "ثبّت. افصل. ادعم." })}
+      titleGradientClass="text-gradient-emerald"
+      beforeShell={emergencyBanner}
+      heroCTAs={[
+        { href: "/sources", label: t({ en: "Support Sources", ar: "مصادر الدعم", arEG: "مصادر الدعم" }) },
+        { href: "/angry-debunkers", label: t({ en: "🔥 Angry Debunkers", ar: "🔥 المفنّدين الغاضبين", arEG: "🔥 المفنّدين الغاضبين" }), accent: "#C2185B" },
+      ]}
       links={[
         {
           href: "/sources",

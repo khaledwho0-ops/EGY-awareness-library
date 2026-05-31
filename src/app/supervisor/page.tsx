@@ -50,17 +50,17 @@ export default function SupervisorPage() {
                 arEG: "لوحة المشرف مقيدة بالمشرفين فقط. يرجى تسجيل الدخول بحساب مشرف للوصول إلى عمليات البحث وتحليلات الفوج وأدوات الحوكمة.",
               })}
             </p>
-            <div style={{ display: "flex", gap: 8, justifyContent: "center", flexWrap: "wrap" }}>
-              <div className="glass-card" style={{
-                padding: "12px 16px", fontSize: 12, color: "var(--text-muted)",
-                lineHeight: 1.6, textAlign: "left", fontFamily: ff,
-              }}>
-                <div style={{ fontWeight: 700, marginBottom: 6, color: "var(--text-primary)" }}>
-                  {t({ en: "Admin credentials:", ar: "بيانات المشرف:", arEG: "بيانات المشرف:" })}
-                </div>
-                <div>{t({ en: "Email:", ar: "البريد:", arEG: "البريد:" })} <code style={{ color: "#EF4444" }}>admin@eal.edu.eg</code></div>
-                <div>{t({ en: "Password:", ar: "كلمة المرور:", arEG: "كلمة المرور:" })} <code style={{ color: "#EF4444" }}>EAL2026!</code></div>
-              </div>
+            <div className="glass-card" style={{
+              padding: "12px 16px", fontSize: 12, color: "var(--text-muted)",
+              lineHeight: 1.6, textAlign: "center", fontFamily: ff,
+            }}>
+              <p style={{ margin: 0 }}>
+                {t({
+                  en: "Please contact the system administrator to obtain supervisor access credentials.",
+                  ar: "يرجى التواصل مع مسؤول النظام للحصول على بيانات الدخول.",
+                  arEG: "يرجى التواصل مع مسؤول النظام للحصول على بيانات الدخول.",
+                })}
+              </p>
             </div>
             <Link
               href="/dashboard"

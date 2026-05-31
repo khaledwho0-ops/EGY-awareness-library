@@ -189,6 +189,13 @@ export default function LandingPage() {
             <Link href="/welcome" className="btn-secondary no-underline" style={{ padding: "14px 28px", fontSize: "16px", fontFamily: ff }}>
               {isRTL ? "قاعدة البيانات الشاملة (تشريح المشروع)" : "Complete Project Data & Anatomy"}
             </Link>
+            <a href="/angry-debunkers" className="btn-primary no-underline" style={{
+              background: 'linear-gradient(135deg, #C2185B, #7B1FA2)',
+              padding: '16px 32px', fontSize: '16px', fontWeight: 800,
+              borderRadius: 'var(--radius-lg)', animation: 'pulse 3s infinite'
+            }}>
+              🔥 {isRTL ? 'أطلق المفنّدين الغاضبين' : 'Launch Angry Debunkers'}
+            </a>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-6" style={{ fontSize: "13px", color: "var(--text-caption)", fontFamily: ff }}>
@@ -196,6 +203,8 @@ export default function LandingPage() {
             <span className="flex items-center gap-1.5"><Users size={13} /> {s(HOME.forStudents, a)}</span>
             <span className="flex items-center gap-1.5"><Target size={13} /> {isRTL ? `${systemCounts.brainExercises} تمريناً تنفيذياً` : `${systemCounts.brainExercises} operational drills`}</span>
             <span className="flex items-center gap-1.5"><BarChart3 size={13} /> {isRTL ? `${systemCounts.communities} مساراً مجانياً` : `${systemCounts.communities} free routes`}</span>
+            <span className="flex items-center gap-1.5"><ShieldCheck size={13} /> {isRTL ? '55+ منظمة عالمية' : '55+ Global Orgs'}</span>
+            <span className="flex items-center gap-1.5"><Sparkles size={13} /> {isRTL ? '8 طبقات خداع' : '8 Deception Layers'}</span>
           </div>
         </div>
       </section>
@@ -276,6 +285,151 @@ export default function LandingPage() {
                 {s(HOME.explore, a)} {isRTL ? "المحور الديني" : "Religion Hub"} <ArrowRight size={14} style={{ transform: isRTL ? "rotate(180deg)" : "none" }} />
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ THE ARSENAL ═══ */}
+      <section className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
+        <div className="container">
+          <div className="text-center mb-12 animate-on-scroll" style={{ direction: dir }}>
+            <div style={{ fontSize: '12px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-caption)', marginBottom: '8px', fontFamily: ff }}>WEAPONS OF TRUTH</div>
+            <h2 style={{ marginBottom: '12px' }}>
+              THE ARSENAL — <span className="text-gradient">{isRTL ? 'أسلحة الحقيقة' : 'Weapons of Truth'}</span>
+            </h2>
+            <p style={{ maxWidth: '700px', margin: '0 auto', fontSize: '17px', lineHeight: 1.7, color: 'var(--text-secondary)', fontFamily: ff }}>
+              {isRTL ? 'ست أدوات قتالية للتحقق والكشف والتحقيق — كل واحدة مصممة لمعركة مختلفة.' : 'Six combat-grade tools for verification, detection & investigation — each built for a different battle.'}
+            </p>
+          </div>
+
+          <div className="arsenal-grid">
+            {/* 🔥 The Angry Debunkers */}
+            <Link href="/angry-debunkers" className="arsenal-card animate-on-scroll stagger-1 no-underline" style={{ direction: dir }}>
+              <div className="arsenal-card-border" style={{ background: 'linear-gradient(135deg, #C2185B, #C2185B44)' }} />
+              <div className="arsenal-card-icon" style={{ background: '#C2185B18', color: '#C2185B' }}>🔥</div>
+              <h3 style={{ fontSize: '20px', marginBottom: '4px' }}>The Angry Debunkers</h3>
+              <p style={{ color: '#C2185B', fontSize: '13px', marginBottom: '12px', fontFamily: ff }}>{isRTL ? 'المفنّدون الغاضبون' : 'AI-Powered Debunking'}</p>
+              <div className="flex flex-col gap-1" style={{ fontSize: '13px', color: 'var(--text-muted)', fontFamily: ff }}>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#C2185B' }} /> {isRTL ? 'ساندويتش الحقيقة بالذكاء الاصطناعي' : 'AI Truth Sandwich'}</span>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#C2185B' }} /> {isRTL ? 'كشف 8 طبقات خداع' : '8-layer deception detection'}</span>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#C2185B' }} /> {isRTL ? 'تتبع المصدر الأول' : 'Patient Zero tracking'}</span>
+              </div>
+              <div className="flex items-center gap-2 mt-4 font-semibold" style={{ color: '#C2185B', fontSize: '14px' }}>
+                {isRTL ? 'استكشف' : 'Explore'} → <ArrowRight size={14} style={{ transform: isRTL ? 'rotate(180deg)' : 'none' }} />
+              </div>
+            </Link>
+
+            {/* 🤖 AI Investigation Squad */}
+            <Link href="/ai-agents" className="arsenal-card animate-on-scroll stagger-2 no-underline" style={{ direction: dir }}>
+              <div className="arsenal-card-border" style={{ background: 'linear-gradient(135deg, #1976D2, #1976D244)' }} />
+              <div className="arsenal-card-icon" style={{ background: '#1976D218', color: '#1976D2' }}>🤖</div>
+              <h3 style={{ fontSize: '20px', marginBottom: '4px' }}>AI Investigation Squad</h3>
+              <p style={{ color: '#1976D2', fontSize: '13px', marginBottom: '12px', fontFamily: ff }}>{isRTL ? 'فريق التحقيق بالذكاء الاصطناعي' : 'Parallel AI Agents'}</p>
+              <div className="flex flex-col gap-1" style={{ fontSize: '13px', color: 'var(--text-muted)', fontFamily: ff }}>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#1976D2' }} /> {isRTL ? '5 عملاء متخصصين' : '5 specialized agents'}</span>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#1976D2' }} /> {isRTL ? 'عمل متوازي في الوقت الفعلي' : 'Real-time parallel processing'}</span>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#1976D2' }} /> {isRTL ? 'تقارير موحدة' : 'Unified reporting'}</span>
+              </div>
+              <div className="flex items-center gap-2 mt-4 font-semibold" style={{ color: '#1976D2', fontSize: '14px' }}>
+                {isRTL ? 'استكشف' : 'Explore'} → <ArrowRight size={14} style={{ transform: isRTL ? 'rotate(180deg)' : 'none' }} />
+              </div>
+            </Link>
+
+            {/* 🌍 Global Alliance */}
+            <Link href="/global-alliance" className="arsenal-card animate-on-scroll stagger-3 no-underline" style={{ direction: dir }}>
+              <div className="arsenal-card-border" style={{ background: 'linear-gradient(135deg, #10B981, #10B98144)' }} />
+              <div className="arsenal-card-icon" style={{ background: '#10B98118', color: '#10B981' }}>🌍</div>
+              <h3 style={{ fontSize: '20px', marginBottom: '4px' }}>Global Alliance</h3>
+              <p style={{ color: '#10B981', fontSize: '13px', marginBottom: '12px', fontFamily: ff }}>{isRTL ? 'التحالف العالمي' : 'Worldwide Fact-Checking'}</p>
+              <div className="flex flex-col gap-1" style={{ fontSize: '13px', color: 'var(--text-muted)', fontFamily: ff }}>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#10B981' }} /> {isRTL ? '55+ منظمة تحقق عالمية' : '55+ fact-checking organizations'}</span>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#10B981' }} /> {isRTL ? 'تغطية عالمية شاملة' : 'Worldwide coverage'}</span>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#10B981' }} /> {isRTL ? 'تحقق متعدد اللغات' : 'Multi-language verification'}</span>
+              </div>
+              <div className="flex items-center gap-2 mt-4 font-semibold" style={{ color: '#10B981', fontSize: '14px' }}>
+                {isRTL ? 'استكشف' : 'Explore'} → <ArrowRight size={14} style={{ transform: isRTL ? 'rotate(180deg)' : 'none' }} />
+              </div>
+            </Link>
+
+            {/* 🕌 Islamic Verification */}
+            <Link href="/religion-hub/tools" className="arsenal-card animate-on-scroll stagger-4 no-underline" style={{ direction: dir }}>
+              <div className="arsenal-card-border" style={{ background: 'linear-gradient(135deg, #D4A843, #D4A84344)' }} />
+              <div className="arsenal-card-icon" style={{ background: '#D4A84318', color: '#D4A843' }}>🕌</div>
+              <h3 style={{ fontSize: '20px', marginBottom: '4px' }}>Islamic Verification</h3>
+              <p style={{ color: '#D4A843', fontSize: '13px', marginBottom: '12px', fontFamily: ff }}>{isRTL ? 'التحقق الإسلامي' : 'Religious Auth Tools'}</p>
+              <div className="flex flex-col gap-1" style={{ fontSize: '13px', color: 'var(--text-muted)', fontFamily: ff }}>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#D4A843' }} /> {isRTL ? 'توثيق الحديث' : 'Hadith authentication'}</span>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#D4A843' }} /> {isRTL ? 'سياق الفتوى' : 'Fatwa context analysis'}</span>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#D4A843' }} /> {isRTL ? 'التحقق القرآني' : 'Quran verification'}</span>
+              </div>
+              <div className="flex items-center gap-2 mt-4 font-semibold" style={{ color: '#D4A843', fontSize: '14px' }}>
+                {isRTL ? 'استكشف' : 'Explore'} → <ArrowRight size={14} style={{ transform: isRTL ? 'rotate(180deg)' : 'none' }} />
+              </div>
+            </Link>
+
+            {/* 🧅 8-Layer Deception */}
+            <Link href="/six-layers" className="arsenal-card animate-on-scroll stagger-5 no-underline" style={{ direction: dir }}>
+              <div className="arsenal-card-border" style={{ background: 'linear-gradient(135deg, #7B1FA2, #7B1FA244)' }} />
+              <div className="arsenal-card-icon" style={{ background: '#7B1FA218', color: '#7B1FA2' }}>🧅</div>
+              <h3 style={{ fontSize: '20px', marginBottom: '4px' }}>8-Layer Deception</h3>
+              <p style={{ color: '#7B1FA2', fontSize: '13px', marginBottom: '12px', fontFamily: ff }}>{isRTL ? '8 طبقات من الخداع' : 'Deception Anatomy'}</p>
+              <div className="flex flex-col gap-1" style={{ fontSize: '13px', color: 'var(--text-muted)', fontFamily: ff }}>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#7B1FA2' }} /> {isRTL ? 'من الاختلاق الكامل' : 'From Absolute Fabrication'}</span>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#7B1FA2' }} /> {isRTL ? 'إلى المجهول' : 'To The Unknown'}</span>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#7B1FA2' }} /> {isRTL ? 'تشريح كل طبقة' : 'Each layer dissected'}</span>
+              </div>
+              <div className="flex items-center gap-2 mt-4 font-semibold" style={{ color: '#7B1FA2', fontSize: '14px' }}>
+                {isRTL ? 'استكشف' : 'Explore'} → <ArrowRight size={14} style={{ transform: isRTL ? 'rotate(180deg)' : 'none' }} />
+              </div>
+            </Link>
+
+            {/* 🔍 OSINT Investigator */}
+            <Link href="/osint-investigator" className="arsenal-card animate-on-scroll stagger-6 no-underline" style={{ direction: dir }}>
+              <div className="arsenal-card-border" style={{ background: 'linear-gradient(135deg, #78909C, #78909C44)' }} />
+              <div className="arsenal-card-icon" style={{ background: '#78909C18', color: '#78909C' }}>🔍</div>
+              <h3 style={{ fontSize: '20px', marginBottom: '4px' }}>OSINT Investigator</h3>
+              <p style={{ color: '#78909C', fontSize: '13px', marginBottom: '12px', fontFamily: ff }}>{isRTL ? 'محقق المصادر المفتوحة' : 'Open-Source Intel'}</p>
+              <div className="flex flex-col gap-1" style={{ fontSize: '13px', color: 'var(--text-muted)', fontFamily: ff }}>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#78909C' }} /> {isRTL ? 'أدوات استخبارات مفتوحة' : 'Open-source intelligence tools'}</span>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#78909C' }} /> {isRTL ? 'التحقق من الصور والفيديو' : 'Image & video verification'}</span>
+                <span className="flex items-center gap-2"><CheckCircle2 size={12} style={{ color: '#78909C' }} /> {isRTL ? 'تحليل البيانات الوصفية' : 'Metadata analysis'}</span>
+              </div>
+              <div className="flex items-center gap-2 mt-4 font-semibold" style={{ color: '#78909C', fontSize: '14px' }}>
+                {isRTL ? 'استكشف' : 'Explore'} → <ArrowRight size={14} style={{ transform: isRTL ? 'rotate(180deg)' : 'none' }} />
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ HOW ANGRY DEBUNKERS WORK ═══ */}
+      <section className="section-padding" style={{ background: 'var(--bg-primary)' }}>
+        <div className="container">
+          <div className="text-center mb-12 animate-on-scroll" style={{ direction: dir }}>
+            <h2 style={{ marginBottom: '12px' }}>
+              {isRTL ? 'كيف يعمل' : 'How'} <span className="text-gradient">{isRTL ? 'المفنّدون الغاضبون' : 'Angry Debunkers Work'}</span>
+            </h2>
+            <p style={{ maxWidth: '600px', margin: '0 auto', fontSize: '17px', lineHeight: 1.7, color: 'var(--text-secondary)', fontFamily: ff }}>
+              {isRTL ? 'أربع خطوات من الادعاء إلى الحقيقة — مدعومة بالذكاء الاصطناعي.' : 'Four steps from claim to truth — powered by AI.'}
+            </p>
+          </div>
+
+          <div className="step-flow animate-on-scroll">
+            {[
+              { num: '1', title: isRTL ? 'الصق الادعاء' : 'Paste Claim', desc: isRTL ? 'أدخل أي ادعاء مشبوه أو رابط أو نص.' : 'Enter any suspicious claim, link, or text.' },
+              { num: '2', title: isRTL ? 'الذكاء الاصطناعي يفحص' : 'AI Scans', desc: isRTL ? '5 عملاء ذكاء اصطناعي يحللون عبر 8 طبقات.' : '5 AI agents analyze across 8 deception layers.' },
+              { num: '3', title: isRTL ? 'ساندويتش الحقيقة' : 'Truth Sandwich', desc: isRTL ? 'النتيجة مغلفة بالحقيقة أولاً وأخيراً.' : 'Result wrapped with truth first and last.' },
+              { num: '4', title: isRTL ? 'تعمّق أكثر' : 'Go Deeper', desc: isRTL ? 'استكشف المصادر والطبقات والأدلة.' : 'Explore sources, layers, and evidence.' },
+            ].map((step, i) => (
+              <div key={i} style={{ display: 'contents' }}>
+                <div className="step-flow-item">
+                  <div className="step-flow-number" style={{ background: 'linear-gradient(135deg, #C2185B, #7B1FA2)', color: '#fff' }}>{step.num}</div>
+                  <h4 style={{ fontSize: '16px', marginBottom: '4px', fontFamily: ff }}>{step.title}</h4>
+                  <p style={{ fontSize: '13px', color: 'var(--text-muted)', lineHeight: 1.5, fontFamily: ff }}>{step.desc}</p>
+                </div>
+                {i < 3 && <div className="step-flow-connector" />}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -448,6 +602,24 @@ export default function LandingPage() {
             <Link href="/baseline" className="btn-primary no-underline" style={{ padding: "12px 28px" }}>
               {s(HOME.takeBaseline, a)} <ArrowRight size={16} style={{ transform: isRTL ? "rotate(180deg)" : "none" }} />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ TRUSTED BY ═══ */}
+      <section className="section-padding animate-on-scroll" style={{ background: 'var(--bg-secondary)' }}>
+        <div className="container">
+          <div className="text-center mb-8" style={{ direction: dir }}>
+            <p style={{ fontSize: '12px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-caption)', fontFamily: ff }}>
+              {isRTL ? 'موثوق من قبل' : 'TRUSTED BY'}
+            </p>
+          </div>
+          <div className="trusted-row">
+            {['Matsda2sh', 'AFP Fact Check', 'Full Fact', 'Snopes', 'Africa Check', 'Bellingcat'].map((org, i) => (
+              <div key={i} className="trusted-logo" style={{ fontFamily: ff }}>
+                {org}
+              </div>
+            ))}
           </div>
         </div>
       </section>

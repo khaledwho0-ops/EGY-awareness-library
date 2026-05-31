@@ -11,7 +11,7 @@ export default function ReligionHubPage() {
     <ModuleOperatingShell
       module="religion-hub"
       accent="var(--accent-religionhub)"
-      icon={<Sparkles size={24} style={{ color: "var(--accent-religionhub)" }} />}
+      icon={<Sparkles size={28} style={{ color: "var(--accent-religionhub)" }} />}
       title={t({ en: "Religion Hub", ar: "المحور الديني", arEG: "المحور الديني" })}
       subtitle={t({
         en: "The moderation engine: protect meaning, block coercion, and keep care handoff visible.",
@@ -33,7 +33,69 @@ export default function ReligionHubPage() {
         ar: "ابدأ بالمختبر، ثم راقب الإكراه والذنب والإحالة، ثم شغّل البروتوكولات على السيناريوهات والوضع العكسي.",
         arEG: "ابدأ بالمختبر، راقب الإكراه والذنب والإحالة، وبعدين شغّل البروتوكولات على السيناريوهات والوضع العكسي.",
       })}
+      heroPattern="geometric"
+      heroGradient="linear-gradient(135deg, rgba(139,92,246,0.12), rgba(109,40,217,0.08))"
+      tagline={t({ en: "Protect. Verify. Moderate. | احمِ. تحقق. اعتدل.", ar: "احمِ. تحقق. اعتدل.", arEG: "احمِ. تحقق. اعتدل." })}
+      titleGradientClass="text-gradient-violet"
+      heroCTAs={[
+        { href: "/religion-hub/tools", label: t({ en: "Islamic Tools Suite", ar: "أدوات إسلامية", arEG: "أدوات إسلامية" }) },
+        { href: "/angry-debunkers", label: t({ en: "🔥 Angry Debunkers", ar: "🔥 المفنّدين الغاضبين", arEG: "🔥 المفنّدين الغاضبين" }), accent: "#C2185B" },
+      ]}
       links={[
+        {
+          href: "/religion-hub/tools",
+          title: t({ en: "Islamic Tools Suite", ar: "مجموعة الأدوات الإسلامية", arEG: "مجموعة الأدوات الإسلامية" }),
+          description: t({
+            en: "Complete toolkit: Quran reader, Hadith search, Tafsir, and more.",
+            ar: "مجموعة أدوات كاملة: قارئ القرآن، بحث الحديث، التفسير، وأكثر.",
+            arEG: "مجموعة أدوات كاملة: قارئ القرآن، بحث الحديث، التفسير، وأكتر.",
+          }),
+        },
+        {
+          href: "/religion-hub/tools/quran",
+          title: t({ en: "Quran reader", ar: "قارئ القرآن", arEG: "قارئ القرآن" }),
+          description: t({
+            en: "Browse and search the Quran with tafsir context.",
+            ar: "تصفح وابحث في القرآن مع سياق التفسير.",
+            arEG: "تصفح وابحث في القرآن مع سياق التفسير.",
+          }),
+        },
+        {
+          href: "/religion-hub/tools/hadith",
+          title: t({ en: "Hadith search", ar: "بحث الحديث", arEG: "بحث الحديث" }),
+          description: t({
+            en: "Search authenticated Hadith collections by keyword or reference.",
+            ar: "ابحث في مجموعات الحديث الموثقة بالكلمة أو المرجع.",
+            arEG: "ابحث في مجموعات الحديث الموثقة بالكلمة أو المرجع.",
+          }),
+        },
+        {
+          href: "/religion-hub/tools/tafsir",
+          title: t({ en: "Tafsir browser", ar: "متصفح التفسير", arEG: "متصفح التفسير" }),
+          description: t({
+            en: "Compare classical and contemporary interpretations.",
+            ar: "قارن بين التفاسير الكلاسيكية والمعاصرة.",
+            arEG: "قارن بين التفاسير الكلاسيكية والمعاصرة.",
+          }),
+        },
+        {
+          href: "/religion-hub/tools/prayer",
+          title: t({ en: "Prayer times", ar: "مواقيت الصلاة", arEG: "مواقيت الصلاة" }),
+          description: t({
+            en: "Accurate prayer times based on your location.",
+            ar: "مواقيت صلاة دقيقة بناءً على موقعك.",
+            arEG: "مواقيت صلاة دقيقة حسب موقعك.",
+          }),
+        },
+        {
+          href: "/religion-hub/tools/names",
+          title: t({ en: "Names of Allah", ar: "أسماء الله الحسنى", arEG: "أسماء الله الحسنى" }),
+          description: t({
+            en: "Browse and reflect on the 99 names with meanings.",
+            ar: "تصفح وتأمل في أسماء الله الـ ٩٩ مع المعاني.",
+            arEG: "تصفح وتأمل في أسماء الله الـ ٩٩ مع المعاني.",
+          }),
+        },
         {
           href: "/science",
           title: t({ en: "Science hub", ar: "مركز العلم", arEG: "مركز العلم" }),

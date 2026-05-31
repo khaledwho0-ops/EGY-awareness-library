@@ -17,6 +17,9 @@ import {
   Square,
   Bot,
   Search,
+  Flame,
+  Globe,
+  ScanSearch,
 } from "lucide-react";
 import { THEME_OPTIONS, useTheme } from "./theme-provider";
 import { useRTL } from "./rtl-provider";
@@ -92,6 +95,13 @@ export function Navbar() {
 
   const mvpLinks = [
     {
+      href: "/angry-debunkers",
+      label: isRTL ? "المفنّدون الغاضبون" : "Angry Debunkers",
+      icon: <Flame size={18} />,
+      accent: "#C2185B",
+      isPrimary: true,
+    },
+    {
       href: "/deepreal",
       label: s(NAV.deepreal, isRTL),
       icon: <ShieldCheck size={18} />,
@@ -124,7 +134,12 @@ export function Navbar() {
   ];
 
   const utilLinks = [
-    { href: "/chatbot", label: `🤖 ${isRTL ? "المحادثة الذكية" : "AI Chatbot"}` },
+    { href: "/angry-debunkers", label: `🔥 ${isRTL ? "المفنّدون الغاضبون" : "Angry Debunkers"}` },
+    { href: "/ai-agents", label: `🤖 ${isRTL ? "فريق التحقيق" : "AI Agents"}` },
+    { href: "/global-alliance", label: `🌍 ${isRTL ? "التحالف العالمي" : "Global Alliance"}` },
+    { href: "/religion-hub/tools", label: `🕌 ${isRTL ? "أدوات التحقق الديني" : "Islamic Tools"}` },
+    { href: "/osint-investigator", label: `🔍 ${isRTL ? "محقق المصادر" : "OSINT Investigator"}` },
+    { href: "/chatbot", label: `💬 ${isRTL ? "المحادثة الذكية" : "AI Chatbot"}` },
     { href: "/defense-qa", label: `🎯 ${isRTL ? "دفاع المشروع" : "Defense Q&A"}` },
     { href: "/welcome", label: `🌟 ${isRTL ? "مرحباً" : "Welcome"}` },
     { href: "/baseline", label: `🧠 ${s(NAV.baseline, isRTL)}` },
@@ -186,7 +201,8 @@ export function Navbar() {
                 href={link.href}
                 className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium no-underline transition-all duration-200"
                 style={{
-                  color: "var(--text-secondary)",
+                  color: (link as any).isPrimary ? "#C2185B" : "var(--text-secondary)",
+                  fontWeight: (link as any).isPrimary ? 800 : undefined,
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.color = link.accent;
@@ -195,12 +211,13 @@ export function Navbar() {
                     : "rgba(0,0,0,0.04)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.color = "var(--text-secondary)";
+                  e.currentTarget.style.color = (link as any).isPrimary ? "#C2185B" : "var(--text-secondary)";
                   e.currentTarget.style.background = "transparent";
                 }}
               >
                 {link.icon}
                 {link.label}
+                {(link as any).isPrimary && <span className="nav-pulse-dot" />}
               </Link>
             ))}
             <Link

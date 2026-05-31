@@ -4,7 +4,9 @@ import { z } from "zod";
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 
-const secret = new TextEncoder().encode(process.env.JWT_SECRET || "eal_pilot_super_secret_key_2026_x_zero_trust");
+const secret = new TextEncoder().encode(
+  process.env.JWT_SECRET || crypto.randomUUID()
+);
 
 // Strict validation of the incoming assessment payload
 const assessmentSchema = z.object({

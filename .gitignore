@@ -24,14 +24,19 @@
 .DS_Store
 *.pem
 
-# debug
+# debug & logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # vercel
 .vercel
@@ -40,4 +45,26 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.vercel
+# AI agent / tool files — NEVER commit
+.agents/
+.gemini/
+.runtime/
+AGENTS.md
+CLAUDE.md
+
+# Dev artifacts & debug output
+scratch/
+test_output*
+test-results/
+screenshot*
+
+# One-off dev scripts
+test-*.ts
+generate-*.js
+rebuild-*.js
+translate-*.js
+git-log.js
+
+# IDE
+.idea/
+.vscode/

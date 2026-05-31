@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Activity, CheckCircle2, Clock3, Database, RefreshCw, ShieldCheck } from "lucide-react";
+import { Activity, CheckCircle2, ChevronDown, Clock3, Database, RefreshCw, ShieldCheck } from "lucide-react";
 import { useRTL } from "@/components/shared/rtl-provider";
 import type { ModuleId } from "@/data/research/module-briefings";
 import type { ProtocolKind } from "@/lib/science/protocol-engine";
@@ -340,6 +340,7 @@ export function ModuleCommandCenter({
   const [visibleCount, setVisibleCount] = useState(12);
   const [protocolTarget, setProtocolTarget] = useState<ProtocolTarget | null>(null);
   const [itemFilter, setItemFilter] = useState<ItemFilter>("all");
+  const [evidenceOpen, setEvidenceOpen] = useState(false);
 
   useEffect(() => {
     setVisibleCount(activeTab === "scenarios" ? 18 : 12);
@@ -490,42 +491,47 @@ export function ModuleCommandCenter({
 
   return (
     <section className="glass-card" style={{ padding: "var(--space-xl)", marginBottom: "var(--space-xl)", direction: a ? "rtl" : "ltr" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", gap: 16, flexWrap: "wrap", marginBottom: 18 }}>
-        <div>
-          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 8 }}>
-            <ShieldCheck size={18} style={{ color: "var(--accent-cta)" }} />
-            <h2 style={{ margin: 0 }}>{copy(payload.briefing.title, a)}</h2>
-          </div>
-          <p style={{ color: "var(--text-muted)", marginTop: 0, marginBottom: 8 }}>
-            {copy(payload.briefing.subtitle, a)}
-          </p>
-          <p style={{ color: "var(--text-secondary)", margin: 0 }}>
-            {copy(payload.briefing.mission, a)}
-          </p>
-        </div>
-
-        <div className="glass-card" style={{ padding: "var(--space-md)", minWidth: 280 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, color: "var(--text-muted)", marginBottom: 8 }}>
-            <Clock3 size={14} />
-            <span>{t({ en: "Last scientific sync", ar: "آخر مزامنة علمية", arEG: "آخر مزامنة علمية" })}</span>
-          </div>
-          <div style={{ fontWeight: 700, marginBottom: 10 }}>{lastRefreshLabel}</div>
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 10 }}>
-            <span className="badge">{payload.evidence.sourceHealth.total} {t({ en: "sources", ar: "مصدر", arEG: "مصدر" })}</span>
-            <span className="badge">{payload.evidence.sourceHealth.live} {t({ en: "live", ar: "حي", arEG: "شغال" })}</span>
-            <span className="badge">{payload.evidence.sourceHealth.failed} {t({ en: "failed", ar: "فشل", arEG: "فشل" })}</span>
-            <span className="badge">{payload.refreshSummary.updateMethodCount} {t({ en: "update methods", ar: "طريقة تحديث", arEG: "طريقة تحديث" })}</span>
-          </div>
-          <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            <button type="button" className="btn-secondary" onClick={refreshScience} disabled={refreshing}>
-              <RefreshCw size={14} />
-              {refreshing ? (t({ en: "Refreshing", ar: "جارٍ التحديث", arEG: "بيتحدّث" })) : t({ en: "Sync evidence", ar: "مزامنة الأدلة", arEG: "زامن الأدلة" })}
-            </button>
-            <button type="button" className="btn-secondary" onClick={() => setGuideOpen(true)}>
-              {t({ en: "How do I start?", ar: "كيف أبدأ؟", arEG: "أبدأ إزاي؟" })}
-            </button>
+      {/* ── Dashboard Header: compact bar with progress pill ── */}
+      <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap", marginBottom: 14 }}>
+        <ShieldCheck size={18} style={{ color: "var(--accent-cta)", flexShrink: 0 }} />
+        <h2 style={{ margin: 0, flex: "0 0 auto" }}>{copy(payload.briefing.title, a)}</h2>
+        <div style={{ flex: 1, minWidth: 100 }}>
+          <div className="progress-pill">
+            <div
+              className="progress-pill-fill"
+              style={{ width: `${payload.journey.progress.percentage}%` }}
+            />
           </div>
         </div>
+        <span className="badge" style={{ flexShrink: 0 }}>
+          {payload.journey.progress.completedSteps}/{payload.journey.progress.totalSteps} ({payload.journey.progress.percentage}%)
+        </span>
+        <div style={{ display: "flex", gap: 6 }}>
+          <button type="button" className="btn-secondary" onClick={refreshScience} disabled={refreshing} style={{ padding: "6px 10px", fontSize: 12 }}>
+            <RefreshCw size={12} style={{ animation: refreshing ? "spin 1s linear infinite" : "none" }} />
+            {refreshing ? t({ en: "Syncing", ar: "مزامنة", arEG: "بيزامن" }) : t({ en: "Sync", ar: "زامن", arEG: "زامن" })}
+          </button>
+          <button type="button" className="btn-secondary" onClick={() => setGuideOpen(true)} style={{ padding: "6px 10px", fontSize: 12 }}>
+            {t({ en: "Guide", ar: "دليل", arEG: "دليل" })}
+          </button>
+        </div>
+      </div>
+      <p style={{ color: "var(--text-muted)", margin: "0 0 6px 0", fontSize: 13 }}>
+        {copy(payload.briefing.subtitle, a)}
+      </p>
+      <p style={{ color: "var(--text-secondary)", margin: "0 0 6px 0", fontSize: 13 }}>
+        {copy(payload.briefing.mission, a)}
+      </p>
+      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 18, fontSize: 12, color: "var(--text-muted)" }}>
+        <Clock3 size={12} />
+        <span>{lastRefreshLabel}</span>
+        <span>•</span>
+        <span>{payload.evidence.sourceHealth.total} {t({ en: "sources", ar: "مصدر", arEG: "مصدر" })}</span>
+        <span>•</span>
+        <span>{payload.evidence.sourceHealth.live} {t({ en: "live", ar: "حي", arEG: "شغال" })}</span>
+        {payload.evidence.sourceHealth.failed > 0 ? (
+          <><span>•</span><span style={{ color: "var(--color-danger)" }}>{payload.evidence.sourceHealth.failed} {t({ en: "failed", ar: "فشل", arEG: "فشل" })}</span></>
+        ) : null}
       </div>
 
       <VisualClarityPanel />
@@ -559,7 +565,7 @@ export function ModuleCommandCenter({
         references={payload.knowledge.references}
       />
 
-      <div className="grid gap-4" style={{ gridTemplateColumns: "1.15fr 1fr", alignItems: "start", marginBottom: 20 }}>
+      <div className="mcc-two-col-grid" style={{ marginBottom: 20 }}>
         <div className="glass-card" style={{ padding: "var(--space-lg)" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
             <Activity size={16} style={{ color: "var(--accent-cta)" }} />
@@ -644,85 +650,109 @@ export function ModuleCommandCenter({
           </div>
         </div>
 
-        <div className="glass-card" style={{ padding: "var(--space-lg)" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
-            <Database size={16} style={{ color: "var(--accent-cta)" }} />
-            <strong>{t({ en: "Why we trust this", ar: "لماذا نثق بهذا", arEG: "ليه نثق بده" })}</strong>
-          </div>
-          <div className="grid gap-3">
-            {evidenceClaims.map((claim) => (
-              <div key={claim.id} className="glass-card" style={{ padding: "var(--space-md)", background: "var(--bg-secondary)" }}>
-                <strong>{copy(claim.title, a)}</strong>
-                <p style={{ marginTop: 6, color: "var(--text-secondary)" }}>{copy(claim.summary, a)}</p>
-                <div className="grid gap-2">
-                  {claim.metrics.slice(0, 2).map((metric) => (
-                    <div key={metric.id}>
-                      <div style={{ fontWeight: 600, marginBottom: 6 }}>{copy(metric.label, a)}</div>
-                      <div className="grid gap-2">
-                        {metric.snapshots.slice(0, 3).map((snapshot) => (
-                          <a
-                            key={snapshot.id}
-                            href={snapshot.source.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="glass-card"
-                            style={{ padding: "var(--space-sm)", background: "rgba(15,23,42,0.18)", textDecoration: "none", color: "inherit" }}
-                          >
-                            <div style={{ display: "flex", justifyContent: "space-between", gap: 8, flexWrap: "wrap" }}>
-                              <div>
-                                <div style={{ fontWeight: 600 }}>{snapshot.region.toUpperCase()}</div>
-                                <div style={{ fontSize: 13, color: "var(--text-secondary)" }}>
-                                  {formatSnapshotValue(snapshot, metric.unit)}
+        {/* ── Evidence: Collapsible Section ── */}
+        <div>
+          <button
+            type="button"
+            className="collapsible-trigger"
+            aria-expanded={evidenceOpen}
+            onClick={() => setEvidenceOpen((prev) => !prev)}
+          >
+            <span style={{ display: "flex", alignItems: "center", gap: 8 }}>
+              <Database size={16} style={{ color: "var(--accent-cta)" }} />
+              {t({ en: "Why we trust this", ar: "لماذا نثق بهذا", arEG: "ليه نثق بده" })}
+              <span className="badge" style={{ fontSize: 11 }}>{evidenceClaims.length}</span>
+            </span>
+            <ChevronDown
+              size={16}
+              style={{
+                transition: "transform 0.2s",
+                transform: evidenceOpen ? "rotate(180deg)" : "rotate(0deg)",
+              }}
+            />
+          </button>
+          {evidenceOpen ? (
+            <div className="collapsible-content">
+              <div className="grid gap-3">
+                {evidenceClaims.map((claim) => (
+                  <div key={claim.id} className="glass-card" style={{ padding: "var(--space-md)", background: "var(--bg-secondary)" }}>
+                    <strong>{copy(claim.title, a)}</strong>
+                    <p style={{ marginTop: 6, color: "var(--text-secondary)" }}>{copy(claim.summary, a)}</p>
+                    <div className="grid gap-2">
+                      {claim.metrics.slice(0, 2).map((metric) => (
+                        <div key={metric.id}>
+                          <div style={{ fontWeight: 600, marginBottom: 6 }}>{copy(metric.label, a)}</div>
+                          <div className="grid gap-2">
+                            {metric.snapshots.slice(0, 3).map((snapshot) => (
+                              <a
+                                key={snapshot.id}
+                                href={snapshot.source.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="glass-card"
+                                style={{ padding: "var(--space-sm)", background: "rgba(15,23,42,0.18)", textDecoration: "none", color: "inherit" }}
+                              >
+                                <div style={{ display: "flex", justifyContent: "space-between", gap: 8, flexWrap: "wrap" }}>
+                                  <div>
+                                    <div style={{ fontWeight: 600 }}>{snapshot.region.toUpperCase()}</div>
+                                    <div style={{ fontSize: 13, color: "var(--text-secondary)" }}>
+                                      {formatSnapshotValue(snapshot, metric.unit)}
+                                    </div>
+                                  </div>
+                                  <div style={{ fontSize: 12, color: "var(--text-muted)" }}>
+                                    {snapshot.year ?? "n/a"} • {snapshot.source.sourceName}
+                                  </div>
                                 </div>
-                              </div>
-                              <div style={{ fontSize: 12, color: "var(--text-muted)" }}>
-                                {snapshot.year ?? "n/a"} • {snapshot.source.sourceName}
-                              </div>
-                            </div>
-                            <div style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 6 }}>
-                              {t({ en: "Method:", ar: "المنهج:", arEG: "المنهج:" })} {snapshot.method} • {t({ en: "Confidence:", ar: "الثقة:", arEG: "الثقة:" })} {Math.round(snapshot.confidence * 100)}%
-                            </div>
-                          </a>
-                        ))}
-                      </div>
+                                <div style={{ fontSize: 12, color: "var(--text-muted)", marginTop: 6 }}>
+                                  {t({ en: "Method:", ar: "المنهج:", arEG: "المنهج:" })} {snapshot.method} • {t({ en: "Confidence:", ar: "الثقة:", arEG: "الثقة:" })} {Math.round(snapshot.confidence * 100)}%
+                                </div>
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          ) : null}
         </div>
       </div>
 
-      <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 14 }}>
+      {/* ── Segmented Control Tabs ── */}
+      <div className="module-tabs-container" style={{ marginBottom: 14 }}>
         {TAB_LABELS.map((tab) => (
           <button
             key={tab.id}
             type="button"
-            className={activeTab === tab.id ? "btn-primary" : "btn-secondary"}
+            className={`module-tab${activeTab === tab.id ? " active" : ""}`}
             onClick={() => setActiveTab(tab.id)}
           >
-            {t(tab)} {payload.counts[tab.id]}
+            {t(tab)}
+            <span className="module-tab-count">{payload.counts[tab.id]}</span>
           </button>
         ))}
       </div>
 
+      {/* ── Filter Pills ── */}
       <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 16 }}>
-        {[
-          { id: "all" as const, en: "All routes", ar: "كل المسارات", arEG: "كل المسارات" },
-          { id: "authored" as const, en: "Authored first", ar: "المحتوى المؤلف", arEG: "المحتوى المؤلف" },
-          { id: "egypt" as const, en: "Egypt priority", ar: "أولوية مصر", arEG: "أولوية مصر" },
-          { id: "high-intensity" as const, en: "High intensity", ar: "شدة عالية", arEG: "شدة عالية" },
-        ].map((filter) => (
+        {([
+          { id: "all" as const, en: "All routes", ar: "كل المسارات", arEG: "كل المسارات", dotColor: "var(--text-muted)" },
+          { id: "authored" as const, en: "Authored first", ar: "المحتوى المؤلف", arEG: "المحتوى المؤلف", dotColor: "#22c55e" },
+          { id: "egypt" as const, en: "Egypt priority", ar: "أولوية مصر", arEG: "أولوية مصر", dotColor: "#f59e0b" },
+          { id: "high-intensity" as const, en: "High intensity", ar: "شدة عالية", arEG: "شدة عالية", dotColor: "#ef4444" },
+        ] as const).map((filter) => (
           <button
             key={filter.id}
             type="button"
-            className={itemFilter === filter.id ? "btn-primary" : "btn-secondary"}
+            className={`filter-pill${itemFilter === filter.id ? " active" : ""}`}
             onClick={() => {
               setItemFilter(filter.id);
               setVisibleCount(activeTab === "scenarios" ? 18 : 12);
             }}
           >
+            <span className="filter-pill-dot" style={{ background: filter.dotColor }} />
             {t(filter)} {filterCounts[filter.id]}
           </button>
         ))}
@@ -735,7 +765,7 @@ export function ModuleCommandCenter({
           const protocolKind = getReviewKind(activeTab);
 
           return (
-            <div key={item.id} className="glass-card" style={{ padding: "var(--space-lg)" }}>
+            <div key={item.id} className={`glass-card item-card-intensity item-card-intensity-${item.intensity}`} style={{ padding: "var(--space-lg)" }}>
               <div style={{ display: "flex", justifyContent: "space-between", gap: 12, marginBottom: 8 }}>
                 <strong>{copy(item.title, a)}</strong>
                 <div style={{ display: "flex", gap: 6, flexWrap: "wrap", justifyContent: "flex-end" }}>

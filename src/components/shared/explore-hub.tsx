@@ -13,7 +13,7 @@ import {
   MessageCircle, Shield, CheckCircle2, AlertTriangle,
   Copy, ArrowRight, Layers, Cpu, BookMarked,
   Fingerprint, ScanEye, Languages, History, Scale,
-  Image as ImageIcon, Syringe, Heart, Activity, ArrowLeftRight, Timer, FlaskConical, MapPin, Flame
+  Image as ImageIcon, Syringe, Heart, Activity, ArrowLeftRight, Timer, FlaskConical, MapPin, Flame, Swords, Star
 } from "lucide-react";
 
 /* ═══════════════════════════════════════════════════════════
@@ -100,6 +100,20 @@ const ALL_PAGES = [
   { href: "/bad-news", label: "Bad News Game 🌟 (Special)", labelAr: "لعبة الأخبار السيئة 🌟", icon: <Gamepad2 size={16} />, category: "innovation" },
   { href: "/osint-investigator", label: "Live OSINT Investigator ⚡ (New)", labelAr: "محقق الـ OSINT الحي ⚡", icon: <Search size={16} />, category: "innovation" },
   { href: "/deepreal-upload", label: "DeepReal Media Forensics 👁️ (New)", labelAr: "تحليل ديب ريل للوسائط 👁️", icon: <ScanEye size={16} />, category: "innovation" },
+
+  // Previously missing pages — now included
+  { href: "/actions", label: "Actions & Exercises", labelAr: "الإجراءات والتمارين", icon: <Zap size={16} />, category: "deepreal" },
+  { href: "/defense-test", label: "Defense Test", labelAr: "اختبار الدفاع", icon: <ClipboardCheck size={16} />, category: "defense" },
+  { href: "/live-deception", label: "Live Deception Monitor", labelAr: "مراقب الخداع المباشر", icon: <Eye size={16} />, category: "innovation" },
+  { href: "/six-layers", label: "Six Layers Deep Dive 🌀", labelAr: "الطبقات الست العميقة 🌀", icon: <Layers size={16} />, category: "science" },
+
+  // Bigger Vision — NEW PAGES (ADD-ONLY)
+  { href: "/ai-agents", label: "AI Agents Dashboard 🤖 (New)", labelAr: "لوحة الوكلاء الذكية 🤖", icon: <Bot size={16} />, category: "innovation" },
+  { href: "/global-alliance", label: "Global Alliance 🌍 (New)", labelAr: "التحالف العالمي 🌍", icon: <Globe size={16} />, category: "innovation" },
+  { href: "/religion-hub/tools", label: "Religious Verification Tools 🕌 (New)", labelAr: "أدوات التحقق الديني 🕌", icon: <BookOpen size={16} />, category: "religionhub" },
+  ...Array.from({ length: 8 }, (_, i) => ({
+    href: `/layers/${i + 1}/fight`, label: `Layer ${i + 1} Fight Page ⚔️`, labelAr: `صفحة محاربة الطبقة ${i + 1} ⚔️`, icon: <Swords size={16} />, category: "defense" as const,
+  })),
 ];
 
 const CATEGORIES = [

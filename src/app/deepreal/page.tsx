@@ -11,7 +11,7 @@ export default function DeepRealPage() {
     <ModuleOperatingShell
       module="deepreal"
       accent="var(--accent-deepreal)"
-      icon={<ShieldCheck size={24} style={{ color: "var(--accent-deepreal)" }} />}
+      icon={<ShieldCheck size={28} style={{ color: "var(--accent-deepreal)" }} />}
       title={t({ en: "DeepReal", ar: "ديب ريال", arEG: "ديب ريل" })}
       subtitle={t({
         en: "The operational verification engine: triage the claim, trace the source, compare evidence, then decide.",
@@ -33,6 +33,14 @@ export default function DeepRealPage() {
         ar: "ابدأ بالمختبر، ثم نفّذ خطوة المسار، ثم شغّل البروتوكولات على السيناريوهات والقواعد.",
         arEG: "ابدأ بالمختبر، كمّل خطوة المسار الجاية، وبعدين شغّل البروتوكولات على السيناريوهات والقواعد.",
       })}
+      heroPattern="topographic"
+      heroGradient="linear-gradient(135deg, rgba(245,158,11,0.12), rgba(217,119,6,0.08))"
+      tagline={t({ en: "Verify. Trace. Decide. | تحقق. تتبع. قرر.", ar: "تحقق. تتبع. قرر.", arEG: "تحقق. تتبع. قرر." })}
+      titleGradientClass="text-gradient-gold"
+      heroCTAs={[
+        { href: "/deepreal/game", label: t({ en: "DeepReal Arena", ar: "ساحة DeepReal", arEG: "ساحة DeepReal" }) },
+        { href: "/angry-debunkers", label: t({ en: "🔥 Angry Debunkers", ar: "🔥 المفنّدين الغاضبين", arEG: "🔥 المفنّدين الغاضبين" }), accent: "#C2185B" },
+      ]}
       links={[
         {
           href: "/deepreal/game",
@@ -41,6 +49,24 @@ export default function DeepRealPage() {
             en: "Operational game lab: classic, Egypt, and good-signal POV.",
             ar: "مختبر لعب تشغيلي: كلاسيكي، مصري، ومنظور جيد.",
             arEG: "مختبر ألعاب عملي: كلاسيكي، مصري، ومنظور إيجابي.",
+          }),
+        },
+        {
+          href: "/deepreal-upload",
+          title: t({ en: "DeepReal upload", ar: "رفع DeepReal", arEG: "رفع DeepReal" }),
+          description: t({
+            en: "Upload media for AI-powered deepfake detection analysis.",
+            ar: "ارفع وسائط لتحليل التزييف العميق بالذكاء الاصطناعي.",
+            arEG: "ارفع ميديا لتحليل التزييف بالذكاء الاصطناعي.",
+          }),
+        },
+        {
+          href: "/angry-debunkers",
+          title: t({ en: "Angry Debunkers", ar: "المفنّدين الغاضبين", arEG: "المفنّدين الغاضبين" }),
+          description: t({
+            en: "Deploy your verification skills against real misinformation.",
+            ar: "استخدم مهارات التحقق ضد معلومات مضللة حقيقية.",
+            arEG: "استخدم مهاراتك في التحقق ضد معلومات مضللة حقيقية.",
           }),
         },
         {
