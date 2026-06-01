@@ -280,7 +280,7 @@ const fragmentShader = /* glsl */ `
 export function ParticleField({ count = 65536 }: { count?: number }) {
   const meshRef = useRef<THREE.Points>(null);
   const matRef = useRef<THREE.ShaderMaterial>(null);
-  const { stateRef } = useScrollContext();
+  const { stateRef, isAnimationsDisabled } = useScrollContext();
 
   const { positions, indices, randoms } = useMemo(() => {
     const p = new Float32Array(count * 3);
@@ -309,6 +309,10 @@ export function ParticleField({ count = 65536 }: { count?: number }) {
 
   useFrame((state, delta) => {
     if (!matRef.current) return;
+    
+    // TURN OFF button: freeze all particle animations
+    if (isAnimationsDisabled) return;
+    
     const { currentLayer, mouseX, mouseY } = stateRef.current;
     
     // Smoothly interpolate towards the true DOM layer instead of relying on unreliable overall document height
