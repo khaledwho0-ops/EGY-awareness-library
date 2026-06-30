@@ -61,11 +61,41 @@ export async function nvidiaFirstGenerateJSON<T = unknown>(
     temperature: options?.temperature ?? 0.3,
   });
 
+  // 1) Direct parse after stripping code fences.
+  const cleaned = result.text.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
   try {
-    const cleaned = result.text.replace(/```json\n?/g, "").replace(/```\n?/g, "").trim();
-    const data = JSON.parse(cleaned) as T;
-    return { data, provider: result.provider, raw: result.text };
-  } catch {
-    return { data: null, provider: result.provider, raw: result.text };
+    return { data: JSON.parse(cleaned) as T, provider: result.provider, raw: result.text };
+  } catch { /* try recovery below */ }
+  // 2) Recovery: pull the first complete JSON value out of prose/markdown-wrapped
+  //    output. This is the #1 failure mode — the model answers with valid JSON but
+  //    surrounds it with a sentence, so strict JSON.parse threw and the whole
+  //    result dropped to null → empty/fallback/500 in callers (whatsapp,
+  //    paper-auditor, toxicity, etc.). Now we recover the real JSON.
+  const extracted = extractFirstJson(cleaned) ?? extractFirstJson(result.text);
+  if (extracted) {
+    try { return { data: JSON.parse(extracted) as T, provider: result.provider, raw: result.text }; } catch { /* give up */ }
   }
+  return { data: null, provider: result.provider, raw: result.text };
+}
+
+/** Extract the first complete brace/bracket-balanced JSON value from a string,
+ *  ignoring braces inside string literals. Recovers JSON wrapped in prose. */
+function extractFirstJson(s: string): string | null {
+  if (!s) return null;
+  const start = s.search(/[{[]/);
+  if (start < 0) return null;
+  const open = s[start];
+  const close = open === "{" ? "}" : "]";
+  let depth = 0, inStr = false, esc = false;
+  for (let i = start; i < s.length; i++) {
+    const c = s[i];
+    if (inStr) {
+      if (esc) esc = false;
+      else if (c === "\\") esc = true;
+      else if (c === '"') inStr = false;
+    } else if (c === '"') inStr = true;
+    else if (c === open) depth++;
+    else if (c === close) { depth--; if (depth === 0) return s.slice(start, i + 1); }
+  }
+  return null;
 }

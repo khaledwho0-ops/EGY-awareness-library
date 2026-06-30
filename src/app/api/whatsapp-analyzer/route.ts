@@ -93,6 +93,20 @@ AUDIT REQUIREMENTS:
 
   } catch (error: any) {
     console.error("[WhatsApp Analyzer API Error]", error);
-    return NextResponse.json({ error: error.message || "Internal Server Error" }, { status: 500 });
+    // Graceful degradation — NEVER 500. If every AI provider is momentarily
+    // busy/exhausted, return a neutral, honest result so the UI still renders
+    // (the page reads score/botPatterns/emotionalFraming/urgencyIndicators/summary).
+    return NextResponse.json({
+      score: 50,
+      botPatterns: [],
+      emotionalFraming: [],
+      urgencyIndicators: [],
+      summary: {
+        en: "Automated analysis is temporarily unavailable (AI providers are busy). Treat forwarded health or urgent claims with caution and verify from a trusted source before sharing.",
+        ar: "التحليل الآلي غير متاح مؤقتًا (مزوّدو الذكاء الاصطناعي مشغولون). تعامل بحذر مع الرسائل الصحية أو العاجلة المُعاد توجيهها، وتحقّق من مصدر موثوق قبل المشاركة.",
+      },
+      provider: "fallback",
+      note: "ai_unavailable",
+    });
   }
 }
