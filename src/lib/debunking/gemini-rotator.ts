@@ -252,8 +252,13 @@ async function rotate<T>(
         setCooldown(nextIdx, extractWaitMs(err));
         console.warn(`[MegaRotator] ⚠️ ${slot.provider} #${nextIdx + 1} rate-limited`);
       } else if (isUnsupported(msg)) {
-        setCooldown(nextIdx, 600_000);
-        console.warn(`[MegaRotator] ⛔ ${slot.provider} #${nextIdx + 1} unsupported → 10min`);
+        // A slot failing STRUCTURED output (generateObject) still works fine for
+        // TEXT (generateText). The old 10-min blanket cooldown poisoned the whole
+        // rotator (e.g. a couple of whatsapp/paper-auditor structured calls cooled
+        // Groq+Cerebras for 10 min, breaking every endpoint). 45s is enough to
+        // skip it for the current structured burst without crippling text calls.
+        setCooldown(nextIdx, 45_000);
+        console.warn(`[MegaRotator] ⛔ ${slot.provider} #${nextIdx + 1} unsupported (structured) → 45s`);
       } else {
         setCooldown(nextIdx, 30_000);
         console.error(`[MegaRotator] ❌ ${slot.provider} #${nextIdx + 1}: ${msg}`);
