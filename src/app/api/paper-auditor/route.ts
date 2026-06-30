@@ -65,7 +65,14 @@ ${claims ? `\nUser's specific claims to verify:\n${JSON.stringify(claims)}` : ''
     );
 
     if (!data) {
-      return NextResponse.json({ error: 'Analysis failed — AI provider returned unparseable response' }, { status: 500 });
+      // Graceful — never 500 when the AI is momentarily busy/unparseable.
+      return NextResponse.json({
+        audit: { overallQualityScore: null, qualityGrade: "—", summary_en: "Automated peer-review audit is temporarily unavailable (AI providers are busy). Please retry in a moment.", summary_ar: "تدقيق المراجعة العلمية الآلي غير متاح مؤقتًا (المزوّدون مشغولون). برجاء إعادة المحاولة بعد لحظات.", statisticalAudit: {}, methodologyAudit: {}, redFlags: [], greenFlags: [] },
+        paperInfo: { title, doi, journal, year },
+        provider: provider || "fallback",
+        note: "ai_unavailable",
+        disclaimer: 'This automated audit is educational. Independent expert review is recommended for clinical or policy decisions.',
+      });
     }
 
     return NextResponse.json({
@@ -76,7 +83,13 @@ ${claims ? `\nUser's specific claims to verify:\n${JSON.stringify(claims)}` : ''
     });
   } catch (error: any) {
     console.error('[Paper Auditor API Error]', error);
-    return NextResponse.json({ error: error.message || 'Internal Server Error' }, { status: 500 });
+    // Graceful — never 500 (e.g. the rotator is momentarily exhausted under load).
+    return NextResponse.json({
+      audit: { overallQualityScore: null, qualityGrade: "—", summary_en: "Automated peer-review audit could not complete right now (AI providers are busy). Please retry in a moment.", summary_ar: "تعذّر إكمال تدقيق المراجعة العلمية الآن (المزوّدون مشغولون). برجاء إعادة المحاولة بعد لحظات.", statisticalAudit: {}, methodologyAudit: {}, redFlags: [], greenFlags: [] },
+      provider: "fallback",
+      note: "ai_unavailable",
+      disclaimer: 'This automated audit is educational. Independent expert review is recommended for clinical or policy decisions.',
+    });
   }
 }
 
