@@ -1,1 +1,29 @@
 services/analysis-backend
+
+# Vercel reinstalls/rebuilds these — never upload (this is what made the CLI upload 1.1GB)
+node_modules
+.next
+.git
+.vercel
+.turbo
+
+# Large recordings / test artifacts (~1.2GB — playwright-report-record + test-results-record)
+tests
+playwright-report
+playwright-report-record
+test-results
+test-results-record
+playwright.record.config.ts
+*.mp4
+**/*.mp4
+**/*.webm
+**/*.mov
+tmp-blueprint.txt
+tmp-*.txt
+
+# Separate repos / big local-only data
+EGY2-vault
+
+# Logs
+**/*.log
+.DS_Store

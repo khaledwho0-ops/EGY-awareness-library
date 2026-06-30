@@ -297,46 +297,73 @@ export async function POST(request: NextRequest) {
     let layersDetected: string[] = [];
     let verdictProvider = 'Rotator';
 
+    let gotVerdict = false;
+    const verdictContext = combinedFindings.slice(0, 3500); // keep the prompt small → faster synthesis
     try {
-      const verdictPrompt = `You are the Chief Verdict Officer of the Angry Debunkers AI system. Synthesize findings from the specialized agents into a FINAL verdict.\n\nClaim: "${claim.trim()}"\n\nAgent Findings:\n${combinedFindings}\n\nReturn ONLY valid JSON:\n{"verdict":"TRUE|FALSE|MISLEADING|UNVERIFIED|PARTIALLY_TRUE","explanation":"Clear 2-3 sentence verdict explanation in English","explanation_ar":"شرح الحكم بالعربية في جملتين","layers_detected":["layer1","layer2"],"manipulationScore":0.0-1.0,"recommendedAction_ar":"ماذا يجب أن يفعل القارئ؟"}`;
-
-      // DEMO LATENCY CAP: verdict maxTokens trimmed 600 → 450 and soft timeout
-      // tightened 12s → 8s so the synthesis step can't blow the request budget.
-      // If it does time out, the catch below falls back to Gemini, then to a
-      // deterministic confidence-weighted verdict.
+      const verdictPrompt = `You are the Chief Verdict Officer of the Angry Debunkers AI system. Synthesize the specialist agents' findings into a FINAL verdict on the claim.\n\nClaim: "${claim.trim()}"\n\nAgent Findings:\n${verdictContext}\n\nReturn ONLY valid JSON:\n{"verdict":"TRUE|FALSE|MISLEADING|UNVERIFIED|PARTIALLY_TRUE","explanation":"Clear 2-3 sentence verdict in English","explanation_ar":"شرح الحكم بالعربية في جملتين","layers_detected":["layer1","layer2"],"manipulationScore":0.0-1.0,"recommendedAction_ar":"ماذا يجب أن يفعل القارئ؟"}`;
       const { data: nvidiaVerdict } = await withTimeout(
         nvidiaFirstGenerateJSON(verdictPrompt, {
           systemPrompt: 'You are the Chief Verdict Officer synthesizing the AI agents. Return ONLY valid JSON.',
           maxTokens: 500,
           temperature: 0.1,
         }),
-        12000,
+        16000,
         { data: null, provider: 'timeout', raw: '' }
       );
-
-      if (nvidiaVerdict) {
-        overallVerdict = (nvidiaVerdict as any).verdict || 'UNVERIFIED';
+      if (nvidiaVerdict && (nvidiaVerdict as any).verdict) {
+        overallVerdict = (nvidiaVerdict as any).verdict;
         verdictExplanation = (nvidiaVerdict as any).explanation || verdictExplanation;
         verdictExplanationAr = (nvidiaVerdict as any).explanation_ar || verdictExplanationAr;
         layersDetected = (nvidiaVerdict as any).layers_detected || [];
+        gotVerdict = true;
       }
-    } catch {
+    } catch { /* fall through */ }
+
+    // BUG FIX: the primary uses withTimeout that RESOLVES with {data:null} on
+    // timeout (it never throws), so the old `catch`-based fallback NEVER ran and
+    // the verdict stayed at the default "UNVERIFIED / could not determine". Run
+    // the secondary + deterministic paths explicitly whenever the primary
+    // produced no verdict, so a REAL verdict is always returned.
+    if (!gotVerdict) {
       verdictProvider = 'Gemini';
       try {
-        const verdictResult = await rotatingGenerateObject({
-          system: `You are the Chief Verdict Officer. Synthesize findings into a verdict.`,
-          prompt: `Verdict for: "${claim.trim()}"\n\n${combinedFindings}`,
-          schema: verdictSchema,
-        });
-        overallVerdict = verdictResult.object.verdict;
-        verdictExplanation = verdictResult.object.explanation;
-        layersDetected = verdictResult.object.layers_detected;
-      } catch (verdictErr) {
-        const avgConf = agentResults.reduce((s, r) => s + r.confidence, 0) / agentResults.length;
-        if (avgConf > 0.7) overallVerdict = 'FALSE';
-        else if (avgConf > 0.5) overallVerdict = 'MISLEADING';
-        else overallVerdict = 'UNVERIFIED';
+        const verdictResult = await withTimeout(
+          rotatingGenerateObject({
+            system: 'You are the Chief Verdict Officer. Synthesize findings into a verdict.',
+            prompt: `Verdict for: "${claim.trim()}"\n\n${verdictContext}`,
+            schema: verdictSchema,
+          }),
+          14000,
+          null as any,
+        );
+        if (verdictResult?.object?.verdict) {
+          overallVerdict = verdictResult.object.verdict;
+          verdictExplanation = verdictResult.object.explanation || verdictExplanation;
+          layersDetected = verdictResult.object.layers_detected || [];
+          gotVerdict = true;
+        }
+      } catch { /* fall through to deterministic */ }
+    }
+
+    if (!gotVerdict) {
+      // Deterministic verdict from the agents that completed — never leave the
+      // default. Each agent's confidence reflects its own deception read.
+      const completed = agentResults.filter((r) => r.confidence > 0);
+      const avgConf = completed.length ? completed.reduce((s, r) => s + r.confidence, 0) / completed.length : 0;
+      if (avgConf >= 0.6) {
+        overallVerdict = 'FALSE';
+        verdictExplanation = `${completed.length} specialist agent(s) found strong deception and manipulation markers in this claim; it does not withstand scrutiny.`;
+        verdictExplanationAr = `رصد ${completed.length} من الوكلاء المتخصصين مؤشرات خداع وتلاعب قوية في هذا الادعاء؛ وهو لا يصمد أمام الفحص.`;
+      } else if (avgConf >= 0.4) {
+        overallVerdict = 'MISLEADING';
+        verdictExplanation = 'The agents found partial/mixed manipulation signals — treat this claim as misleading and verify before sharing.';
+        verdictExplanationAr = 'رصد الوكلاء مؤشرات تلاعب جزئية — تعامل مع الادعاء كمضلِّل وتحقّق قبل المشاركة.';
+      } else {
+        overallVerdict = 'UNVERIFIED';
+        verdictExplanation = 'Not enough verified signal from the agents to issue a confident verdict.';
+        verdictExplanationAr = 'لا توجد إشارات مؤكدة كافية من الوكلاء لإصدار حكم واثق.';
       }
+      verdictProvider = 'deterministic';
     }
 
     const report: InvestigationReport = {
