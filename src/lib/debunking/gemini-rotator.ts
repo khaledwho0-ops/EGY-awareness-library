@@ -31,6 +31,23 @@ function env(name: string): string | undefined {
   return val && val.trim().length > 0 ? val.trim() : undefined;
 }
 
+/**
+ * Collect ALL keys for a provider from three sources, de-duped, in order:
+ *   BASE, BASE_2 … BASE_{maxNumbered}   (legacy numbered slots), then
+ *   BASE+"S"  — an UNLIMITED comma-separated list (e.g. GEMINI_API_KEYS="k1,k2,k3,…").
+ * The comma list removes the old fixed cap so "add more keys → deeper fallback,
+ * quota never dies" just works: drop any number of keys into <PROVIDER>_API_KEYS.
+ */
+function multiKeys(base: string, maxNumbered: number): string[] {
+  const out: string[] = [];
+  const add = (v?: string) => { if (v && !out.includes(v)) out.push(v); };
+  add(env(base));
+  for (let i = 2; i <= maxNumbered; i++) add(env(`${base}_${i}`));
+  const list = env(`${base}S`);
+  if (list) for (const k of list.split(",").map((s) => s.trim()).filter(Boolean)) add(k);
+  return out;
+}
+
 function buildSlots(): ProviderSlot[] {
   const slots: ProviderSlot[] = [];
 
@@ -72,20 +89,13 @@ function buildSlots(): ProviderSlot[] {
   }
 
   // ① GEMINI — lead priority (fast + best structured output)
-  const gemKeys = [
-    env("GEMINI_API_KEY"), env("GEMINI_API_KEY_2"), env("GEMINI_API_KEY_3"),
-    env("GEMINI_API_KEY_4"), env("GEMINI_API_KEY_5"), env("GEMINI_API_KEY_6"),
-    env("GEMINI_API_KEY_7"),
-  ].filter(Boolean) as string[];
+  const gemKeys = multiKeys("GEMINI_API_KEY", 7); // + unlimited via GEMINI_API_KEYS="k1,k2,…"
   for (const key of gemKeys) {
     slots.push({ provider: "Gemini", build: () => createGoogleGenerativeAI({ apiKey: key })("gemini-2.5-flash") });
   }
 
   // ② GROQ — very fast, good JSON
-  const groqKeys = [
-    env("GROQ_API_KEY"), env("GROQ_API_KEY_2"), env("GROQ_API_KEY_3"),
-    env("GROQ_API_KEY_4"), env("GROQ_API_KEY_5"),
-  ].filter(Boolean) as string[];
+  const groqKeys = multiKeys("GROQ_API_KEY", 5); // + unlimited via GROQ_API_KEYS="k1,k2,…"
   for (const key of groqKeys) {
     slots.push({ provider: "Groq", build: () => createGroq({ apiKey: key })("llama-3.3-70b-versatile") });
   }
@@ -96,13 +106,13 @@ function buildSlots(): ProviderSlot[] {
   // if (kimiKey) slots.push({ provider: "Kimi", build: () => createOpenAICompatible({ name: "moonshot", baseURL: "https://api.moonshot.ai/v1", headers: { Authorization: `Bearer ${kimiKey}` } })("kimi-k2-0905-preview") });
 
   // ③ OPENROUTER — free models
-  const orKeys = [env("OPENROUTER_API_KEY"), env("OPENROUTER_API_KEY_2")].filter(Boolean) as string[];
+  const orKeys = multiKeys("OPENROUTER_API_KEY", 2); // + unlimited via OPENROUTER_API_KEYS="k1,k2,…"
   for (const key of orKeys) {
     slots.push({ provider: "OpenRouter", build: () => createOpenAICompatible({ name: "openrouter", baseURL: "https://openrouter.ai/api/v1", headers: { Authorization: `Bearer ${key}` } })("meta-llama/llama-3.3-70b-instruct:free") });
   }
 
   // ④ CEREBRAS
-  const cereKeys = [env("CEREBRAS_API_KEY"), env("CEREBRAS_API_KEY_2")].filter(Boolean) as string[];
+  const cereKeys = multiKeys("CEREBRAS_API_KEY", 2); // + unlimited via CEREBRAS_API_KEYS="k1,k2,…"
   for (const key of cereKeys) {
     slots.push({ provider: "Cerebras", build: () => createOpenAICompatible({ name: "cerebras", baseURL: "https://api.cerebras.ai/v1", headers: { Authorization: `Bearer ${key}` } })("llama-3.3-70b") });
   }
@@ -114,6 +124,52 @@ function buildSlots(): ProviderSlot[] {
   // ⑥ SAMBANOVA
   const samKey = env("SAMBANOVA_API_KEY");
   if (samKey) slots.push({ provider: "SambaNova", build: () => createOpenAICompatible({ name: "sambanova", baseURL: "https://api.sambanova.ai/v1", headers: { Authorization: `Bearer ${samKey}` } })("Meta-Llama-3.3-70B-Instruct") });
+
+  // ── EXTRA FREE OpenAI-compatible providers (from freellm.net) ─────────────
+  // Each activates ONLY when its env key is set → more free capacity so the
+  // rotator stops falling back to the graceful placeholder under load. Every
+  // slot is fail-safe: a bad/rate-limited one is just cooled down and skipped.
+
+  // ⑦ MISTRAL — console.mistral.ai (free tier, no card; phone verify). Key: MISTRAL_API_KEY
+  const mistralKey = env("MISTRAL_API_KEY");
+  if (mistralKey) slots.push({ provider: "Mistral", build: () => createOpenAICompatible({ name: "mistral", baseURL: "https://api.mistral.ai/v1", headers: { Authorization: `Bearer ${mistralKey}` } })(env("MISTRAL_MODEL") || "mistral-small-latest") });
+
+  // ⑧ COHERE (chat) — REUSES the COHERE_API_KEY already set for reranking, so this
+  //    one adds capacity immediately with no new signup. cohere.com
+  const cohereChatKey = env("COHERE_API_KEY");
+  if (cohereChatKey) slots.push({ provider: "Cohere", build: () => createOpenAICompatible({ name: "cohere", baseURL: "https://api.cohere.ai/compatibility/v1", headers: { Authorization: `Bearer ${cohereChatKey}` } })(env("COHERE_CHAT_MODEL") || "command-r-08-2024") });
+
+  // ⑧½ ZENMUX — zenmux.ai OpenAI-compatible gateway (<provider>/<model>). UNLIMITED keys via
+  //     ZENMUX_API_KEYS="k1,k2,…". Intentionally NOT in SPEED_PRIORITY ⇒ default weight 50 ⇒ it
+  //     runs only AFTER every free provider, so it's a deep last-resort that won't burn credits
+  //     until free quota is truly exhausted. Set ZENMUX_MODEL to pick the routed model.
+  const zenmuxKeys = multiKeys("ZENMUX_API_KEY", 4);
+  for (const key of zenmuxKeys) {
+    slots.push({ provider: "ZenMux", build: () => createOpenAICompatible({ name: "zenmux", baseURL: "https://zenmux.ai/api/v1", headers: { Authorization: `Bearer ${key}` } })(env("ZENMUX_MODEL") || "openai/gpt-4o-mini") });
+  }
+
+  // ⑧¾ NARAROUTER — router.bynara.id OpenAI-compatible gateway. VERIFIED live: only the free-tier
+  //      model `kimi-k2.7-code-free` runs at balance 0 (a strong 262K-ctx reasoning model) — the
+  //      premium ones (claude-opus-4.8 / sonnet-5 / fable-5 / gpt-5.5 / glm-5.2) return 402 without
+  //      paid credits. So NARA_MODEL defaults to the free model; change it only if you top up.
+  //      Keyed via NARA_API_KEYS="k1,k2,…" (one fresh key per email = more free daily quota).
+  //      Mid priority (SPEED_PRIORITY below) ⇒ real free fallback capacity; fails over on 402/403/429.
+  const naraKeys = multiKeys("NARA_API_KEY", 4);
+  for (const key of naraKeys) {
+    slots.push({ provider: "NaraRouter", build: () => createOpenAICompatible({ name: "nara", baseURL: "https://router.bynara.id/v1", headers: { Authorization: `Bearer ${key}` } })(env("NARA_MODEL") || "kimi-k2.7-code-free") });
+  }
+
+  // ⑨ GITHUB MODELS — github.com/marketplace/models (uses a GitHub PAT). Key: GITHUB_MODELS_KEY or GITHUB_TOKEN
+  const ghModelsKey = env("GITHUB_MODELS_KEY") || env("GITHUB_TOKEN");
+  if (ghModelsKey) slots.push({ provider: "GitHubModels", build: () => createOpenAICompatible({ name: "github-models", baseURL: "https://models.inference.ai.azure.com", headers: { Authorization: `Bearer ${ghModelsKey}` } })(env("GITHUB_MODEL") || "gpt-4o-mini") });
+
+  // ⑩ CLOUDFLARE WORKERS AI — needs both CF_WORKERS_AI_TOKEN and CF_ACCOUNT_ID. cloudflare.com
+  const cfToken = env("CF_WORKERS_AI_TOKEN"); const cfAccount = env("CF_ACCOUNT_ID");
+  if (cfToken && cfAccount) slots.push({ provider: "CloudflareAI", build: () => createOpenAICompatible({ name: "cloudflare-workers-ai", baseURL: `https://api.cloudflare.com/client/v4/accounts/${cfAccount}/ai/v1`, headers: { Authorization: `Bearer ${cfToken}` } })(env("CF_WORKERS_AI_MODEL") || "@cf/meta/llama-3.3-70b-instruct-fp8-fast") });
+
+  // ⑪ OVHcloud AI Endpoints — free, low RPM. Key: OVH_AI_TOKEN
+  const ovhKey = env("OVH_AI_TOKEN");
+  if (ovhKey) slots.push({ provider: "OVHcloud", build: () => createOpenAICompatible({ name: "ovhcloud", baseURL: env("OVH_AI_BASE_URL") || "https://oai.endpoints.kepler.ai.cloud.ovh.net/v1", headers: { Authorization: `Bearer ${ovhKey}` } })(env("OVH_AI_MODEL") || "Meta-Llama-3_3-70B-Instruct") });
 
   // ⑦ NVIDIA NIM — WIPED OUT of the rotator pool.
   // The Nemotron-3 550B is the strongest reasoner but is FAR too slow for
@@ -135,7 +191,7 @@ function buildSlots(): ProviderSlot[] {
   // quality/quota fallbacks. Array.sort is stable, so multi-key order within a
   // single provider is preserved.
   const SPEED_PRIORITY: Record<string, number> = {
-    Groq: 0, Cerebras: 1, "GLM-CF": 2, Gemini: 3, SambaNova: 4, Together: 5, OpenRouter: 6,
+    Groq: 0, Cerebras: 1, "GLM-CF": 2, Gemini: 3, Mistral: 4, Cohere: 5, NaraRouter: 6, SambaNova: 7, Together: 8, GitHubModels: 9, CloudflareAI: 10, OpenRouter: 11, OVHcloud: 12,
   };
   slots.sort((a, b) => (SPEED_PRIORITY[a.provider] ?? 50) - (SPEED_PRIORITY[b.provider] ?? 50));
 
@@ -269,20 +325,92 @@ async function rotate<T>(
   throw new Error(`[MegaRotator] All ${SLOTS.length} slots failed. Errors: ${errors.join(" | ").slice(0, 500)}`);
 }
 
+// ── Helpers for the structured→text RESILIENCE FALLBACK ──
+// Tolerant JSON extractor: strips code fences and slices the first {…last }.
+function extractJsonObject(text: string): unknown {
+  let t = (text || "").trim();
+  const fence = t.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  if (fence) t = fence[1].trim();
+  const s = t.indexOf("{");
+  const e = t.lastIndexOf("}");
+  if (s >= 0 && e > s) t = t.slice(s, e + 1);
+  return JSON.parse(t);
+}
+
+// Best-effort compact shape description from a Zod schema, so the text-mode
+// fallback knows which keys/types to emit. NEVER throws — returns "" on any issue.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function zodShapeHint(schema: any, depth = 0): string {
+  try {
+    if (!schema || depth > 4) return '"value"';
+    const def = schema._def;
+    const tn = def?.typeName;
+    switch (tn) {
+      case "ZodObject": {
+        const shape = typeof def.shape === "function" ? def.shape() : def.shape;
+        const parts = Object.keys(shape).map((k) => `"${k}": ${zodShapeHint(shape[k], depth + 1)}`);
+        return `{ ${parts.join(", ")} }`;
+      }
+      case "ZodArray": return `[ ${zodShapeHint(def.type, depth + 1)} ]`;
+      case "ZodString": return def?.description ? `"${def.description}"` : `"string"`;
+      case "ZodNumber": return `0`;
+      case "ZodBoolean": return `true|false`;
+      case "ZodEnum": return `"${(def.values || []).join("|")}"`;
+      case "ZodOptional":
+      case "ZodNullable":
+      case "ZodDefault": return zodShapeHint(def.innerType, depth);
+      case "ZodUnion": return (def.options || []).map((o: unknown) => zodShapeHint(o, depth + 1)).join(" | ");
+      default: return def?.description ? `"${def.description}"` : `"value"`;
+    }
+  } catch { return '"value"'; }
+}
+
 // ── STRUCTURED OUTPUT (debunking classifier, etc.) ──
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export async function rotatingGenerateObject(args: Record<string, any>): Promise<any> {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { modelName, ...rest } = args;
-  const { value, provider } = await rotate(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (model) => (generateObject as any)({ ...rest, model, maxRetries: 0, abortSignal: AbortSignal.timeout(ATTEMPT_TIMEOUT_MS) }),
-    (msg) => /not support|json_schema|response_format|Unsupported|structured|tool_use|function|no object generated|did not match|match schema|invalid.*json/i.test(msg),
-  );
-  // Attach the answering slot's provider so callers can report it accurately
-  // (the AI SDK's generateObject result object is extensible).
-  if (value && typeof value === 'object') (value as Record<string, unknown>).provider = provider;
-  return value;
+  try {
+    const { value, provider } = await rotate(
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (model) => (generateObject as any)({ ...rest, model, maxRetries: 0, abortSignal: AbortSignal.timeout(ATTEMPT_TIMEOUT_MS) }),
+      (msg) => /not support|json_schema|response_format|Unsupported|structured|tool_use|function|no object generated|did not match|match schema|invalid.*json/i.test(msg),
+    );
+    // Attach the answering slot's provider so callers can report it accurately
+    // (the AI SDK's generateObject result object is extensible).
+    if (value && typeof value === 'object') (value as Record<string, unknown>).provider = provider;
+    return value;
+  } catch (primaryErr) {
+    // ── RESILIENCE FALLBACK ──
+    // The structured slots are exhausted or can't do json_schema (e.g. only
+    // Groq/llama left, or Gemini rate-limited). Re-run as PLAIN TEXT on ANY
+    // provider and parse the JSON ourselves, so every structured endpoint
+    // (8-layer-scan, firewall, council, sovo, decompose, blackbox, hadith, …)
+    // stays up instead of 503-ing whenever the json_schema-capable slots are busy.
+    try {
+      const schema = rest.schema;
+      const hint = zodShapeHint(schema);
+      const sys =
+        (rest.system ? rest.system + "\n\n" : "") +
+        "OUTPUT FORMAT: return ONE valid JSON object and NOTHING else — no markdown, no code fences, no commentary." +
+        (hint ? `\nThe JSON MUST match this exact shape:\n${hint}` : "");
+      const prompt = String(rest.prompt ?? "") + "\n\nReturn the JSON object now.";
+      const { text, provider } = await rotatingGenerateText({
+        system: sys,
+        prompt,
+        temperature: typeof rest.temperature === "number" ? rest.temperature : 0.3,
+        maxTokens: rest.maxTokens ?? rest.maxOutputTokens ?? 2000,
+      });
+      let parsed = extractJsonObject(text);
+      if (schema && typeof schema.safeParse === "function") {
+        const r = schema.safeParse(parsed);
+        if (r.success) parsed = r.data; // else keep the lenient raw parse
+      }
+      return { object: parsed, provider: provider + "+text-fallback" };
+    } catch {
+      throw primaryErr; // preserve original failure semantics for the caller
+    }
+  }
 }
 
 // ── PLAIN TEXT (powers every chatbot via nvidiaFirstGenerate) ──
